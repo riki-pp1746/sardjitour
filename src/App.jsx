@@ -4088,7 +4088,7 @@ export default function App() {
         const activeDate = new Date(profile.masa_aktif);
         const today = new Date();
         if (activeDate < today) {
-          setLoginError(`Masa berlaku akses Anda telah habis. Silahkan hubungi Admin AKURAT - iDRG.`);
+          setLoginError(`Masa berlaku akses Anda telah habis. Silahkan hubungi Admin UR Sardjito.`);
           await supabase.auth.signOut();
           return;
         }
@@ -10135,9 +10135,9 @@ export default function App() {
               </div>
               <div className="flex flex-col items-center justify-center">
                 <h1 className="text-4xl font-black tracking-tight leading-none mb-1" style={{ color: '#0f4c75', textShadow: '0 2px 20px rgba(14,165,233,0.15)' }}>
-                  AKURAT - <span style={{ color: '#0ea5e9' }}>iD</span><span style={{ color: '#0f4c75' }}>RG</span>
+                  UR Sardjito
                 </h1>
-                <p className="text-[9px] font-black uppercase tracking-[0.2em] text-center px-4 mt-3 leading-relaxed" style={{ color: '#64748b' }}>Analisis Klaim & Utilisasi Review Terpadu<br />Indonesian Diagnosis Related Group</p>
+                <p className="text-[9px] font-black uppercase tracking-[0.2em] text-center px-4 mt-3 leading-relaxed" style={{ color: '#64748b' }}>Sistem Informasi & Utilisasi Rumah Sakit Terpadu<br />Indonesian Diagnosis Related Group</p>
               </div>
             </div>
 
@@ -10513,7 +10513,7 @@ export default function App() {
                 <div className="space-y-3">
                   <h2 className="text-2xl font-black text-slate-800 tracking-tight">Privasi & Keamanan Data</h2>
                   <p className="text-sm text-slate-500 leading-relaxed font-bold">
-                    Sebagai standar kepatuhan data medis, sistem <strong className="text-teal-600">AKURAT - iDRG</strong> memberitahukan:
+                    Sebagai standar kepatuhan data medis, sistem <strong className="text-teal-600">UR Sardjito</strong> memberitahukan:
                   </p>
                 </div>
                 <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 text-left space-y-4 shadow-inner">
@@ -11045,10 +11045,10 @@ export default function App() {
               {isSidebarOpen && (
                 <div className="flex flex-col ml-1">
                   <span className="text-xl font-black whitespace-nowrap tracking-tight leading-none text-slate-800">
-                    AKURAT - <span className="text-teal-600">iD</span><span className="text-slate-800">RG</span>
+                    UR Sardjito
                   </span>
-                  <span className="text-[7px] text-slate-500 mt-0.5 tracking-wider font-extrabold uppercase leading-tight opacity-90" title="Analisis Klaim & Utilisasi Review Terpadu - Indonesian Diagnosis Related Group">
-                    Analisis Klaim & Utilisasi Review Terpadu
+                  <span className="text-[7px] text-slate-500 mt-0.5 tracking-wider font-extrabold uppercase leading-tight opacity-90" title="Sistem Informasi & Utilisasi Rumah Sakit Terpadu - Indonesian Diagnosis Related Group">
+                    Sistem Informasi & Utilisasi Rumah Sakit Terpadu
                   </span>
                   <span className="text-[7px] text-teal-400 font-black mt-0.5 tracking-[0.2em] uppercase leading-tight">Alpha v1.7.7 (070620260947)</span>
                 </div>
@@ -11264,7 +11264,7 @@ export default function App() {
           </main>
           <footer className="p-4 text-center border-t border-slate-100 mt-12 bg-white/30 backdrop-blur-sm relative z-20 print:hidden">
             <p className="text-slate-400 text-[10px] font-bold tracking-widest uppercase flex items-center justify-center gap-2 flex-wrap">
-              <span>Copyright@RPP Analisis Klaim & Utilisasi Review Terpadu iDRG</span>
+              <span>Copyright@RPP Sistem Informasi & Utilisasi Rumah Sakit Terpadu iDRG</span>
               <span className="w-1.5 h-1.5 rounded-full bg-teal-500/50 hidden sm:inline" />
               <span className="bg-teal-50 text-teal-700 px-2.5 py-0.5 rounded-full font-black border border-teal-100 shadow-sm shrink-0">Alpha v1.7.7</span>
             </p>

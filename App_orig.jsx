@@ -1371,7 +1371,7 @@ export default function App() {
             const activeDate = new Date(`${parts[2]}-${parts[1]}-${parts[0]}T23:59:59`);
             const today = new Date();
             if (activeDate < today) {
-              setLoginError(`Masa berlaku akses Anda telah habis pada ${activeStr}. Silahkan hubungi Admin AKURAT - iDRG.`);
+              setLoginError(`Masa berlaku akses Anda telah habis pada ${activeStr}. Silahkan hubungi Admin UR Sardjito.`);
               setPassword('');
               setCaptchaVerified(false);
               setIsLoggingIn(false);
@@ -1382,7 +1382,7 @@ export default function App() {
         setShowDisclaimer(true);
         setLoginError('');
       } else {
-        setLoginError('Username atau Password tidak terdaftar. Silahkan hubungi Admin AKURAT - iDRG untuk mendapatkan akses.');
+        setLoginError('Username atau Password tidak terdaftar. Silahkan hubungi Admin UR Sardjito untuk mendapatkan akses.');
         setPassword('');
         setCaptchaVerified(false);
       }
@@ -4079,9 +4079,9 @@ export default function App() {
               </div>
               <div className="flex flex-col items-center justify-center">
                 <h1 className="text-4xl font-black tracking-tight leading-none mb-1 text-white drop-shadow-lg">
-                  AKURAT - <span className="text-teal-200">iD</span><span className="text-white">RG</span>
+                  UR Sardjito
                 </h1>
-                <p className="text-teal-50 text-[9px] font-black uppercase tracking-[0.2em] opacity-90 text-center px-4 mt-3 leading-relaxed">Analisis Klaim & Utilisasi Review Terpadu<br />Indonesian Diagnosis Related Group</p>
+                <p className="text-teal-50 text-[9px] font-black uppercase tracking-[0.2em] opacity-90 text-center px-4 mt-3 leading-relaxed">Sistem Informasi & Utilisasi Rumah Sakit Terpadu<br />Indonesian Diagnosis Related Group</p>
               </div>
             </div>
 
@@ -4155,7 +4155,7 @@ export default function App() {
                 <div className="space-y-3">
                   <h2 className="text-2xl font-black text-slate-800 tracking-tight">Privasi & Keamanan Data</h2>
                   <p className="text-sm text-slate-500 leading-relaxed font-bold">
-                    Sebagai standar kepatuhan data medis, sistem <strong className="text-teal-600">AKURAT - iDRG</strong> memberitahukan:
+                    Sebagai standar kepatuhan data medis, sistem <strong className="text-teal-600">UR Sardjito</strong> memberitahukan:
                   </p>
                 </div>
                 <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 text-left space-y-4 shadow-inner">
@@ -4446,10 +4446,10 @@ export default function App() {
                 {isSidebarOpen && (
                   <div className="flex flex-col ml-1">
                     <span className="text-xl font-black whitespace-nowrap tracking-tight leading-none text-slate-800">
-                      AKURAT - <span className="text-teal-600">iD</span><span className="text-slate-800">RG</span>
+                      UR Sardjito
                     </span>
-                    <span className="text-[7px] text-slate-500 mt-0.5 tracking-wider font-extrabold uppercase leading-tight opacity-90" title="Analisis Klaim & Utilisasi Review Terpadu - Indonesian Diagnosis Related Group">
-                      Analisis Klaim & Utilisasi Review Terpadu
+                    <span className="text-[7px] text-slate-500 mt-0.5 tracking-wider font-extrabold uppercase leading-tight opacity-90" title="Sistem Informasi & Utilisasi Rumah Sakit Terpadu - Indonesian Diagnosis Related Group">
+                      Sistem Informasi & Utilisasi Rumah Sakit Terpadu
                     </span>
                   </div>
                 )}
@@ -4581,7 +4581,7 @@ export default function App() {
           </main>
           <footer className="p-4 text-center border-t border-slate-100 mt-12 bg-white/30 backdrop-blur-sm relative z-20 print:hidden">
             <p className="text-slate-400 text-[10px] font-bold tracking-widest uppercase flex items-center justify-center gap-2">
-              Copyright@RPP Analisis Klaim & Utilisasi Review Terpadu iDRG
+              Copyright@RPP Sistem Informasi & Utilisasi Rumah Sakit Terpadu iDRG
             </p>
           </footer>
         </div>

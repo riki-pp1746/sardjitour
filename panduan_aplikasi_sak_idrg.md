@@ -1,5 +1,5 @@
 # 📖 Panduan Penggunaan **UR Sardjito**
-*Analisis Klaim & Utilisasi Review Terpadu — Indonesian Diagnosis Related Group*
+*Sistem Informasi & Utilisasi Rumah Sakit Terpadu — Indonesian Diagnosis Related Group*
 
 ---
 
@@ -249,4 +249,4 @@ Klik **KPI Coder**. Menampilkan performa individu petugas koding:
 ---
 
 *Panduan ini dibuat berdasarkan aplikasi UR Sardjito versi aktif di **[https://UR Sardjito.web.id/](https://UR Sardjito.web.id/)***
-*© RPP Analisis Klaim & Utilisasi Review Terpadu iDRG*
+*© RPP Sistem Informasi & Utilisasi Rumah Sakit Terpadu iDRG*
