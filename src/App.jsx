@@ -10132,10 +10132,10 @@ export default function App() {
                 <img src={logo} className="w-full h-full object-contain" alt="Logo" />
               </div>
               <div className="flex flex-col items-center justify-center">
-                <h1 className="text-4xl font-black tracking-tight leading-none mb-1" style={{ color: '#0f4c75', textShadow: '0 2px 20px rgba(14,165,233,0.15)' }}>
+                <h1 className="text-4xl font-black tracking-tight leading-none mb-1" style={{ color: '#ffffff', textShadow: '0 2px 20px rgba(14,165,233,0.15)' }}>
                   UR Sardjito
                 </h1>
-                <p className="text-[9px] font-black uppercase tracking-[0.2em] text-center px-4 mt-3 leading-relaxed" style={{ color: '#64748b' }}>Sistem Informasi & Utilisasi Rumah Sakit Terpadu<br />Indonesian Diagnosis Related Group</p>
+                <p className="text-[9px] font-black uppercase tracking-[0.2em] text-center px-4 mt-3 leading-relaxed" style={{ color: '#94a3b8' }}>Sistem Informasi & Utilisasi Rumah Sakit Terpadu<br />Indonesian Diagnosis Related Group</p>
               </div>
             </div>
 
@@ -10144,7 +10144,7 @@ export default function App() {
               <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-blue-400 to-emerald-400"></div>
               {/* Error Alert */}
               {loginError && (
-                <div className="mb-6 bg-rose-50 border border-rose-100 rounded-2xl p-4 flex gap-3 items-start animate-in slide-in-from-top-2 duration-300">
+                <div className="mb-6 bg-rose-900/30 border border-rose-100 rounded-2xl p-4 flex gap-3 items-start animate-in slide-in-from-top-2 duration-300">
                   <div className="shrink-0 w-8 h-8 rounded-full bg-rose-100 flex items-center justify-center mt-0.5">
                     <AlertCircle size={16} className="text-rose-600" />
                   </div>
@@ -10160,7 +10160,7 @@ export default function App() {
                     <div className="w-16 h-16 bg-blue-100 rounded-full mx-auto flex items-center justify-center text-blue-600 mb-4">
                       <ShieldAlert size={32} />
                     </div>
-                    <h3 className="text-xl font-black text-slate-800">Verifikasi Keamanan</h3>
+                    <h3 className="text-xl font-black text-white">Verifikasi Keamanan</h3>
                     <p className="text-sm text-slate-500">Masukkan 6 digit OTP dari aplikasi Google Authenticator Anda.</p>
                   </div>
                   <div>
@@ -10168,14 +10168,14 @@ export default function App() {
                       type="text" 
                       value={mfaVerifyCode}
                       onChange={e => { setMfaVerifyCode(e.target.value.replace(/\D/g, '').slice(0, 6)); setLoginError(''); }}
-                      className="w-full px-6 py-4 rounded-2xl bg-slate-50 border-2 border-slate-100 text-slate-800 placeholder-slate-300 focus:bg-white focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 outline-none transition-all font-black text-center text-2xl tracking-[0.2em] shadow-sm"
+                      className="w-full px-6 py-4 rounded-2xl bg-black/20 border-2 border-white/10 text-white placeholder-slate-500 focus:bg-white/5 focus:ring-4 focus:ring-cyan-500/20 focus:border-cyan-400 outline-none transition-all font-black text-center text-2xl tracking-[0.2em] shadow-sm"
                       placeholder="000000" required
                     />
                   </div>
-                  <button type="submit" disabled={isLoggingIn || mfaVerifyCode.length !== 6} className="w-full bg-blue-600 hover:bg-blue-700 text-white rounded-2xl py-4 font-black uppercase tracking-widest text-sm transition-all flex justify-center items-center gap-2 hover:shadow-lg hover:shadow-blue-500/30 disabled:opacity-50 cursor-pointer">
+                  <button type="submit" disabled={isLoggingIn || mfaVerifyCode.length !== 6} className="w-full bg-blue-600 hover:bg-blue-700 text-white rounded-2xl py-4 font-black uppercase tracking-widest text-sm transition-all flex justify-center items-center gap-2 hover:shadow-lg hover:shadow-cyan-500/30 disabled:opacity-50 cursor-pointer">
                     {isLoggingIn ? 'Memverifikasi...' : 'Verifikasi OTP'}
                   </button>
-                  <button type="button" onClick={() => { setMfaChallengeMode(false); setMfaVerifyCode(''); }} className="w-full text-slate-400 hover:text-slate-600 text-xs font-bold uppercase tracking-wider mt-4 cursor-pointer">
+                  <button type="button" onClick={() => { setMfaChallengeMode(false); setMfaVerifyCode(''); }} className="w-full text-slate-400 hover:text-slate-300 text-xs font-bold uppercase tracking-wider mt-4 cursor-pointer">
                     Kembali ke Login
                   </button>
                 </form>
@@ -10186,7 +10186,7 @@ export default function App() {
                   <input
                     type="text" value={username}
                     onChange={e => { setUsername(e.target.value); setLoginError(''); }}
-                    className="w-full px-6 py-4 rounded-2xl bg-slate-50 border-2 border-slate-100 text-slate-800 placeholder-slate-300 focus:bg-white focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 outline-none transition-all font-bold shadow-sm"
+                    className="w-full px-6 py-4 rounded-2xl bg-black/20 border-2 border-white/10 text-white placeholder-slate-500 focus:bg-white/5 focus:ring-4 focus:ring-cyan-500/20 focus:border-cyan-400 outline-none transition-all font-bold shadow-sm"
                     placeholder="Masukkan Email lengkap Anda" required
                   />
                 </div>
@@ -10196,7 +10196,7 @@ export default function App() {
                     <input
                       type={showPassword ? "text" : "password"} value={password}
                       onChange={e => { setPassword(e.target.value); setLoginError(''); }}
-                      className="w-full pl-6 pr-14 py-4 rounded-2xl bg-slate-50 border-2 border-slate-100 text-slate-800 placeholder-slate-300 focus:bg-white focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 outline-none transition-all font-bold shadow-sm"
+                      className="w-full pl-6 pr-14 py-4 rounded-2xl bg-black/20 border-2 border-white/10 text-white placeholder-slate-500 focus:bg-white/5 focus:ring-4 focus:ring-cyan-500/20 focus:border-cyan-400 outline-none transition-all font-bold shadow-sm"
                       placeholder="Masukkan password" required
                     />
                     <button
@@ -10264,12 +10264,12 @@ export default function App() {
               </button>
 
               <div className="text-center space-y-3 mb-6">
-                <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center shadow-inner mx-auto">
+                <div className="w-16 h-16 bg-blue-900/30 rounded-2xl flex items-center justify-center shadow-inner mx-auto">
                   <Key size={32} className="text-blue-600" />
                 </div>
-                <h3 className="text-xl font-black text-slate-800 tracking-tight">Lupa Password?</h3>
+                <h3 className="text-xl font-black text-white tracking-tight">Lupa Password?</h3>
                 <p className="text-xs text-slate-500 leading-relaxed font-medium">
-                  Masukkan <span className="font-bold text-slate-700">Email</span> atau <span className="font-bold text-slate-700">Username</span> akun Anda.
+                  Masukkan <span className="font-bold text-slate-200">Email</span> atau <span className="font-bold text-slate-200">Username</span> akun Anda.
                   Kami akan mengirimkan tautan reset password ke email terdaftar.
                 </p>
               </div>
@@ -10283,7 +10283,7 @@ export default function App() {
                     type="text"
                     value={forgotIdentity}
                     onChange={e => { setForgotIdentity(e.target.value); setForgotError(''); setForgotSuccess(''); }}
-                    className="w-full px-5 py-4 rounded-2xl bg-slate-50 border-2 border-slate-100 text-slate-800 placeholder-slate-300 focus:bg-white focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 outline-none transition-all font-bold shadow-sm"
+                    className="w-full px-5 py-4 rounded-2xl bg-black/20 border-2 border-white/10 text-white placeholder-slate-500 focus:bg-white/5 focus:ring-4 focus:ring-cyan-500/20 focus:border-cyan-400 outline-none transition-all font-bold shadow-sm"
                     placeholder="Contoh: user@email.com atau username Anda"
                     autoComplete="email"
                     autoFocus
@@ -10294,14 +10294,14 @@ export default function App() {
                 </div>
 
                 {forgotError && (
-                  <div className="p-4 bg-rose-50 border border-rose-100 rounded-2xl flex items-start gap-3 text-rose-700 font-bold text-xs animate-in shake duration-300">
+                  <div className="p-4 bg-rose-900/30 border border-rose-100 rounded-2xl flex items-start gap-3 text-rose-700 font-bold text-xs animate-in shake duration-300">
                     <AlertCircle size={16} className="shrink-0 mt-0.5" />
                     <span>{forgotError}</span>
                   </div>
                 )}
 
                 {forgotSuccess && (
-                  <div className="p-4 bg-emerald-50 border border-emerald-100 rounded-2xl flex items-start gap-3 text-emerald-700 font-bold text-xs animate-in fade-in duration-300">
+                  <div className="p-4 bg-emerald-900/30 border border-emerald-100 rounded-2xl flex items-start gap-3 text-emerald-700 font-bold text-xs animate-in fade-in duration-300">
                     <CheckCircle size={16} className="shrink-0 mt-0.5" />
                     <span>{forgotSuccess}</span>
                   </div>
@@ -10351,10 +10351,10 @@ export default function App() {
               <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-blue-500 to-emerald-500 rounded-t-[2rem]"></div>
               
               <div className="text-center space-y-3 mb-6 mt-4">
-                <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center shadow-inner mx-auto">
+                <div className="w-16 h-16 bg-blue-900/30 rounded-2xl flex items-center justify-center shadow-inner mx-auto">
                   <Key size={32} className="text-blue-600" />
                 </div>
-                <h3 className="text-xl font-black text-slate-800 tracking-tight">Buat Password Baru</h3>
+                <h3 className="text-xl font-black text-white tracking-tight">Buat Password Baru</h3>
                 <p className="text-xs text-slate-500 leading-relaxed font-medium">
                   Silakan masukkan password baru untuk akun Anda.
                 </p>
@@ -10370,7 +10370,7 @@ export default function App() {
                       type={showNewPassword ? "text" : "password"}
                       value={newPassword}
                       onChange={e => { setNewPassword(e.target.value); setResetNewPasswordError(''); setResetNewPasswordSuccess(''); }}
-                      className="w-full px-5 py-4 rounded-2xl bg-slate-50 border-2 border-slate-100 text-slate-800 placeholder-slate-300 focus:bg-white focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 outline-none transition-all font-bold shadow-sm"
+                      className="w-full px-5 py-4 rounded-2xl bg-black/20 border-2 border-white/10 text-white placeholder-slate-500 focus:bg-white/5 focus:ring-4 focus:ring-cyan-500/20 focus:border-cyan-400 outline-none transition-all font-bold shadow-sm"
                       placeholder="Minimal 6 karakter"
                       autoFocus
                     />
@@ -10385,14 +10385,14 @@ export default function App() {
                 </div>
 
                 {resetNewPasswordError && (
-                  <div className="p-4 bg-rose-50 border border-rose-100 rounded-2xl flex items-start gap-3 text-rose-700 font-bold text-xs animate-in shake duration-300">
+                  <div className="p-4 bg-rose-900/30 border border-rose-100 rounded-2xl flex items-start gap-3 text-rose-700 font-bold text-xs animate-in shake duration-300">
                     <AlertCircle size={16} className="shrink-0 mt-0.5" />
                     <span>{resetNewPasswordError}</span>
                   </div>
                 )}
 
                 {resetNewPasswordSuccess && (
-                  <div className="p-4 bg-emerald-50 border border-emerald-100 rounded-2xl flex items-start gap-3 text-emerald-700 font-bold text-xs animate-in fade-in duration-300">
+                  <div className="p-4 bg-emerald-900/30 border border-emerald-100 rounded-2xl flex items-start gap-3 text-emerald-700 font-bold text-xs animate-in fade-in duration-300">
                     <CheckCircle size={16} className="shrink-0 mt-0.5" />
                     <span>{resetNewPasswordSuccess}</span>
                   </div>
@@ -10429,27 +10429,27 @@ export default function App() {
           <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-slate-900/90 backdrop-blur-md animate-in fade-in duration-300">
             <div className="max-w-md w-full max-h-[95vh] overflow-y-auto custom-scrollbar p-10 shadow-2xl border border-white/20 bg-white relative rounded-[2.5rem] animate-in zoom-in-95 duration-300">
               <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-blue-500 via-emerald-500 to-blue-600"></div>
-              <button onClick={() => setShowRegister(false)} className="absolute top-6 right-6 text-slate-400 hover:text-slate-600 hover:bg-slate-100 p-2 rounded-full transition-all">
+              <button onClick={() => setShowRegister(false)} className="absolute top-6 right-6 text-slate-400 hover:text-slate-300 hover:bg-slate-100 p-2 rounded-full transition-all">
                 <X size={20} />
               </button>
               
               <div className="text-center mb-8">
-                <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 bg-blue-900/30 rounded-2xl flex items-center justify-center mx-auto mb-4">
                   <ClipboardList size={32} className="text-blue-600" />
                 </div>
-                <h2 className="text-2xl font-black text-slate-800 tracking-tight">Permohonan Akun</h2>
+                <h2 className="text-2xl font-black text-white tracking-tight">Permohonan Akun</h2>
                 <p className="text-sm text-slate-500 font-medium mt-2">Daftar untuk mendapatkan akses ke aplikasi</p>
               </div>
 
               {regState.error && (
-                <div className="mb-6 p-4 bg-rose-50 border border-rose-100 rounded-2xl flex items-start gap-3">
+                <div className="mb-6 p-4 bg-rose-900/30 border border-rose-100 rounded-2xl flex items-start gap-3">
                   <AlertCircle size={18} className="text-rose-500 shrink-0 mt-0.5" />
                   <p className="text-xs font-bold text-rose-700">{regState.error}</p>
                 </div>
               )}
 
               {regState.success && (
-                <div className="mb-6 p-4 bg-emerald-50 border border-emerald-100 rounded-2xl flex items-start gap-3">
+                <div className="mb-6 p-4 bg-emerald-900/30 border border-emerald-100 rounded-2xl flex items-start gap-3">
                   <CheckCircle size={18} className="text-emerald-500 shrink-0 mt-0.5" />
                   <p className="text-xs font-bold text-emerald-700">{regState.success}</p>
                 </div>
@@ -10458,12 +10458,12 @@ export default function App() {
               <form onSubmit={handleRegister} className="space-y-4">
                 <div>
                   <label className="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1.5 ml-1">Email</label>
-                  <input type="email" required value={regData.email} onChange={e => setRegData({...regData, email: e.target.value})} className="w-full bg-slate-50 border border-slate-200 text-slate-800 text-sm rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent block p-3.5 transition-all outline-none font-medium" placeholder="email@contoh.com" />
+                  <input type="email" required value={regData.email} onChange={e => setRegData({...regData, email: e.target.value})} className="w-full bg-slate-50 border border-slate-200 text-white text-sm rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent block p-3.5 transition-all outline-none font-medium" placeholder="email@contoh.com" />
                 </div>
                 <div>
                   <label className="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1.5 ml-1">Password</label>
                   <div className="relative">
-                    <input type={showRegPassword ? "text" : "password"} required value={regData.password} onChange={e => setRegData({...regData, password: e.target.value})} minLength={8} className="w-full bg-slate-50 border border-slate-200 text-slate-800 text-sm rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent block p-3.5 pr-12 transition-all outline-none font-medium" placeholder="Minimal 8 karakter" />
+                    <input type={showRegPassword ? "text" : "password"} required value={regData.password} onChange={e => setRegData({...regData, password: e.target.value})} minLength={8} className="w-full bg-slate-50 border border-slate-200 text-white text-sm rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent block p-3.5 pr-12 transition-all outline-none font-medium" placeholder="Minimal 8 karakter" />
                     <button
                       type="button"
                       onClick={() => setShowRegPassword(!showRegPassword)}
@@ -10475,19 +10475,19 @@ export default function App() {
                 </div>
                 <div>
                   <label className="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1.5 ml-1">Username (ID Login)</label>
-                  <input type="text" required value={regData.username} onChange={e => setRegData({...regData, username: e.target.value})} className="w-full bg-slate-50 border border-slate-200 text-slate-800 text-sm rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent block p-3.5 transition-all outline-none font-medium" placeholder="johndoe" />
+                  <input type="text" required value={regData.username} onChange={e => setRegData({...regData, username: e.target.value})} className="w-full bg-slate-50 border border-slate-200 text-white text-sm rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent block p-3.5 transition-all outline-none font-medium" placeholder="johndoe" />
                 </div>
                 <div>
                   <label className="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1.5 ml-1">Nama Lengkap</label>
-                  <input type="text" required value={regData.nama} onChange={e => setRegData({...regData, nama: e.target.value})} className="w-full bg-slate-50 border border-slate-200 text-slate-800 text-sm rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent block p-3.5 transition-all outline-none font-medium" placeholder="Nama Lengkap Anda" />
+                  <input type="text" required value={regData.nama} onChange={e => setRegData({...regData, nama: e.target.value})} className="w-full bg-slate-50 border border-slate-200 text-white text-sm rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent block p-3.5 transition-all outline-none font-medium" placeholder="Nama Lengkap Anda" />
                 </div>
                 <div>
                   <label className="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1.5 ml-1">Nama Rumah Sakit / Faskes</label>
-                  <input type="text" required value={regData.faskes} onChange={e => setRegData({...regData, faskes: e.target.value})} className="w-full bg-slate-50 border border-slate-200 text-slate-800 text-sm rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent block p-3.5 transition-all outline-none font-medium" placeholder="RSUD Contoh" />
+                  <input type="text" required value={regData.faskes} onChange={e => setRegData({...regData, faskes: e.target.value})} className="w-full bg-slate-50 border border-slate-200 text-white text-sm rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent block p-3.5 transition-all outline-none font-medium" placeholder="RSUD Contoh" />
                 </div>
                 <div>
                   <label className="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1.5 ml-1">No WhatsApp</label>
-                  <input type="text" value={regData.wa} onChange={e => setRegData({...regData, wa: e.target.value})} className="w-full bg-slate-50 border border-slate-200 text-slate-800 text-sm rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent block p-3.5 transition-all outline-none font-medium" placeholder="081234567890" />
+                  <input type="text" value={regData.wa} onChange={e => setRegData({...regData, wa: e.target.value})} className="w-full bg-slate-50 border border-slate-200 text-white text-sm rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent block p-3.5 transition-all outline-none font-medium" placeholder="081234567890" />
                 </div>
                 <div className="pt-4">
                   <button type="submit" disabled={regState.loading} className="w-full font-black py-4 px-4 rounded-2xl flex items-center justify-center gap-2 transition-all duration-300 text-xs tracking-[0.1em] uppercase bg-blue-600 hover:bg-blue-700 text-white shadow-lg shadow-blue-600/20 hover:-translate-y-0.5 disabled:opacity-50 disabled:hover:translate-y-0">
@@ -10505,11 +10505,11 @@ export default function App() {
             <div className="max-w-md w-full max-h-[95vh] overflow-y-auto custom-scrollbar p-10 shadow-2xl border border-white/20 bg-white relative rounded-[2.5rem] animate-in zoom-in-95 duration-300">
               <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-blue-500 via-emerald-500 to-blue-600"></div>
               <div className="flex flex-col items-center text-center space-y-6">
-                <div className="w-24 h-24 bg-blue-50 rounded-3xl flex items-center justify-center shadow-inner">
+                <div className="w-24 h-24 bg-blue-900/30 rounded-3xl flex items-center justify-center shadow-inner">
                   <AlertTriangle size={48} className="text-blue-600 animate-pulse" />
                 </div>
                 <div className="space-y-3">
-                  <h2 className="text-2xl font-black text-slate-800 tracking-tight">Privasi & Keamanan Data</h2>
+                  <h2 className="text-2xl font-black text-white tracking-tight">Privasi & Keamanan Data</h2>
                   <p className="text-sm text-slate-500 leading-relaxed font-bold">
                     Sebagai standar kepatuhan data medis, sistem <strong className="text-blue-600">UR Sardjito</strong> memberitahukan:
                   </p>
@@ -10517,26 +10517,26 @@ export default function App() {
                 <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 text-left space-y-4 shadow-inner">
                   <div className="flex gap-4">
                     <CheckCircle className="text-blue-500 shrink-0 mt-0.5" size={18} />
-                    <p className="text-xs text-slate-600 leading-relaxed"><strong>Pemrosesan Lokal 100%.</strong> Developer tidak menyimpan data Anda di server. Seluruh proses terjadi di memori browser.</p>
+                    <p className="text-xs text-slate-300 leading-relaxed"><strong>Pemrosesan Lokal 100%.</strong> Developer tidak menyimpan data Anda di server. Seluruh proses terjadi di memori browser.</p>
                   </div>
                   <div className="flex gap-4">
                     <CheckCircle className="text-blue-500 shrink-0 mt-0.5" size={18} />
-                    <p className="text-xs text-slate-600 leading-relaxed"><strong>Tanggung Jawab Pengguna.</strong> Segala akses dan kerahasiaan data adalah tanggung jawab penuh operator di faskes.</p>
+                    <p className="text-xs text-slate-300 leading-relaxed"><strong>Tanggung Jawab Pengguna.</strong> Segala akses dan kerahasiaan data adalah tanggung jawab penuh operator di faskes.</p>
                   </div>
                   <div className="flex gap-4">
                     <CheckCircle className="text-blue-500 shrink-0 mt-0.5" size={18} />
-                    <p className="text-xs text-slate-600 leading-relaxed"><strong>Sesi Sementara.</strong> Menutup tab atau me-refresh halaman akan menghapus data analisis secara permanen dari aplikasi.</p>
+                    <p className="text-xs text-slate-300 leading-relaxed"><strong>Sesi Sementara.</strong> Menutup tab atau me-refresh halaman akan menghapus data analisis secara permanen dari aplikasi.</p>
                   </div>
                   <div className="flex gap-4">
                     <ShieldAlert className="text-amber-500 shrink-0 mt-0.5" size={18} />
-                    <p className="text-xs text-slate-600 leading-relaxed"><strong>Sangat Disarankan.</strong> Segera aktifkan perlindungan <em>Multi-Factor Authentication (MFA)</em> di menu <strong>Keamanan Akun</strong> setelah login, untuk memastikan data hanya dapat diakses oleh Anda.</p>
+                    <p className="text-xs text-slate-300 leading-relaxed"><strong>Sangat Disarankan.</strong> Segera aktifkan perlindungan <em>Multi-Factor Authentication (MFA)</em> di menu <strong>Keamanan Akun</strong> setelah login, untuk memastikan data hanya dapat diakses oleh Anda.</p>
                   </div>
                 </div>
                 <div className="w-full flex flex-col gap-3 pt-2">
                   <button onClick={finalizeLogin} className="w-full py-4 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl font-black text-sm transition-all shadow-lg shadow-emerald-500/25 active:scale-95 flex items-center justify-center gap-2">
                     <CheckCircle size={18} /> SAYA MENGERTI & SETUJU
                   </button>
-                  <button onClick={() => setShowDisclaimer(false)} className="w-full py-3.5 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-xl font-bold text-xs transition-all border border-slate-200 flex items-center justify-center gap-2">
+                  <button onClick={() => setShowDisclaimer(false)} className="w-full py-3.5 bg-slate-100 hover:bg-slate-200 text-slate-300 rounded-xl font-bold text-xs transition-all border border-slate-200 flex items-center justify-center gap-2">
                     <X size={16} /> TIDAK SETUJU & KEMBALI
                   </button>
                 </div>
