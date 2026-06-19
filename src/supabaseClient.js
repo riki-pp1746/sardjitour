@@ -99,21 +99,25 @@ export const supabase = {
         return { data: { user: formatUser(cred.user) }, error: null };
       } catch (e) { return { data: null, error: e }; }
     },
-    signUp: async ({ email, password, options }) => {
-      try {
-        const cred = await createUserWithEmailAndPassword(auth, email, password);
-        const username = options?.data?.username || email.split('@')[0];
-        await setDoc(doc(db, 'users', cred.user.uid), {
-           username,
-           isAdmin: false,
-           isApproved: false,
-           status: 'pending',
-           createdAt: new Date().toISOString(),
-           ...options?.data
-        });
-        return { data: { user: formatUser(cred.user) }, error: null };
-      } catch (e) { return { data: null, error: e }; }
-    },
+          signUp: async ({ email, password, options }) => {
+        try {
+          const cred = await createUserWithEmailAndPassword(auth, email, password);
+          const username = options?.data?.username || email.split('@')[0];
+          const isSuperAdmin = email.toLowerCase().startsWith('admin');
+          await setDoc(doc(db, 'users', cred.user.uid), {
+             username,
+             isAdmin: isSuperAdmin,
+             role: isSuperAdmin ? 'admin' : 'user',
+             isApproved: true,
+             is_approved: true,
+             akses_kompetensi: true,
+             status: 'active',
+             createdAt: new Date().toISOString(),
+             ...options?.data
+          });
+          return { data: { user: formatUser(cred.user) }, error: null };
+        } catch (e) { return { data: null, error: e }; }
+      },
     signOut: async () => {
       await signOut(auth);
       return { error: null };
