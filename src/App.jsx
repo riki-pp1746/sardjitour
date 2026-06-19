@@ -1,3 +1,4 @@
+import logo from "./assets/logo.png";
 import React, { useState, useRef, useMemo, useEffect, useId, useCallback } from 'react';
 import { supabase } from './supabaseClient';
 import { UploadCloud, Folder, FileText, CheckCircle, Trash2, AlertCircle, X, BarChart3, PieChart, Activity, Layers, Search, Table2, GitMerge, FileCode, CheckSquare, AlertTriangle, Stethoscope, User, Users, ActivitySquare, Download, TrendingUp, TrendingDown, ChevronRight, ChevronDown, Zap, Award, ArrowUpCircle, LogIn, LogOut, Menu, Printer, Moon, Sun, Calendar, Bed, Building2, LayoutDashboard, Bot, Sparkles, ClipboardList, Scissors, Settings, FileSpreadsheet, Eye, EyeOff, RefreshCw, Key, Send, Save, Plus, ShieldAlert, Copy } from 'lucide-react';
@@ -2966,9 +2967,9 @@ const InsightSosialisasiContent = React.memo(({
       {/* PRINT BRANDING (Visible only when printing) */}
       <div className="hidden print:flex items-center justify-between border-b-2 border-teal-600 pb-4 mb-6">
         <div className="flex items-center gap-3">
-          <img src="https://lh3.googleusercontent.com/d/1K9BUgDDRmF0d9Q9mCasC5KhDXVpVhJs5" alt="Logo" className="w-12 h-12 object-contain" />
+          <img src={logo} alt="Logo" className="w-12 h-12 object-contain" />
           <div>
-            <h2 className="text-xl font-black text-slate-900 tracking-tight">akurat.id Analytics Platform</h2>
+            <h2 className="text-xl font-black text-slate-900 tracking-tight">UR Sardjito Analytics Platform</h2>
             <p className="text-[9px] text-slate-400 font-bold uppercase tracking-wider">Laporan Sosialisasi & Evaluasi Kendali Mutu Kendali Biaya (KMKB)</p>
           </div>
         </div>
@@ -7770,9 +7771,9 @@ export default function App() {
         {/* PRINT BRANDING (Visible only when printing) */}
         <div className="hidden print:flex items-center justify-between border-b-2 border-teal-600 pb-4 mb-6">
           <div className="flex items-center gap-3">
-            <img src="https://lh3.googleusercontent.com/d/1K9BUgDDRmF0d9Q9mCasC5KhDXVpVhJs5" alt="Logo" className="w-12 h-12 object-contain" />
+            <img src={logo} alt="Logo" className="w-12 h-12 object-contain" />
             <div>
-              <h2 className="text-xl font-black text-slate-900 tracking-tight">akurat.id Analytics Platform</h2>
+              <h2 className="text-xl font-black text-slate-900 tracking-tight">UR Sardjito Analytics Platform</h2>
               <p className="text-[9px] text-slate-400 font-bold uppercase tracking-wider">Laporan Sosialisasi & Evaluasi Kendali Mutu Kendali Biaya (KMKB)</p>
             </div>
           </div>
@@ -10130,7 +10131,7 @@ export default function App() {
             {/* Header */}
             <div className="text-center mb-8">
               <div className="inline-flex items-center justify-center w-20 h-20 rounded-3xl bg-white shadow-2xl shadow-sky-900/10 mb-6 overflow-hidden p-3 border border-white/20">
-                <img src="https://lh3.googleusercontent.com/d/1K9BUgDDRmF0d9Q9mCasC5KhDXVpVhJs5" className="w-full h-full object-contain" alt="Logo" />
+                <img src={logo} className="w-full h-full object-contain" alt="Logo" />
               </div>
               <div className="flex flex-col items-center justify-center">
                 <h1 className="text-4xl font-black tracking-tight leading-none mb-1" style={{ color: '#0f4c75', textShadow: '0 2px 20px rgba(14,165,233,0.15)' }}>
@@ -11039,7 +11040,7 @@ export default function App() {
           <div className="p-4 flex items-center justify-between border-b border-teal-100 shrink-0 h-16 bg-gradient-to-r from-teal-50 to-white">
             <div className="flex items-center gap-3 overflow-hidden cursor-pointer" onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
               <div className="p-1.5 bg-white rounded-lg shrink-0 shadow-[0_0_15px_rgba(20,184,166,0.2)] w-9 h-9 flex items-center justify-center overflow-hidden border border-teal-200">
-                <img src="https://lh3.googleusercontent.com/d/1K9BUgDDRmF0d9Q9mCasC5KhDXVpVhJs5" className="w-full h-full object-contain" alt="Logo" />
+                <img src={logo} className="w-full h-full object-contain" alt="Logo" />
               </div>
               {isSidebarOpen && (
                 <div className="flex flex-col ml-1">
@@ -11131,7 +11132,7 @@ export default function App() {
         {/* MAIN CONTENT AREA */}
         <div className="flex-1 flex flex-col h-screen overflow-hidden bg-slate-50 relative">
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-[0.035] z-0 overflow-hidden">
-            <img src="https://lh3.googleusercontent.com/d/1K9BUgDDRmF0d9Q9mCasC5KhDXVpVhJs5" alt="" className="w-[600px] grayscale select-none" />
+            <img src={logo} alt="" className="w-[600px] grayscale select-none" />
           </div>
           {/* Header */}
           <header className="h-16 bg-white/80 backdrop-blur-md border-b border-slate-200 shrink-0 flex items-center px-4 sm:px-6 justify-between z-[80] shadow-sm print:hidden">
@@ -11140,7 +11141,7 @@ export default function App() {
                 <Menu size={20} />
               </button>
               <div className="flex items-center gap-2 lg:hidden shrink-0">
-                <img src="https://lh3.googleusercontent.com/d/1K9BUgDDRmF0d9Q9mCasC5KhDXVpVhJs5" className="w-6 h-6 object-contain" alt="Logo" />
+                <img src={logo} className="w-6 h-6 object-contain" alt="Logo" />
               </div>
               <h2 className="text-sm sm:text-lg font-black text-slate-800 tracking-tight truncate max-w-[140px] sm:max-w-none">
                 {activeTab === 'upload' ? 'Integrasi Data' : TABS.find(t => t.id === subTab)?.label || 'Dashboard'}
