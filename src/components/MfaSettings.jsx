@@ -83,7 +83,7 @@ const MfaSettings = () => {
   return (
     <div className="max-w-3xl mx-auto p-6 space-y-8 animate-in fade-in duration-500">
       <div className="flex items-center gap-4 border-b border-slate-200 pb-4">
-        <div className="w-12 h-12 rounded-2xl bg-teal-50 flex items-center justify-center text-teal-600">
+        <div className="w-12 h-12 rounded-2xl bg-blue-50 flex items-center justify-center text-blue-600">
           <ShieldAlert size={24} />
         </div>
         <div>
@@ -97,7 +97,7 @@ const MfaSettings = () => {
 
       <div className="bg-white rounded-2xl shadow-sm border border-slate-100 p-6">
         <h3 className="text-lg font-bold text-slate-800 mb-4 flex items-center gap-2">
-          <Key size={18} className="text-teal-500"/> Status MFA (Google Authenticator)
+          <Key size={18} className="text-blue-500"/> Status MFA (Google Authenticator)
         </h3>
         
         {isMfaActive ? (
@@ -133,7 +133,7 @@ const MfaSettings = () => {
                     <li>Pengolahan Data TXT tersebut hanya dapat diakses oleh Anda Seorang dan tidak dapat diakses oleh pihak lain.</li>
                   </ul>
                 </div>
-                <button onClick={handleEnableMfa} disabled={loading} className="px-6 py-2.5 bg-teal-600 hover:bg-teal-700 text-white font-bold rounded-xl text-sm transition-colors shadow-lg shadow-teal-500/30 cursor-pointer disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center gap-2">
+                <button onClick={handleEnableMfa} disabled={loading} className="px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl text-sm transition-colors shadow-lg shadow-blue-500/30 cursor-pointer disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center gap-2">
                   {loading ? (
                     <>
                       <svg className="animate-spin h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
@@ -163,7 +163,7 @@ const MfaSettings = () => {
                       value={verifyCode} 
                       onChange={(e) => setVerifyCode(e.target.value.replace(/\D/g, '').slice(0, 6))}
                       placeholder="6 Digit OTP" 
-                      className="w-full max-w-[200px] px-4 py-2 border border-slate-300 rounded-xl text-center text-lg font-black tracking-[0.2em] focus:border-teal-500 focus:ring-2 focus:ring-teal-100 outline-none"
+                      className="w-full max-w-[200px] px-4 py-2 border border-slate-300 rounded-xl text-center text-lg font-black tracking-[0.2em] focus:border-blue-500 focus:ring-2 focus:ring-blue-100 outline-none"
                     />
                   </div>
                   <button onClick={handleVerify} disabled={loading || verifyCode.length !== 6} className="px-6 py-2.5 bg-slate-800 hover:bg-slate-900 text-white font-bold rounded-xl text-sm transition-colors disabled:opacity-50 cursor-pointer">
@@ -180,7 +180,7 @@ const MfaSettings = () => {
       {!isMfaActive && (
         <div className="bg-white rounded-2xl shadow-sm border border-slate-100 p-6 mt-8">
           <h3 className="text-lg font-bold text-slate-800 mb-6 flex items-center gap-2">
-            <Smartphone size={18} className="text-teal-500"/> Panduan Aktivasi MFA
+            <Smartphone size={18} className="text-blue-500"/> Panduan Aktivasi MFA
           </h3>
           <div className="space-y-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

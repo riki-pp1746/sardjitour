@@ -2032,7 +2032,7 @@ const SectionHeader = React.memo(({ icon: Icon, title, desc, exportAction, expor
         <Printer size={16} /> Print Cetak
       </button>
       {exportAction && (
-        <button onClick={exportAction} className={`bg-teal-600 hover:bg-teal-700 text-white px-5 py-2.5 rounded-xl text-sm font-bold flex items-center gap-2 transition-all shadow-sm`}>
+        <button onClick={exportAction} className={`bg-blue-600 hover:bg-blue-700 text-white px-5 py-2.5 rounded-xl text-sm font-bold flex items-center gap-2 transition-all shadow-sm`}>
           <Download size={16} /> {exportText || 'Ekspor Data'}
         </button>
       )}
@@ -2071,7 +2071,7 @@ const MiniTable = React.memo(({ data = [], columns = [], onRowClick, maxHeight =
     <div className={`flex flex-col flex-1`} style={{ maxHeight }}>
       <div className="flex items-center justify-between px-3 pt-2 pb-1 bg-slate-50/70 border-b border-slate-100">
         <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">{title || 'Tabel Data'}</span>
-        <button onClick={copyMiniTable} className="flex items-center gap-1 px-2 py-1 bg-white hover:bg-slate-50 border border-slate-200 rounded-lg text-slate-500 hover:text-teal-600 shadow-sm transition-all text-[10px] font-bold">
+        <button onClick={copyMiniTable} className="flex items-center gap-1 px-2 py-1 bg-white hover:bg-slate-50 border border-slate-200 rounded-lg text-slate-500 hover:text-blue-600 shadow-sm transition-all text-[10px] font-bold">
           <Copy size={11} /> Salin
         </button>
       </div>
@@ -2216,7 +2216,7 @@ const ScatterChart = React.memo(({ data, xKey, yKey, rKey, color, xLabel, yLabel
     <div className="w-full">
       <div className="flex items-center justify-between px-3 py-1.5 bg-slate-50 border border-slate-200 rounded-t-xl border-b-0">
         <span className="text-xs font-bold text-slate-500">{title || 'Scatter Plot'}</span>
-        <button onClick={() => saveAsPng(chartId, title)} className="flex items-center gap-1.5 px-3 py-1 bg-white hover:bg-teal-50 border border-slate-200 hover:border-teal-300 rounded-lg text-slate-500 hover:text-teal-600 text-xs font-bold shadow-sm transition-all">
+        <button onClick={() => saveAsPng(chartId, title)} className="flex items-center gap-1.5 px-3 py-1 bg-white hover:bg-blue-50 border border-slate-200 hover:border-blue-300 rounded-lg text-slate-500 hover:text-blue-600 text-xs font-bold shadow-sm transition-all">
           <Download size={13} /> Simpan PNG
         </button>
       </div>
@@ -2360,22 +2360,22 @@ const SliderCaptcha = ({ onVerified, verified }) => {
 
           {/* Background Shimmer (only when not verified) */}
           {!verified && !failed && (
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-teal-500/5 to-transparent -translate-x-full animate-[shimmer_2s_infinite]" style={{ width: '50%' }}></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-blue-500/5 to-transparent -translate-x-full animate-[shimmer_2s_infinite]" style={{ width: '50%' }}></div>
           )}
 
           {/* Target Slot (The "Hole") */}
           <div
-            className="absolute top-1 bottom-1 rounded-lg border-2 border-dashed border-teal-200/50 flex items-center justify-center bg-teal-900/5 shadow-inner"
+            className="absolute top-1 bottom-1 rounded-lg border-2 border-dashed border-blue-200/50 flex items-center justify-center bg-blue-900/5 shadow-inner"
             style={{ left: `${TARGET_START}%`, width: `${TARGET_W}%` }}
           >
-            <div className="w-6 h-6 rounded-lg bg-teal-500/10 border border-teal-500/20 animate-pulse"></div>
+            <div className="w-6 h-6 rounded-lg bg-blue-500/10 border border-blue-500/20 animate-pulse"></div>
           </div>
 
           {/* Slider Thumb (The "Puzzle Piece") */}
           <div
             onMouseDown={handleMouseDown}
             onTouchStart={handleTouchStart}
-            className={`absolute top-1 bottom-1 flex items-center justify-center rounded-lg shadow-2xl cursor-grab active:cursor-grabbing transition-all duration-200 ${isDragging ? 'scale-110 z-20' : 'scale-100 z-10'} ${verified ? 'bg-emerald-600 text-white shadow-emerald-600/40 cursor-default' : failed ? 'bg-rose-600 text-white shadow-rose-600/40' : 'bg-white text-teal-600 hover:shadow-teal-600/20 border border-teal-50'}`}
+            className={`absolute top-1 bottom-1 flex items-center justify-center rounded-lg shadow-2xl cursor-grab active:cursor-grabbing transition-all duration-200 ${isDragging ? 'scale-110 z-20' : 'scale-100 z-10'} ${verified ? 'bg-emerald-600 text-white shadow-emerald-600/40 cursor-default' : failed ? 'bg-rose-600 text-white shadow-rose-600/40' : 'bg-white text-blue-600 hover:shadow-blue-600/20 border border-blue-50'}`}
             style={{
               width: `${THUMB_W}px`,
               left: `${sliderVal}%`,
@@ -2385,9 +2385,9 @@ const SliderCaptcha = ({ onVerified, verified }) => {
             <div className="flex gap-0.5 items-center justify-center">
               {verified ? <CheckCircle size={24} /> : failed ? <X size={24} /> : (
                 <div className="flex flex-col gap-1 items-center">
-                  <div className="w-4 h-0.5 bg-teal-600/30 rounded-full"></div>
-                  <div className="w-5 h-0.5 bg-teal-600/60 rounded-full"></div>
-                  <div className="w-4 h-0.5 bg-teal-600/30 rounded-full"></div>
+                  <div className="w-4 h-0.5 bg-blue-600/30 rounded-full"></div>
+                  <div className="w-5 h-0.5 bg-blue-600/60 rounded-full"></div>
+                  <div className="w-4 h-0.5 bg-blue-600/30 rounded-full"></div>
                 </div>
               )}
             </div>
@@ -2876,7 +2876,7 @@ const InsightSosialisasiContent = React.memo(({
   if (allRows.length === 0) {
     return (
       <div className="bg-white/50 backdrop-blur-sm border border-slate-200/60 p-20 rounded-[2.5rem] text-center mt-10 max-w-3xl mx-auto shadow-2xl shadow-slate-200/50">
-        <div className="mb-6"><AlertCircle size={48} className="text-teal-600 mx-auto animate-bounce" /></div>
+        <div className="mb-6"><AlertCircle size={48} className="text-blue-600 mx-auto animate-bounce" /></div>
         <h2 className="text-2xl font-black mb-3 text-slate-800">Menunggu Dataset Utama...</h2>
         <p className="text-slate-500 font-medium leading-relaxed">
           Data sosialisasi belum dapat ditampilkan. Silakan unggah file klaim RS terlebih dahulu di tab <strong>Integrasi Data</strong>.
@@ -2889,9 +2889,9 @@ const InsightSosialisasiContent = React.memo(({
     <div className={`space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-500 ${isSlideMode ? 'p-6 bg-slate-900 text-white rounded-3xl' : ''}`}>
       
       {/* HEADER & TOP CONTROLS */}
-      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 bg-white/40 backdrop-blur-sm p-4 rounded-3xl border border-teal-100 shadow-sm print:hidden hidden-on-print">
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 bg-white/40 backdrop-blur-sm p-4 rounded-3xl border border-blue-100 shadow-sm print:hidden hidden-on-print">
         <div className="flex items-center gap-3">
-          <div className="p-3 bg-teal-600 text-white rounded-2xl shadow-lg shadow-teal-600/20">
+          <div className="p-3 bg-blue-600 text-white rounded-2xl shadow-lg shadow-blue-600/20">
             <Sparkles size={24} className="animate-pulse" />
           </div>
           <div>
@@ -2902,7 +2902,7 @@ const InsightSosialisasiContent = React.memo(({
         <div className="flex flex-wrap gap-2 w-full sm:w-auto">
           <button
             onClick={() => setIsSlideMode(!isSlideMode)}
-            className={`px-4 py-2.5 rounded-xl text-xs font-black transition-all border shadow-sm uppercase tracking-wider ${isSlideMode ? 'bg-teal-600 text-white border-teal-500' : 'bg-white hover:bg-slate-50 text-slate-700 border-slate-200'}`}
+            className={`px-4 py-2.5 rounded-xl text-xs font-black transition-all border shadow-sm uppercase tracking-wider ${isSlideMode ? 'bg-blue-600 text-white border-blue-500' : 'bg-white hover:bg-slate-50 text-slate-700 border-slate-200'}`}
             title="Toggle Mode Slide / Layar Penuh Presentasi"
           >
             📺 {isSlideMode ? 'Mode Biasa' : 'Mode Slide / Presentasi'}
@@ -2916,7 +2916,7 @@ const InsightSosialisasiContent = React.memo(({
           </button>
           <button
             onClick={() => window.print()}
-            className="bg-teal-600 hover:bg-teal-700 text-white px-4 py-2.5 rounded-xl text-xs font-black transition-all shadow-md flex items-center gap-1.5 uppercase tracking-wider"
+            className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2.5 rounded-xl text-xs font-black transition-all shadow-md flex items-center gap-1.5 uppercase tracking-wider"
             title="Cetak/Simpan Handout Sosialisasi ke PDF"
           >
             <Printer size={14} /> Cetak Handout PDF
@@ -2937,7 +2937,7 @@ const InsightSosialisasiContent = React.memo(({
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 bg-white p-5 rounded-3xl border border-slate-200/60 shadow-sm print:hidden hidden-on-print">
         <div className="flex flex-col gap-2">
           <label className="text-[10px] font-black text-slate-400 uppercase tracking-widest flex items-center gap-1.5">
-            <Building2 size={12} className="text-teal-600" /> Pilih Departemen
+            <Building2 size={12} className="text-blue-600" /> Pilih Departemen
           </label>
           <select
             value={currentDept}
@@ -2945,19 +2945,19 @@ const InsightSosialisasiContent = React.memo(({
               setSelectedSocializationDept(e.target.value);
               setSelectedSocializationKsm(''); // Reset KSM
             }}
-            className="w-full px-4 py-3 rounded-2xl bg-slate-50 border-2 border-slate-100 text-slate-800 font-bold focus:bg-white focus:ring-4 focus:ring-teal-500/10 focus:border-teal-500 outline-none transition-all cursor-pointer shadow-inner"
+            className="w-full px-4 py-3 rounded-2xl bg-slate-50 border-2 border-slate-100 text-slate-800 font-bold focus:bg-white focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 outline-none transition-all cursor-pointer shadow-inner"
           >
             {depts.map(d => <option key={d} value={d}>{d}</option>)}
           </select>
         </div>
         <div className="flex flex-col gap-2">
           <label className="text-[10px] font-black text-slate-400 uppercase tracking-widest flex items-center gap-1.5">
-            <Users size={12} className="text-teal-600" /> Pilih Kelompok Staf Medis (KSM)
+            <Users size={12} className="text-blue-600" /> Pilih Kelompok Staf Medis (KSM)
           </label>
           <select
             value={currentKsm}
             onChange={e => setSelectedSocializationKsm(e.target.value)}
-            className="w-full px-4 py-3 rounded-2xl bg-slate-50 border-2 border-slate-100 text-slate-800 font-bold focus:bg-white focus:ring-4 focus:ring-teal-500/10 focus:border-teal-500 outline-none transition-all cursor-pointer shadow-inner"
+            className="w-full px-4 py-3 rounded-2xl bg-slate-50 border-2 border-slate-100 text-slate-800 font-bold focus:bg-white focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 outline-none transition-all cursor-pointer shadow-inner"
           >
             {ksmsForDept.map(k => <option key={k} value={k}>{k}</option>)}
           </select>
@@ -2965,7 +2965,7 @@ const InsightSosialisasiContent = React.memo(({
       </div>
 
       {/* PRINT BRANDING (Visible only when printing) */}
-      <div className="hidden print:flex items-center justify-between border-b-2 border-teal-600 pb-4 mb-6">
+      <div className="hidden print:flex items-center justify-between border-b-2 border-blue-600 pb-4 mb-6">
         <div className="flex items-center gap-3">
           <img src={logo} alt="Logo" className="w-12 h-12 object-contain" />
           <div>
@@ -2975,19 +2975,19 @@ const InsightSosialisasiContent = React.memo(({
         </div>
         <div className="text-right text-[10px] font-bold text-slate-500">
           <div>Departemen: <span className="text-slate-800">{currentDept}</span></div>
-          <div>KSM: <span className="text-teal-600">{currentKsm}</span></div>
+          <div>KSM: <span className="text-blue-600">{currentKsm}</span></div>
           <div>Tanggal Cetak: {new Date().toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' })}</div>
         </div>
       </div>
 
       {/* PRESENTATION SLIDE - EXECUTIVE SCORECARDS */}
-      <div className={`p-8 rounded-[2.5rem] border shadow-2xl flex flex-col gap-6 relative overflow-hidden transition-all duration-300 ${isSlideMode ? 'bg-slate-800 border-slate-700/50 shadow-slate-950/40 text-white' : 'bg-gradient-to-br from-white to-teal-50/20 border-teal-100/70 shadow-teal-900/5'}`}>
-        <div className="absolute top-0 right-0 w-64 h-64 bg-teal-500/5 rounded-full blur-3xl pointer-events-none" />
+      <div className={`p-8 rounded-[2.5rem] border shadow-2xl flex flex-col gap-6 relative overflow-hidden transition-all duration-300 ${isSlideMode ? 'bg-slate-800 border-slate-700/50 shadow-slate-950/40 text-white' : 'bg-gradient-to-br from-white to-blue-50/20 border-blue-100/70 shadow-blue-900/5'}`}>
+        <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/5 rounded-full blur-3xl pointer-events-none" />
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 relative z-10">
           <div>
-            <span className={`text-[10px] font-black tracking-[0.2em] uppercase px-3 py-1 rounded-full ${isSlideMode ? 'bg-teal-500/20 text-teal-300' : 'bg-teal-50 text-teal-700'}`}>Bahan Sosialisasi Medis</span>
+            <span className={`text-[10px] font-black tracking-[0.2em] uppercase px-3 py-1 rounded-full ${isSlideMode ? 'bg-blue-500/20 text-blue-300' : 'bg-blue-50 text-blue-700'}`}>Bahan Sosialisasi Medis</span>
             <h2 className={`text-2xl font-black mt-2 tracking-tight ${isSlideMode ? 'text-white' : 'text-slate-800'}`}>
-              Evaluasi Kinerja Klinis: <span className="text-teal-600 font-extrabold">{currentKsm}</span>
+              Evaluasi Kinerja Klinis: <span className="text-blue-600 font-extrabold">{currentKsm}</span>
             </h2>
             <p className={`text-[11px] font-medium mt-1 ${isSlideMode ? 'text-slate-400' : 'text-slate-400'}`}>
               Membawahi Departemen: <strong className={isSlideMode ? 'text-slate-300' : 'text-slate-700'}>{currentDept}</strong>
@@ -3006,8 +3006,8 @@ const InsightSosialisasiContent = React.memo(({
         </div>
 
         {/* Dinamic Rekomendasi Sosialisasi */}
-        <div className={`p-5 rounded-2xl border flex gap-3.5 items-start ${isSlideMode ? 'bg-slate-700/50 border-slate-600 text-slate-100 font-semibold' : 'bg-teal-50/40 border-teal-100 text-teal-800 font-semibold'}`}>
-          <div className="p-2 bg-teal-600 text-white rounded-xl shadow-md shrink-0"><Zap size={18} /></div>
+        <div className={`p-5 rounded-2xl border flex gap-3.5 items-start ${isSlideMode ? 'bg-slate-700/50 border-slate-600 text-slate-100 font-semibold' : 'bg-blue-50/40 border-blue-100 text-blue-800 font-semibold'}`}>
+          <div className="p-2 bg-blue-600 text-white rounded-xl shadow-md shrink-0"><Zap size={18} /></div>
           <div>
             <span className="text-[10px] font-black uppercase tracking-wider block opacity-70">Rekomendasi Sosialisasi Ke Dokter Spesialis</span>
             <p className="text-xs font-semibold leading-relaxed mt-1">{quadrantTip}</p>
@@ -3020,7 +3020,7 @@ const InsightSosialisasiContent = React.memo(({
             { label: 'Jumlah Kasus', value: `${ksmRows.length} kasus`, sub: `${kPctOfHospital.toFixed(1)}% dari total RS`, color: 'from-sky-500/10 to-blue-600/5 text-sky-700 border-sky-100/50' },
             { label: 'Rerata Selisih (INA-RS)', value: formatRp(kAvgSelisihIna), sub: `Total: ${formatRp(kSelisihIna)}`, color: kSelisihIna >= 0 ? 'from-emerald-500/10 to-green-600/5 text-emerald-700 border-emerald-100/50' : 'from-rose-500/10 to-red-600/5 text-rose-700 border-rose-100/50' },
             { label: 'Rerata iDRG vs INA-CBG', value: `+${formatRp(kAvgIdrg - kAvgIna)}`, sub: `Total Potensi: +${formatRp(kSumIdrg - kSumIna)}`, color: 'from-purple-500/10 to-indigo-600/5 text-purple-700 border-purple-100/50' },
-            { label: 'Rerata LOS vs RS', value: `${kAvgLos.toFixed(1)} Hari`, sub: `Rerata RS: ${hAvgLos.toFixed(1)} | Max: ${kMaxLos}`, color: kAvgLos > hAvgLos ? 'from-orange-500/10 to-amber-600/5 text-orange-700 border-orange-100/50' : 'from-teal-500/10 to-emerald-600/5 text-teal-700 border-teal-100/50' }
+            { label: 'Rerata LOS vs RS', value: `${kAvgLos.toFixed(1)} Hari`, sub: `Rerata RS: ${hAvgLos.toFixed(1)} | Max: ${kMaxLos}`, color: kAvgLos > hAvgLos ? 'from-orange-500/10 to-amber-600/5 text-orange-700 border-orange-100/50' : 'from-blue-500/10 to-emerald-600/5 text-blue-700 border-blue-100/50' }
           ].map((card, i) => (
             <div key={i} className={`p-4.5 rounded-2xl border-2 bg-gradient-to-br ${card.color} flex flex-col gap-1 shadow-sm`}>
               <span className={`text-[10px] font-bold uppercase tracking-wider block ${isSlideMode ? 'text-slate-400' : 'text-slate-400'}`}>{card.label}</span>
@@ -3099,7 +3099,7 @@ const InsightSosialisasiContent = React.memo(({
                   <span className="font-black text-red-600 text-xs whitespace-nowrap">{formatRp(d.totalDefisit)}</span>
                 </div>
                 <div className="flex flex-col gap-1.5 bg-slate-50 p-3 rounded-xl border border-slate-100 text-[11px] font-semibold text-slate-600">
-                  <span className="text-[9px] font-black text-teal-600 uppercase tracking-widest block">💡 Rekomendasi Koding / Sosialisasi Dokter:</span>
+                  <span className="text-[9px] font-black text-blue-600 uppercase tracking-widest block">💡 Rekomendasi Koding / Sosialisasi Dokter:</span>
                   {getCodingGuideline(d.code)}
                 </div>
                 <div className="text-[9px] text-slate-400 font-bold uppercase tracking-wide flex items-center justify-between">
@@ -3130,7 +3130,7 @@ const InsightSosialisasiContent = React.memo(({
                   <span className="font-black text-amber-600 text-xs whitespace-nowrap">{formatRp(p.totalDefisit)}</span>
                 </div>
                 <div className="flex flex-col gap-1.5 bg-slate-50 p-3 rounded-xl border border-slate-100 text-[11px] font-semibold text-slate-600">
-                  <span className="text-[9px] font-black text-teal-600 uppercase tracking-widest block">💡 Rekomendasi Dokumentasi Klinis:</span>
+                  <span className="text-[9px] font-black text-blue-600 uppercase tracking-widest block">💡 Rekomendasi Dokumentasi Klinis:</span>
                   {getProcedureGuideline(p.code)}
                 </div>
                 <div className="text-[9px] text-slate-400 font-bold uppercase tracking-wide flex items-center justify-between">
@@ -3150,7 +3150,7 @@ const InsightSosialisasiContent = React.memo(({
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b pb-4 border-slate-100">
           <div>
             <h3 className="text-base font-extrabold text-slate-800 flex items-center gap-2">
-              <Activity size={18} className="text-teal-600 animate-pulse" /> Peta Mutu Klinis (LOS) &amp; Simulasi iDRG
+              <Activity size={18} className="text-blue-600 animate-pulse" /> Peta Mutu Klinis (LOS) &amp; Simulasi iDRG
             </h3>
             <p className="text-xs text-slate-400 mt-0.5">Analisis korelasi lama hari rawat (LOS) terhadap profitabilitas. Klik bulatan pasien untuk melihat rekam medis.</p>
           </div>
@@ -3159,13 +3159,13 @@ const InsightSosialisasiContent = React.memo(({
           <div className="flex gap-1.5 p-1 bg-slate-100 rounded-xl w-fit shrink-0 print:hidden">
             <button
               onClick={() => setSocializationScatterMode('inacbg')}
-              className={`px-3.5 py-1.5 rounded-lg text-xs font-black transition-all ${socializationScatterMode === 'inacbg' ? 'bg-white text-teal-700 shadow-sm' : 'text-slate-600 hover:text-slate-900'}`}
+              className={`px-3.5 py-1.5 rounded-lg text-xs font-black transition-all ${socializationScatterMode === 'inacbg' ? 'bg-white text-blue-700 shadow-sm' : 'text-slate-600 hover:text-slate-900'}`}
             >
               🇮🇩 INA-CBG vs RS
             </button>
             <button
               onClick={() => setSocializationScatterMode('idrg')}
-              className={`px-3.5 py-1.5 rounded-lg text-xs font-black transition-all ${socializationScatterMode === 'idrg' ? 'bg-white text-teal-700 shadow-sm' : 'text-slate-600 hover:text-slate-900'}`}
+              className={`px-3.5 py-1.5 rounded-lg text-xs font-black transition-all ${socializationScatterMode === 'idrg' ? 'bg-white text-blue-700 shadow-sm' : 'text-slate-600 hover:text-slate-900'}`}
             >
               ⚡ iDRG vs RS (Simulasi)
             </button>
@@ -3181,7 +3181,7 @@ const InsightSosialisasiContent = React.memo(({
           </div>
           <div className="flex flex-col">
             <span className="text-[9px] font-black text-slate-400 uppercase tracking-wider">Efisiensi LOS</span>
-            <span className="text-base font-black text-teal-600 mt-1">{pctEfficientLos.toFixed(1)}%</span>
+            <span className="text-base font-black text-blue-600 mt-1">{pctEfficientLos.toFixed(1)}%</span>
             <span className="text-[10px] font-bold text-slate-500 mt-0.5">Kasus &lt;= Rerata RS</span>
           </div>
           <div className="flex flex-col">
@@ -3202,14 +3202,14 @@ const InsightSosialisasiContent = React.memo(({
         <div className="space-y-6">
           <div className="w-full">
             <div className="mb-2 text-right text-[10px] font-bold text-slate-400 uppercase tracking-wider">
-              Menampilkan: <span className="text-teal-600 font-extrabold">{socializationScatterMode === 'idrg' ? 'Simulasi Tarif iDRG vs Biaya Riil' : 'Tarif INA-CBG vs Biaya Riil'}</span>
+              Menampilkan: <span className="text-blue-600 font-extrabold">{socializationScatterMode === 'idrg' ? 'Simulasi Tarif iDRG vs Biaya Riil' : 'Tarif INA-CBG vs Biaya Riil'}</span>
             </div>
             <ScatterChart
               data={scatterData}
               xKey="selisih"
               yKey="los"
               rKey="rsTarif"
-              color={socializationScatterMode === 'idrg' ? '#8b5cf6' : '#0d9488'}
+              color={socializationScatterMode === 'idrg' ? '#8b5cf6' : '#2563eb'}
               xLabel={socializationScatterMode === 'idrg' ? "Selisih Finansial iDRG vs RS (Rupiah)" : "Selisih Finansial INA-CBG vs RS (Rupiah)"}
               yLabel="Lama Hari Rawat (LOS - Hari)"
               title=""
@@ -3281,8 +3281,8 @@ const InsightSosialisasiContent = React.memo(({
 
       {/* 18-COMPONENT COST EFFICIENCY ANALYZER (KSM vs Hospital Average) */}
       <Card className="overflow-hidden">
-        <div className="p-5 border-b border-slate-100 bg-gradient-to-r from-teal-50 to-white flex items-center gap-3">
-          <div className="p-2 bg-teal-100 text-teal-700 rounded-xl"><Layers size={18} /></div>
+        <div className="p-5 border-b border-slate-100 bg-gradient-to-r from-blue-50 to-white flex items-center gap-3">
+          <div className="p-2 bg-blue-100 text-blue-700 rounded-xl"><Layers size={18} /></div>
           <div>
             <h3 className="font-extrabold text-slate-800 font-semibold">Analisis Deviasi 18 Komponen Biaya</h3>
             <p className="text-[10px] text-slate-400 mt-0.5">Perbandingan rata-rata biaya satuan komponen KSM terhadap Rata-rata Rumah Sakit secara keseluruhan.</p>
@@ -5155,11 +5155,11 @@ export default function App() {
   const renderUploadTab = () => (
     <div className="flex flex-col gap-8 animate-in fade-in slide-in-from-bottom-4 duration-500 max-w-6xl mx-auto mt-4">
       {/* Tab Switcher */}
-      <div className="flex items-center gap-2 p-1 bg-white border border-teal-100 rounded-2xl w-fit mx-auto shadow-sm">
-        <button onClick={() => { setUploadSubTab('manual'); setUploadProgress(null); setError(''); }} className={`flex items-center gap-2 px-6 py-2.5 rounded-xl text-xs font-black transition-all ${uploadSubTab === 'manual' ? 'bg-teal-600 text-white shadow-lg shadow-teal-600/30' : 'text-slate-500 hover:bg-teal-50'}`}>
+      <div className="flex items-center gap-2 p-1 bg-white border border-blue-100 rounded-2xl w-fit mx-auto shadow-sm">
+        <button onClick={() => { setUploadSubTab('manual'); setUploadProgress(null); setError(''); }} className={`flex items-center gap-2 px-6 py-2.5 rounded-xl text-xs font-black transition-all ${uploadSubTab === 'manual' ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/30' : 'text-slate-500 hover:bg-blue-50'}`}>
           <UploadCloud size={16} /> Upload Manual (TXT)
         </button>
-        <button onClick={() => { setUploadSubTab('cloud'); setUploadProgress(null); setError(''); }} className={`flex items-center gap-2 px-6 py-2.5 rounded-xl text-xs font-black transition-all ${uploadSubTab === 'cloud' ? 'bg-teal-600 text-white shadow-lg shadow-teal-600/30' : 'text-slate-500 hover:bg-teal-50'}`}>
+        <button onClick={() => { setUploadSubTab('cloud'); setUploadProgress(null); setError(''); }} className={`flex items-center gap-2 px-6 py-2.5 rounded-xl text-xs font-black transition-all ${uploadSubTab === 'cloud' ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/30' : 'text-slate-500 hover:bg-blue-50'}`}>
           <GitMerge size={16} /> Cloud Sync (G-Drive)
         </button>
       </div>
@@ -5187,13 +5187,13 @@ export default function App() {
             <>
               {uploadSubTab === 'manual' ? (
                 <Card className="p-8 text-center transition-all duration-300 relative group">
-                  <div className="absolute inset-0 bg-gradient-to-br from-teal-50/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                  <div className={`relative z-10 border-2 border-dashed rounded-xl p-8 transition-colors ${isDragging ? 'border-teal-500 bg-teal-50/50' : 'border-slate-200 hover:border-teal-300'}`} onDragOver={handleDragOver} onDragLeave={handleDragLeave} onDrop={handleDrop}>
-                    <div className="w-16 h-16 bg-teal-50 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-sm group-hover:scale-110 transition-transform"><UploadCloud className="text-teal-600" size={32} /></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                  <div className={`relative z-10 border-2 border-dashed rounded-xl p-8 transition-colors ${isDragging ? 'border-blue-500 bg-blue-50/50' : 'border-slate-200 hover:border-blue-300'}`} onDragOver={handleDragOver} onDragLeave={handleDragLeave} onDrop={handleDrop}>
+                    <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-sm group-hover:scale-110 transition-transform"><UploadCloud className="text-blue-600" size={32} /></div>
                     <h3 className="text-xl font-extrabold text-slate-800 tracking-tight">Unggah Data TXT</h3>
                     <p className="text-sm text-slate-500 mb-8 mt-2">Tarik dan letakkan file format TXT klaim RS ke area ini.</p>
                     <div className="flex flex-col gap-3">
-                      <button onClick={() => fileInputRef.current?.click()} className="bg-teal-600 hover:bg-teal-700 text-white py-4 px-4 rounded-2xl flex items-center justify-center gap-2 font-black text-sm transition-all shadow-lg shadow-teal-600/20 hover:-translate-y-1"><FileText size={18} /> PILIH FILE TXT</button>
+                      <button onClick={() => fileInputRef.current?.click()} className="bg-blue-600 hover:bg-blue-700 text-white py-4 px-4 rounded-2xl flex items-center justify-center gap-2 font-black text-sm transition-all shadow-lg shadow-blue-600/20 hover:-translate-y-1"><FileText size={18} /> PILIH FILE TXT</button>
                       <button onClick={() => folderInputRef.current?.click()} className="bg-white hover:bg-slate-50 text-slate-700 border-2 border-slate-100 py-4 px-4 rounded-2xl flex items-center justify-center gap-2 font-black text-sm transition-all hover:shadow-md"><Folder size={18} className="text-slate-400" /> PILIH FOLDER</button>
                     </div>
                     <input type="file" multiple accept=".txt" ref={fileInputRef} className="hidden" onChange={(e) => { if (e.target.files) processFiles(e.target.files); }} />
@@ -5202,9 +5202,9 @@ export default function App() {
                 </Card>
               ) : (
                 <Card className="p-8 space-y-6 relative group overflow-hidden">
-                  <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity"><GitMerge size={80} className="text-teal-600" /></div>
+                  <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity"><GitMerge size={80} className="text-blue-600" /></div>
                   <div className="relative z-10">
-                    <div className="w-16 h-16 bg-teal-50 rounded-2xl flex items-center justify-center mb-6 shadow-sm"><GitMerge className="text-teal-600" size={32} /></div>
+                    <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mb-6 shadow-sm"><GitMerge className="text-blue-600" size={32} /></div>
                     <h3 className="text-xl font-extrabold text-slate-800 tracking-tight">Koneksi Cloud (G-Drive)</h3>
                     <p className="text-sm text-slate-500 mt-2 mb-6 leading-relaxed">Masukkan link "Shareable" file TXT dari Google Drive untuk memproses data secara langsung tanpa upload manual.</p>
 
@@ -5219,7 +5219,7 @@ export default function App() {
                               value={driveUrl}
                               onChange={(e) => setDriveUrl(e.target.value)}
                               placeholder="https://drive.google.com/file/d/..."
-                              className="w-full pl-10 pr-4 py-3 border border-slate-200 rounded-xl text-sm focus:ring-2 focus:ring-teal-500 outline-none transition-all shadow-sm bg-slate-50/50"
+                              className="w-full pl-10 pr-4 py-3 border border-slate-200 rounded-xl text-sm focus:ring-2 focus:ring-blue-500 outline-none transition-all shadow-sm bg-slate-50/50"
                             />
                           </div>
                           <button
@@ -5265,7 +5265,7 @@ export default function App() {
                                 });
                             }}
                             disabled={!driveUrl || (uploadProgress && uploadProgress.status !== 'complete')}
-                            className="px-6 py-3 bg-teal-600 text-white rounded-xl text-sm font-black shadow-lg shadow-teal-600/20 hover:bg-teal-700 active:scale-95 transition-all disabled:bg-slate-300 disabled:shadow-none"
+                            className="px-6 py-3 bg-blue-600 text-white rounded-xl text-sm font-black shadow-lg shadow-blue-600/20 hover:bg-blue-700 active:scale-95 transition-all disabled:bg-slate-300 disabled:shadow-none"
                           >
                             Tarik Data
                           </button>
@@ -5289,17 +5289,17 @@ export default function App() {
         <div className="lg:col-span-3">
           <Card className="p-8 h-full flex flex-col shadow-xl border-0">
             <div className="flex justify-between items-center mb-8 pb-4 border-b border-slate-100">
-              <div><h3 className="text-lg font-black text-slate-800 tracking-tight flex items-center gap-2"><Layers className="text-teal-600" size={24} /> Dataset Aktif</h3><p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mt-1">{uploadedFiles.length} file terintegrasi ke sistem.</p></div>
+              <div><h3 className="text-lg font-black text-slate-800 tracking-tight flex items-center gap-2"><Layers className="text-blue-600" size={24} /> Dataset Aktif</h3><p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mt-1">{uploadedFiles.length} file terintegrasi ke sistem.</p></div>
               {uploadedFiles.length > 0 && <button onClick={clearData} className="text-rose-500 hover:text-rose-700 hover:bg-rose-50 px-4 py-2 rounded-xl text-xs font-black flex items-center gap-2 transition-all border border-transparent hover:border-rose-100 uppercase tracking-wider"><Trash2 size={16} /> Kosongkan</button>}
             </div>
             {uploadedFiles.length === 0 ? (
-              <div className="flex-1 flex flex-col items-center justify-center text-slate-400 bg-slate-50/50 rounded-3xl border-2 border-dashed border-slate-200 min-h-[300px]"><Layers size={64} className="opacity-10 mb-6 text-teal-900" /><p className="font-black text-slate-400 uppercase tracking-[0.2em] text-[10px]">Dataset Kosong</p><p className="text-xs mt-2 font-medium opacity-60">Silakan upload file .txt klaim untuk memulai analisis.</p></div>
+              <div className="flex-1 flex flex-col items-center justify-center text-slate-400 bg-slate-50/50 rounded-3xl border-2 border-dashed border-slate-200 min-h-[300px]"><Layers size={64} className="opacity-10 mb-6 text-blue-900" /><p className="font-black text-slate-400 uppercase tracking-[0.2em] text-[10px]">Dataset Kosong</p><p className="text-xs mt-2 font-medium opacity-60">Silakan upload file .txt klaim untuk memulai analisis.</p></div>
             ) : (
               <ul className="space-y-4 overflow-y-auto max-h-[500px] pr-2 custom-scrollbar">
                 {uploadedFiles.map((f) => (
-                  <li key={f.id} className="flex items-center gap-5 text-sm bg-white border border-slate-100 shadow-sm p-5 rounded-[1.5rem] group hover:border-teal-200 transition-all hover:shadow-xl hover:-translate-y-1">
+                  <li key={f.id} className="flex items-center gap-5 text-sm bg-white border border-slate-100 shadow-sm p-5 rounded-[1.5rem] group hover:border-blue-200 transition-all hover:shadow-xl hover:-translate-y-1">
                     <div className="w-12 h-12 rounded-2xl bg-emerald-50 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform shadow-sm shadow-emerald-100"><CheckCircle size={24} className="text-emerald-500" /></div>
-                    <div className="flex-1 min-w-0"><p className="truncate text-slate-800 font-black tracking-tight" title={String(f.path)}>{String(f.name)}</p><p className="text-[10px] text-slate-500 mt-1 font-bold uppercase tracking-wider">{String(f.size)} • <span className="font-black text-teal-600 bg-teal-50 px-2 py-0.5 rounded-lg ml-1">{f.rows.length.toLocaleString()} RECORDS</span></p></div>
+                    <div className="flex-1 min-w-0"><p className="truncate text-slate-800 font-black tracking-tight" title={String(f.path)}>{String(f.name)}</p><p className="text-[10px] text-slate-500 mt-1 font-bold uppercase tracking-wider">{String(f.size)} • <span className="font-black text-blue-600 bg-blue-50 px-2 py-0.5 rounded-lg ml-1">{f.rows.length.toLocaleString()} RECORDS</span></p></div>
                     <button onClick={() => removeFile(f.id)} className="text-slate-300 hover:text-rose-600 p-2.5 rounded-xl hover:bg-rose-50 transition-all hover:rotate-90"><X size={20} /></button>
                   </li>
                 ))}
@@ -5324,8 +5324,8 @@ export default function App() {
   const renderExecutive = () => {
     const isSelPos = dashData.selisihTotal > 0;
     const dp = dashData.dischargeStats, t = dashData.totalRows || 1;
-    const dischargePie = [{ value: (dp["1"] / t) * 100, color: '#10b981', label: 'Atas Ijin Dokter' }, { value: (dp["2"] / t) * 100, color: '#0d9488', label: 'Dirujuk' }, { value: (dp["3"] / t) * 100, color: '#f59e0b', label: 'Pulang APS' }, { value: (dp["4"] / t) * 100, color: '#ef4444', label: 'Meninggal' }, { value: (dp["5"] / t) * 100, color: '#94a3b8', label: 'Lain-lain' }];
-    const selPie = [{ value: t > 0 ? (dashData.cInaHigh / t) * 100 : 0, color: '#0d9488', label: 'INA > IDRG' }, { value: t > 0 ? (dashData.cIdrgHigh / t) * 100 : 0, color: '#f59e0b', label: 'IDRG > INA' }, { value: t > 0 ? (dashData.cEq / t) * 100 : 0, color: '#94a3b8', label: 'Sama Besar' }];
+    const dischargePie = [{ value: (dp["1"] / t) * 100, color: '#10b981', label: 'Atas Ijin Dokter' }, { value: (dp["2"] / t) * 100, color: '#2563eb', label: 'Dirujuk' }, { value: (dp["3"] / t) * 100, color: '#f59e0b', label: 'Pulang APS' }, { value: (dp["4"] / t) * 100, color: '#ef4444', label: 'Meninggal' }, { value: (dp["5"] / t) * 100, color: '#94a3b8', label: 'Lain-lain' }];
+    const selPie = [{ value: t > 0 ? (dashData.cInaHigh / t) * 100 : 0, color: '#2563eb', label: 'INA > IDRG' }, { value: t > 0 ? (dashData.cIdrgHigh / t) * 100 : 0, color: '#f59e0b', label: 'IDRG > INA' }, { value: t > 0 ? (dashData.cEq / t) * 100 : 0, color: '#94a3b8', label: 'Sama Besar' }];
 
     const rajalCount = t - dashData.ranapCount;
     const totalTarifRS = (dashData.reportArray || []).reduce((s, r) => s + r.tarifRsTotal, 0);
@@ -5348,17 +5348,17 @@ export default function App() {
 
     return (
       <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
-        <SectionHeader icon={PieChart} title="Executive Dashboard" desc="Ringkasan eksekutif klaim klinis dan analisis profitabilitas." colorClass="bg-teal-50 text-teal-600" highlightClass="bg-teal-500/5" printAction={() => window.print()} exportAction={handleExportPPT} exportText={isExportingPPT ? "Mengekspor PPT..." : "Export PPTX"} />
+        <SectionHeader icon={PieChart} title="Executive Dashboard" desc="Ringkasan eksekutif klaim klinis dan analisis profitabilitas." colorClass="bg-blue-50 text-blue-600" highlightClass="bg-blue-500/5" printAction={() => window.print()} exportAction={handleExportPPT} exportText={isExportingPPT ? "Mengekspor PPT..." : "Export PPTX"} />
 
         {/* KPI 6-CARD ROW */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
           {[
             { label: 'Total Kasus', value: t.toLocaleString(), sub: `${dashData.ranapCount.toLocaleString()} RI + ${rajalCount.toLocaleString()} RJ`, c: 'bg-slate-700', fn: () => openDrilldown('Seluruh Kasus', () => true), icon: <Users size={15} /> },
-            { label: 'Rawat Inap', value: dashData.ranapCount.toLocaleString(), sub: `${formatPct(ranapPct)}% dari total`, c: 'bg-teal-600', fn: () => openDrilldown('Rawat Inap', r => String(r['PTD'] || '').trim() === '1'), icon: <Activity size={15} /> },
+            { label: 'Rawat Inap', value: dashData.ranapCount.toLocaleString(), sub: `${formatPct(ranapPct)}% dari total`, c: 'bg-blue-600', fn: () => openDrilldown('Rawat Inap', r => String(r['PTD'] || '').trim() === '1'), icon: <Activity size={15} /> },
             { label: 'Rawat Jalan', value: rajalCount.toLocaleString(), sub: `${formatPct(100 - ranapPct)}% dari total`, c: 'bg-emerald-500', fn: () => openDrilldown('Rawat Jalan', r => String(r['PTD'] || '').trim() !== '1'), icon: <User size={15} /> },
             { label: 'Total Tarif RS', value: formatRp(totalTarifRS), sub: `Avg ${formatRp(totalTarifRS / t)}/ep`, c: 'bg-slate-400', fn: () => openDrilldown('Seluruh Kasus', () => true), icon: <BarChart3 size={15} /> },
-            { label: 'Selisih INA-RS', value: (selInaRS >= 0 ? '+' : '') + formatRp(selInaRS), sub: selInaRS >= 0 ? 'Surplus' : 'Defisit', c: selInaRS >= 0 ? 'bg-teal-500' : 'bg-rose-500', fn: () => openDrilldown('Seluruh INA-CBG', () => true), icon: <TrendingUp size={15} /> },
-            { label: 'Selisih iDRG-RS', value: (selIdrgRS >= 0 ? '+' : '') + formatRp(selIdrgRS), sub: selIdrgRS >= 0 ? 'Surplus' : 'Defisit', c: selIdrgRS >= 0 ? 'bg-teal-500' : 'bg-rose-500', fn: () => openDrilldown('Seluruh iDRG', () => true), icon: <TrendingUp size={15} /> },
+            { label: 'Selisih INA-RS', value: (selInaRS >= 0 ? '+' : '') + formatRp(selInaRS), sub: selInaRS >= 0 ? 'Surplus' : 'Defisit', c: selInaRS >= 0 ? 'bg-blue-500' : 'bg-rose-500', fn: () => openDrilldown('Seluruh INA-CBG', () => true), icon: <TrendingUp size={15} /> },
+            { label: 'Selisih iDRG-RS', value: (selIdrgRS >= 0 ? '+' : '') + formatRp(selIdrgRS), sub: selIdrgRS >= 0 ? 'Surplus' : 'Defisit', c: selIdrgRS >= 0 ? 'bg-blue-500' : 'bg-rose-500', fn: () => openDrilldown('Seluruh iDRG', () => true), icon: <TrendingUp size={15} /> },
           ].map((k, i) => (
             <Card
               key={i}
@@ -5377,19 +5377,19 @@ export default function App() {
 
         {/* INSIGHT BLOCK */}
         <Card className="p-0 overflow-hidden shadow-sm border border-slate-200 bg-white">
-          <div className="bg-teal-600 px-6 py-4 flex items-center gap-3">
+          <div className="bg-blue-600 px-6 py-4 flex items-center gap-3">
             <Zap size={20} className="text-white" />
             <div>
               <h3 className="font-bold text-white text-base tracking-wide">Insight Analisis Otomatis</h3>
-              <p className="text-teal-100 text-[11px] uppercase tracking-wider font-medium">Temuan Kunci dari Efisiensi Koding</p>
+              <p className="text-blue-100 text-[11px] uppercase tracking-wider font-medium">Temuan Kunci dari Efisiensi Koding</p>
             </div>
           </div>
           <div className="p-5 bg-slate-50">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
               {insights.map((ins, i) => (
                 <div key={i} className="flex gap-4 p-4 rounded-lg bg-white border border-slate-200 shadow-sm relative overflow-hidden">
-                  <div className={`absolute left-0 top-0 w-1 h-full ${ins.t === 'w' ? 'bg-rose-500' : ins.t === 's' ? 'bg-emerald-500' : 'bg-teal-500'}`}></div>
-                  <div className={`shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-sm ${ins.t === 'w' ? 'bg-rose-50 text-rose-600' : ins.t === 's' ? 'bg-emerald-50 text-emerald-600' : 'bg-teal-50 text-teal-600'}`}>
+                  <div className={`absolute left-0 top-0 w-1 h-full ${ins.t === 'w' ? 'bg-rose-500' : ins.t === 's' ? 'bg-emerald-500' : 'bg-blue-500'}`}></div>
+                  <div className={`shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-sm ${ins.t === 'w' ? 'bg-rose-50 text-rose-600' : ins.t === 's' ? 'bg-emerald-50 text-emerald-600' : 'bg-blue-50 text-blue-600'}`}>
                     {ins.icon}
                   </div>
                   <div className="flex items-center">
@@ -5403,13 +5403,13 @@ export default function App() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           <Card className="p-6 cursor-pointer hover:-translate-y-1 hover:shadow-lg transition-all group relative border-0 shadow-md">
-            <div className="absolute top-0 left-0 w-full h-1.5 bg-teal-600"></div>
-            <div className="flex justify-between items-start mb-4"><p className="text-slate-500 font-black text-[9px] uppercase tracking-[0.15em]">Total INA-CBG</p><div className="bg-teal-50 p-2.5 rounded-xl text-teal-600 group-hover:bg-teal-600 group-hover:text-white transition-all" onClick={() => openDrilldown('Seluruh Data INA-CBG', () => true)}><Search size={18} /></div></div>
+            <div className="absolute top-0 left-0 w-full h-1.5 bg-blue-600"></div>
+            <div className="flex justify-between items-start mb-4"><p className="text-slate-500 font-black text-[9px] uppercase tracking-[0.15em]">Total INA-CBG</p><div className="bg-blue-50 p-2.5 rounded-xl text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-all" onClick={() => openDrilldown('Seluruh Data INA-CBG', () => true)}><Search size={18} /></div></div>
             <h2 className="text-3xl font-black text-slate-800 tracking-tight">{formatRp(dashData.tIna)}</h2><p className="text-[10px] font-bold text-slate-400 mt-2 uppercase tracking-wider">Rata-rata {formatRp(dashData.rataIna)} per kasus</p>
           </Card>
           <Card className="p-6 cursor-pointer hover:-translate-y-1 hover:shadow-lg transition-all group relative border-0 shadow-md">
-            <div className="absolute top-0 left-0 w-full h-1.5 bg-teal-500"></div>
-            <div className="flex justify-between items-start mb-4"><p className="text-slate-500 font-black text-[9px] uppercase tracking-[0.15em]">Total iDRG</p><div className="bg-teal-50 p-2.5 rounded-xl text-teal-600 group-hover:bg-teal-600 group-hover:text-white transition-all" onClick={() => openDrilldown('Seluruh Data iDRG', () => true)}><Search size={18} /></div></div>
+            <div className="absolute top-0 left-0 w-full h-1.5 bg-blue-500"></div>
+            <div className="flex justify-between items-start mb-4"><p className="text-slate-500 font-black text-[9px] uppercase tracking-[0.15em]">Total iDRG</p><div className="bg-blue-50 p-2.5 rounded-xl text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-all" onClick={() => openDrilldown('Seluruh Data iDRG', () => true)}><Search size={18} /></div></div>
             <h2 className="text-3xl font-black text-slate-800 tracking-tight">{formatRp(dashData.tIdrg)}</h2><p className="text-[10px] font-bold text-slate-400 mt-2 uppercase tracking-wider">Rata-rata {formatRp(dashData.rataIdrg)} per kasus</p>
           </Card>
           <Card className="p-6 cursor-pointer hover:-translate-y-1 hover:shadow-lg transition-all group relative lg:col-span-2 border-0 shadow-md">
@@ -5422,7 +5422,7 @@ export default function App() {
 
         <div className="grid grid-cols-1">
           <Card id="chart-komprehensif-bulan" downloadTitle="Perkembangan Finansial Per Bulan" className="p-8 flex flex-col border-0 shadow-xl">
-            <div className="flex justify-between items-center mb-10"><h3 className="text-xs font-black text-slate-800 uppercase tracking-[0.2em] flex items-center gap-2"><BarChart3 size={20} className="text-teal-600" /> Komparasi & Tren Bulanan</h3><button onClick={() => exportToXlsx('Bulan', ['Bulan', 'RS', 'INA', 'IDRG', 'Selisih'], dashData.monthlyArray.map(m => [m.label, m.tarifRs, m.inacbg, m.idrg, m.selisih]))} className="text-teal-600 hover:text-white hover:bg-teal-600 bg-teal-50 px-4 py-2 rounded-xl text-xs font-black transition-all border border-teal-100 uppercase tracking-wider shadow-sm">UNDUH CSV</button></div>
+            <div className="flex justify-between items-center mb-10"><h3 className="text-xs font-black text-slate-800 uppercase tracking-[0.2em] flex items-center gap-2"><BarChart3 size={20} className="text-blue-600" /> Komparasi & Tren Bulanan</h3><button onClick={() => exportToXlsx('Bulan', ['Bulan', 'RS', 'INA', 'IDRG', 'Selisih'], dashData.monthlyArray.map(m => [m.label, m.tarifRs, m.inacbg, m.idrg, m.selisih]))} className="text-blue-600 hover:text-white hover:bg-blue-600 bg-blue-50 px-4 py-2 rounded-xl text-xs font-black transition-all border border-blue-100 uppercase tracking-wider shadow-sm">UNDUH CSV</button></div>
             <div className="w-full h-[22rem] mt-6 flex flex-col relative px-2">
               <div className="absolute left-0 right-0 border-b border-slate-300 border-dashed z-0" style={{ top: '65%' }}></div>
               <div className="w-full flex items-center justify-between h-full z-10 gap-2">
@@ -5452,7 +5452,7 @@ export default function App() {
                       <div className="opacity-0 group-hover:opacity-100 absolute bottom-full mb-2 bg-slate-900/95 backdrop-blur text-white text-xs p-3 rounded-xl shadow-xl z-30 pointer-events-none whitespace-nowrap border border-slate-700">
                         <p className="font-extrabold border-b border-slate-700 pb-1.5 mb-1.5 text-slate-100">{String(m.label)}</p>
                         <p className="text-slate-400 font-medium">RS: <span className="text-white">{formatRp(m.tarifRs, true)}</span></p>
-                        <p className="text-teal-400 font-medium">INA: <span className="text-white">{formatRp(m.inacbg, true)}</span></p>
+                        <p className="text-blue-400 font-medium">INA: <span className="text-white">{formatRp(m.inacbg, true)}</span></p>
                         <p className="text-rose-400 font-medium">iDRG: <span className="text-white">{formatRp(m.idrg, true)}</span></p>
                         <p className={`font-bold mt-1 pt-1 border-t border-slate-700 ${isDef ? 'text-rose-400' : 'text-emerald-400'}`}>{isDef ? 'Defisit' : 'Surplus'}: <span className="text-white">{formatRp(m.selisih, true)}</span></p>
                       </div>
@@ -5463,8 +5463,8 @@ export default function App() {
                           <div className="w-1/4 bg-slate-300 rounded-t-sm transition-all group-hover:opacity-80 relative" style={{ height: `${hRs}%` }}>
                             <span className="absolute -top-5 left-1/2 -translate-x-1/2 text-[8px] font-extrabold px-1.5 py-0.5 rounded shadow-[0_1px_2px_rgba(0,0,0,0.15)] bg-white/90 backdrop-blur-sm border border-slate-200 text-slate-500 z-10 whitespace-nowrap transition-transform group-hover:scale-110">{formatRp(m.tarifRs, true)}</span>
                           </div>
-                          <div className="w-1/4 bg-teal-500 rounded-t-sm transition-all group-hover:opacity-80 shadow-[0_0_8px_rgba(20,184,166,0.3)] relative" style={{ height: `${hIna}%` }}>
-                            <span className="absolute -top-10 left-1/2 -translate-x-1/2 text-[8px] font-extrabold px-1.5 py-0.5 rounded shadow-[0_1px_2px_rgba(0,0,0,0.15)] bg-white/90 backdrop-blur-sm border border-teal-200 text-teal-600 z-10 whitespace-nowrap transition-transform group-hover:scale-110">{formatRp(m.inacbg, true)}</span>
+                          <div className="w-1/4 bg-blue-500 rounded-t-sm transition-all group-hover:opacity-80 shadow-[0_0_8px_rgba(59,130,246,0.3)] relative" style={{ height: `${hIna}%` }}>
+                            <span className="absolute -top-10 left-1/2 -translate-x-1/2 text-[8px] font-extrabold px-1.5 py-0.5 rounded shadow-[0_1px_2px_rgba(0,0,0,0.15)] bg-white/90 backdrop-blur-sm border border-blue-200 text-blue-600 z-10 whitespace-nowrap transition-transform group-hover:scale-110">{formatRp(m.inacbg, true)}</span>
                           </div>
                           <div className="w-1/4 bg-rose-600 rounded-t-sm transition-all group-hover:opacity-80 shadow-[0_0_8px_rgba(225,29,72,0.3)] relative" style={{ height: `${hIdrg}%` }}>
                             <span className="absolute -top-[3.5rem] left-1/2 -translate-x-1/2 text-[8px] font-extrabold px-1.5 py-0.5 rounded shadow-[0_1px_2px_rgba(0,0,0,0.15)] bg-white/90 backdrop-blur-sm border border-rose-200 text-rose-600 z-10 whitespace-nowrap transition-transform group-hover:scale-110">{formatRp(m.idrg, true)}</span>
@@ -5494,7 +5494,7 @@ export default function App() {
             </div>
             <div className="flex justify-center gap-4 mt-6 pt-4 border-t border-slate-100 flex-wrap">
               <div className="flex items-center gap-1.5"><div className="w-2.5 h-2.5 rounded-full bg-slate-300"></div><span className="text-[10px] font-bold text-slate-600 uppercase">Tarif RS</span></div>
-              <div className="flex items-center gap-1.5"><div className="w-2.5 h-2.5 rounded-full bg-teal-500"></div><span className="text-[10px] font-bold text-slate-600 uppercase">INACBG</span></div>
+              <div className="flex items-center gap-1.5"><div className="w-2.5 h-2.5 rounded-full bg-blue-500"></div><span className="text-[10px] font-bold text-slate-600 uppercase">INACBG</span></div>
               <div className="flex items-center gap-1.5"><div className="w-2.5 h-2.5 rounded-full bg-rose-600"></div><span className="text-[10px] font-bold text-slate-600 uppercase">IDRG</span></div>
               <div className="flex items-center gap-1.5"><div className="w-2.5 h-2.5 rounded-full bg-emerald-500"></div><span className="text-[10px] font-bold text-slate-600 uppercase">Surplus</span></div>
               <div className="flex items-center gap-1.5"><div className="w-2.5 h-2.5 rounded-full bg-rose-500"></div><span className="text-[10px] font-bold text-slate-600 uppercase">Defisit</span></div>
@@ -5509,7 +5509,7 @@ export default function App() {
               <svg viewBox="0 0 36 36" className="w-56 h-56 group-hover:scale-110 transition-transform duration-500 drop-shadow-xl">{getPieSlices(selPie).map((slice, idx) => (<g key={`psel-${idx}`}><path d={slice.path} fill={slice.color} stroke="white" strokeWidth="0.5" className="hover:opacity-80 transition-opacity" />{!slice.isSmall && <text x={slice.labelX} y={slice.labelY} fill="white" fontSize="2.5" fontWeight="bold" textAnchor="middle" alignmentBaseline="central" className="pointer-events-none drop-shadow-md">{slice.percentStr}</text>}</g>))}</svg>
             </div>
             <div className="mt-8 w-full border-t border-slate-100 pt-6 space-y-3 w-full">
-              <div className="flex justify-between items-center p-3 hover:bg-teal-50 rounded-xl cursor-pointer transition-colors border border-transparent hover:border-teal-100" onClick={() => openDrilldown('Kasus INA-CBG > iDRG', r => Math.round(getInaTarif(r)) > Math.round(getIdrgTarif(r)))}><div className="flex items-center gap-3"><div className="w-3 h-3 rounded-full bg-teal-500 shadow-sm"></div><span className="text-xs font-bold text-slate-700">INACBG {'>'} IDRG</span></div><div className="text-right"><span className="text-sm font-extrabold text-teal-600 mr-2">{dashData.cInaHigh.toLocaleString()} <span className="text-[10px] text-teal-500 uppercase">Kasus</span></span><span className="text-xs font-bold text-slate-400">({formatPct(t > 0 ? (dashData.cInaHigh / t) * 100 : 0)}%)</span></div></div>
+              <div className="flex justify-between items-center p-3 hover:bg-blue-50 rounded-xl cursor-pointer transition-colors border border-transparent hover:border-blue-100" onClick={() => openDrilldown('Kasus INA-CBG > iDRG', r => Math.round(getInaTarif(r)) > Math.round(getIdrgTarif(r)))}><div className="flex items-center gap-3"><div className="w-3 h-3 rounded-full bg-blue-500 shadow-sm"></div><span className="text-xs font-bold text-slate-700">INACBG {'>'} IDRG</span></div><div className="text-right"><span className="text-sm font-extrabold text-blue-600 mr-2">{dashData.cInaHigh.toLocaleString()} <span className="text-[10px] text-blue-500 uppercase">Kasus</span></span><span className="text-xs font-bold text-slate-400">({formatPct(t > 0 ? (dashData.cInaHigh / t) * 100 : 0)}%)</span></div></div>
               <div className="flex justify-between items-center p-3 hover:bg-rose-50 rounded-xl cursor-pointer transition-colors border border-transparent hover:border-rose-100" onClick={() => openDrilldown('Kasus iDRG > INA-CBG', r => Math.round(getIdrgTarif(r)) > Math.round(getInaTarif(r)))}><div className="flex items-center gap-3"><div className="w-3 h-3 rounded-full bg-rose-600 shadow-sm"></div><span className="text-xs font-bold text-slate-700">IDRG {'>'} INACBG</span></div><div className="text-right"><span className="text-sm font-extrabold text-rose-600 mr-2">{dashData.cIdrgHigh.toLocaleString()} <span className="text-[10px] text-rose-500 uppercase">Kasus</span></span><span className="text-xs font-bold text-slate-400">({formatPct(t > 0 ? (dashData.cIdrgHigh / t) * 100 : 0)}%)</span></div></div>
               <div className="flex justify-between items-center p-3 hover:bg-slate-50 rounded-xl cursor-pointer transition-colors border border-transparent hover:border-slate-200" onClick={() => openDrilldown('Kasus Sama Besar', r => Math.round(getIdrgTarif(r)) === Math.round(getInaTarif(r)))}><div className="flex items-center gap-3"><div className="w-3 h-3 rounded-full bg-slate-400 shadow-sm"></div><span className="text-xs font-bold text-slate-700">Sama Besar (Sesuai)</span></div><div className="text-right"><span className="text-sm font-extrabold text-slate-600 mr-2">{dashData.cEq.toLocaleString()} <span className="text-[10px] text-slate-400 uppercase">Kasus</span></span><span className="text-xs font-bold text-slate-400">({formatPct(t > 0 ? (dashData.cEq / t) * 100 : 0)}%)</span></div></div>
             </div>
@@ -5532,13 +5532,13 @@ export default function App() {
 
         <div className="mt-12 pt-8 border-t border-slate-200">
           <div className="flex flex-col mb-8 text-center items-center justify-center">
-            <div className="w-12 h-12 bg-teal-50 rounded-2xl flex items-center justify-center mb-4"><Layers size={24} className="text-teal-600" /></div>
+            <div className="w-12 h-12 bg-blue-50 rounded-2xl flex items-center justify-center mb-4"><Layers size={24} className="text-blue-600" /></div>
             <h2 className="text-2xl font-black text-slate-800 tracking-tight">Top 10 Analisis Klinis & Finansial</h2>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
-            <Card className="flex flex-col hover:shadow-lg transition-all"><div className="p-4 bg-teal-50/50 border-b border-teal-100 flex items-center gap-2"><Stethoscope size={16} className="text-teal-600" /><h3 className="text-sm font-extrabold text-slate-800 uppercase tracking-tight">Top 10 Diag. Utama</h3></div><MiniTable data={dashData.topDiagUtama} columns={[{ header: 'No', className: 'w-8 text-center text-slate-400 font-bold', render: (r, i) => i + 1 }, { header: 'Kode', className: 'font-extrabold text-slate-700', render: (r) => r[0] }, { header: 'Deskripsi', className: 'text-[10px] text-slate-500 max-w-[150px] truncate', render: (r) => getIcdDescription(r[0]) || '-' }, { header: 'Kasus', className: 'text-right font-black text-teal-600', render: (r) => r[1].toLocaleString() }]} /></Card>
-            <Card className="flex flex-col hover:shadow-lg transition-all"><div className="p-4 bg-teal-50/50 border-b border-teal-100 flex items-center gap-2"><Stethoscope size={16} className="text-teal-600" /><h3 className="text-sm font-extrabold text-slate-800 uppercase tracking-tight">Top 10 Diag. Sekunder</h3></div><MiniTable data={dashData.topDiagSekunder} columns={[{ header: 'No', className: 'w-8 text-center text-slate-400 font-bold', render: (r, i) => i + 1 }, { header: 'Kode', className: 'font-extrabold text-slate-700', render: (r) => r[0] }, { header: 'Deskripsi', className: 'text-[10px] text-slate-500 max-w-[150px] truncate', render: (r) => getIcdDescription(r[0]) || '-' }, { header: 'Kasus', className: 'text-right font-black text-teal-600', render: (r) => r[1].toLocaleString() }]} /></Card>
+            <Card className="flex flex-col hover:shadow-lg transition-all"><div className="p-4 bg-blue-50/50 border-b border-blue-100 flex items-center gap-2"><Stethoscope size={16} className="text-blue-600" /><h3 className="text-sm font-extrabold text-slate-800 uppercase tracking-tight">Top 10 Diag. Utama</h3></div><MiniTable data={dashData.topDiagUtama} columns={[{ header: 'No', className: 'w-8 text-center text-slate-400 font-bold', render: (r, i) => i + 1 }, { header: 'Kode', className: 'font-extrabold text-slate-700', render: (r) => r[0] }, { header: 'Deskripsi', className: 'text-[10px] text-slate-500 max-w-[150px] truncate', render: (r) => getIcdDescription(r[0]) || '-' }, { header: 'Kasus', className: 'text-right font-black text-blue-600', render: (r) => r[1].toLocaleString() }]} /></Card>
+            <Card className="flex flex-col hover:shadow-lg transition-all"><div className="p-4 bg-blue-50/50 border-b border-blue-100 flex items-center gap-2"><Stethoscope size={16} className="text-blue-600" /><h3 className="text-sm font-extrabold text-slate-800 uppercase tracking-tight">Top 10 Diag. Sekunder</h3></div><MiniTable data={dashData.topDiagSekunder} columns={[{ header: 'No', className: 'w-8 text-center text-slate-400 font-bold', render: (r, i) => i + 1 }, { header: 'Kode', className: 'font-extrabold text-slate-700', render: (r) => r[0] }, { header: 'Deskripsi', className: 'text-[10px] text-slate-500 max-w-[150px] truncate', render: (r) => getIcdDescription(r[0]) || '-' }, { header: 'Kasus', className: 'text-right font-black text-blue-600', render: (r) => r[1].toLocaleString() }]} /></Card>
             <Card className="flex flex-col hover:shadow-lg transition-all">
               <div className="p-4 bg-emerald-50/50 border-b border-emerald-100 flex items-center justify-between gap-2">
                 <div className="flex items-center gap-2">
@@ -5677,7 +5677,7 @@ export default function App() {
 
         {reportSubTab === 'summary' && (
           <div className="space-y-6 animate-in fade-in zoom-in-95 duration-500">
-            <SectionHeader icon={Table2} title="Laporan Tabel Klaim" desc="Rekapitulasi komprehensif jumlah kasus dan nominal klaim INA-CBG vs iDRG per bulan layanan." colorClass="bg-teal-50 text-teal-600" highlightClass="bg-teal-500/5" exportAction={() => exportToXlsx('Laporan_Ringkasan', ['Bulan', 'Tarif RS', 'Kasus Rajal (INA)', 'Kasus Ranap (INA)', 'Total Kasus (INA)', 'Tarif Rajal (INA)', 'Tarif Ranap (INA)', 'Total Tarif (INA)', 'Kasus Rajal (iDRG)', 'Kasus Ranap (iDRG)', 'Total Kasus (iDRG)', 'Tarif Rajal (iDRG)', 'Tarif Ranap (iDRG)', 'Total Tarif (iDRG)', 'Selisih INACBG - RS', 'Selisih iDRG - RS', 'Selisih iDRG - INACBG'], dashData.reportArray.map(m => {
+            <SectionHeader icon={Table2} title="Laporan Tabel Klaim" desc="Rekapitulasi komprehensif jumlah kasus dan nominal klaim INA-CBG vs iDRG per bulan layanan." colorClass="bg-blue-50 text-blue-600" highlightClass="bg-blue-500/5" exportAction={() => exportToXlsx('Laporan_Ringkasan', ['Bulan', 'Tarif RS', 'Kasus Rajal (INA)', 'Kasus Ranap (INA)', 'Total Kasus (INA)', 'Tarif Rajal (INA)', 'Tarif Ranap (INA)', 'Total Tarif (INA)', 'Kasus Rajal (iDRG)', 'Kasus Ranap (iDRG)', 'Total Kasus (iDRG)', 'Tarif Rajal (iDRG)', 'Tarif Ranap (iDRG)', 'Total Tarif (iDRG)', 'Selisih INACBG - RS', 'Selisih iDRG - RS', 'Selisih iDRG - INACBG'], dashData.reportArray.map(m => {
               const totIna = (m.inaRajal ?? 0) + (m.inaRanap ?? 0);
               const totIdrg = (m.idrgRajal ?? 0) + (m.idrgRanap ?? 0);
               return [
@@ -5692,18 +5692,18 @@ export default function App() {
                 <thead className="text-[10px] uppercase font-black tracking-wider sticky top-0 z-40">
                   <tr>
                     <th rowSpan={3} className="bg-slate-900 text-white border-b border-r border-white/10 p-3">NO</th><th rowSpan={3} className="bg-slate-900 text-white border-b border-r border-white/10 p-3">BULAN LAYANAN</th><th rowSpan={3} className="bg-slate-900 text-white border-b border-r border-white/10 p-3">Tarif RS (Cost)</th>
-                    <th colSpan={6} className="bg-teal-800 text-white border-b border-r border-white/10 p-3">Klaim INA CBG</th><th colSpan={6} className="bg-emerald-800 text-white border-b border-r border-white/10 p-3">Klaim iDRG</th>
+                    <th colSpan={6} className="bg-blue-800 text-white border-b border-r border-white/10 p-3">Klaim INA CBG</th><th colSpan={6} className="bg-emerald-800 text-white border-b border-r border-white/10 p-3">Klaim iDRG</th>
                     <th rowSpan={3} className="bg-indigo-900 text-white border-b border-r border-white/10 p-3">Selisih INACBG - RS</th>
                     <th rowSpan={3} className="bg-violet-900 text-white border-b border-r border-white/10 p-3">Selisih iDRG - RS</th>
                     <th rowSpan={3} className="bg-purple-900 text-white border-b border-white/10 p-3">Selisih iDRG - INACBG</th>
                   </tr>
                   <tr>
-                    <th colSpan={3} className="bg-teal-700/80 text-white border-b border-r border-white/10 p-2">KASUS</th><th colSpan={3} className="bg-teal-700/80 text-white border-b border-r border-white/10 p-2">Penerimaan INACBG (Rp)</th>
+                    <th colSpan={3} className="bg-blue-700/80 text-white border-b border-r border-white/10 p-2">KASUS</th><th colSpan={3} className="bg-blue-700/80 text-white border-b border-r border-white/10 p-2">Penerimaan INACBG (Rp)</th>
                     <th colSpan={3} className="bg-emerald-700/80 text-white border-b border-r border-white/10 p-2">JUMLAH KASUS iDRG</th><th colSpan={3} className="bg-emerald-700/80 text-white border-b border-white/10 p-2">TOTAL KLAIM iDRG (Rp)</th>
                   </tr>
                   <tr>
-                    <th className="bg-teal-600/50 text-white border-b border-r border-white/10 p-2">RJ</th><th className="bg-teal-600/50 text-white border-b border-r border-white/10 p-2">RI</th><th className="bg-teal-900 text-teal-100 border-b border-r border-white/10 p-2">TOT</th>
-                    <th className="bg-teal-600/50 text-white border-b border-r border-white/10 p-2">RJ</th><th className="bg-teal-600/50 text-white border-b border-r border-white/10 p-2">RI</th><th className="bg-teal-900 text-teal-100 border-b border-r border-white/10 p-2">TOT</th>
+                    <th className="bg-blue-600/50 text-white border-b border-r border-white/10 p-2">RJ</th><th className="bg-blue-600/50 text-white border-b border-r border-white/10 p-2">RI</th><th className="bg-blue-900 text-blue-100 border-b border-r border-white/10 p-2">TOT</th>
+                    <th className="bg-blue-600/50 text-white border-b border-r border-white/10 p-2">RJ</th><th className="bg-blue-600/50 text-white border-b border-r border-white/10 p-2">RI</th><th className="bg-blue-900 text-blue-100 border-b border-r border-white/10 p-2">TOT</th>
                     <th className="bg-emerald-600/50 text-white border-b border-r border-white/10 p-2">RJ</th><th className="bg-emerald-600/50 text-white border-b border-r border-white/10 p-2">RI</th><th className="bg-emerald-900 text-emerald-100 border-b border-r border-white/10 p-2">TOT</th>
                     <th className="bg-emerald-600/50 text-white border-b border-r border-white/10 p-2">RJ</th><th className="bg-emerald-600/50 text-white border-b border-r border-white/10 p-2">RI</th><th className="bg-emerald-900 text-emerald-100 border-b border-white/10 p-2">TOT</th>
                   </tr>
@@ -5720,8 +5720,8 @@ export default function App() {
                         <td className="border-r border-slate-100 p-3 font-semibold text-slate-400">{i + 1}</td>
                         <td className="border-r border-slate-100 p-3 font-bold text-slate-700">{row.label}</td>
                         <td className="border-r border-slate-100 p-3 text-right font-semibold text-slate-600">{formatRpEx(row.tarifRsTotal)}</td>
-                        <td className="border-r border-slate-50 p-3 text-right text-slate-600 bg-teal-50/10">{(row.kasusRajal ?? 0).toLocaleString()}</td><td className="border-r border-slate-50 p-3 text-right text-slate-600 bg-teal-50/10">{(row.kasusRanap ?? 0).toLocaleString()}</td><td className="border-r border-teal-50 p-3 text-right font-black text-teal-600 bg-teal-50/40">{((row.kasusRajal ?? 0) + (row.kasusRanap ?? 0)).toLocaleString()}</td>
-                        <td className="border-r border-slate-50 p-3 text-right text-slate-600 bg-teal-50/10">{formatRpEx(row.inaRajal)}</td><td className="border-r border-slate-50 p-3 text-right text-slate-600 bg-teal-50/10">{formatRpEx(row.inaRanap)}</td><td className="border-r border-teal-100 p-3 text-right font-black text-teal-600 bg-teal-50/40">{formatRpEx(totIna)}</td>
+                        <td className="border-r border-slate-50 p-3 text-right text-slate-600 bg-blue-50/10">{(row.kasusRajal ?? 0).toLocaleString()}</td><td className="border-r border-slate-50 p-3 text-right text-slate-600 bg-blue-50/10">{(row.kasusRanap ?? 0).toLocaleString()}</td><td className="border-r border-blue-50 p-3 text-right font-black text-blue-600 bg-blue-50/40">{((row.kasusRajal ?? 0) + (row.kasusRanap ?? 0)).toLocaleString()}</td>
+                        <td className="border-r border-slate-50 p-3 text-right text-slate-600 bg-blue-50/10">{formatRpEx(row.inaRajal)}</td><td className="border-r border-slate-50 p-3 text-right text-slate-600 bg-blue-50/10">{formatRpEx(row.inaRanap)}</td><td className="border-r border-blue-100 p-3 text-right font-black text-blue-600 bg-blue-50/40">{formatRpEx(totIna)}</td>
                         <td className="border-r border-slate-50 p-3 text-right text-slate-600 bg-emerald-50/10">{(row.kasusRajal ?? 0).toLocaleString()}</td><td className="border-r border-slate-50 p-3 text-right text-slate-600 bg-emerald-50/10">{(row.kasusRanap ?? 0).toLocaleString()}</td><td className="border-r border-emerald-50 p-3 text-right font-black text-emerald-600 bg-emerald-50/40">{((row.kasusRajal ?? 0) + (row.kasusRanap ?? 0)).toLocaleString()}</td>
                         <td className="border-r border-slate-50 p-3 text-right text-slate-600 bg-emerald-50/10">{formatRpEx(row.idrgRajal)}</td><td className="border-r border-slate-50 p-3 text-right text-slate-600 bg-emerald-50/10">{formatRpEx(row.idrgRanap)}</td><td className="border-r border-emerald-100 p-3 text-right font-black text-emerald-600 bg-emerald-50/40">{formatRpEx(totIdrg)}</td>
                         <td className={`border-r border-slate-100 p-3 text-right font-black bg-indigo-50/5 ${diffInaRs > 0 ? 'text-emerald-600' : diffInaRs < 0 ? 'text-rose-600' : 'text-slate-400'}`}>
@@ -6032,17 +6032,17 @@ export default function App() {
                     <th rowSpan={2} className="p-3 border-b border-r border-white/10">Code</th>
                     <th rowSpan={2} className="p-3 border-b border-r border-white/10 min-w-[200px]">Deskripsi</th>
                     <th rowSpan={2} className="p-3 border-b border-r border-white/10">Jumlah</th>
-                    <th rowSpan={2} className="p-3 border-b border-r border-white/10 text-teal-300">ALOS</th>
+                    <th rowSpan={2} className="p-3 border-b border-r border-white/10 text-blue-300">ALOS</th>
                     <th rowSpan={2} className="p-3 border-b border-r border-white/10 text-rose-300">LOS Max</th>
                     <th rowSpan={2} className="p-3 border-b border-r border-white/10">Subtotal RS</th>
-                    <th className="p-3 border-b border-r border-white/10 bg-teal-800">INA CBGs</th>
+                    <th className="p-3 border-b border-r border-white/10 bg-blue-800">INA CBGs</th>
                     <th colSpan={4} className="p-3 border-b border-r border-white/10 bg-emerald-800 text-center">Data iDRG</th>
                     <th rowSpan={2} className="p-3 border-b border-r border-white/10 bg-slate-800">Avg Cost/Pasien</th>
                     <th rowSpan={2} className="p-3 border-b border-r border-white/10 bg-emerald-900">Subtotal iDRG</th>
                     <th rowSpan={2} className="p-3 border-b border-white/10 bg-rose-900">Selisih</th>
                   </tr>
                   <tr className="bg-slate-800 text-slate-300">
-                    <th className="p-2 border-b border-r border-white/10 bg-teal-700/50">Subtotal INA</th>
+                    <th className="p-2 border-b border-r border-white/10 bg-blue-700/50">Subtotal INA</th>
                     <th className="p-2 border-b border-r border-white/10 bg-emerald-700/50">Perpasien</th>
                     <th className="p-2 border-b border-r border-white/10 bg-emerald-700/50">Cost Weight</th>
                     <th className="p-2 border-b border-r border-white/10 bg-emerald-700/50">NBR</th>
@@ -6055,11 +6055,11 @@ export default function App() {
                       <td className="p-2.5 border-r border-slate-100 font-bold text-slate-400">{i + 1}</td>
                       <td className="p-2.5 border-r border-slate-100 font-black text-slate-700">{r.code}</td>
                       <td className="p-2.5 border-r border-slate-100 text-left font-bold text-slate-600 truncate max-w-[250px]" title={r.desc}>{r.desc}</td>
-                      <td className="p-2.5 border-r border-slate-100 font-black text-teal-600 bg-teal-50/10">{r.count.toLocaleString()}</td>
+                      <td className="p-2.5 border-r border-slate-100 font-black text-blue-600 bg-blue-50/10">{r.count.toLocaleString()}</td>
                       <td className="p-2.5 border-r border-slate-100 font-bold text-slate-500">{r.avgLos.toFixed(1)}</td>
                       <td className="p-2.5 border-r border-slate-100 font-black text-rose-600 bg-rose-50/10">{r.maxLos}</td>
                       <td className="p-2.5 border-r border-slate-100 text-right font-semibold text-slate-600">{formatRpEx(r.sumRS)}</td>
-                      <td className="p-2.5 border-r border-slate-100 text-right font-black text-teal-700 bg-teal-50/20">{formatRpEx(r.sumIna)}</td>
+                      <td className="p-2.5 border-r border-slate-100 text-right font-black text-blue-700 bg-blue-50/20">{formatRpEx(r.sumIna)}</td>
                       <td className="p-2.5 border-r border-slate-50 text-right font-bold text-emerald-700 bg-emerald-50/10">{formatRpEx(r.avgIdrg)}</td>
                       <td className="p-2.5 border-r border-slate-50 text-center font-bold text-slate-600 bg-emerald-50/5">{r.avgCW.toFixed(4)}</td>
                       <td className="p-2.5 border-r border-slate-50 text-right font-bold text-slate-600 bg-emerald-50/5">{formatRpEx(r.avgNBR)}</td>
@@ -6086,17 +6086,17 @@ export default function App() {
                     <th rowSpan={2} className="p-3 border-b border-r border-white/10">Code</th>
                     <th rowSpan={2} className="p-3 border-b border-r border-white/10 min-w-[200px]">Deskripsi</th>
                     <th rowSpan={2} className="p-3 border-b border-r border-white/10">Jumlah</th>
-                    <th rowSpan={2} className="p-3 border-b border-r border-white/10 text-teal-300">ALOS</th>
+                    <th rowSpan={2} className="p-3 border-b border-r border-white/10 text-blue-300">ALOS</th>
                     <th rowSpan={2} className="p-3 border-b border-r border-white/10 text-rose-300">LOS Max</th>
                     <th rowSpan={2} className="p-3 border-b border-r border-white/10">Subtotal RS</th>
-                    <th className="p-3 border-b border-r border-white/10 bg-teal-800">INA CBGs</th>
+                    <th className="p-3 border-b border-r border-white/10 bg-blue-800">INA CBGs</th>
                     <th colSpan={4} className="p-3 border-b border-r border-white/10 bg-emerald-800 text-center">Data iDRG</th>
                     <th rowSpan={2} className="p-3 border-b border-r border-white/10 bg-slate-800">Avg Cost/Pasien</th>
                     <th rowSpan={2} className="p-3 border-b border-r border-white/10 bg-emerald-900">Subtotal iDRG</th>
                     <th rowSpan={2} className="p-3 border-b border-white/10 bg-rose-900">Selisih</th>
                   </tr>
                   <tr className="bg-slate-800 text-slate-300">
-                    <th className="p-2 border-b border-r border-white/10 bg-teal-700/50">Subtotal INA</th>
+                    <th className="p-2 border-b border-r border-white/10 bg-blue-700/50">Subtotal INA</th>
                     <th className="p-2 border-b border-r border-white/10 bg-emerald-700/50">Perpasien</th>
                     <th className="p-2 border-b border-r border-white/10 bg-emerald-700/50">Cost Weight</th>
                     <th className="p-2 border-b border-r border-white/10 bg-emerald-700/50">NBR</th>
@@ -6109,11 +6109,11 @@ export default function App() {
                       <td className="p-2.5 border-r border-slate-100 font-bold text-slate-400">{i + 1}</td>
                       <td className="p-2.5 border-r border-slate-100 font-black text-slate-700">{r.code}</td>
                       <td className="p-2.5 border-r border-slate-100 text-left font-bold text-slate-600 truncate max-w-[250px]" title={r.desc}>{r.desc}</td>
-                      <td className="p-2.5 border-r border-slate-100 font-black text-teal-600 bg-teal-50/10">{r.count.toLocaleString()}</td>
+                      <td className="p-2.5 border-r border-slate-100 font-black text-blue-600 bg-blue-50/10">{r.count.toLocaleString()}</td>
                       <td className="p-2.5 border-r border-slate-100 font-bold text-slate-500">{r.avgLos.toFixed(1)}</td>
                       <td className="p-2.5 border-r border-slate-100 font-black text-rose-600 bg-rose-50/10">{r.maxLos}</td>
                       <td className="p-2.5 border-r border-slate-100 text-right font-semibold text-slate-600">{formatRpEx(r.sumRS)}</td>
-                      <td className="p-2.5 border-r border-slate-100 text-right font-black text-teal-700 bg-teal-50/20">{formatRpEx(r.sumIna)}</td>
+                      <td className="p-2.5 border-r border-slate-100 text-right font-black text-blue-700 bg-blue-50/20">{formatRpEx(r.sumIna)}</td>
                       <td className="p-2.5 border-r border-slate-50 text-right font-bold text-emerald-700 bg-emerald-50/10">{formatRpEx(r.avgIdrg)}</td>
                       <td className="p-2.5 border-r border-slate-50 text-center font-bold text-slate-600 bg-emerald-50/5">{r.avgCW.toFixed(4)}</td>
                       <td className="p-2.5 border-r border-slate-50 text-right font-bold text-slate-600 bg-emerald-50/5">{formatRpEx(r.avgNBR)}</td>
@@ -6304,7 +6304,7 @@ export default function App() {
                       <span className="text-xs font-medium text-slate-500 mt-1 block leading-relaxed">{String(sourceData[key].desc)}</span>
                       <div className="flex flex-wrap gap-1.5 mt-3">
                         <span className={`inline-block text-[10px] font-black uppercase text-white px-2 py-0.5 rounded-lg ${isReverse ? 'bg-orange-500' : 'bg-sky-500'}`}>{sourceData[key].totalCases || 0} Kasus</span>
-                        <span className="inline-block text-[10px] font-black uppercase text-teal-600 bg-teal-50 px-2 py-0.5 rounded-lg border border-teal-100">Avg LOS: {(sourceData[key].sumLos / (sourceData[key].totalCases || 1)).toFixed(1)}</span>
+                        <span className="inline-block text-[10px] font-black uppercase text-blue-600 bg-blue-50 px-2 py-0.5 rounded-lg border border-blue-100">Avg LOS: {(sourceData[key].sumLos / (sourceData[key].totalCases || 1)).toFixed(1)}</span>
                         <span className="inline-block text-[10px] font-black uppercase text-rose-600 bg-rose-50 px-2 py-0.5 rounded-lg border border-rose-100">Max LOS: {sourceData[key].maxLos}</span>
                         <span className={`inline-block text-[10px] font-black uppercase px-2 py-0.5 rounded-lg border ${isReverse ? 'text-orange-700 bg-orange-50 border-orange-100' : 'text-sky-700 bg-sky-50 border-sky-100'}`}>Avg {isReverse ? 'iDRG' : 'INA'}: {formatRp(sourceData[key][isReverse ? 'sumIdrg' : 'sumIna'] / (sourceData[key].totalCases || 1))}</span>
                       </div>
@@ -6318,7 +6318,7 @@ export default function App() {
                               <span className="text-xs font-bold text-slate-700 flex-1">{isReverse ? (data.desc || '-') : targetKey.substring(targetKey.indexOf(' ') + 1)}</span>
                               <div className="flex items-center gap-1.5">
                                 <span className={`text-[10px] font-black uppercase px-2 py-1 rounded-md ${isReverse ? 'text-orange-700 bg-orange-100' : 'text-sky-700 bg-sky-100'}`}>{data.count} Kasus</span>
-                                <span className="text-[10px] font-black uppercase text-teal-700 bg-teal-50 px-2 py-1 rounded-md">ALOS: {(data.sumLos / data.count).toFixed(1)}</span>
+                                <span className="text-[10px] font-black uppercase text-blue-700 bg-blue-50 px-2 py-1 rounded-md">ALOS: {(data.sumLos / data.count).toFixed(1)}</span>
                                 <span className="text-[10px] font-black uppercase text-rose-700 bg-rose-50 px-2 py-1 rounded-md">Max LOS: {data.maxLos}</span>
                                 <span className={`text-[10px] font-black uppercase px-2 py-1 rounded-md border ${isReverse ? 'text-sky-700 bg-sky-50 border-sky-100' : 'text-orange-700 bg-orange-50 border-orange-100'}`}>Avg {isReverse ? 'INA' : 'iDRG'}: {formatRp(data[isReverse ? 'sumIna' : 'sumIdrg'] / data.count)}</span>
                               </div>
@@ -6530,18 +6530,18 @@ export default function App() {
     };
     return (
       <div className="space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-500">
-        <SectionHeader icon={Layers} title="Rekap Kode INA-CBG & iDRG" desc={`Seluruh ${allRows.length.toLocaleString()} kasus beserta rincian 18 komponen biaya.`} colorClass="bg-teal-50 text-teal-600" highlightClass="bg-teal-500/5" exportAction={exportAllCases} exportText="Ekspor Semua Kasus (Excel)" />
+        <SectionHeader icon={Layers} title="Rekap Kode INA-CBG & iDRG" desc={`Seluruh ${allRows.length.toLocaleString()} kasus beserta rincian 18 komponen biaya.`} colorClass="bg-blue-50 text-blue-600" highlightClass="bg-blue-500/5" exportAction={exportAllCases} exportText="Ekspor Semua Kasus (Excel)" />
         {/* === SCATTER INA-CBG (FULL WIDTH) === */}
         <Card className="overflow-visible">
-          <div className="p-5 border-b border-slate-100 bg-gradient-to-r from-teal-50 to-white flex items-center gap-3">
-            <div className="p-2 bg-teal-100 rounded-xl text-teal-700"><Activity size={18} /></div>
+          <div className="p-5 border-b border-slate-100 bg-gradient-to-r from-blue-50 to-white flex items-center gap-3">
+            <div className="p-2 bg-blue-100 rounded-xl text-blue-700"><Activity size={18} /></div>
             <div>
               <h3 className="font-extrabold text-slate-800 tracking-tight">Kuadran Kasus INA-CBG</h3>
               <p className="text-[11px] text-slate-400 mt-0.5">Distribusi kode INA-CBG berdasarkan Selisih Finansial vs Volume Kasus — klik titik untuk drill-down</p>
             </div>
           </div>
           <div className="p-4">
-            <ScatterChart data={dashData.inaSummary} xKey="totalSelisih" yKey="count" rKey="sumIna" color="#0d9488" xLabel="Selisih Finansial (INA-CBG vs RS)" yLabel="Volume Kasus" title="" onDotClick={(d) => openDrilldown(`Scatter INA: ${d.code}`, row => String(row.INACBG).trim() === d.code)} />
+            <ScatterChart data={dashData.inaSummary} xKey="totalSelisih" yKey="count" rKey="sumIna" color="#2563eb" xLabel="Selisih Finansial (INA-CBG vs RS)" yLabel="Volume Kasus" title="" onDotClick={(d) => openDrilldown(`Scatter INA: ${d.code}`, row => String(row.INACBG).trim() === d.code)} />
           </div>
           {/* Insight Panel INA */}
           {(() => {
@@ -6563,7 +6563,7 @@ export default function App() {
                     { label: 'Defisit & Vol Tinggi', count: q1.length, color: 'bg-red-50 border-red-200 text-red-700', badge: 'bg-red-500', icon: '🔴', note: 'Prioritas perbaikan Dokumentasi Klinis Diagnosa Sekunder & koding' },
                     { label: 'Surplus & Vol Tinggi', count: q2.length, color: 'bg-lime-50 border-lime-200 text-lime-700', badge: 'bg-lime-500', icon: '🟢', note: 'Kode unggulan, pertahankan' },
                     { label: 'Defisit & Vol Rendah', count: q3.length, color: 'bg-amber-50 border-amber-200 text-amber-700', badge: 'bg-amber-500', icon: '🟡', note: 'Pantau efisiensi Dokumentasi Klinis Diagnosa Sekunder & koding' },
-                    { label: 'Surplus & Vol Rendah', count: q4.length, color: 'bg-teal-50 border-teal-200 text-teal-700', badge: 'bg-teal-500', icon: '🔵', note: 'Potensi pengembangan layanan' },
+                    { label: 'Surplus & Vol Rendah', count: q4.length, color: 'bg-blue-50 border-blue-200 text-blue-700', badge: 'bg-blue-500', icon: '🔵', note: 'Potensi pengembangan layanan' },
                   ].map((item, i) => {
                     const qData = [q1, q2, q3, q4][i];
                     const codes = new Set(qData.map(d => d.code));
@@ -6927,7 +6927,7 @@ export default function App() {
                 <tr className="bg-slate-900 text-white sticky top-[38px] z-40">
                   <th className="p-4 min-w-[300px] max-w-[300px] w-[300px] truncate bg-slate-900 sticky left-0 z-50 shadow-[2px_0_5px_rgba(0,0,0,0.08)]">Hierarki Departemen / KSM / DPJP</th>
                   <th className="p-4 text-right bg-slate-900 w-20">Kasus</th>
-                  <th className="p-4 text-center bg-teal-900 text-teal-300 w-20 text-[9px]">ALOS</th>
+                  <th className="p-4 text-center bg-blue-900 text-blue-300 w-20 text-[9px]">ALOS</th>
                   <th className="p-4 text-center bg-rose-900 text-rose-300 w-20 text-[9px]">MAX LOS</th>
                   <th className="p-4 text-right bg-slate-900 min-w-[120px]">Avg RS</th>
                   <th className="p-4 text-right bg-sky-900/50 min-w-[120px]">Sel. INA</th>
@@ -6980,7 +6980,7 @@ export default function App() {
                           </div>
                         </td>
                         <td className="p-4 text-right font-black">{dept.count.toLocaleString()}</td>
-                        <td className="p-4 text-center text-teal-700 font-bold text-xs bg-teal-50/30">{(dept.sumLos / (dept.count || 1)).toFixed(1)}</td>
+                        <td className="p-4 text-center text-blue-700 font-bold text-xs bg-blue-50/30">{(dept.sumLos / (dept.count || 1)).toFixed(1)}</td>
                         <td className="p-4 text-center text-rose-700 font-bold text-xs bg-rose-50/30">{dept.maxLos}</td>
                         <td className="p-4 text-right text-slate-600">{formatRp(dAvgRS)}</td>
                         <td className={`p-4 text-right font-black ${dAvgSelIna >= 0 ? 'text-lime-700' : 'text-orange-700'}`}>{formatRp(dAvgSelIna)}</td>
@@ -7004,7 +7004,7 @@ export default function App() {
                                 </div>
                               </td>
                               <td className="p-4 text-right font-bold text-slate-700">{ksm.count.toLocaleString()}</td>
-                              <td className="p-4 text-center text-teal-600 font-bold text-xs bg-teal-50/20">{(ksm.sumLos / ksm.count).toFixed(1)}</td>
+                              <td className="p-4 text-center text-blue-600 font-bold text-xs bg-blue-50/20">{(ksm.sumLos / ksm.count).toFixed(1)}</td>
                               <td className="p-4 text-center text-rose-600 font-bold text-xs bg-rose-50/20">{ksm.maxLos}</td>
                               <td className="p-4 text-right text-slate-500 text-xs">{formatRp(ksm.sumRS / ksm.count)}</td>
                               <td className={`p-4 text-right font-bold ${ksm.selisihIna >= 0 ? 'text-lime-600' : 'text-orange-600'}`}>{formatRp(ksm.selisihIna / ksm.count)}</td>
@@ -7026,7 +7026,7 @@ export default function App() {
                                   </div>
                                 </td>
                                 <td className="p-3 text-right">{dpjp.count.toLocaleString()}</td>
-                                <td className="p-3 text-center text-teal-600 text-[10px]">{(dpjp.sumLos / dpjp.count).toFixed(1)}</td>
+                                <td className="p-3 text-center text-blue-600 text-[10px]">{(dpjp.sumLos / dpjp.count).toFixed(1)}</td>
                                 <td className="p-3 text-center text-rose-600 text-[10px]">{dpjp.maxLos}</td>
                                 <td className="p-3 text-right opacity-60 text-[10px]">{formatRp(dpjp.sumRS / dpjp.count)}</td>
                                 <td className={`p-3 text-right font-medium text-[10px] ${dpjp.sumIna - dpjp.sumRS >= 0 ? 'text-lime-600' : 'text-orange-600'}`}>{formatRp((dpjp.sumIna - dpjp.sumRS) / dpjp.count)}</td>
@@ -7136,7 +7136,7 @@ export default function App() {
                 <tr className="bg-slate-900 text-white sticky top-[38px] z-40">
                   <th className="p-4 min-w-[300px] max-w-[300px] w-[300px] truncate bg-slate-900 sticky left-0 z-50 shadow-[2px_0_5px_rgba(0,0,0,0.08)]">Hierarki KSM / DPJP</th>
                   <th className="p-4 text-right bg-slate-900 w-20">Kasus</th>
-                  <th className="p-4 text-center bg-teal-900 text-teal-300 w-20 text-[9px]">ALOS</th>
+                  <th className="p-4 text-center bg-blue-900 text-blue-300 w-20 text-[9px]">ALOS</th>
                   <th className="p-4 text-center bg-rose-900 text-rose-300 w-20 text-[9px]">MAX LOS</th>
                   <th className="p-4 text-right bg-slate-900 min-w-[120px]">Avg RS</th>
                   <th className="p-4 text-right bg-sky-900/50 min-w-[120px]">Sel. INA</th>
@@ -7179,7 +7179,7 @@ export default function App() {
                           </div>
                         </td>
                         <td className="p-3 text-right font-black text-slate-800">{ksm.count.toLocaleString()}</td>
-                        <td className="p-3 text-center text-teal-700 font-bold text-xs bg-teal-50/30">{(ksm.sumLos / (ksm.count || 1)).toFixed(1)}</td>
+                        <td className="p-3 text-center text-blue-700 font-bold text-xs bg-blue-50/30">{(ksm.sumLos / (ksm.count || 1)).toFixed(1)}</td>
                         <td className="p-3 text-center text-rose-700 font-bold text-xs bg-rose-50/30">{ksm.maxLos}</td>
                         <td className="p-3 text-right text-slate-600 font-bold">{formatRp(ksm.sumRS / (ksm.count || 1))}</td>
                         <td className={`p-3 text-right font-black ${(ksm.selisihIna / (ksm.count || 1)) >= 0 ? 'text-lime-700' : 'text-orange-700'}`}>{formatRp(ksm.selisihIna / (ksm.count || 1))}</td>
@@ -7210,7 +7210,7 @@ export default function App() {
                               </div>
                             </td>
                             <td className="p-3 text-right font-bold text-slate-600">{dpjp.count.toLocaleString()}</td>
-                            <td className={`p-3 text-center font-bold text-xs bg-teal-50/10 ${dpjpAvgLos > ksmAvgLos ? 'text-rose-600' : 'text-teal-600'}`}>{(dpjp.sumLos / dpjp.count).toFixed(1)}</td>
+                            <td className={`p-3 text-center font-bold text-xs bg-blue-50/10 ${dpjpAvgLos > ksmAvgLos ? 'text-rose-600' : 'text-blue-600'}`}>{(dpjp.sumLos / dpjp.count).toFixed(1)}</td>
                             <td className="p-3 text-center text-rose-600 font-bold text-xs bg-rose-50/10">{dpjp.maxLos}</td>
                             <td className={`p-3 text-right text-xs font-semibold ${dpjpAvgRS > ksmAvgRS ? 'text-rose-600' : 'text-slate-500'}`}>{formatRp(dpjp.sumRS / dpjp.count)}</td>
                           <td className={`p-3 text-right font-bold ${(dpjp.sumIna - dpjp.sumRS) >= 0 ? 'text-lime-600' : 'text-orange-600'}`}>{formatRp((dpjp.sumIna - dpjp.sumRS) / dpjp.count)}</td>
@@ -7250,7 +7250,7 @@ export default function App() {
     if (allRows.length === 0) {
       return (
         <div className="bg-white/50 backdrop-blur-sm border border-slate-200/60 p-20 rounded-[2.5rem] text-center mt-10 max-w-3xl mx-auto shadow-2xl shadow-slate-200/50">
-          <div className="mb-6"><AlertCircle size={48} className="text-teal-600 mx-auto animate-bounce" /></div>
+          <div className="mb-6"><AlertCircle size={48} className="text-blue-600 mx-auto animate-bounce" /></div>
           <h2 className="text-2xl font-black mb-3 text-slate-800">Menunggu Dataset Utama...</h2>
           <p className="text-slate-500 font-medium leading-relaxed">
             Data sosialisasi belum dapat ditampilkan. Silakan unggah file klaim RS terlebih dahulu di tab <strong>Integrasi Data</strong>.
@@ -7701,9 +7701,9 @@ export default function App() {
       <div className={`space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-500 ${isSlideMode ? 'p-6 bg-slate-900 text-white rounded-3xl' : ''}`}>
         
         {/* HEADER & TOP CONTROLS */}
-        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 bg-white/40 backdrop-blur-sm p-4 rounded-3xl border border-teal-100 shadow-sm print:hidden hidden-on-print">
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 bg-white/40 backdrop-blur-sm p-4 rounded-3xl border border-blue-100 shadow-sm print:hidden hidden-on-print">
           <div className="flex items-center gap-3">
-            <div className="p-3 bg-teal-600 text-white rounded-2xl shadow-lg shadow-teal-600/20">
+            <div className="p-3 bg-blue-600 text-white rounded-2xl shadow-lg shadow-blue-600/20">
               <Sparkles size={24} className="animate-pulse" />
             </div>
             <div>
@@ -7714,7 +7714,7 @@ export default function App() {
           <div className="flex flex-wrap gap-2 w-full sm:w-auto">
             <button
               onClick={() => setIsSlideMode(!isSlideMode)}
-              className={`px-4 py-2.5 rounded-xl text-xs font-black transition-all border shadow-sm uppercase tracking-wider ${isSlideMode ? 'bg-teal-600 text-white border-teal-500' : 'bg-white hover:bg-slate-50 text-slate-700 border-slate-200'}`}
+              className={`px-4 py-2.5 rounded-xl text-xs font-black transition-all border shadow-sm uppercase tracking-wider ${isSlideMode ? 'bg-blue-600 text-white border-blue-500' : 'bg-white hover:bg-slate-50 text-slate-700 border-slate-200'}`}
               title="Toggle Mode Slide / Layar Penuh Presentasi"
             >
               📺 {isSlideMode ? 'Mode Biasa' : 'Mode Slide / Presentasi'}
@@ -7728,7 +7728,7 @@ export default function App() {
             </button>
             <button
               onClick={() => window.print()}
-              className="bg-teal-600 hover:bg-teal-700 text-white px-4 py-2.5 rounded-xl text-xs font-black transition-all shadow-md flex items-center gap-1.5 uppercase tracking-wider"
+              className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2.5 rounded-xl text-xs font-black transition-all shadow-md flex items-center gap-1.5 uppercase tracking-wider"
               title="Cetak/Simpan Handout Sosialisasi ke PDF"
             >
               <Printer size={14} /> Cetak Handout PDF
@@ -7741,7 +7741,7 @@ export default function App() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 bg-white p-5 rounded-3xl border border-slate-200/60 shadow-sm print:hidden hidden-on-print">
           <div className="flex flex-col gap-2">
             <label className="text-[10px] font-black text-slate-400 uppercase tracking-widest flex items-center gap-1.5">
-              <Building2 size={12} className="text-teal-600" /> Pilih Departemen
+              <Building2 size={12} className="text-blue-600" /> Pilih Departemen
             </label>
             <select
               value={currentDept}
@@ -7749,19 +7749,19 @@ export default function App() {
                 setSelectedSocializationDept(e.target.value);
                 setSelectedSocializationKsm(''); // Reset KSM
               }}
-              className="w-full px-4 py-3 rounded-2xl bg-slate-50 border-2 border-slate-100 text-slate-800 font-bold focus:bg-white focus:ring-4 focus:ring-teal-500/10 focus:border-teal-500 outline-none transition-all cursor-pointer shadow-inner"
+              className="w-full px-4 py-3 rounded-2xl bg-slate-50 border-2 border-slate-100 text-slate-800 font-bold focus:bg-white focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 outline-none transition-all cursor-pointer shadow-inner"
             >
               {depts.map(d => <option key={d} value={d}>{d}</option>)}
             </select>
           </div>
           <div className="flex flex-col gap-2">
             <label className="text-[10px] font-black text-slate-400 uppercase tracking-widest flex items-center gap-1.5">
-              <Users size={12} className="text-teal-600" /> Pilih Kelompok Staf Medis (KSM)
+              <Users size={12} className="text-blue-600" /> Pilih Kelompok Staf Medis (KSM)
             </label>
             <select
               value={currentKsm}
               onChange={e => setSelectedSocializationKsm(e.target.value)}
-              className="w-full px-4 py-3 rounded-2xl bg-slate-50 border-2 border-slate-100 text-slate-800 font-bold focus:bg-white focus:ring-4 focus:ring-teal-500/10 focus:border-teal-500 outline-none transition-all cursor-pointer shadow-inner"
+              className="w-full px-4 py-3 rounded-2xl bg-slate-50 border-2 border-slate-100 text-slate-800 font-bold focus:bg-white focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 outline-none transition-all cursor-pointer shadow-inner"
             >
               {ksmsForDept.map(k => <option key={k} value={k}>{k}</option>)}
             </select>
@@ -7769,7 +7769,7 @@ export default function App() {
         </div>
 
         {/* PRINT BRANDING (Visible only when printing) */}
-        <div className="hidden print:flex items-center justify-between border-b-2 border-teal-600 pb-4 mb-6">
+        <div className="hidden print:flex items-center justify-between border-b-2 border-blue-600 pb-4 mb-6">
           <div className="flex items-center gap-3">
             <img src={logo} alt="Logo" className="w-12 h-12 object-contain" />
             <div>
@@ -7779,19 +7779,19 @@ export default function App() {
           </div>
           <div className="text-right text-[10px] font-bold text-slate-500">
             <div>Departemen: <span className="text-slate-800">{currentDept}</span></div>
-            <div>KSM: <span className="text-teal-600">{currentKsm}</span></div>
+            <div>KSM: <span className="text-blue-600">{currentKsm}</span></div>
             <div>Tanggal Cetak: {new Date().toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' })}</div>
           </div>
         </div>
 
         {/* PRESENTATION SLIDE - EXECUTIVE SCORECARDS */}
-        <div className={`p-8 rounded-[2.5rem] border shadow-2xl flex flex-col gap-6 relative overflow-hidden transition-all duration-300 ${isSlideMode ? 'bg-slate-800 border-slate-700/50 shadow-slate-950/40 text-white' : 'bg-gradient-to-br from-white to-teal-50/20 border-teal-100/70 shadow-teal-900/5'}`}>
-          <div className="absolute top-0 right-0 w-64 h-64 bg-teal-500/5 rounded-full blur-3xl pointer-events-none" />
+        <div className={`p-8 rounded-[2.5rem] border shadow-2xl flex flex-col gap-6 relative overflow-hidden transition-all duration-300 ${isSlideMode ? 'bg-slate-800 border-slate-700/50 shadow-slate-950/40 text-white' : 'bg-gradient-to-br from-white to-blue-50/20 border-blue-100/70 shadow-blue-900/5'}`}>
+          <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/5 rounded-full blur-3xl pointer-events-none" />
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 relative z-10">
             <div>
-              <span className={`text-[10px] font-black tracking-[0.2em] uppercase px-3 py-1 rounded-full ${isSlideMode ? 'bg-teal-500/20 text-teal-300' : 'bg-teal-50 text-teal-700'}`}>Bahan Sosialisasi Medis</span>
+              <span className={`text-[10px] font-black tracking-[0.2em] uppercase px-3 py-1 rounded-full ${isSlideMode ? 'bg-blue-500/20 text-blue-300' : 'bg-blue-50 text-blue-700'}`}>Bahan Sosialisasi Medis</span>
               <h2 className={`text-2xl font-black mt-2 tracking-tight ${isSlideMode ? 'text-white' : 'text-slate-800'}`}>
-                Evaluasi Kinerja Klinis: <span className="text-teal-600 font-extrabold">{currentKsm}</span>
+                Evaluasi Kinerja Klinis: <span className="text-blue-600 font-extrabold">{currentKsm}</span>
               </h2>
               <p className={`text-[11px] font-medium mt-1 ${isSlideMode ? 'text-slate-400' : 'text-slate-400'}`}>
                 Membawahi Departemen: <strong className={isSlideMode ? 'text-slate-300' : 'text-slate-700'}>{currentDept}</strong>
@@ -7810,8 +7810,8 @@ export default function App() {
           </div>
 
           {/* Dinamic Rekomendasi Sosialisasi */}
-          <div className={`p-5 rounded-2xl border flex gap-3.5 items-start ${isSlideMode ? 'bg-slate-700/50 border-slate-600 text-slate-100 font-semibold' : 'bg-teal-50/40 border-teal-100 text-teal-800 font-semibold'}`}>
-            <div className="p-2 bg-teal-600 text-white rounded-xl shadow-md shrink-0"><Zap size={18} /></div>
+          <div className={`p-5 rounded-2xl border flex gap-3.5 items-start ${isSlideMode ? 'bg-slate-700/50 border-slate-600 text-slate-100 font-semibold' : 'bg-blue-50/40 border-blue-100 text-blue-800 font-semibold'}`}>
+            <div className="p-2 bg-blue-600 text-white rounded-xl shadow-md shrink-0"><Zap size={18} /></div>
             <div>
               <span className="text-[10px] font-black uppercase tracking-wider block opacity-70">Rekomendasi Sosialisasi Ke Dokter Spesialis</span>
               <p className="text-xs font-semibold leading-relaxed mt-1">{quadrantTip}</p>
@@ -7824,7 +7824,7 @@ export default function App() {
               { label: 'Jumlah Kasus', value: `${ksmRows.length} kasus`, sub: `${kPctOfHospital.toFixed(1)}% dari total RS`, color: 'from-sky-500/10 to-blue-600/5 text-sky-700 border-sky-100/50' },
               { label: 'Rerata Selisih (INA-RS)', value: formatRp(kAvgSelisihIna), sub: `Total: ${formatRp(kSelisihIna)}`, color: kSelisihIna >= 0 ? 'from-emerald-500/10 to-green-600/5 text-emerald-700 border-emerald-100/50' : 'from-rose-500/10 to-red-600/5 text-rose-700 border-rose-100/50' },
               { label: 'Rerata iDRG vs INA-CBG', value: `+${formatRp(kAvgIdrg - kAvgIna)}`, sub: `Total Potensi: +${formatRp(kSumIdrg - kSumIna)}`, color: 'from-purple-500/10 to-indigo-600/5 text-purple-700 border-purple-100/50' },
-              { label: 'Rerata LOS vs RS', value: `${kAvgLos.toFixed(1)} Hari`, sub: `Rerata RS: ${hAvgLos.toFixed(1)} | Max: ${kMaxLos}`, color: kAvgLos > hAvgLos ? 'from-orange-500/10 to-amber-600/5 text-orange-700 border-orange-100/50' : 'from-teal-500/10 to-emerald-600/5 text-teal-700 border-teal-100/50' }
+              { label: 'Rerata LOS vs RS', value: `${kAvgLos.toFixed(1)} Hari`, sub: `Rerata RS: ${hAvgLos.toFixed(1)} | Max: ${kMaxLos}`, color: kAvgLos > hAvgLos ? 'from-orange-500/10 to-amber-600/5 text-orange-700 border-orange-100/50' : 'from-blue-500/10 to-emerald-600/5 text-blue-700 border-blue-100/50' }
             ].map((card, i) => (
               <div key={i} className={`p-4.5 rounded-2xl border-2 bg-gradient-to-br ${card.color} flex flex-col gap-1 shadow-sm`}>
                 <span className={`text-[10px] font-bold uppercase tracking-wider block ${isSlideMode ? 'text-slate-400' : 'text-slate-400'}`}>{card.label}</span>
@@ -7903,7 +7903,7 @@ export default function App() {
                     <span className="font-black text-red-600 text-xs whitespace-nowrap">{formatRp(d.totalDefisit)}</span>
                   </div>
                   <div className="flex flex-col gap-1.5 bg-slate-50 p-3 rounded-xl border border-slate-100 text-[11px] font-semibold text-slate-600">
-                    <span className="text-[9px] font-black text-teal-600 uppercase tracking-widest block">💡 Rekomendasi Koding / Sosialisasi Dokter:</span>
+                    <span className="text-[9px] font-black text-blue-600 uppercase tracking-widest block">💡 Rekomendasi Koding / Sosialisasi Dokter:</span>
                     {getCodingGuideline(d.code)}
                   </div>
                   <div className="text-[9px] text-slate-400 font-bold uppercase tracking-wide flex items-center justify-between">
@@ -7934,7 +7934,7 @@ export default function App() {
                     <span className="font-black text-amber-600 text-xs whitespace-nowrap">{formatRp(p.totalDefisit)}</span>
                   </div>
                   <div className="flex flex-col gap-1.5 bg-slate-50 p-3 rounded-xl border border-slate-100 text-[11px] font-semibold text-slate-600">
-                    <span className="text-[9px] font-black text-teal-600 uppercase tracking-widest block">💡 Rekomendasi Dokumentasi Klinis:</span>
+                    <span className="text-[9px] font-black text-blue-600 uppercase tracking-widest block">💡 Rekomendasi Dokumentasi Klinis:</span>
                     {getProcedureGuideline(p.code)}
                   </div>
                   <div className="text-[9px] text-slate-400 font-bold uppercase tracking-wide flex items-center justify-between">
@@ -7954,7 +7954,7 @@ export default function App() {
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b pb-4 border-slate-100">
             <div>
               <h3 className="text-base font-extrabold text-slate-800 flex items-center gap-2">
-                <Activity size={18} className="text-teal-600 animate-pulse" /> Peta Mutu Klinis (LOS) &amp; Simulasi iDRG
+                <Activity size={18} className="text-blue-600 animate-pulse" /> Peta Mutu Klinis (LOS) &amp; Simulasi iDRG
               </h3>
               <p className="text-xs text-slate-400 mt-0.5">Analisis korelasi lama hari rawat (LOS) terhadap profitabilitas. Klik bulatan pasien untuk melihat rekam medis.</p>
             </div>
@@ -7963,13 +7963,13 @@ export default function App() {
             <div className="flex gap-1.5 p-1 bg-slate-100 rounded-xl w-fit shrink-0 print:hidden">
               <button
                 onClick={() => setSocializationScatterMode('inacbg')}
-                className={`px-3.5 py-1.5 rounded-lg text-xs font-black transition-all ${socializationScatterMode === 'inacbg' ? 'bg-white text-teal-700 shadow-sm' : 'text-slate-600 hover:text-slate-900'}`}
+                className={`px-3.5 py-1.5 rounded-lg text-xs font-black transition-all ${socializationScatterMode === 'inacbg' ? 'bg-white text-blue-700 shadow-sm' : 'text-slate-600 hover:text-slate-900'}`}
               >
                 🇮🇩 INA-CBG vs RS
               </button>
               <button
                 onClick={() => setSocializationScatterMode('idrg')}
-                className={`px-3.5 py-1.5 rounded-lg text-xs font-black transition-all ${socializationScatterMode === 'idrg' ? 'bg-white text-teal-700 shadow-sm' : 'text-slate-600 hover:text-slate-900'}`}
+                className={`px-3.5 py-1.5 rounded-lg text-xs font-black transition-all ${socializationScatterMode === 'idrg' ? 'bg-white text-blue-700 shadow-sm' : 'text-slate-600 hover:text-slate-900'}`}
               >
                 ⚡ iDRG vs RS (Simulasi)
               </button>
@@ -7985,7 +7985,7 @@ export default function App() {
             </div>
             <div className="flex flex-col">
               <span className="text-[9px] font-black text-slate-400 uppercase tracking-wider">Efisiensi LOS</span>
-              <span className="text-base font-black text-teal-600 mt-1">{pctEfficientLos.toFixed(1)}%</span>
+              <span className="text-base font-black text-blue-600 mt-1">{pctEfficientLos.toFixed(1)}%</span>
               <span className="text-[10px] font-bold text-slate-500 mt-0.5">Kasus &lt;= Rerata RS</span>
             </div>
             <div className="flex flex-col">
@@ -8006,14 +8006,14 @@ export default function App() {
           <div className="space-y-6">
             <div className="w-full">
               <div className="mb-2 text-right text-[10px] font-bold text-slate-400 uppercase tracking-wider">
-                Menampilkan: <span className="text-teal-600 font-extrabold">{socializationScatterMode === 'idrg' ? 'Simulasi Tarif iDRG vs Biaya Riil' : 'Tarif INA-CBG vs Biaya Riil'}</span>
+                Menampilkan: <span className="text-blue-600 font-extrabold">{socializationScatterMode === 'idrg' ? 'Simulasi Tarif iDRG vs Biaya Riil' : 'Tarif INA-CBG vs Biaya Riil'}</span>
               </div>
               <ScatterChart
                 data={scatterData}
                 xKey="selisih"
                 yKey="los"
                 rKey="rsTarif"
-                color={socializationScatterMode === 'idrg' ? '#8b5cf6' : '#0d9488'}
+                color={socializationScatterMode === 'idrg' ? '#8b5cf6' : '#2563eb'}
                 xLabel={socializationScatterMode === 'idrg' ? "Selisih Finansial iDRG vs RS (Rupiah)" : "Selisih Finansial INA-CBG vs RS (Rupiah)"}
                 yLabel="Lama Hari Rawat (LOS - Hari)"
                 title=""
@@ -8085,8 +8085,8 @@ export default function App() {
 
         {/* 18-COMPONENT COST EFFICIENCY ANALYZER (KSM vs Hospital Average) */}
         <Card className="overflow-hidden">
-          <div className="p-5 border-b border-slate-100 bg-gradient-to-r from-teal-50 to-white flex items-center gap-3">
-            <div className="p-2 bg-teal-100 text-teal-700 rounded-xl"><Layers size={18} /></div>
+          <div className="p-5 border-b border-slate-100 bg-gradient-to-r from-blue-50 to-white flex items-center gap-3">
+            <div className="p-2 bg-blue-100 text-blue-700 rounded-xl"><Layers size={18} /></div>
             <div>
               <h3 className="font-extrabold text-slate-800 font-semibold">Analisis Deviasi 18 Komponen Biaya</h3>
               <p className="text-[10px] text-slate-400 mt-0.5">Perbandingan rata-rata biaya satuan komponen KSM terhadap Rata-rata Rumah Sakit secara keseluruhan.</p>
@@ -8158,7 +8158,7 @@ export default function App() {
     const top10SelIdrg = [...data].map(d => ({ ...d, selIdrg: d.sumIdrg - d.sumRS })).sort((a, b) => b.selIdrg - a.selIdrg).slice(0, 10);
     return (
       <div className="space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-500">
-        <SectionHeader icon={User} title="Kinerja DPJP (Dokter Penanggung Jawab Pelayanan)" desc="Produktivitas dan selisih finansial per DPJP." colorClass="bg-teal-50 text-teal-600" highlightClass="bg-teal-500/5" exportAction={() => {
+        <SectionHeader icon={User} title="Kinerja DPJP (Dokter Penanggung Jawab Pelayanan)" desc="Produktivitas dan selisih finansial per DPJP." colorClass="bg-blue-50 text-blue-600" highlightClass="bg-blue-500/5" exportAction={() => {
           const csv = data.map(d => [maskName(d.rawName || d.name), d.count, d.sumRS, d.sumIna, d.sumIdrg, d.sumIna - d.sumRS, d.sumIdrg - d.sumRS, d.sumIdrg - d.sumIna, ...compKeys.map(c => d.comps?.[c.key] || 0)]);
           exportToXlsx('Kinerja_DPJP', ['Nama DPJP', 'Jumlah Kasus', 'Total RS', 'Total INA', 'Total iDRG', 'Selisih INA-RS', 'Selisih iDRG-RS', 'Selisih iDRG-INA', ...compKeys.map(c => c.label)], csv);
         }} />
@@ -8167,12 +8167,12 @@ export default function App() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           <Card className="p-4 cursor-pointer hover:-translate-y-0.5 hover:shadow-md transition-all" onClick={() => openDrilldown('Seluruh Kasus', () => true)}>
             <p className="text-[10px] font-bold text-slate-400 uppercase">Total DPJP</p>
-            <p className="text-2xl font-black text-teal-700">{data.length}</p>
+            <p className="text-2xl font-black text-blue-700">{data.length}</p>
           </Card>
           <Card className="p-4 cursor-pointer hover:-translate-y-0.5 hover:shadow-md transition-all" onClick={() => openDrilldown(`DPJP Terbanyak: ${top10Kasus[0]?.name}`, r => normDpjp(r['DPJP']) === top10Kasus[0]?.normName)}>
             <p className="text-[10px] font-bold text-slate-400 uppercase">DPJP Terbanyak</p>
             <p className="text-sm font-black text-slate-800 truncate">{top10Kasus[0]?.name || '-'}</p>
-            <p className="text-xs text-teal-600 font-bold">{top10Kasus[0]?.count?.toLocaleString() || 0} kasus</p>
+            <p className="text-xs text-blue-600 font-bold">{top10Kasus[0]?.count?.toLocaleString() || 0} kasus</p>
           </Card>
           <Card className="p-4 cursor-pointer hover:-translate-y-0.5 hover:shadow-md transition-all" onClick={() => openDrilldown(`Top Surplus INA: ${top10SelIna[0]?.name}`, r => normDpjp(r['DPJP']) === top10SelIna[0]?.normName)}>
             <p className="text-[10px] font-bold text-lime-500 uppercase">Surplus INA-RS Tertinggi</p>
@@ -8189,13 +8189,13 @@ export default function App() {
         {/* DPJP BAR CHARTS */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {[
-            { title: 'Top 10 DPJP — Volume Kasus', items: top10Kasus, getVal: d => d.count, color: '#14b8a6', unit: ' kasus' },
+            { title: 'Top 10 DPJP — Volume Kasus', items: top10Kasus, getVal: d => d.count, color: '#3b82f6', unit: ' kasus' },
             { title: 'Top 10 DPJP — Selisih INA-RS', items: top10SelIna, getVal: d => d.selIna, color: '#0ea5e9', negColor: '#f97316', isCurrency: true },
           ].map((chart, ci) => {
             const maxVal = Math.max(...chart.items.map(d => Math.abs(chart.getVal(d))), 1);
             return (
               <Card key={ci} id={`dpjp-bar-${ci}`} downloadTitle={chart.title} className="p-5">
-                <h3 className="text-sm font-extrabold text-slate-800 uppercase tracking-wider mb-4 flex items-center gap-2"><BarChart3 size={16} className="text-teal-500" /> {chart.title}</h3>
+                <h3 className="text-sm font-extrabold text-slate-800 uppercase tracking-wider mb-4 flex items-center gap-2"><BarChart3 size={16} className="text-blue-500" /> {chart.title}</h3>
                 <div className="space-y-2">
                   {chart.items.map((d, di) => {
                     const val = chart.getVal(d); const pct = (Math.abs(val) / maxVal) * 100;
@@ -8204,9 +8204,9 @@ export default function App() {
                         onClick={() => openDrilldown(`Kasus DPJP: ${d.name}`, row => normDpjp(row['DPJP']) === d.normName)}>
                         <span className="text-[11px] font-bold text-slate-600 w-32 truncate shrink-0" title={d.name}>{d.name}</span>
                         <div className="flex-1 h-5 bg-slate-100 rounded-full overflow-hidden">
-                          <div className="h-full rounded-full transition-all duration-500" style={{ width: `${Math.max(pct, 2)}%`, backgroundColor: val >= 0 ? (chart.color || '#14b8a6') : (chart.negColor || '#f97316') }}></div>
+                          <div className="h-full rounded-full transition-all duration-500" style={{ width: `${Math.max(pct, 2)}%`, backgroundColor: val >= 0 ? (chart.color || '#3b82f6') : (chart.negColor || '#f97316') }}></div>
                         </div>
-                        <span className={`text-xs font-black w-24 text-right shrink-0 ${chart.isCurrency ? (val >= 0 ? 'text-lime-600' : 'text-orange-600') : 'text-teal-700'}`}>
+                        <span className={`text-xs font-black w-24 text-right shrink-0 ${chart.isCurrency ? (val >= 0 ? 'text-lime-600' : 'text-orange-600') : 'text-blue-700'}`}>
                           {chart.isCurrency ? ((val > 0 ? '+' : '') + formatRp(val)) : val.toLocaleString() + (chart.unit || '')}
                         </span>
                       </div>
@@ -8224,17 +8224,17 @@ export default function App() {
             <table className="w-full text-sm text-left whitespace-nowrap">
               <thead className="sticky top-0 z-40">
                 <tr>
-                  <th colSpan={10} className="px-4 py-3 bg-teal-600 text-white font-extrabold text-xs uppercase tracking-widest border-b border-teal-500">Ringkasan Finansial DPJP</th>
+                  <th colSpan={10} className="px-4 py-3 bg-blue-600 text-white font-extrabold text-xs uppercase tracking-widest border-b border-blue-500">Ringkasan Finansial DPJP</th>
                   <th colSpan={18} className="px-4 py-3 bg-slate-800 text-white font-extrabold text-xs uppercase tracking-widest text-center border-b border-slate-700">Rincian 18 Komponen Biaya RS</th>
                 </tr>
-                <tr className="bg-teal-50 text-[10px] uppercase font-extrabold tracking-wider text-teal-700">
-                  <th className="px-3 py-2.5 border-r border-teal-100 sticky left-0 bg-teal-50 z-50 min-w-[180px]">Nama DPJP</th>
-                  <th className="px-3 py-2.5 border-r border-teal-100 text-right w-16">Kasus</th>
-                  <th className="px-3 py-2.5 border-r border-teal-100 text-center">Avg LOS</th>
-                  <th className="px-3 py-2.5 border-r border-teal-100 text-center">Max LOS</th>
-                  <th className="px-3 py-2.5 border-r border-teal-100 text-right">Total RS</th>
-                  <th className="px-3 py-2.5 border-r border-teal-100 text-right">Total INA</th>
-                  <th className="px-3 py-2.5 border-r border-teal-100 text-right">Total iDRG</th>
+                <tr className="bg-blue-50 text-[10px] uppercase font-extrabold tracking-wider text-blue-700">
+                  <th className="px-3 py-2.5 border-r border-blue-100 sticky left-0 bg-blue-50 z-50 min-w-[180px]">Nama DPJP</th>
+                  <th className="px-3 py-2.5 border-r border-blue-100 text-right w-16">Kasus</th>
+                  <th className="px-3 py-2.5 border-r border-blue-100 text-center">Avg LOS</th>
+                  <th className="px-3 py-2.5 border-r border-blue-100 text-center">Max LOS</th>
+                  <th className="px-3 py-2.5 border-r border-blue-100 text-right">Total RS</th>
+                  <th className="px-3 py-2.5 border-r border-blue-100 text-right">Total INA</th>
+                  <th className="px-3 py-2.5 border-r border-blue-100 text-right">Total iDRG</th>
                   <th className="px-3 py-2.5 border-r border-sky-200 text-right bg-sky-50 text-sky-700">Sel. INA-RS</th>
                   <th className="px-3 py-2.5 border-r border-orange-200 text-right bg-orange-50 text-orange-700">Sel. iDRG-RS</th>
                   <th className="px-3 py-2.5 border-r border-slate-300 text-right bg-purple-50 text-purple-700">Sel. iDRG-INA</th>
@@ -8271,11 +8271,11 @@ export default function App() {
                   const selIdrg = dpjp.sumIdrg - dpjp.sumRS;
                   const selIdrgIna = dpjp.sumIdrg - dpjp.sumIna;
                   return (
-                    <tr key={i} className="hover:bg-teal-50/30 cursor-pointer transition-colors"
+                    <tr key={i} className="hover:bg-blue-50/30 cursor-pointer transition-colors"
                       onClick={() => openDrilldown(`Semua Kasus DPJP: ${dpjp.name}`, row => normDpjp(row['DPJP']) === dpjp.normName)}>
                       <td className="px-3 py-3 border-r border-slate-100 font-extrabold text-slate-800 sticky left-0 bg-white z-[5] text-xs">{dpjp.name}</td>
                       <td className="px-3 py-3 border-r border-slate-100 text-right font-bold text-slate-700">{dpjp.count.toLocaleString()}</td>
-                      <td className="px-3 py-3 border-r border-slate-100 text-center text-teal-600 font-bold text-xs">{dpjp.count > 0 ? (dpjp.sumLos / dpjp.count).toFixed(1) : 0}</td>
+                      <td className="px-3 py-3 border-r border-slate-100 text-center text-blue-600 font-bold text-xs">{dpjp.count > 0 ? (dpjp.sumLos / dpjp.count).toFixed(1) : 0}</td>
                       <td className="px-3 py-3 border-r border-slate-100 text-center text-rose-600 font-bold text-xs">{dpjp.maxLos || 0}</td>
                       <td className="px-3 py-3 border-r border-slate-100 text-right text-slate-600 text-xs">{formatRp(dpjp.sumRS)}</td>
                       <td className="px-3 py-3 border-r border-slate-100 text-right text-sky-700 font-semibold text-xs">{formatRp(dpjp.sumIna)}</td>
@@ -8297,17 +8297,17 @@ export default function App() {
                 })}
               </tbody>
               <tfoot>
-                <tr className="bg-teal-50 border-t-2 border-teal-300 font-black">
-                  <td className="px-3 py-3 border-r border-teal-200 sticky left-0 bg-teal-50 z-[5] text-teal-800 text-xs uppercase">Grand Total</td>
-                  <td className="px-3 py-3 border-r border-teal-200 text-right text-teal-800">{data.reduce((s, d) => s + d.count, 0).toLocaleString()}</td>
-                  <td className="px-3 py-3 border-r border-teal-200 text-right text-xs">{formatRp(data.reduce((s, d) => s + d.sumRS, 0))}</td>
-                  <td className="px-3 py-3 border-r border-teal-200 text-right text-xs text-sky-700">{formatRp(data.reduce((s, d) => s + d.sumIna, 0))}</td>
-                  <td className="px-3 py-3 border-r border-teal-200 text-right text-xs text-orange-700">{formatRp(data.reduce((s, d) => s + d.sumIdrg, 0))}</td>
-                  <td className="px-3 py-3 border-r border-teal-200 text-right text-xs">{(() => { const v = data.reduce((s, d) => s + d.sumIna - d.sumRS, 0); return <span className={v >= 0 ? 'text-lime-600' : 'text-orange-600'}>{v > 0 ? '+' : ''}{formatRp(v)}</span>; })()}</td>
-                  <td className="px-3 py-3 border-r border-teal-200 text-right text-xs">{(() => { const v = data.reduce((s, d) => s + d.sumIdrg - d.sumRS, 0); return <span className={v >= 0 ? 'text-lime-600' : 'text-orange-600'}>{v > 0 ? '+' : ''}{formatRp(v)}</span>; })()}</td>
-                  <td className="px-3 py-3 border-r border-teal-200 text-right text-xs">{(() => { const v = data.reduce((s, d) => s + d.sumIdrg - d.sumIna, 0); return <span className={v >= 0 ? 'text-purple-600' : 'text-rose-600'}>{v > 0 ? '+' : ''}{formatRp(v)}</span>; })()}</td>
+                <tr className="bg-blue-50 border-t-2 border-blue-300 font-black">
+                  <td className="px-3 py-3 border-r border-blue-200 sticky left-0 bg-blue-50 z-[5] text-blue-800 text-xs uppercase">Grand Total</td>
+                  <td className="px-3 py-3 border-r border-blue-200 text-right text-blue-800">{data.reduce((s, d) => s + d.count, 0).toLocaleString()}</td>
+                  <td className="px-3 py-3 border-r border-blue-200 text-right text-xs">{formatRp(data.reduce((s, d) => s + d.sumRS, 0))}</td>
+                  <td className="px-3 py-3 border-r border-blue-200 text-right text-xs text-sky-700">{formatRp(data.reduce((s, d) => s + d.sumIna, 0))}</td>
+                  <td className="px-3 py-3 border-r border-blue-200 text-right text-xs text-orange-700">{formatRp(data.reduce((s, d) => s + d.sumIdrg, 0))}</td>
+                  <td className="px-3 py-3 border-r border-blue-200 text-right text-xs">{(() => { const v = data.reduce((s, d) => s + d.sumIna - d.sumRS, 0); return <span className={v >= 0 ? 'text-lime-600' : 'text-orange-600'}>{v > 0 ? '+' : ''}{formatRp(v)}</span>; })()}</td>
+                  <td className="px-3 py-3 border-r border-blue-200 text-right text-xs">{(() => { const v = data.reduce((s, d) => s + d.sumIdrg - d.sumRS, 0); return <span className={v >= 0 ? 'text-lime-600' : 'text-orange-600'}>{v > 0 ? '+' : ''}{formatRp(v)}</span>; })()}</td>
+                  <td className="px-3 py-3 border-r border-blue-200 text-right text-xs">{(() => { const v = data.reduce((s, d) => s + d.sumIdrg - d.sumIna, 0); return <span className={v >= 0 ? 'text-purple-600' : 'text-rose-600'}>{v > 0 ? '+' : ''}{formatRp(v)}</span>; })()}</td>
                   {compKeys.map(c => (
-                    <td key={`tot-${c.key}`} className="px-3 py-3 border-r border-teal-200 text-right text-[11px] text-slate-700">{formatRpEx(data.reduce((s, d) => s + (d.comps?.[c.key] || 0), 0))}</td>
+                    <td key={`tot-${c.key}`} className="px-3 py-3 border-r border-blue-200 text-right text-[11px] text-slate-700">{formatRpEx(data.reduce((s, d) => s + (d.comps?.[c.key] || 0), 0))}</td>
                   ))}
                 </tr>
               </tfoot>
@@ -8349,7 +8349,7 @@ export default function App() {
 
     return (
       <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
-        <SectionHeader icon={Award} title="KPI Coder (Kinerja Petugas Koding)" desc="Analisis produktivitas, akurasi input, dan efektivitas koding per individu petugas." colorClass="bg-teal-50 text-teal-600" highlightClass="bg-teal-500/5" exportAction={() => {
+        <SectionHeader icon={Award} title="KPI Coder (Kinerja Petugas Koding)" desc="Analisis produktivitas, akurasi input, dan efektivitas koding per individu petugas." colorClass="bg-blue-50 text-blue-600" highlightClass="bg-blue-500/5" exportAction={() => {
           const csv = data.map(c => [c.id, c.cases, c.discrepancyCount, c.auditHits, c.sesuai, c.tidakSesuai, c.adjAuditHits]);
           exportToXlsx('KPI_Coder', ['Coder ID', 'Total Kasus', 'Discrepancy', 'Audit Flag (Raw)', 'Verified Sesuai', 'Verified Tidak Sesuai', 'Audit Flag (Adjusted)'], csv);
         }}
@@ -8359,11 +8359,11 @@ export default function App() {
         {/* Coder Performance Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <Card className="p-6 bg-white border-0 shadow-lg relative overflow-hidden group">
-            <div className="absolute top-0 right-0 w-24 h-24 bg-teal-50 rounded-full -mr-12 -mt-12 transition-transform group-hover:scale-150 duration-500"></div>
+            <div className="absolute top-0 right-0 w-24 h-24 bg-blue-50 rounded-full -mr-12 -mt-12 transition-transform group-hover:scale-150 duration-500"></div>
             <div className="relative z-10">
               <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2">Total Kasus Direview</p>
               <h3 className="text-4xl font-black text-slate-800 tracking-tight">{totalVerified.toLocaleString()}</h3>
-              <div className="mt-4 flex items-center gap-2 text-teal-600 font-bold text-xs bg-teal-50 w-fit px-3 py-1 rounded-full">
+              <div className="mt-4 flex items-center gap-2 text-blue-600 font-bold text-xs bg-blue-50 w-fit px-3 py-1 rounded-full">
                 <CheckSquare size={14} /> Audit Progress
               </div>
             </div>
@@ -8408,15 +8408,15 @@ export default function App() {
                 {data.map((r, i) => {
                   const accuracy = r.cases > 0 ? 100 - (r.tidakSesuai / r.cases) * 100 : 100;
                   return (
-                    <tr key={i} className="hover:bg-teal-50/30 cursor-pointer transition-colors group" onClick={() => openDrilldown(`Kasus Coder: ${r.id}`, row => {
+                    <tr key={i} className="hover:bg-blue-50/30 cursor-pointer transition-colors group" onClick={() => openDrilldown(`Kasus Coder: ${r.id}`, row => {
                       const raw = String(row['CODER_ID'] || row['USER_CODER'] || row['CODER'] || '').trim().toUpperCase();
                       const c = raw.includes(';') ? raw.split(';')[0].trim() : raw;
                       return c === r.id;
                     })}>
                       <td className="px-6 py-4">
                         <div className="flex items-center gap-3">
-                          <div className="w-8 h-8 rounded-full bg-teal-100 flex items-center justify-center text-teal-700 font-black text-[10px]">{r.id.charAt(0)}</div>
-                          <span className="font-extrabold text-slate-700 group-hover:text-teal-700 transition-colors">{r.id.includes(';') ? r.id.split(';')[0].trim() : r.id}</span>
+                          <div className="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-blue-700 font-black text-[10px]">{r.id.charAt(0)}</div>
+                          <span className="font-extrabold text-slate-700 group-hover:text-blue-700 transition-colors">{r.id.includes(';') ? r.id.split(';')[0].trim() : r.id}</span>
                         </div>
                       </td>
                       <td className="px-6 py-4 text-right font-bold text-slate-600">{r.cases.toLocaleString()}</td>
@@ -8915,8 +8915,8 @@ export default function App() {
       <div className="space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-500 pb-10">
         {/* Banner Notifikasi Auto-Sync */}
         {autoSyncStatus === "syncing" && (
-          <div className="bg-teal-50 border border-teal-200 text-teal-800 px-4 py-3 rounded-2xl flex items-center gap-3 animate-pulse text-xs font-bold shadow-sm">
-            <RefreshCw className="animate-spin text-teal-600" size={16} />
+          <div className="bg-blue-50 border border-blue-200 text-blue-800 px-4 py-3 rounded-2xl flex items-center gap-3 animate-pulse text-xs font-bold shadow-sm">
+            <RefreshCw className="animate-spin text-blue-600" size={16} />
             <span>🔄 Sedang menyelaraskan Kamus ICD terbaru dari Google Sheets secara otomatis di latar belakang...</span>
           </div>
         )}
@@ -8934,17 +8934,17 @@ export default function App() {
           icon={RefreshCw} 
           title="Sinkronisasi & Kamus ICD" 
           desc="Hubungkan aplikasi UR Sardjito dengan pangkalan data ICD-10 & ICD-9 eksternal via Google Sheets untuk verifikasi deskripsi diagnosis dan prosedur medis." 
-          colorClass="bg-teal-50 text-teal-600" 
-          highlightClass="bg-teal-500/5" 
+          colorClass="bg-blue-50 text-blue-600" 
+          highlightClass="bg-blue-500/5" 
         />
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* COLUMN 1: STATUS & STATS */}
           <Card className="p-6 flex flex-col justify-between hover:shadow-lg transition-all duration-300 border border-slate-100 relative overflow-hidden bg-white">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-teal-50 rounded-full blur-3xl -mr-8 -mt-8 pointer-events-none"></div>
+            <div className="absolute top-0 right-0 w-32 h-32 bg-blue-50 rounded-full blur-3xl -mr-8 -mt-8 pointer-events-none"></div>
             <div className="space-y-4 relative z-10">
               <div className="flex items-center gap-2">
-                <span className="p-2 bg-teal-50 rounded-xl text-teal-600"><Layers size={16} /></span>
+                <span className="p-2 bg-blue-50 rounded-xl text-blue-600"><Layers size={16} /></span>
                 <h3 className="font-extrabold text-slate-800 tracking-tight text-xs uppercase">Status Penyimpanan</h3>
               </div>
               
@@ -8989,7 +8989,7 @@ export default function App() {
 
               <div className="space-y-2">
                 <label className="text-[10px] font-black uppercase text-slate-400 tracking-wider">Tautan Google Sheets (Shareable Link)</label>
-                <div className="flex items-center gap-2 bg-slate-50 border border-slate-200 focus-within:border-teal-500 rounded-xl px-3 py-2.5 transition-all">
+                <div className="flex items-center gap-2 bg-slate-50 border border-slate-200 focus-within:border-blue-500 rounded-xl px-3 py-2.5 transition-all">
                   <FileSpreadsheet className="text-slate-400 shrink-0" size={16} />
                   <input 
                     type="text" 
@@ -9006,7 +9006,7 @@ export default function App() {
               <button 
                 onClick={handleManualSync}
                 disabled={isSyncingIcd}
-                className="w-full sm:w-auto px-6 py-3 rounded-xl bg-gradient-to-r from-teal-600 to-emerald-600 text-white font-black text-xs uppercase tracking-widest shadow-md hover:shadow-lg hover:from-teal-700 hover:to-emerald-700 hover:scale-[1.02] active:scale-[0.98] transition-all disabled:opacity-50 shrink-0"
+                className="w-full sm:w-auto px-6 py-3 rounded-xl bg-gradient-to-r from-blue-600 to-emerald-600 text-white font-black text-xs uppercase tracking-widest shadow-md hover:shadow-lg hover:from-blue-700 hover:to-emerald-700 hover:scale-[1.02] active:scale-[0.98] transition-all disabled:opacity-50 shrink-0"
               >
                 {isSyncingIcd ? `⏳ ${icdSyncStatus}` : "⚡ Sinkronkan Sekarang"}
               </button>
@@ -9025,7 +9025,7 @@ export default function App() {
               <p className="text-[11px] text-slate-400 font-medium">Cari kode ICD-10 atau ICD-9 beserta deskripsi terjemahannya secara instan.</p>
             </div>
 
-            <div className="bg-slate-50 border border-slate-200 focus-within:border-teal-500 rounded-xl px-3 py-2 flex items-center gap-2 w-full md:w-80 transition-all">
+            <div className="bg-slate-50 border border-slate-200 focus-within:border-blue-500 rounded-xl px-3 py-2 flex items-center gap-2 w-full md:w-80 transition-all">
               <Search className="text-slate-400" size={14} />
               <input 
                 type="text" 
@@ -9094,8 +9094,8 @@ export default function App() {
           icon={ClipboardList} 
           title="Manajemen Akses & Kredensial Pengguna" 
           desc="Otorisasi pengajuan akun baru dan atur masa aktif akses UR Sardjito langsung dari aplikasi secara otomatis menggunakan Supabase." 
-          colorClass="bg-teal-500/10 text-teal-700" 
-          highlightClass="bg-teal-500/5" 
+          colorClass="bg-blue-500/10 text-blue-700" 
+          highlightClass="bg-blue-500/5" 
         />
 
         {userManagementError && (
@@ -9117,7 +9117,7 @@ export default function App() {
           <button 
             onClick={fetchUserManagementData}
             disabled={isLoadingUsers || isProcessingAction}
-            className="bg-teal-600 hover:bg-teal-700 disabled:bg-slate-300 text-white px-5 py-2.5 rounded-xl text-xs font-black flex items-center gap-2 shadow-lg shadow-teal-600/20 disabled:shadow-none transition-all uppercase tracking-wider cursor-pointer"
+            className="bg-blue-600 hover:bg-blue-700 disabled:bg-slate-300 text-white px-5 py-2.5 rounded-xl text-xs font-black flex items-center gap-2 shadow-lg shadow-blue-600/20 disabled:shadow-none transition-all uppercase tracking-wider cursor-pointer"
           >
             {isLoadingUsers ? <Activity size={16} className="animate-spin" /> : <RefreshCw size={16} />} 
             {isLoadingUsers ? 'Memuat...' : 'Muat Ulang'}
@@ -9183,7 +9183,7 @@ export default function App() {
                     <tr key={u.username} className="hover:bg-amber-50/30 transition-colors">
                       <td className="px-5 py-4">
                         <span className="font-black text-slate-800 text-sm block">{u.nama_lengkap}</span>
-                        <span className="font-black text-teal-600 text-[10px] block mt-0.5">@{u.username}</span>
+                        <span className="font-black text-blue-600 text-[10px] block mt-0.5">@{u.username}</span>
                         <span className="text-[9px] text-slate-400 font-bold block mt-0.5">{u.created_at ? new Date(u.created_at).toLocaleString('id-ID') : '-'}</span>
                       </td>
                       <td className="px-5 py-4">
@@ -9205,7 +9205,7 @@ export default function App() {
                         <select 
                           value={pendingDurations[u.username] || 3}
                           onChange={(e) => setPendingDurations({ ...pendingDurations, [u.username]: parseInt(e.target.value) })}
-                          className="px-3 py-1.5 bg-slate-50 border border-slate-200 rounded-lg text-xs font-bold outline-none focus:border-teal-500 text-slate-700 cursor-pointer"
+                          className="px-3 py-1.5 bg-slate-50 border border-slate-200 rounded-lg text-xs font-bold outline-none focus:border-blue-500 text-slate-700 cursor-pointer"
                         >
                           <option value="1">1 Bulan</option>
                           <option value="3">3 Bulan</option>
@@ -9290,7 +9290,7 @@ export default function App() {
                   <th className="px-5 py-4">Email</th>
                   <th className="px-5 py-4">Masa Berlaku Akses</th>
                   <th className="px-5 py-4 text-center">Status Keaktifan</th>
-                  <th className="px-5 py-4 text-center bg-teal-50/50 text-teal-700">🔐 Status MFA</th>
+                  <th className="px-5 py-4 text-center bg-blue-50/50 text-blue-700">🔐 Status MFA</th>
                   <th className="px-5 py-4 text-center">Tindakan Kontrol</th>
                 </tr>
               </thead>
@@ -9346,10 +9346,10 @@ export default function App() {
                           )}
                         </td>
                         {/* MFA Status Column */}
-                        <td className="px-5 py-4 text-center bg-teal-50/20">
+                        <td className="px-5 py-4 text-center bg-blue-50/20">
                           {u.mfa_enabled ? (
                             <div className="flex flex-col items-center gap-1.5">
-                              <span className="bg-teal-100 text-teal-800 text-[9px] font-extrabold px-2.5 py-1 rounded-full uppercase tracking-wider flex items-center gap-1">
+                              <span className="bg-blue-100 text-blue-800 text-[9px] font-extrabold px-2.5 py-1 rounded-full uppercase tracking-wider flex items-center gap-1">
                                 🔐 MFA Aktif
                               </span>
                               {u.role !== 'admin' && (
@@ -9517,7 +9517,7 @@ export default function App() {
     });
     return (
       <div className="space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-500">
-        <SectionHeader icon={CheckSquare} title="Audit Log Kaidah Koding" desc="Verifikasi temuan audit secara mendalam untuk meningkatkan akurasi koding dan performa klinis." colorClass="bg-teal-50 text-teal-600" highlightClass="bg-teal-500/5" exportAction={() => {
+        <SectionHeader icon={CheckSquare} title="Audit Log Kaidah Koding" desc="Verifikasi temuan audit secara mendalam untuk meningkatkan akurasi koding dan performa klinis." colorClass="bg-blue-50 text-blue-600" highlightClass="bg-blue-500/5" exportAction={() => {
           const csv = findings.map((f) => [f.ruleId, f.case, f.warning, f.mrn, f.sep, f.diaglist, f.proclist, auditVerdicts[`${f.sep}|${f.ruleId}`] || 'belum']);
           exportToXlsx('Audit_Log', ['Rule ID', 'Case', 'Warning', 'MRN', 'SEP', 'Diaglist', 'Proclist', 'Verdict'], csv);
         }}
@@ -9525,9 +9525,9 @@ export default function App() {
         pptText="Export PPTX" />
 
         <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-          <Card className="p-5 text-center border-b-4 border-b-teal-500"><p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">Total Temuan</p><p className="text-3xl font-black text-slate-800">{findings.length}</p></Card>
+          <Card className="p-5 text-center border-b-4 border-b-blue-500"><p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">Total Temuan</p><p className="text-3xl font-black text-slate-800">{findings.length}</p></Card>
           <Card className="p-5 text-center bg-slate-50/50"><p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">Sudah Direview</p><p className="text-3xl font-black text-slate-600">{totalReviewed}</p></Card>
-          <Card className="p-5 text-center bg-teal-50/50 border border-teal-100"><p className="text-[10px] font-black text-teal-600 uppercase tracking-widest mb-1">Total Klaim Audit</p><p className="text-2xl font-black text-teal-700">{formatRp(filtered.reduce((s, f) => s + (f.totalTarif || 0), 0))}</p></Card>
+          <Card className="p-5 text-center bg-blue-50/50 border border-blue-100"><p className="text-[10px] font-black text-blue-600 uppercase tracking-widest mb-1">Total Klaim Audit</p><p className="text-2xl font-black text-blue-700">{formatRp(filtered.reduce((s, f) => s + (f.totalTarif || 0), 0))}</p></Card>
           <Card className="p-5 text-center bg-emerald-50/50 border border-emerald-100"><p className="text-[10px] font-black text-emerald-600 uppercase tracking-widest mb-1">Sesuai</p><p className="text-3xl font-black text-emerald-600">{totalSesuai}</p></Card>
           <Card className="p-5 text-center bg-rose-50/50 border border-rose-100"><p className="text-[10px] font-black text-rose-600 uppercase tracking-widest mb-1">Tidak Sesuai</p><p className="text-3xl font-black text-rose-600">{totalTidak}</p></Card>
         </div>
@@ -9535,10 +9535,10 @@ export default function App() {
         <div className="flex flex-col md:flex-row items-center gap-4 mb-4">
           <div className="relative flex-1 w-full">
             <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" size={18} />
-            <input type="text" placeholder="Cari kata kunci audit, rule, atau MRN..." value={auditFilter} onChange={e => setAuditFilter(e.target.value)} className="w-full pl-12 pr-4 py-3.5 bg-white border-2 border-slate-100 rounded-2xl text-sm font-bold focus:ring-4 focus:ring-teal-500/10 focus:border-teal-500 outline-none transition-all shadow-sm" />
+            <input type="text" placeholder="Cari kata kunci audit, rule, atau MRN..." value={auditFilter} onChange={e => setAuditFilter(e.target.value)} className="w-full pl-12 pr-4 py-3.5 bg-white border-2 border-slate-100 rounded-2xl text-sm font-bold focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 outline-none transition-all shadow-sm" />
           </div>
           <div className="relative w-full md:w-80 shrink-0">
-            <select value={auditRuleFilter} onChange={e => setAuditRuleFilter(e.target.value)} className="w-full pl-4 pr-10 py-3.5 bg-white border-2 border-slate-100 rounded-2xl text-sm font-black text-slate-700 focus:ring-4 focus:ring-teal-500/10 focus:border-teal-500 outline-none transition-all appearance-none cursor-pointer">
+            <select value={auditRuleFilter} onChange={e => setAuditRuleFilter(e.target.value)} className="w-full pl-4 pr-10 py-3.5 bg-white border-2 border-slate-100 rounded-2xl text-sm font-black text-slate-700 focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 outline-none transition-all appearance-none cursor-pointer">
               <option value="">Filter Berdasarkan Aturan</option>
               {Array.from(new Set(findings.map(f => f.ruleId))).filter(Boolean).sort().map(rId => {
                 const f = findings.find(x => x.ruleId === rId);
@@ -9548,7 +9548,7 @@ export default function App() {
             <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none" size={18} />
           </div>
           <div className="relative w-full md:w-56 shrink-0">
-            <select value={auditReviewFilter} onChange={e => setAuditReviewFilter(e.target.value)} className="w-full pl-4 pr-10 py-3.5 bg-white border-2 border-slate-100 rounded-2xl text-sm font-black text-slate-700 focus:ring-4 focus:ring-teal-500/10 focus:border-teal-500 outline-none transition-all appearance-none cursor-pointer">
+            <select value={auditReviewFilter} onChange={e => setAuditReviewFilter(e.target.value)} className="w-full pl-4 pr-10 py-3.5 bg-white border-2 border-slate-100 rounded-2xl text-sm font-black text-slate-700 focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 outline-none transition-all appearance-none cursor-pointer">
               <option value="">Status Verifikasi</option>
               <option value="reviewed">Sudah Direview</option>
               <option value="unreviewed">Belum Direview</option>
@@ -9558,10 +9558,10 @@ export default function App() {
         </div>
 
         {filtered.length > 0 && (
-          <div className="flex flex-wrap items-center gap-3 mb-4 p-4 bg-teal-50/50 rounded-[1.5rem] border border-teal-100/50 animate-in fade-in slide-in-from-top-2 duration-300">
-            <div className="flex items-center gap-2 mr-3 px-3 py-1.5 bg-white rounded-xl border border-teal-100 shadow-sm">
-              <Zap size={16} className="text-teal-500" />
-              <span className="text-[10px] font-black text-teal-700 uppercase tracking-widest">Aksi Massal ({filtered.length})</span>
+          <div className="flex flex-wrap items-center gap-3 mb-4 p-4 bg-blue-50/50 rounded-[1.5rem] border border-blue-100/50 animate-in fade-in slide-in-from-top-2 duration-300">
+            <div className="flex items-center gap-2 mr-3 px-3 py-1.5 bg-white rounded-xl border border-blue-100 shadow-sm">
+              <Zap size={16} className="text-blue-500" />
+              <span className="text-[10px] font-black text-blue-700 uppercase tracking-widest">Aksi Massal ({filtered.length})</span>
             </div>
             <button onClick={() => {
               const newV = { ...auditVerdicts };
@@ -9612,7 +9612,7 @@ export default function App() {
                       className={`animate-in fade-in slide-in-from-bottom-1 duration-300 transition-colors ${v === 'sesuai' ? 'bg-emerald-50/40' : v === 'tidak' ? 'bg-rose-50/40' : 'hover:bg-slate-50'}`}
                       style={{ animationDelay: `${Math.min(idx * 20, 500)}ms`, animationFillMode: 'both' }}
                     >
-                      <td className="p-4 border-r border-slate-100 align-top font-mono text-[11px] font-black text-teal-700">{f.ruleId || '-'}</td>
+                      <td className="p-4 border-r border-slate-100 align-top font-mono text-[11px] font-black text-blue-700">{f.ruleId || '-'}</td>
                       <td className="p-4 border-r border-slate-100 align-top text-slate-700 font-bold text-xs">{f.case}</td>
                       <td className="p-4 border-r border-slate-100 align-top text-rose-700 font-bold text-[11px] leading-relaxed max-w-[250px]">{f.warning}</td>
                       <td className="p-4 border-r border-slate-100 align-top">
@@ -9620,7 +9620,7 @@ export default function App() {
                         <p className="text-[10px] text-slate-400 font-mono mt-0.5">{f.sep}</p>
                       </td>
                       <td className="p-4 border-r border-slate-100 align-top">
-                        <p className="font-bold text-teal-700 text-[11px]">{f.coderId || '-'}</p>
+                        <p className="font-bold text-blue-700 text-[11px]">{f.coderId || '-'}</p>
                         <p className="text-[10px] text-slate-400 font-bold">{formatRp(f.totalTarif || 0)}</p>
                       </td>
                       <td className="p-4 border-r border-slate-100 align-top font-mono text-[10px] text-slate-600 max-w-[176px] break-words leading-relaxed" title={f.diaglist}>{formatIcdList(f.diaglist)}</td>
@@ -9846,7 +9846,7 @@ export default function App() {
                                       {isPtd1 ? 'Rawat Inap' : 'Rawat Jalan'}
                                     </span>
                                     <span className="font-mono text-[10px] font-bold text-slate-500 bg-white border px-1.5 rounded">SEP: {sep}</span>
-                                    {v.DPJP && <span className="text-[10px] font-bold text-teal-600 bg-teal-50 px-1.5 rounded">DPJP: {maskName(v.DPJP)}</span>}
+                                    {v.DPJP && <span className="text-[10px] font-bold text-blue-600 bg-blue-50 px-1.5 rounded">DPJP: {maskName(v.DPJP)}</span>}
                                   </div>
                                   <div className="text-[10px] text-slate-600">
                                     <span className="font-bold text-slate-800">{diagC}</span> - {diagDesc}
@@ -9921,7 +9921,7 @@ export default function App() {
           </Card>
           <Card className="p-5 border-0 shadow-lg bg-white">
             <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">Avg Top-Up per Kasus</p>
-            <h3 className="text-2xl font-black text-teal-600">{formatRp((dashData?.topUpStats?.topUpNilai || 0) / (dashData?.topUpStats?.topUpKasus || 1))}</h3>
+            <h3 className="text-2xl font-black text-blue-600">{formatRp((dashData?.topUpStats?.topUpNilai || 0) / (dashData?.topUpStats?.topUpKasus || 1))}</h3>
           </Card>
           <Card className="p-5 border-0 shadow-lg bg-white">
             <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">Items Terdeteksi</p>
@@ -9957,7 +9957,7 @@ export default function App() {
                   <p className="text-sm font-black text-emerald-600">+{formatRp(item.totalPotensi)}</p>
                 </div>
               </div>
-              <h4 className="text-base font-black text-slate-800 mb-1 leading-tight group-hover:text-teal-600 transition-colors">{item.item}</h4>
+              <h4 className="text-base font-black text-slate-800 mb-1 leading-tight group-hover:text-blue-600 transition-colors">{item.item}</h4>
               <p className="text-xs font-bold text-slate-400 mb-4">{item.count} Kasus Terdeteksi</p>
               <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
                 <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Lihat Rincian</span>
@@ -10066,9 +10066,9 @@ export default function App() {
   const analysisSteps = [
     { icon: '📊', label: 'Membaca struktur data klaim...', color: '#2dd4bf' },
     { icon: '🔬', label: 'Menganalisis kode INA-CBG & iDRG...', color: '#5eead4' },
-    { icon: '💰', label: 'Menghitung selisih finansial...', color: '#14b8a6' },
-    { icon: '🩺', label: 'Mendeteksi anomali koding audit...', color: '#0d9488' },
-    { icon: '📈', label: 'Menyusun laporan & grafik...', color: '#0f766e' },
+    { icon: '💰', label: 'Menghitung selisih finansial...', color: '#3b82f6' },
+    { icon: '🩺', label: 'Mendeteksi anomali koding audit...', color: '#2563eb' },
+    { icon: '📈', label: 'Menyusun laporan & grafik...', color: '#1d4ed8' },
   ];
   useEffect(() => {
     if (!isAnalyzing) { setAnalysisStep(0); return; }
@@ -10123,7 +10123,7 @@ export default function App() {
           </div>
           <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
             {loginParticles.map((p, i) => (
-              <div key={i} className="absolute rounded-full" style={{ width: `${p.size}px`, height: `${p.size}px`, left: `${p.x}%`, top: `${p.y}%`, background: 'rgba(20,184,166,0.15)', animationDuration: `${p.duration}s`, animationDelay: `${p.delay}s`, animation: `pulse ${p.duration}s ease-in-out ${p.delay}s infinite` }} />
+              <div key={i} className="absolute rounded-full" style={{ width: `${p.size}px`, height: `${p.size}px`, left: `${p.x}%`, top: `${p.y}%`, background: 'rgba(59,130,246,0.15)', animationDuration: `${p.duration}s`, animationDelay: `${p.delay}s`, animation: `pulse ${p.duration}s ease-in-out ${p.delay}s infinite` }} />
             ))}
           </div>
 
@@ -10143,7 +10143,7 @@ export default function App() {
 
             {/* Card */}
             <div className="bg-white/90 backdrop-blur-2xl rounded-[3rem] border border-white shadow-[0_25px_60px_rgba(0,0,0,0.15)] p-10 overflow-hidden relative group">
-              <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-teal-400 to-emerald-400"></div>
+              <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-blue-400 to-emerald-400"></div>
               {/* Error Alert */}
               {loginError && (
                 <div className="mb-6 bg-rose-50 border border-rose-100 rounded-2xl p-4 flex gap-3 items-start animate-in slide-in-from-top-2 duration-300">
@@ -10159,7 +10159,7 @@ export default function App() {
               {mfaChallengeMode ? (
                 <form onSubmit={handleMfaVerify} className="space-y-6">
                   <div className="text-center space-y-3 mb-6">
-                    <div className="w-16 h-16 bg-teal-100 rounded-full mx-auto flex items-center justify-center text-teal-600 mb-4">
+                    <div className="w-16 h-16 bg-blue-100 rounded-full mx-auto flex items-center justify-center text-blue-600 mb-4">
                       <ShieldAlert size={32} />
                     </div>
                     <h3 className="text-xl font-black text-slate-800">Verifikasi Keamanan</h3>
@@ -10170,11 +10170,11 @@ export default function App() {
                       type="text" 
                       value={mfaVerifyCode}
                       onChange={e => { setMfaVerifyCode(e.target.value.replace(/\D/g, '').slice(0, 6)); setLoginError(''); }}
-                      className="w-full px-6 py-4 rounded-2xl bg-slate-50 border-2 border-slate-100 text-slate-800 placeholder-slate-300 focus:bg-white focus:ring-4 focus:ring-teal-500/10 focus:border-teal-500 outline-none transition-all font-black text-center text-2xl tracking-[0.2em] shadow-sm"
+                      className="w-full px-6 py-4 rounded-2xl bg-slate-50 border-2 border-slate-100 text-slate-800 placeholder-slate-300 focus:bg-white focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 outline-none transition-all font-black text-center text-2xl tracking-[0.2em] shadow-sm"
                       placeholder="000000" required
                     />
                   </div>
-                  <button type="submit" disabled={isLoggingIn || mfaVerifyCode.length !== 6} className="w-full bg-teal-600 hover:bg-teal-700 text-white rounded-2xl py-4 font-black uppercase tracking-widest text-sm transition-all flex justify-center items-center gap-2 hover:shadow-lg hover:shadow-teal-500/30 disabled:opacity-50 cursor-pointer">
+                  <button type="submit" disabled={isLoggingIn || mfaVerifyCode.length !== 6} className="w-full bg-blue-600 hover:bg-blue-700 text-white rounded-2xl py-4 font-black uppercase tracking-widest text-sm transition-all flex justify-center items-center gap-2 hover:shadow-lg hover:shadow-blue-500/30 disabled:opacity-50 cursor-pointer">
                     {isLoggingIn ? 'Memverifikasi...' : 'Verifikasi OTP'}
                   </button>
                   <button type="button" onClick={() => { setMfaChallengeMode(false); setMfaVerifyCode(''); }} className="w-full text-slate-400 hover:text-slate-600 text-xs font-bold uppercase tracking-wider mt-4 cursor-pointer">
@@ -10188,7 +10188,7 @@ export default function App() {
                   <input
                     type="text" value={username}
                     onChange={e => { setUsername(e.target.value); setLoginError(''); }}
-                    className="w-full px-6 py-4 rounded-2xl bg-slate-50 border-2 border-slate-100 text-slate-800 placeholder-slate-300 focus:bg-white focus:ring-4 focus:ring-teal-500/10 focus:border-teal-500 outline-none transition-all font-bold shadow-sm"
+                    className="w-full px-6 py-4 rounded-2xl bg-slate-50 border-2 border-slate-100 text-slate-800 placeholder-slate-300 focus:bg-white focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 outline-none transition-all font-bold shadow-sm"
                     placeholder="Masukkan Email lengkap Anda" required
                   />
                 </div>
@@ -10198,13 +10198,13 @@ export default function App() {
                     <input
                       type={showPassword ? "text" : "password"} value={password}
                       onChange={e => { setPassword(e.target.value); setLoginError(''); }}
-                      className="w-full pl-6 pr-14 py-4 rounded-2xl bg-slate-50 border-2 border-slate-100 text-slate-800 placeholder-slate-300 focus:bg-white focus:ring-4 focus:ring-teal-500/10 focus:border-teal-500 outline-none transition-all font-bold shadow-sm"
+                      className="w-full pl-6 pr-14 py-4 rounded-2xl bg-slate-50 border-2 border-slate-100 text-slate-800 placeholder-slate-300 focus:bg-white focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 outline-none transition-all font-bold shadow-sm"
                       placeholder="Masukkan password" required
                     />
                     <button
                       type="button"
                       onClick={() => setShowPassword(!showPassword)}
-                      className="absolute right-5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-teal-600 transition-colors focus:outline-none"
+                      className="absolute right-5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-blue-600 transition-colors focus:outline-none"
                     >
                       {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
                     </button>
@@ -10218,7 +10218,7 @@ export default function App() {
                         setForgotSuccess('');
                         setForgotIdentity('');
                       }}
-                      className="text-teal-500 hover:text-teal-600 text-[10px] font-black tracking-wider uppercase transition-colors"
+                      className="text-blue-500 hover:text-blue-600 text-[10px] font-black tracking-wider uppercase transition-colors"
                     >
                       Lupa Password?
                     </button>
@@ -10232,7 +10232,7 @@ export default function App() {
                   type="submit"
                   disabled={!captchaVerified || isLoggingIn}
                   className={`w-full font-black py-4.5 px-4 rounded-2xl flex items-center justify-center gap-3 transition-all duration-300 mt-4 text-xs tracking-[0.1em] uppercase ${(captchaVerified && !isLoggingIn)
-                    ? 'bg-teal-600 hover:bg-teal-700 text-white shadow-2xl shadow-teal-600/30 hover:-translate-y-1 hover:shadow-teal-600/40'
+                    ? 'bg-blue-600 hover:bg-blue-700 text-white shadow-2xl shadow-blue-600/30 hover:-translate-y-1 hover:shadow-blue-600/40'
                     : 'bg-slate-100 text-slate-300 cursor-not-allowed border-2 border-slate-50'
                     }`}
                 >
@@ -10245,7 +10245,7 @@ export default function App() {
               <div className="mt-8 text-center">
                 <p className="text-slate-400 text-[10px] font-bold uppercase tracking-[0.15em]">Gunakan akun resmi sistem AKURAT.</p>
                 <div className="mt-3">
-                  <button type="button" onClick={() => setShowRegister(true)} className="text-teal-500 hover:text-teal-600 text-[11px] font-bold transition-colors">Belum punya akun? Daftar Baru di sini</button>
+                  <button type="button" onClick={() => setShowRegister(true)} className="text-blue-500 hover:text-blue-600 text-[11px] font-bold transition-colors">Belum punya akun? Daftar Baru di sini</button>
                 </div>
                 <p className="text-slate-300 text-[9px] mt-2 font-medium">© 2026 iDRG Analytics Platform • Alpha v1.7.7 (070620260947)</p>
               </div>
@@ -10256,7 +10256,7 @@ export default function App() {
         {showForgotPassword && (
           <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-slate-900/80 backdrop-blur-md animate-in fade-in duration-300">
             <div className="max-w-md w-full p-8 shadow-2xl border border-white/20 bg-white relative rounded-[2rem] animate-in zoom-in-95 duration-300">
-              <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-teal-500 to-emerald-500 rounded-t-[2rem]"></div>
+              <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-blue-500 to-emerald-500 rounded-t-[2rem]"></div>
               
               <button 
                 onClick={() => { setShowForgotPassword(false); setForgotError(''); setForgotSuccess(''); setForgotIdentity(''); }}
@@ -10266,8 +10266,8 @@ export default function App() {
               </button>
 
               <div className="text-center space-y-3 mb-6">
-                <div className="w-16 h-16 bg-teal-50 rounded-2xl flex items-center justify-center shadow-inner mx-auto">
-                  <Key size={32} className="text-teal-600" />
+                <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center shadow-inner mx-auto">
+                  <Key size={32} className="text-blue-600" />
                 </div>
                 <h3 className="text-xl font-black text-slate-800 tracking-tight">Lupa Password?</h3>
                 <p className="text-xs text-slate-500 leading-relaxed font-medium">
@@ -10285,7 +10285,7 @@ export default function App() {
                     type="text"
                     value={forgotIdentity}
                     onChange={e => { setForgotIdentity(e.target.value); setForgotError(''); setForgotSuccess(''); }}
-                    className="w-full px-5 py-4 rounded-2xl bg-slate-50 border-2 border-slate-100 text-slate-800 placeholder-slate-300 focus:bg-white focus:ring-4 focus:ring-teal-500/10 focus:border-teal-500 outline-none transition-all font-bold shadow-sm"
+                    className="w-full px-5 py-4 rounded-2xl bg-slate-50 border-2 border-slate-100 text-slate-800 placeholder-slate-300 focus:bg-white focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 outline-none transition-all font-bold shadow-sm"
                     placeholder="Contoh: user@email.com atau username Anda"
                     autoComplete="email"
                     autoFocus
@@ -10323,7 +10323,7 @@ export default function App() {
                     disabled={isProcessingForgot || !forgotIdentity.trim()}
                     className={`w-full font-black py-4 px-4 rounded-2xl flex items-center justify-center gap-2 transition-all duration-300 text-xs tracking-[0.1em] uppercase ${
                       !isProcessingForgot && forgotIdentity.trim()
-                        ? 'bg-teal-600 hover:bg-teal-700 text-white shadow-lg shadow-teal-600/20 hover:-translate-y-0.5 cursor-pointer'
+                        ? 'bg-blue-600 hover:bg-blue-700 text-white shadow-lg shadow-blue-600/20 hover:-translate-y-0.5 cursor-pointer'
                         : 'bg-slate-100 text-slate-300 cursor-not-allowed border-2 border-slate-50'
                     }`}
                   >
@@ -10338,7 +10338,7 @@ export default function App() {
                 <button
                   type="button"
                   onClick={() => { setShowForgotPassword(false); setForgotError(''); setForgotSuccess(''); }}
-                  className="text-teal-500 hover:text-teal-600 font-bold transition-colors"
+                  className="text-blue-500 hover:text-blue-600 font-bold transition-colors"
                 >
                   Kembali ke Login
                 </button>
@@ -10350,11 +10350,11 @@ export default function App() {
         {isResettingPassword && (
           <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-slate-900/80 backdrop-blur-md animate-in fade-in duration-300">
             <div className="max-w-md w-full p-8 shadow-2xl border border-white/20 bg-white relative rounded-[2rem] animate-in zoom-in-95 duration-300">
-              <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-teal-500 to-emerald-500 rounded-t-[2rem]"></div>
+              <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-blue-500 to-emerald-500 rounded-t-[2rem]"></div>
               
               <div className="text-center space-y-3 mb-6 mt-4">
-                <div className="w-16 h-16 bg-teal-50 rounded-2xl flex items-center justify-center shadow-inner mx-auto">
-                  <Key size={32} className="text-teal-600" />
+                <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center shadow-inner mx-auto">
+                  <Key size={32} className="text-blue-600" />
                 </div>
                 <h3 className="text-xl font-black text-slate-800 tracking-tight">Buat Password Baru</h3>
                 <p className="text-xs text-slate-500 leading-relaxed font-medium">
@@ -10372,14 +10372,14 @@ export default function App() {
                       type={showNewPassword ? "text" : "password"}
                       value={newPassword}
                       onChange={e => { setNewPassword(e.target.value); setResetNewPasswordError(''); setResetNewPasswordSuccess(''); }}
-                      className="w-full px-5 py-4 rounded-2xl bg-slate-50 border-2 border-slate-100 text-slate-800 placeholder-slate-300 focus:bg-white focus:ring-4 focus:ring-teal-500/10 focus:border-teal-500 outline-none transition-all font-bold shadow-sm"
+                      className="w-full px-5 py-4 rounded-2xl bg-slate-50 border-2 border-slate-100 text-slate-800 placeholder-slate-300 focus:bg-white focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 outline-none transition-all font-bold shadow-sm"
                       placeholder="Minimal 6 karakter"
                       autoFocus
                     />
                     <button
                       type="button"
                       onClick={() => setShowNewPassword(!showNewPassword)}
-                      className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 hover:text-teal-500 focus:outline-none transition-colors"
+                      className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 hover:text-blue-500 focus:outline-none transition-colors"
                     >
                       {showNewPassword ? <EyeOff size={18} /> : <Eye size={18} />}
                     </button>
@@ -10414,7 +10414,7 @@ export default function App() {
                     disabled={isProcessingNewPassword || !newPassword}
                     className={`w-full font-black py-4 px-4 rounded-2xl flex items-center justify-center gap-2 transition-all duration-300 text-xs tracking-[0.1em] uppercase ${
                       !isProcessingNewPassword && newPassword
-                        ? 'bg-teal-600 hover:bg-teal-700 text-white shadow-lg shadow-teal-600/20 hover:-translate-y-0.5 cursor-pointer'
+                        ? 'bg-blue-600 hover:bg-blue-700 text-white shadow-lg shadow-blue-600/20 hover:-translate-y-0.5 cursor-pointer'
                         : 'bg-slate-100 text-slate-300 cursor-not-allowed border-2 border-slate-50'
                     }`}
                   >
@@ -10430,14 +10430,14 @@ export default function App() {
         {showRegister && (
           <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-slate-900/90 backdrop-blur-md animate-in fade-in duration-300">
             <div className="max-w-md w-full max-h-[95vh] overflow-y-auto custom-scrollbar p-10 shadow-2xl border border-white/20 bg-white relative rounded-[2.5rem] animate-in zoom-in-95 duration-300">
-              <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-teal-500 via-emerald-500 to-teal-600"></div>
+              <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-blue-500 via-emerald-500 to-blue-600"></div>
               <button onClick={() => setShowRegister(false)} className="absolute top-6 right-6 text-slate-400 hover:text-slate-600 hover:bg-slate-100 p-2 rounded-full transition-all">
                 <X size={20} />
               </button>
               
               <div className="text-center mb-8">
-                <div className="w-16 h-16 bg-teal-50 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                  <ClipboardList size={32} className="text-teal-600" />
+                <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                  <ClipboardList size={32} className="text-blue-600" />
                 </div>
                 <h2 className="text-2xl font-black text-slate-800 tracking-tight">Permohonan Akun</h2>
                 <p className="text-sm text-slate-500 font-medium mt-2">Daftar untuk mendapatkan akses ke aplikasi</p>
@@ -10460,16 +10460,16 @@ export default function App() {
               <form onSubmit={handleRegister} className="space-y-4">
                 <div>
                   <label className="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1.5 ml-1">Email</label>
-                  <input type="email" required value={regData.email} onChange={e => setRegData({...regData, email: e.target.value})} className="w-full bg-slate-50 border border-slate-200 text-slate-800 text-sm rounded-xl focus:ring-2 focus:ring-teal-500 focus:border-transparent block p-3.5 transition-all outline-none font-medium" placeholder="email@contoh.com" />
+                  <input type="email" required value={regData.email} onChange={e => setRegData({...regData, email: e.target.value})} className="w-full bg-slate-50 border border-slate-200 text-slate-800 text-sm rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent block p-3.5 transition-all outline-none font-medium" placeholder="email@contoh.com" />
                 </div>
                 <div>
                   <label className="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1.5 ml-1">Password</label>
                   <div className="relative">
-                    <input type={showRegPassword ? "text" : "password"} required value={regData.password} onChange={e => setRegData({...regData, password: e.target.value})} minLength={8} className="w-full bg-slate-50 border border-slate-200 text-slate-800 text-sm rounded-xl focus:ring-2 focus:ring-teal-500 focus:border-transparent block p-3.5 pr-12 transition-all outline-none font-medium" placeholder="Minimal 8 karakter" />
+                    <input type={showRegPassword ? "text" : "password"} required value={regData.password} onChange={e => setRegData({...regData, password: e.target.value})} minLength={8} className="w-full bg-slate-50 border border-slate-200 text-slate-800 text-sm rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent block p-3.5 pr-12 transition-all outline-none font-medium" placeholder="Minimal 8 karakter" />
                     <button
                       type="button"
                       onClick={() => setShowRegPassword(!showRegPassword)}
-                      className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 hover:text-teal-600 transition-colors focus:outline-none"
+                      className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 hover:text-blue-600 transition-colors focus:outline-none"
                     >
                       {showRegPassword ? <EyeOff size={16} /> : <Eye size={16} />}
                     </button>
@@ -10477,22 +10477,22 @@ export default function App() {
                 </div>
                 <div>
                   <label className="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1.5 ml-1">Username (ID Login)</label>
-                  <input type="text" required value={regData.username} onChange={e => setRegData({...regData, username: e.target.value})} className="w-full bg-slate-50 border border-slate-200 text-slate-800 text-sm rounded-xl focus:ring-2 focus:ring-teal-500 focus:border-transparent block p-3.5 transition-all outline-none font-medium" placeholder="johndoe" />
+                  <input type="text" required value={regData.username} onChange={e => setRegData({...regData, username: e.target.value})} className="w-full bg-slate-50 border border-slate-200 text-slate-800 text-sm rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent block p-3.5 transition-all outline-none font-medium" placeholder="johndoe" />
                 </div>
                 <div>
                   <label className="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1.5 ml-1">Nama Lengkap</label>
-                  <input type="text" required value={regData.nama} onChange={e => setRegData({...regData, nama: e.target.value})} className="w-full bg-slate-50 border border-slate-200 text-slate-800 text-sm rounded-xl focus:ring-2 focus:ring-teal-500 focus:border-transparent block p-3.5 transition-all outline-none font-medium" placeholder="Nama Lengkap Anda" />
+                  <input type="text" required value={regData.nama} onChange={e => setRegData({...regData, nama: e.target.value})} className="w-full bg-slate-50 border border-slate-200 text-slate-800 text-sm rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent block p-3.5 transition-all outline-none font-medium" placeholder="Nama Lengkap Anda" />
                 </div>
                 <div>
                   <label className="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1.5 ml-1">Nama Rumah Sakit / Faskes</label>
-                  <input type="text" required value={regData.faskes} onChange={e => setRegData({...regData, faskes: e.target.value})} className="w-full bg-slate-50 border border-slate-200 text-slate-800 text-sm rounded-xl focus:ring-2 focus:ring-teal-500 focus:border-transparent block p-3.5 transition-all outline-none font-medium" placeholder="RSUD Contoh" />
+                  <input type="text" required value={regData.faskes} onChange={e => setRegData({...regData, faskes: e.target.value})} className="w-full bg-slate-50 border border-slate-200 text-slate-800 text-sm rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent block p-3.5 transition-all outline-none font-medium" placeholder="RSUD Contoh" />
                 </div>
                 <div>
                   <label className="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1.5 ml-1">No WhatsApp</label>
-                  <input type="text" value={regData.wa} onChange={e => setRegData({...regData, wa: e.target.value})} className="w-full bg-slate-50 border border-slate-200 text-slate-800 text-sm rounded-xl focus:ring-2 focus:ring-teal-500 focus:border-transparent block p-3.5 transition-all outline-none font-medium" placeholder="081234567890" />
+                  <input type="text" value={regData.wa} onChange={e => setRegData({...regData, wa: e.target.value})} className="w-full bg-slate-50 border border-slate-200 text-slate-800 text-sm rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent block p-3.5 transition-all outline-none font-medium" placeholder="081234567890" />
                 </div>
                 <div className="pt-4">
-                  <button type="submit" disabled={regState.loading} className="w-full font-black py-4 px-4 rounded-2xl flex items-center justify-center gap-2 transition-all duration-300 text-xs tracking-[0.1em] uppercase bg-teal-600 hover:bg-teal-700 text-white shadow-lg shadow-teal-600/20 hover:-translate-y-0.5 disabled:opacity-50 disabled:hover:translate-y-0">
+                  <button type="submit" disabled={regState.loading} className="w-full font-black py-4 px-4 rounded-2xl flex items-center justify-center gap-2 transition-all duration-300 text-xs tracking-[0.1em] uppercase bg-blue-600 hover:bg-blue-700 text-white shadow-lg shadow-blue-600/20 hover:-translate-y-0.5 disabled:opacity-50 disabled:hover:translate-y-0">
                     {regState.loading ? <Activity size={16} className="animate-spin" /> : <Send size={16} />}
                     {regState.loading ? 'MEMPROSES...' : 'KIRIM PERMOHONAN'}
                   </button>
@@ -10505,28 +10505,28 @@ export default function App() {
         {showDisclaimer && (
           <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-slate-900/90 backdrop-blur-md animate-in fade-in duration-300">
             <div className="max-w-md w-full max-h-[95vh] overflow-y-auto custom-scrollbar p-10 shadow-2xl border border-white/20 bg-white relative rounded-[2.5rem] animate-in zoom-in-95 duration-300">
-              <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-teal-500 via-emerald-500 to-teal-600"></div>
+              <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-blue-500 via-emerald-500 to-blue-600"></div>
               <div className="flex flex-col items-center text-center space-y-6">
-                <div className="w-24 h-24 bg-teal-50 rounded-3xl flex items-center justify-center shadow-inner">
-                  <AlertTriangle size={48} className="text-teal-600 animate-pulse" />
+                <div className="w-24 h-24 bg-blue-50 rounded-3xl flex items-center justify-center shadow-inner">
+                  <AlertTriangle size={48} className="text-blue-600 animate-pulse" />
                 </div>
                 <div className="space-y-3">
                   <h2 className="text-2xl font-black text-slate-800 tracking-tight">Privasi & Keamanan Data</h2>
                   <p className="text-sm text-slate-500 leading-relaxed font-bold">
-                    Sebagai standar kepatuhan data medis, sistem <strong className="text-teal-600">UR Sardjito</strong> memberitahukan:
+                    Sebagai standar kepatuhan data medis, sistem <strong className="text-blue-600">UR Sardjito</strong> memberitahukan:
                   </p>
                 </div>
                 <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 text-left space-y-4 shadow-inner">
                   <div className="flex gap-4">
-                    <CheckCircle className="text-teal-500 shrink-0 mt-0.5" size={18} />
+                    <CheckCircle className="text-blue-500 shrink-0 mt-0.5" size={18} />
                     <p className="text-xs text-slate-600 leading-relaxed"><strong>Pemrosesan Lokal 100%.</strong> Developer tidak menyimpan data Anda di server. Seluruh proses terjadi di memori browser.</p>
                   </div>
                   <div className="flex gap-4">
-                    <CheckCircle className="text-teal-500 shrink-0 mt-0.5" size={18} />
+                    <CheckCircle className="text-blue-500 shrink-0 mt-0.5" size={18} />
                     <p className="text-xs text-slate-600 leading-relaxed"><strong>Tanggung Jawab Pengguna.</strong> Segala akses dan kerahasiaan data adalah tanggung jawab penuh operator di faskes.</p>
                   </div>
                   <div className="flex gap-4">
-                    <CheckCircle className="text-teal-500 shrink-0 mt-0.5" size={18} />
+                    <CheckCircle className="text-blue-500 shrink-0 mt-0.5" size={18} />
                     <p className="text-xs text-slate-600 leading-relaxed"><strong>Sesi Sementara.</strong> Menutup tab atau me-refresh halaman akan menghapus data analisis secara permanen dari aplikasi.</p>
                   </div>
                   <div className="flex gap-4">
@@ -10551,7 +10551,7 @@ export default function App() {
   }
 
   return (
-    <div className="min-h-screen bg-[#f8fafc] text-slate-800 font-sans selection:bg-teal-100 selection:text-teal-900">
+    <div className="min-h-screen bg-[#f8fafc] text-slate-800 font-sans selection:bg-blue-100 selection:text-blue-900">
 
       {/* Kompetensi Confirmation Popup */}
       {showKompPopup && (
@@ -10578,7 +10578,7 @@ export default function App() {
                 setActiveTab('dashboard');
                 setSubTab('kompetensi');
                 if (window.innerWidth < 1024) setIsSidebarOpen(false);
-              }} className="flex-1 py-3 px-4 bg-teal-500 text-white font-bold rounded-xl hover:bg-teal-600 transition-colors shadow-sm shadow-teal-500/20">
+              }} className="flex-1 py-3 px-4 bg-blue-500 text-white font-bold rounded-xl hover:bg-blue-600 transition-colors shadow-sm shadow-blue-500/20">
                 YA, Sudah
               </button>
             </div>
@@ -10595,7 +10595,7 @@ export default function App() {
         >
           <div className="flex flex-col items-center gap-6 mt-4">
             {/* Cycling step label */}
-            <div className="flex items-center gap-3 bg-white/70 border border-teal-100/60 px-6 py-3 rounded-2xl backdrop-blur-md shadow-sm min-w-[320px] justify-center">
+            <div className="flex items-center gap-3 bg-white/70 border border-blue-100/60 px-6 py-3 rounded-2xl backdrop-blur-md shadow-sm min-w-[320px] justify-center">
               <span className="text-2xl drop-shadow-sm">{analysisSteps[analysisStep].icon}</span>
               <span className="text-sm font-black tracking-wide" style={{ color: analysisSteps[analysisStep].color, transition: 'color 0.3s ease' }}>
                 {analysisSteps[analysisStep].label}
@@ -10604,7 +10604,7 @@ export default function App() {
 
             {/* Shimmer progress bar */}
             <div className="w-64 h-1.5 bg-slate-200/50 rounded-full overflow-hidden">
-              <div className="h-full rounded-full relative overflow-hidden bg-gradient-to-r from-teal-400 via-teal-300 to-teal-400" style={{ backgroundSize: '200% 100%', animation: 'shimmer 1.5s linear infinite' }} />
+              <div className="h-full rounded-full relative overflow-hidden bg-gradient-to-r from-blue-400 via-blue-300 to-blue-400" style={{ backgroundSize: '200% 100%', animation: 'shimmer 1.5s linear infinite' }} />
             </div>
           </div>
           
@@ -10622,7 +10622,7 @@ export default function App() {
                 {drilldown.prev && (
                   <button
                     onClick={() => setDrilldown(drilldown.prev)}
-                    className="p-1.5 sm:p-2 bg-teal-50 text-teal-600 hover:bg-teal-600 hover:text-white rounded-xl transition-all shadow-sm border border-teal-100 group mt-0.5"
+                    className="p-1.5 sm:p-2 bg-blue-50 text-blue-600 hover:bg-blue-600 hover:text-white rounded-xl transition-all shadow-sm border border-blue-100 group mt-0.5"
                     title="Kembali ke Daftar INACBG / iDRG"
                   >
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="group-hover:-translate-x-1 transition-transform"><path d="M15 18l-6-6 6-6" /></svg>
@@ -10630,7 +10630,7 @@ export default function App() {
                 )}
                 <div>
                   <h3 className="text-base sm:text-xl font-black text-slate-800 flex items-center gap-2 tracking-tight">
-                    {!drilldown.prev && <Table2 size={20} className="text-teal-600 shrink-0" />} Rincian Data Analitik
+                    {!drilldown.prev && <Table2 size={20} className="text-blue-600 shrink-0" />} Rincian Data Analitik
                   </h3>
                   <p className="text-[9px] sm:text-[10px] font-black text-slate-400 mt-1 uppercase tracking-[0.2em]">{drilldown.title} — {drilldown.data.length.toLocaleString()} Record Terfilter</p>
                 </div>
@@ -10639,7 +10639,7 @@ export default function App() {
                 <button onClick={copyDrilldownTable} className="bg-sky-600 hover:bg-sky-700 text-white px-4 sm:px-6 py-2 sm:py-2.5 rounded-xl text-xs font-black flex items-center gap-2 shadow-lg shadow-sky-600/20 transition-all uppercase tracking-wider">
                   <Copy size={16} /> <span className="hidden sm:inline">Copy Tabel</span>
                 </button>
-                <button onClick={dlDrilldownCSV} className="bg-teal-600 hover:bg-teal-700 text-white px-4 sm:px-6 py-2 sm:py-2.5 rounded-xl text-xs font-black flex items-center gap-2 shadow-lg shadow-teal-600/20 transition-all uppercase tracking-wider">
+                <button onClick={dlDrilldownCSV} className="bg-blue-600 hover:bg-blue-700 text-white px-4 sm:px-6 py-2 sm:py-2.5 rounded-xl text-xs font-black flex items-center gap-2 shadow-lg shadow-blue-600/20 transition-all uppercase tracking-wider">
                   <Download size={16} /> <span className="hidden sm:inline">Unduh CSV</span>
                 </button>
                 <button onClick={() => setDrilldown({ isOpen: false, title: '', data: [] })} className="p-2 sm:p-2.5 hover:bg-rose-50 rounded-full transition-all border border-transparent hover:border-rose-100 text-slate-400 hover:text-rose-600">
@@ -10658,10 +10658,10 @@ export default function App() {
                     <div className="p-6 bg-white border-b border-slate-100 shadow-sm">
                       <div className="flex items-center justify-between mb-4">
                         <h4 className="text-xs font-black text-slate-500 uppercase tracking-[0.2em] flex items-center gap-2">
-                          <LayoutDashboard size={14} className="text-teal-600" />
+                          <LayoutDashboard size={14} className="text-blue-600" />
                           {drilldown.type === 'audit_kpi' ? 'Ringkasan Akurasi Input Koding & Temuan Audit' : 'Insight Rata-rata 18 Komponen Biaya per Kasus'}
                         </h4>
-                        <span className="text-[10px] bg-teal-50 text-teal-700 px-2.5 py-1 rounded-full font-black uppercase">
+                        <span className="text-[10px] bg-blue-50 text-blue-700 px-2.5 py-1 rounded-full font-black uppercase">
                           {drilldown.type === 'audit_kpi' ? 'Audit Insight' : 'Efisiensi Insight'}
                         </span>
                       </div>
@@ -10686,12 +10686,12 @@ export default function App() {
                                 <span className="text-[9px] font-black text-rose-600 uppercase tracking-widest">Verified Tidak</span>
                                 <span className="text-xl font-black text-rose-700">{tidak}</span>
                               </div>
-                              <div className="bg-teal-900 p-4 rounded-2xl border border-teal-800 flex flex-col gap-1 shadow-lg shadow-teal-900/20 col-span-2">
+                              <div className="bg-blue-900 p-4 rounded-2xl border border-blue-800 flex flex-col gap-1 shadow-lg shadow-blue-900/20 col-span-2">
                                 <div className="flex justify-between items-center">
-                                  <span className="text-[9px] font-black text-teal-300 uppercase tracking-widest">Skor Akurasi Koder</span>
+                                  <span className="text-[9px] font-black text-blue-300 uppercase tracking-widest">Skor Akurasi Koder</span>
                                   <span className="text-xs font-black text-white">{accuracy.toFixed(1)}%</span>
                                 </div>
-                                <div className="w-full h-2 bg-teal-800 rounded-full mt-1 overflow-hidden">
+                                <div className="w-full h-2 bg-blue-800 rounded-full mt-1 overflow-hidden">
                                   <div className="h-full bg-emerald-400 rounded-full" style={{ width: `${accuracy}%` }}></div>
                                 </div>
                               </div>
@@ -10701,14 +10701,14 @@ export default function App() {
                           const stat = drilldownStats.avgComps[c.key];
                           if (!stat || stat.val === 0) return null;
                           return (
-                            <div key={c.key} className="bg-slate-50 hover:bg-teal-50 p-2.5 rounded-xl border border-slate-100 hover:border-teal-200 transition-all group">
+                            <div key={c.key} className="bg-slate-50 hover:bg-blue-50 p-2.5 rounded-xl border border-slate-100 hover:border-blue-200 transition-all group">
                               <p className="text-[8px] font-black text-slate-400 uppercase truncate mb-1" title={c.label}>{c.label}</p>
                               <p className="text-[11px] font-black text-slate-800">{formatRp(stat.val)}</p>
                               <div className="mt-1.5 flex items-center gap-1.5">
                                 <div className="flex-1 h-1 bg-slate-200 rounded-full overflow-hidden">
-                                  <div className="h-full bg-teal-500 rounded-full transition-all duration-1000" style={{ width: `${Math.min(stat.pct * 2, 100)}%` }}></div>
+                                  <div className="h-full bg-blue-500 rounded-full transition-all duration-1000" style={{ width: `${Math.min(stat.pct * 2, 100)}%` }}></div>
                                 </div>
-                                <span className="text-[9px] font-bold text-teal-600 shrink-0">{stat.pct.toFixed(1)}%</span>
+                                <span className="text-[9px] font-bold text-blue-600 shrink-0">{stat.pct.toFixed(1)}%</span>
                               </div>
                             </div>
                           );
@@ -10723,7 +10723,7 @@ export default function App() {
                       <span className="text-rose-700 flex items-center gap-1.5"><span className="inline-block w-3.5 h-3.5 rounded bg-rose-200 border border-rose-400 mr-0.5" />Baris Merah = Tarif RS di atas rata-rata (~ {formatRp(drilldownStats.avgRS)})</span>
                       <span className="text-rose-500 flex items-center gap-1.5">^ = Nilai sel melebihi rata-rata (hover untuk detail)</span>
                       <span className="text-orange-600 flex items-center gap-1.5"><span className="inline-block w-3.5 h-3.5 rounded bg-orange-100 border border-orange-400 mr-0.5" />Orange = Tarif INA / iDRG di atas rata-rata</span>
-                      <span className="text-teal-600 flex items-center gap-1.5"><span className="inline-block w-3.5 h-3.5 rounded bg-teal-50 border border-teal-300 mr-0.5" />Normal = Di bawah atau sama dengan rata-rata</span>
+                      <span className="text-blue-600 flex items-center gap-1.5"><span className="inline-block w-3.5 h-3.5 rounded bg-blue-50 border border-blue-300 mr-0.5" />Normal = Di bawah atau sama dengan rata-rata</span>
                     </div>
                   )}
 
@@ -10752,7 +10752,7 @@ export default function App() {
                               <td className="px-5 py-3.5 border-r border-slate-50 font-black text-slate-800">{c.nama || '-'}</td>
                               <td className="px-5 py-3.5 border-r border-slate-50 text-slate-600 whitespace-normal min-w-[200px] break-words leading-relaxed">{c.keterangan || '-'}</td>
                               <td className="px-5 py-3.5 border-r border-slate-50 text-center">
-                                <span className="px-2.5 py-1 bg-teal-50 text-teal-700 rounded-full font-black text-[9px] uppercase tracking-wide border border-teal-200 shadow-sm">
+                                <span className="px-2.5 py-1 bg-blue-50 text-blue-700 rounded-full font-black text-[9px] uppercase tracking-wide border border-blue-200 shadow-sm">
                                   {Array.isArray(c.kategori) ? c.kategori.join(', ') : (c.kategori || '-')}
                                 </span>
                               </td>
@@ -10855,7 +10855,7 @@ export default function App() {
                             <th className="px-5 py-4 border-r border-slate-100 bg-white min-w-[120px]">{drilldown.type === 'summary_ina' ? 'Kode INA-CBG' : 'Kode iDRG'}</th>
                             <th className="px-5 py-4 border-r border-slate-100 bg-slate-50 min-w-[300px]">Deskripsi</th>
                             <th className="px-5 py-4 border-r border-slate-100 bg-white text-center">Jumlah Kasus</th>
-                            <th className="px-5 py-4 border-r border-slate-100 bg-teal-50 text-center text-teal-700">ALOS</th>
+                            <th className="px-5 py-4 border-r border-slate-100 bg-blue-50 text-center text-blue-700">ALOS</th>
                             <th className="px-5 py-4 border-r border-slate-100 bg-rose-50 text-center text-rose-700">Max LOS</th>
                             <th className="px-5 py-4 border-r border-slate-100 bg-slate-50 text-right">Tarif RS</th>
                             <th className="px-5 py-4 border-r border-slate-100 bg-white text-right">{drilldown.type === 'summary_ina' ? 'Total Tarif INA' : 'Total Tarif iDRG'}</th>
@@ -10885,8 +10885,8 @@ export default function App() {
                                 <td className="px-5 py-3 border-r border-slate-50 text-center text-slate-400 font-semibold">{idx + 1}</td>
                                 <td className="px-5 py-3 border-r border-slate-50 font-black text-slate-700">{item.code}</td>
                                 <td className="px-5 py-3 border-r border-slate-50 font-bold text-slate-600 truncate max-w-[400px]" title={item.desc}>{item.desc}</td>
-                                <td className="px-5 py-3 border-r border-slate-50 text-center font-black text-teal-600">{item.count.toLocaleString()}</td>
-                                <td className="px-5 py-3 border-r border-slate-50 text-center font-bold text-teal-700 bg-teal-50/30">{item.count > 0 ? (item.sumLos / item.count).toFixed(1) : 0}</td>
+                                <td className="px-5 py-3 border-r border-slate-50 text-center font-black text-blue-600">{item.count.toLocaleString()}</td>
+                                <td className="px-5 py-3 border-r border-slate-50 text-center font-bold text-blue-700 bg-blue-50/30">{item.count > 0 ? (item.sumLos / item.count).toFixed(1) : 0}</td>
                                 <td className="px-5 py-3 border-r border-slate-50 text-center font-bold text-rose-700 bg-rose-50/30">{item.maxLos || 0}</td>
                                 <td className="px-5 py-3 border-r border-slate-50 text-right font-semibold text-slate-600">{formatRp(item.sumRS)}</td>
                                 <td className="px-5 py-3 border-r border-slate-50 text-right font-black text-slate-700">{formatRp(item.sumTarif)}</td>
@@ -10894,7 +10894,7 @@ export default function App() {
                                 <td className="px-5 py-3 text-center">
                                   <button
                                     onClick={() => setDrilldown({ ...drilldown, title: `Data Pasien: ${item.code}`, data: drilldown.data.filter(r => String(r[codeKey]).trim() === item.code), type: 'patient', prev: { ...drilldown, prev: null } })}
-                                    className="bg-teal-50 hover:bg-teal-600 text-teal-600 hover:text-white px-3 py-1.5 rounded-lg text-[10px] font-black uppercase tracking-wider transition-all border border-teal-100"
+                                    className="bg-blue-50 hover:bg-blue-600 text-blue-600 hover:text-white px-3 py-1.5 rounded-lg text-[10px] font-black uppercase tracking-wider transition-all border border-blue-100"
                                   >Tampilkan Data Pasien</button>
                                 </td>
                               </tr>
@@ -10914,36 +10914,36 @@ export default function App() {
                             <th rowSpan={2} className="px-5 py-4 border-r border-slate-100 align-middle bg-slate-50">Tgl Masuk</th>
                             <th rowSpan={2} className="px-5 py-4 border-r border-slate-100 align-middle bg-slate-50">Tgl Pulang</th>
                             <th rowSpan={2} className="px-5 py-4 border-r border-slate-100 align-middle text-center bg-slate-50">LOS</th>
-                            <th rowSpan={2} className="px-4 py-4 text-center border-r border-teal-100 align-middle bg-teal-50/50 text-teal-700">SL INA</th>
+                            <th rowSpan={2} className="px-4 py-4 text-center border-r border-blue-100 align-middle bg-blue-50/50 text-blue-700">SL INA</th>
                             <th rowSpan={2} className="px-4 py-4 text-center border-r border-emerald-100 align-middle bg-emerald-50/50 text-emerald-700">CL iDRG</th>
-                            <th colSpan={4} className="px-5 py-3 text-center border-r border-teal-100 border-b border-teal-100 bg-teal-50 text-teal-800">Diagnosis & Prosedur INA-CBG</th>
+                            <th colSpan={4} className="px-5 py-3 text-center border-r border-blue-100 border-b border-blue-100 bg-blue-50 text-blue-800">Diagnosis & Prosedur INA-CBG</th>
                             <th colSpan={4} className="px-5 py-3 text-center border-r border-emerald-100 border-b border-emerald-100 bg-emerald-50 text-emerald-800">Diagnosis & Prosedur iDRG</th>
-                            <th rowSpan={2} className="px-5 py-4 text-right border-r border-teal-100 align-middle bg-teal-50/50 text-teal-800">Tarif RS</th>
-                            <th rowSpan={2} className="px-5 py-4 text-right border-r border-teal-100 align-middle bg-teal-50/50 text-teal-800">Tarif INA</th>
+                            <th rowSpan={2} className="px-5 py-4 text-right border-r border-blue-100 align-middle bg-blue-50/50 text-blue-800">Tarif RS</th>
+                            <th rowSpan={2} className="px-5 py-4 text-right border-r border-blue-100 align-middle bg-blue-50/50 text-blue-800">Tarif INA</th>
                             <th rowSpan={2} className="px-5 py-4 text-right border-r border-emerald-100 align-middle bg-emerald-50/50 text-emerald-800">Tarif iDRG</th>
                             <th rowSpan={2} className="px-5 py-4 text-right border-r-4 border-r-slate-200 align-middle bg-slate-100 text-slate-800">Selisih (iDRG-RS)</th>
                             <th rowSpan={2} className="px-5 py-4 text-right border-r-4 border-r-slate-200 align-middle bg-slate-100 text-slate-800">Selisih (iDRG-INA)</th>
                             <th colSpan={18} className="px-5 py-3 text-center bg-slate-800 text-white border-b border-slate-700 tracking-[0.2em]">RINCIAN 18 KOMPONEN BILLING (Rp)</th>
                           </tr>
                           <tr className="text-[10px]">
-                            <th className="px-4 py-2 bg-teal-50/30 text-teal-600 border-r border-teal-100/50">Code</th><th className="px-4 py-2 bg-teal-50/30 text-teal-600 border-r border-teal-100/50">Deskripsi</th><th className="px-4 py-2 bg-teal-50/30 text-teal-600 border-r border-teal-100/50">Diaglist</th><th className="px-4 py-2 bg-teal-50/30 text-teal-600 border-r border-teal-100">Proclist</th>
+                            <th className="px-4 py-2 bg-blue-50/30 text-blue-600 border-r border-blue-100/50">Code</th><th className="px-4 py-2 bg-blue-50/30 text-blue-600 border-r border-blue-100/50">Deskripsi</th><th className="px-4 py-2 bg-blue-50/30 text-blue-600 border-r border-blue-100/50">Diaglist</th><th className="px-4 py-2 bg-blue-50/30 text-blue-600 border-r border-blue-100">Proclist</th>
                             <th className="px-4 py-2 bg-emerald-50/30 text-emerald-600 border-r border-emerald-100/50">Code</th><th className="px-4 py-2 bg-emerald-50/30 text-emerald-600 border-r border-emerald-100/50">Deskripsi</th><th className="px-4 py-2 bg-emerald-50/30 text-emerald-600 border-r border-emerald-100/50">Diaglist</th><th className="px-4 py-2 bg-emerald-50/30 text-emerald-600 border-r border-emerald-100">Proclist</th>
                             {compKeys.map(c => <th key={c.key} className="px-4 py-2 bg-slate-700 text-slate-300 border-r border-slate-600 text-right">{c.label}</th>)}
                           </tr>
                         </thead>
                         <tfoot className="sticky bottom-0 z-20">
                           {drilldownStats && (
-                            <tr className="bg-teal-100 border-t-2 border-teal-300 shadow-[0_-2px_8px_-2px_rgba(20,184,166,0.25)]">
-                              <td colSpan={8} className="px-5 py-3 font-black text-right text-teal-900 tracking-wider text-xs uppercase">~ Rata-Rata / {drilldown.data.length.toLocaleString()} Kasus:</td>
-                              <td className="px-5 py-3 text-center font-black text-teal-800 bg-teal-200/50">ALOS: {drilldownStats.avgLos.toFixed(1)}</td>
+                            <tr className="bg-blue-100 border-t-2 border-blue-300 shadow-[0_-2px_8px_-2px_rgba(59,130,246,0.25)]">
+                              <td colSpan={8} className="px-5 py-3 font-black text-right text-blue-900 tracking-wider text-xs uppercase">~ Rata-Rata / {drilldown.data.length.toLocaleString()} Kasus:</td>
+                              <td className="px-5 py-3 text-center font-black text-blue-800 bg-blue-200/50">ALOS: {drilldownStats.avgLos.toFixed(1)}</td>
                               <td className="px-5 py-3 text-center font-black text-rose-800 bg-rose-100/70">MAX: {drilldownStats.maxLos}</td>
                               <td colSpan={8}></td>
                               <td className="px-5 py-3 text-right font-black text-slate-800">{formatRp(drilldownStats.avgRS)}</td>
-                              <td className="px-5 py-3 text-right font-black text-teal-800">{formatRp(drilldownStats.avgIna)}</td>
+                              <td className="px-5 py-3 text-right font-black text-blue-800">{formatRp(drilldownStats.avgIna)}</td>
                               <td className="px-5 py-3 text-right font-black text-emerald-800">{formatRp(drilldownStats.avgIdrg)}</td>
-                              <td className={`px-5 py-3 text-right font-black border-r-4 border-teal-400 ${drilldownStats.avgSelVsRs > 0 ? 'text-lime-700' : drilldownStats.avgSelVsRs < 0 ? 'text-rose-700' : 'text-slate-600'}`}>{drilldownStats.avgSelVsRs > 0 ? '+' : ''}{formatRp(drilldownStats.avgSelVsRs)}</td>
-                              <td className={`px-5 py-3 text-right font-black border-r-4 border-teal-400 ${drilldownStats.avgSel > 0 ? 'text-lime-700' : drilldownStats.avgSel < 0 ? 'text-rose-700' : 'text-slate-600'}`}>{drilldownStats.avgSel > 0 ? '+' : ''}{formatRp(drilldownStats.avgSel)}</td>
-                              {compKeys.map(c => <td key={`avg-${c.key}`} className="px-4 py-3 text-right font-bold text-teal-900 bg-teal-200/60 border-r border-teal-200">{formatRpEx(drilldownStats.avgComps[c.key].val)}</td>)}
+                              <td className={`px-5 py-3 text-right font-black border-r-4 border-blue-400 ${drilldownStats.avgSelVsRs > 0 ? 'text-lime-700' : drilldownStats.avgSelVsRs < 0 ? 'text-rose-700' : 'text-slate-600'}`}>{drilldownStats.avgSelVsRs > 0 ? '+' : ''}{formatRp(drilldownStats.avgSelVsRs)}</td>
+                              <td className={`px-5 py-3 text-right font-black border-r-4 border-blue-400 ${drilldownStats.avgSel > 0 ? 'text-lime-700' : drilldownStats.avgSel < 0 ? 'text-rose-700' : 'text-slate-600'}`}>{drilldownStats.avgSel > 0 ? '+' : ''}{formatRp(drilldownStats.avgSel)}</td>
+                              {compKeys.map(c => <td key={`avg-${c.key}`} className="px-4 py-3 text-right font-bold text-blue-900 bg-blue-200/60 border-r border-blue-200">{formatRpEx(drilldownStats.avgComps[c.key].val)}</td>)}
                             </tr>
                           )}
                         </tfoot>
@@ -10969,18 +10969,18 @@ export default function App() {
                                 <td className={`${tCell} text-xs font-bold text-slate-500`}>{String(row._tglMasuk || '-')}</td>
                                 <td className={`${tCell} text-xs font-bold text-slate-500`}>{String(row.DISCHARGE_DATE || '-')}</td>
                                 <td className={`${tCell} text-center font-bold text-slate-600 bg-slate-50/50`}>{row._los}</td>
-                                <td className={`${tCell} text-center font-black text-teal-600 bg-teal-50/20`}>{sev > 0 ? sev : '-'}</td>
+                                <td className={`${tCell} text-center font-black text-blue-600 bg-blue-50/20`}>{sev > 0 ? sev : '-'}</td>
                                 <td className={`${tCell} text-center font-black text-emerald-600 bg-emerald-50/20`}>{isNaN(cl) ? '-' : cl}</td>
-                                <td className={`${tCell} font-bold text-teal-700 bg-teal-50/10`}>{String(row.INACBG || '-')}</td>
-                                <td className={`${tCell} text-xs font-medium text-slate-600 max-w-[200px] truncate bg-teal-50/10`} title={String(row.DESKRIPSI_INACBG || '-')}>{String(row.DESKRIPSI_INACBG || '-')}</td>
-                                <td className={`${tCell} text-xs font-mono font-semibold text-slate-500 max-w-[150px] truncate bg-teal-50/10`} title={String(row.DIAGLIST || '-')}>{String(row.DIAGLIST || '-')}</td>
-                                <td className={`${tCell} text-xs font-mono font-semibold text-slate-500 max-w-[150px] truncate bg-teal-50/10`} title={String(row.PROCLIST || '-')}>{String(row.PROCLIST || '-')}</td>
+                                <td className={`${tCell} font-bold text-blue-700 bg-blue-50/10`}>{String(row.INACBG || '-')}</td>
+                                <td className={`${tCell} text-xs font-medium text-slate-600 max-w-[200px] truncate bg-blue-50/10`} title={String(row.DESKRIPSI_INACBG || '-')}>{String(row.DESKRIPSI_INACBG || '-')}</td>
+                                <td className={`${tCell} text-xs font-mono font-semibold text-slate-500 max-w-[150px] truncate bg-blue-50/10`} title={String(row.DIAGLIST || '-')}>{String(row.DIAGLIST || '-')}</td>
+                                <td className={`${tCell} text-xs font-mono font-semibold text-slate-500 max-w-[150px] truncate bg-blue-50/10`} title={String(row.PROCLIST || '-')}>{String(row.PROCLIST || '-')}</td>
                                 <td className={`${tCell} font-bold text-emerald-700 bg-emerald-50/10`}>{String(row.IDRG_DRG_CODE || '-')}</td>
                                 <td className={`${tCell} text-xs font-medium text-slate-600 max-w-[200px] truncate bg-emerald-50/10`} title={String(row.IDRG_DRG_DESCRIPTION || '-')}>{String(row.IDRG_DRG_DESCRIPTION || '-')}</td>
                                 <td className={`${tCell} text-xs font-mono font-semibold text-slate-500 max-w-[150px] truncate bg-emerald-50/10`} title={String(row.IDRG_DIAG_LISTS || '-')}>{String(row.IDRG_DIAG_LISTS || '-')}</td>
                                 <td className={`${tCell} text-xs font-mono font-semibold text-slate-500 max-w-[150px] truncate bg-emerald-50/10`} title={String(row.IDRG_PROC_LISTS || '-')}>{String(row.IDRG_PROC_LISTS || '-')}</td>
                                 <td className={`${tCell} text-right font-bold border-l-2 ${aboveAvgRS ? 'border-l-rose-400 bg-rose-100/60 text-rose-700 ring-1 ring-rose-200' : 'bg-slate-50/20 text-slate-600 border-l-transparent'}`} title={aboveAvgRS ? `Di atas rata-rata (~${formatRp(drilldownStats?.avgRS)})` : ''}>{aboveAvgRS && <span className="text-[9px] mr-1 align-middle font-black text-rose-500">^</span>}{formatRp(rs)}</td>
-                                <td className={`${tCell} text-right font-bold border-l-2 ${aboveAvgIna ? 'border-l-orange-400 bg-orange-50/60 text-orange-700 ring-1 ring-orange-200' : 'bg-teal-50/20 text-teal-700 border-l-transparent'}`} title={aboveAvgIna ? `Di atas rata-rata (~${formatRp(drilldownStats?.avgIna)})` : ''}>{aboveAvgIna && <span className="text-[9px] mr-1 align-middle font-black text-orange-500">^</span>}{formatRp(ina)}</td>
+                                <td className={`${tCell} text-right font-bold border-l-2 ${aboveAvgIna ? 'border-l-orange-400 bg-orange-50/60 text-orange-700 ring-1 ring-orange-200' : 'bg-blue-50/20 text-blue-700 border-l-transparent'}`} title={aboveAvgIna ? `Di atas rata-rata (~${formatRp(drilldownStats?.avgIna)})` : ''}>{aboveAvgIna && <span className="text-[9px] mr-1 align-middle font-black text-orange-500">^</span>}{formatRp(ina)}</td>
                                 <td className={`${tCell} text-right font-bold border-l-2 ${aboveAvgIdrg ? 'border-l-orange-400 bg-orange-50/60 text-orange-700 ring-1 ring-orange-200' : 'bg-emerald-50/20 text-emerald-700 border-l-transparent'}`} title={aboveAvgIdrg ? `Di atas rata-rata (~${formatRp(drilldownStats?.avgIdrg)})` : ''}>{aboveAvgIdrg && <span className="text-[9px] mr-1 align-middle font-black text-orange-500">^</span>}{formatRp(idrg)}</td>
                                 <td className={`px-5 py-3 text-right font-black border-r-4 border-slate-200 bg-slate-50/50 ${selVsRs > 0 ? 'text-lime-500' : selVsRs < 0 ? 'text-emerald-500' : 'text-slate-400'}`}>{selVsRs > 0 ? '+' : ''}{formatRp(selVsRs)}</td>
                                 <td className={`px-5 py-3 text-right font-black border-r-4 border-slate-200 bg-slate-50/50 ${sel > 0 ? 'text-lime-500' : sel < 0 ? 'text-emerald-500' : 'text-slate-400'}`}>{sel > 0 ? '+' : ''}{formatRp(sel)}</td>
@@ -11021,7 +11021,7 @@ export default function App() {
           .dark-mode-container table tbody tr { border-color: #334155 !important; }
           .dark-mode-container table tbody tr:hover { background-color: rgba(255,255,255,0.05) !important; }
           .dark-mode-container input, .dark-mode-container select { background-color: #1e293b !important; color: #f1f5f9 !important; border-color: #475569 !important; }
-          .dark-mode-container .bg-indigo-50, .dark-mode-container .bg-sky-50, .dark-mode-container .bg-teal-50, .dark-mode-container .bg-purple-50, .dark-mode-container .bg-orange-50, .dark-mode-container .bg-rose-50, .dark-mode-container .bg-lime-50, .dark-mode-container .bg-violet-50 { background-color: rgba(30, 41, 59, 0.6) !important; border-color: #334155 !important; }
+          .dark-mode-container .bg-indigo-50, .dark-mode-container .bg-sky-50, .dark-mode-container .bg-blue-50, .dark-mode-container .bg-purple-50, .dark-mode-container .bg-orange-50, .dark-mode-container .bg-rose-50, .dark-mode-container .bg-lime-50, .dark-mode-container .bg-violet-50 { background-color: rgba(30, 41, 59, 0.6) !important; border-color: #334155 !important; }
         `}} />
       )}
       <div className={`flex h-screen overflow-hidden font-sans ${isDarkMode ? 'dark-mode-container' : 'bg-slate-50 text-slate-800'}`}>
@@ -11035,11 +11035,11 @@ export default function App() {
         )}
 
         {/* SIDEBAR NAVIGATION */}
-        <aside className={`bg-white border-r border-teal-100 transition-all duration-300 z-[100] flex flex-col shadow-2xl shadow-teal-900/5 print:hidden fixed inset-y-0 left-0 lg:relative ${isSidebarOpen ? 'translate-x-0 w-64' : '-translate-x-full lg:translate-x-0 lg:w-20 w-64'} shrink-0 h-screen`}>
+        <aside className={`bg-white border-r border-blue-100 transition-all duration-300 z-[100] flex flex-col shadow-2xl shadow-blue-900/5 print:hidden fixed inset-y-0 left-0 lg:relative ${isSidebarOpen ? 'translate-x-0 w-64' : '-translate-x-full lg:translate-x-0 lg:w-20 w-64'} shrink-0 h-screen`}>
           {/* Branding */}
-          <div className="p-4 flex items-center justify-between border-b border-teal-100 shrink-0 h-16 bg-gradient-to-r from-teal-50 to-white">
+          <div className="p-4 flex items-center justify-between border-b border-blue-100 shrink-0 h-16 bg-gradient-to-r from-blue-50 to-white">
             <div className="flex items-center gap-3 overflow-hidden cursor-pointer" onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
-              <div className="p-1.5 bg-white rounded-lg shrink-0 shadow-[0_0_15px_rgba(20,184,166,0.2)] w-9 h-9 flex items-center justify-center overflow-hidden border border-teal-200">
+              <div className="p-1.5 bg-white rounded-lg shrink-0 shadow-[0_0_15px_rgba(59,130,246,0.2)] w-9 h-9 flex items-center justify-center overflow-hidden border border-blue-200">
                 <img src={logo} className="w-full h-full object-contain" alt="Logo" />
               </div>
               {isSidebarOpen && (
@@ -11050,13 +11050,13 @@ export default function App() {
                   <span className="text-[7px] text-slate-500 mt-0.5 tracking-wider font-extrabold uppercase leading-tight opacity-90" title="Sistem Informasi & Utilisasi Rumah Sakit Terpadu - Indonesian Diagnosis Related Group">
                     Sistem Informasi & Utilisasi Rumah Sakit Terpadu
                   </span>
-                  <span className="text-[7px] text-teal-400 font-black mt-0.5 tracking-[0.2em] uppercase leading-tight">Alpha v1.7.7 (070620260947)</span>
+                  <span className="text-[7px] text-blue-400 font-black mt-0.5 tracking-[0.2em] uppercase leading-tight">Alpha v1.7.7 (070620260947)</span>
                 </div>
               )}
             </div>
             {/* Mobile close button inside sidebar */}
             {isSidebarOpen && (
-              <button onClick={() => setIsSidebarOpen(false)} className="lg:hidden p-1.5 hover:bg-teal-100 rounded-lg text-teal-600 transition-colors" title="Tutup Menu">
+              <button onClick={() => setIsSidebarOpen(false)} className="lg:hidden p-1.5 hover:bg-blue-100 rounded-lg text-blue-600 transition-colors" title="Tutup Menu">
                 <X size={18} />
               </button>
             )}
@@ -11065,12 +11065,12 @@ export default function App() {
           {/* User Profile Section */}
           {isLoggedIn && (
             <div className={`p-4 border-b border-slate-50 flex items-center ${isSidebarOpen ? 'gap-3' : 'justify-center'} bg-slate-50/30`}>
-              <div className="w-10 h-10 rounded-xl bg-teal-600 flex items-center justify-center text-white font-black text-lg shadow-lg shadow-teal-600/20 shrink-0 border border-teal-500/20">
+              <div className="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center text-white font-black text-lg shadow-lg shadow-blue-600/20 shrink-0 border border-blue-500/20">
                 {username.charAt(0).toUpperCase()}
               </div>
               {isSidebarOpen && (
                 <div className="flex flex-col min-w-0">
-                  <span className="text-[10px] font-black text-teal-600 uppercase tracking-widest leading-none mb-1 opacity-70">Logged In As</span>
+                  <span className="text-[10px] font-black text-blue-600 uppercase tracking-widest leading-none mb-1 opacity-70">Logged In As</span>
                   <span className="text-sm font-black text-slate-800 truncate leading-tight">{username}</span>
                 </div>
               )}
@@ -11079,7 +11079,7 @@ export default function App() {
 
           {/* Navigation Menu */}
           <div className="flex-1 overflow-y-auto py-6 px-3 space-y-1.5 custom-scrollbar">
-            <button onClick={() => { setActiveTab('upload'); if (window.innerWidth < 1024) setIsSidebarOpen(false); }} className={`w-full flex items-center gap-3 px-3 py-3 rounded-xl text-sm font-bold transition-all ${activeTab === 'upload' ? 'bg-teal-600 text-white shadow-xl shadow-teal-600/30' : 'text-slate-600 hover:bg-teal-50 hover:text-teal-700'} ${!isSidebarOpen && 'justify-center'}`} title="Integrasi Data">
+            <button onClick={() => { setActiveTab('upload'); if (window.innerWidth < 1024) setIsSidebarOpen(false); }} className={`w-full flex items-center gap-3 px-3 py-3 rounded-xl text-sm font-bold transition-all ${activeTab === 'upload' ? 'bg-blue-600 text-white shadow-xl shadow-blue-600/30' : 'text-slate-600 hover:bg-blue-50 hover:text-blue-700'} ${!isSidebarOpen && 'justify-center'}`} title="Integrasi Data">
               <UploadCloud size={20} className="shrink-0" />
               {isSidebarOpen && <span>Integrasi Data</span>}
             </button>
@@ -11106,8 +11106,8 @@ export default function App() {
                     switchSubTab(t.id); 
                     if (window.innerWidth < 1024) setIsSidebarOpen(false);
                   }
-                }} className={`w-full flex items-center gap-3 px-3 py-3 rounded-xl text-sm transition-all group ${isActive ? 'bg-teal-50 text-teal-700 font-bold border border-teal-100 shadow-sm' : 'text-slate-500 hover:bg-slate-50 hover:text-slate-800 font-medium border border-transparent'} ${!isSidebarOpen && 'justify-center'}`} title={t.label}>
-                  <Icon size={20} className={`shrink-0 transition-colors ${isActive ? 'text-teal-600' : 'text-slate-400 group-hover:text-slate-600'}`} />
+                }} className={`w-full flex items-center gap-3 px-3 py-3 rounded-xl text-sm transition-all group ${isActive ? 'bg-blue-50 text-blue-700 font-bold border border-blue-100 shadow-sm' : 'text-slate-500 hover:bg-slate-50 hover:text-slate-800 font-medium border border-transparent'} ${!isSidebarOpen && 'justify-center'}`} title={t.label}>
+                  <Icon size={20} className={`shrink-0 transition-colors ${isActive ? 'text-blue-600' : 'text-slate-400 group-hover:text-slate-600'}`} />
                   {isSidebarOpen && <span className="whitespace-nowrap">{t.label}</span>}
                 </button>
               )
@@ -11253,9 +11253,9 @@ export default function App() {
                   <div className="mt-10 animate-in zoom-in-95 duration-500 max-w-3xl mx-auto">
                     <GlobalLoader 
                       title="Menunggu Dataset Utama..."
-                      subtitle={<>Dashboard analitik belum aktif. Silakan menuju tab <strong className="text-teal-600 bg-teal-50 px-2 py-0.5 rounded-md">Integrasi Data</strong> untuk mengunggah file TXT klaim RS agar sistem dapat memproses wawasan finansial Anda.</>}
+                      subtitle={<>Dashboard analitik belum aktif. Silakan menuju tab <strong className="text-blue-600 bg-blue-50 px-2 py-0.5 rounded-md">Integrasi Data</strong> untuk mengunggah file TXT klaim RS agar sistem dapat memproses wawasan finansial Anda.</>}
                     >
-                      <button onClick={() => setActiveTab('upload')} className="bg-teal-600 hover:bg-teal-700 text-white px-8 py-4 rounded-2xl font-black text-sm transition-all shadow-xl shadow-teal-600/20 hover:-translate-y-1 uppercase tracking-widest cursor-pointer">MULAI INTEGRASI SEKARANG</button>
+                      <button onClick={() => setActiveTab('upload')} className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-2xl font-black text-sm transition-all shadow-xl shadow-blue-600/20 hover:-translate-y-1 uppercase tracking-widest cursor-pointer">MULAI INTEGRASI SEKARANG</button>
                     </GlobalLoader>
                   </div>
                 ))}
@@ -11265,8 +11265,8 @@ export default function App() {
           <footer className="p-4 text-center border-t border-slate-100 mt-12 bg-white/30 backdrop-blur-sm relative z-20 print:hidden">
             <p className="text-slate-400 text-[10px] font-bold tracking-widest uppercase flex items-center justify-center gap-2 flex-wrap">
               <span>Copyright@RPP Sistem Informasi & Utilisasi Rumah Sakit Terpadu iDRG</span>
-              <span className="w-1.5 h-1.5 rounded-full bg-teal-500/50 hidden sm:inline" />
-              <span className="bg-teal-50 text-teal-700 px-2.5 py-0.5 rounded-full font-black border border-teal-100 shadow-sm shrink-0">Alpha v1.7.7</span>
+              <span className="w-1.5 h-1.5 rounded-full bg-blue-500/50 hidden sm:inline" />
+              <span className="bg-blue-50 text-blue-700 px-2.5 py-0.5 rounded-full font-black border border-blue-100 shadow-sm shrink-0">Alpha v1.7.7</span>
             </p>
           </footer>
         </div>
@@ -11409,7 +11409,7 @@ export default function App() {
           href="https://notebooklm.google.com/notebook/0006be3a-8708-41f5-b2da-47cc54b04763"
           target="_blank"
           rel="noopener noreferrer"
-          className="fixed bottom-10 right-10 z-[160] flex items-center gap-3 bg-gradient-to-br from-teal-600 via-teal-700 to-emerald-800 text-white p-4 rounded-3xl shadow-[0_20px_50px_rgba(13,148,136,0.3)] border border-teal-400/30 transition-all duration-700 hover:rounded-2xl hover:scale-105 group print:hidden overflow-hidden"
+          className="fixed bottom-10 right-10 z-[160] flex items-center gap-3 bg-gradient-to-br from-blue-600 via-blue-700 to-emerald-800 text-white p-4 rounded-3xl shadow-[0_20px_50px_rgba(13,148,136,0.3)] border border-blue-400/30 transition-all duration-700 hover:rounded-2xl hover:scale-105 group print:hidden overflow-hidden"
           title="Tanya AI Analis (NotebookLM)"
         >
           <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />

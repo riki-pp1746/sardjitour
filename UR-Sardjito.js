@@ -2723,7 +2723,7 @@ export default function App() {
           {[
             { label: 'Total Kasus', value: t.toLocaleString(), sub: `${dashData.ranapCount.toLocaleString()} RI + ${rajalCount.toLocaleString()} RJ`, c: 'bg-slate-600', fn: () => openDrilldown('Seluruh Kasus', () => true), icon: <Users size={15} /> },
             { label: 'Rawat Inap', value: dashData.ranapCount.toLocaleString(), sub: `${formatPct(ranapPct)}% dari total`, c: 'bg-blue-500', fn: () => openDrilldown('Rawat Inap', r => String(r['PTD'] || '').trim() === '1'), icon: <Activity size={15} /> },
-            { label: 'Rawat Jalan', value: rajalCount.toLocaleString(), sub: `${formatPct(100 - ranapPct)}% dari total`, c: 'bg-teal-500', fn: () => openDrilldown('Rawat Jalan', r => String(r['PTD'] || '').trim() !== '1'), icon: <User size={15} /> },
+            { label: 'Rawat Jalan', value: rajalCount.toLocaleString(), sub: `${formatPct(100 - ranapPct)}% dari total`, c: 'bg-blue-500', fn: () => openDrilldown('Rawat Jalan', r => String(r['PTD'] || '').trim() !== '1'), icon: <User size={15} /> },
             { label: 'Total Tarif RS', value: formatRp(totalTarifRS), sub: `Avg ${formatRp(totalTarifRS / t)}/ep`, c: 'bg-slate-400', fn: () => openDrilldown('Seluruh Kasus', () => true), icon: <BarChart3 size={15} /> },
             { label: 'Selisih INA-RS', value: (selInaRS >= 0 ? '+' : '') + formatRp(selInaRS), sub: selInaRS >= 0 ? 'Surplus' : 'Defisit', c: selInaRS >= 0 ? 'bg-lime-500' : 'bg-orange-500', fn: () => openDrilldown('Seluruh INA-CBG', () => true), icon: <TrendingUp size={15} /> },
             { label: 'Selisih iDRG-RS', value: (selIdrgRS >= 0 ? '+' : '') + formatRp(selIdrgRS), sub: selIdrgRS >= 0 ? 'Surplus' : 'Defisit', c: selIdrgRS >= 0 ? 'bg-lime-500' : 'bg-orange-500', fn: () => openDrilldown('Seluruh iDRG', () => true), icon: <TrendingUp size={15} /> },
@@ -3484,7 +3484,7 @@ export default function App() {
     const top10SelIdrg = [...data].map(d => ({ ...d, selIdrg: d.sumIdrg - d.sumRS })).sort((a, b) => b.selIdrg - a.selIdrg).slice(0, 10);
     return (
       <div className="space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-500">
-        <SectionHeader icon={User} title="Kinerja DPJP (Dokter Penanggung Jawab Pelayanan)" desc="Produktivitas dan selisih finansial per DPJP." colorClass="bg-teal-50 text-teal-600" highlightClass="bg-teal-500/5" exportAction={() => {
+        <SectionHeader icon={User} title="Kinerja DPJP (Dokter Penanggung Jawab Pelayanan)" desc="Produktivitas dan selisih finansial per DPJP." colorClass="bg-blue-50 text-blue-600" highlightClass="bg-blue-500/5" exportAction={() => {
           const csv = data.map(d => [d.name, d.count, d.sumRS, d.sumIna, d.sumIdrg, d.sumIna - d.sumRS, d.sumIdrg - d.sumRS, d.sumIdrg - d.sumIna, ...compKeys.map(c => d.comps?.[c.key] || 0)]);
           exportToXlsx('Kinerja_DPJP', ['Nama DPJP', 'Jumlah Kasus', 'Total RS', 'Total INA', 'Total iDRG', 'Selisih INA-RS', 'Selisih iDRG-RS', 'Selisih iDRG-INA', ...compKeys.map(c => c.label)], csv);
         }} />
@@ -3493,12 +3493,12 @@ export default function App() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           <Card className="p-4 cursor-pointer hover:-translate-y-0.5 hover:shadow-md transition-all" onClick={() => openDrilldown('Seluruh Kasus', () => true)}>
             <p className="text-[10px] font-bold text-slate-400 uppercase">Total DPJP</p>
-            <p className="text-2xl font-black text-teal-700">{data.length}</p>
+            <p className="text-2xl font-black text-blue-700">{data.length}</p>
           </Card>
           <Card className="p-4 cursor-pointer hover:-translate-y-0.5 hover:shadow-md transition-all" onClick={() => openDrilldown(`DPJP Terbanyak: ${top10Kasus[0]?.name}`, r => normDpjp(r['DPJP']) === top10Kasus[0]?.normName)}>
             <p className="text-[10px] font-bold text-slate-400 uppercase">DPJP Terbanyak</p>
             <p className="text-sm font-black text-slate-800 truncate">{top10Kasus[0]?.name || '-'}</p>
-            <p className="text-xs text-teal-600 font-bold">{top10Kasus[0]?.count?.toLocaleString() || 0} kasus</p>
+            <p className="text-xs text-blue-600 font-bold">{top10Kasus[0]?.count?.toLocaleString() || 0} kasus</p>
           </Card>
           <Card className="p-4 cursor-pointer hover:-translate-y-0.5 hover:shadow-md transition-all" onClick={() => openDrilldown(`Top Surplus INA: ${top10SelIna[0]?.name}`, r => normDpjp(r['DPJP']) === top10SelIna[0]?.normName)}>
             <p className="text-[10px] font-bold text-lime-500 uppercase">Surplus INA-RS Tertinggi</p>
@@ -3515,13 +3515,13 @@ export default function App() {
         {/* DPJP BAR CHARTS */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {[
-            { title: 'Top 10 DPJP — Volume Kasus', items: top10Kasus, getVal: d => d.count, color: '#14b8a6', unit: ' kasus' },
+            { title: 'Top 10 DPJP — Volume Kasus', items: top10Kasus, getVal: d => d.count, color: '#3b82f6', unit: ' kasus' },
             { title: 'Top 10 DPJP — Selisih INA-RS', items: top10SelIna, getVal: d => d.selIna, color: '#0ea5e9', negColor: '#f97316', isCurrency: true },
           ].map((chart, ci) => {
             const maxVal = Math.max(...chart.items.map(d => Math.abs(chart.getVal(d))), 1);
             return (
               <Card key={ci} id={`dpjp-bar-${ci}`} downloadTitle={chart.title} className="p-5">
-                <h3 className="text-sm font-extrabold text-slate-800 uppercase tracking-wider mb-4 flex items-center gap-2"><BarChart3 size={16} className="text-teal-500" /> {chart.title}</h3>
+                <h3 className="text-sm font-extrabold text-slate-800 uppercase tracking-wider mb-4 flex items-center gap-2"><BarChart3 size={16} className="text-blue-500" /> {chart.title}</h3>
                 <div className="space-y-2">
                   {chart.items.map((d, di) => {
                     const val = chart.getVal(d); const pct = (Math.abs(val) / maxVal) * 100;
@@ -3530,9 +3530,9 @@ export default function App() {
                         onClick={() => openDrilldown(`Kasus DPJP: ${d.name}`, row => normDpjp(row['DPJP']) === d.normName)}>
                         <span className="text-[11px] font-bold text-slate-600 w-32 truncate shrink-0" title={d.name}>{d.name}</span>
                         <div className="flex-1 h-5 bg-slate-100 rounded-full overflow-hidden">
-                          <div className="h-full rounded-full transition-all duration-500" style={{ width: `${Math.max(pct, 2)}%`, backgroundColor: val >= 0 ? (chart.color || '#14b8a6') : (chart.negColor || '#f97316') }}></div>
+                          <div className="h-full rounded-full transition-all duration-500" style={{ width: `${Math.max(pct, 2)}%`, backgroundColor: val >= 0 ? (chart.color || '#3b82f6') : (chart.negColor || '#f97316') }}></div>
                         </div>
-                        <span className={`text-xs font-black w-24 text-right shrink-0 ${chart.isCurrency ? (val >= 0 ? 'text-lime-600' : 'text-orange-600') : 'text-teal-700'}`}>
+                        <span className={`text-xs font-black w-24 text-right shrink-0 ${chart.isCurrency ? (val >= 0 ? 'text-lime-600' : 'text-orange-600') : 'text-blue-700'}`}>
                           {chart.isCurrency ? ((val > 0 ? '+' : '') + formatRp(val)) : val.toLocaleString() + (chart.unit || '')}
                         </span>
                       </div>
@@ -3550,17 +3550,17 @@ export default function App() {
             <table className="w-full text-sm text-left whitespace-nowrap">
               <thead className="sticky top-0 z-10">
                 <tr>
-                  <th colSpan={10} className="px-4 py-3 bg-teal-600 text-white font-extrabold text-xs uppercase tracking-widest border-b border-teal-500">Ringkasan Finansial DPJP</th>
+                  <th colSpan={10} className="px-4 py-3 bg-blue-600 text-white font-extrabold text-xs uppercase tracking-widest border-b border-blue-500">Ringkasan Finansial DPJP</th>
                   <th colSpan={18} className="px-4 py-3 bg-slate-800 text-white font-extrabold text-xs uppercase tracking-widest text-center border-b border-slate-700">Rincian 18 Komponen Biaya RS</th>
                 </tr>
-                <tr className="bg-teal-50 text-[10px] uppercase font-extrabold tracking-wider text-teal-700">
-                  <th className="px-3 py-2.5 border-r border-teal-100 sticky left-0 bg-teal-50 z-20 min-w-[180px]">Nama DPJP</th>
-                  <th className="px-3 py-2.5 border-r border-teal-100 text-right w-16">Kasus</th>
-                  <th className="px-3 py-2.5 border-r border-teal-100 text-center">Avg LOS</th>
-                  <th className="px-3 py-2.5 border-r border-teal-100 text-center">Max LOS</th>
-                  <th className="px-3 py-2.5 border-r border-teal-100 text-right">Total RS</th>
-                  <th className="px-3 py-2.5 border-r border-teal-100 text-right">Total INA</th>
-                  <th className="px-3 py-2.5 border-r border-teal-100 text-right">Total iDRG</th>
+                <tr className="bg-blue-50 text-[10px] uppercase font-extrabold tracking-wider text-blue-700">
+                  <th className="px-3 py-2.5 border-r border-blue-100 sticky left-0 bg-blue-50 z-20 min-w-[180px]">Nama DPJP</th>
+                  <th className="px-3 py-2.5 border-r border-blue-100 text-right w-16">Kasus</th>
+                  <th className="px-3 py-2.5 border-r border-blue-100 text-center">Avg LOS</th>
+                  <th className="px-3 py-2.5 border-r border-blue-100 text-center">Max LOS</th>
+                  <th className="px-3 py-2.5 border-r border-blue-100 text-right">Total RS</th>
+                  <th className="px-3 py-2.5 border-r border-blue-100 text-right">Total INA</th>
+                  <th className="px-3 py-2.5 border-r border-blue-100 text-right">Total iDRG</th>
                   <th className="px-3 py-2.5 border-r border-sky-200 text-right bg-sky-50 text-sky-700">Sel. INA-RS</th>
                   <th className="px-3 py-2.5 border-r border-orange-200 text-right bg-orange-50 text-orange-700">Sel. iDRG-RS</th>
                   <th className="px-3 py-2.5 border-r border-slate-300 text-right bg-purple-50 text-purple-700">Sel. iDRG-INA</th>
@@ -3573,11 +3573,11 @@ export default function App() {
                   const selIdrg = dpjp.sumIdrg - dpjp.sumRS;
                   const selIdrgIna = dpjp.sumIdrg - dpjp.sumIna;
                   return (
-                    <tr key={i} className="hover:bg-teal-50/30 cursor-pointer transition-colors"
+                    <tr key={i} className="hover:bg-blue-50/30 cursor-pointer transition-colors"
                       onClick={() => openDrilldown(`Semua Kasus DPJP: ${dpjp.name}`, row => normDpjp(row['DPJP']) === dpjp.normName)}>
                       <td className="px-3 py-3 border-r border-slate-100 font-extrabold text-slate-800 sticky left-0 bg-white z-[5] text-xs">{dpjp.name}</td>
                       <td className="px-3 py-3 border-r border-slate-100 text-right font-bold text-slate-700">{dpjp.count.toLocaleString()}</td>
-                      <td className="px-3 py-3 border-r border-slate-100 text-center text-teal-600 font-bold text-xs">{dpjp.count > 0 ? (dpjp.sumLos / dpjp.count).toFixed(1) : 0}</td>
+                      <td className="px-3 py-3 border-r border-slate-100 text-center text-blue-600 font-bold text-xs">{dpjp.count > 0 ? (dpjp.sumLos / dpjp.count).toFixed(1) : 0}</td>
                       <td className="px-3 py-3 border-r border-slate-100 text-center text-rose-600 font-bold text-xs">{dpjp.maxLos || 0}</td>
                       <td className="px-3 py-3 border-r border-slate-100 text-right text-slate-600 text-xs">{formatRp(dpjp.sumRS)}</td>
                       <td className="px-3 py-3 border-r border-slate-100 text-right text-sky-700 font-semibold text-xs">{formatRp(dpjp.sumIna)}</td>
@@ -3599,17 +3599,17 @@ export default function App() {
                 })}
               </tbody>
               <tfoot>
-                <tr className="bg-teal-50 border-t-2 border-teal-300 font-black">
-                  <td className="px-3 py-3 border-r border-teal-200 sticky left-0 bg-teal-50 z-[5] text-teal-800 text-xs uppercase">Grand Total</td>
-                  <td className="px-3 py-3 border-r border-teal-200 text-right text-teal-800">{data.reduce((s, d) => s + d.count, 0).toLocaleString()}</td>
-                  <td className="px-3 py-3 border-r border-teal-200 text-right text-xs">{formatRp(data.reduce((s, d) => s + d.sumRS, 0))}</td>
-                  <td className="px-3 py-3 border-r border-teal-200 text-right text-xs text-sky-700">{formatRp(data.reduce((s, d) => s + d.sumIna, 0))}</td>
-                  <td className="px-3 py-3 border-r border-teal-200 text-right text-xs text-orange-700">{formatRp(data.reduce((s, d) => s + d.sumIdrg, 0))}</td>
-                  <td className="px-3 py-3 border-r border-teal-200 text-right text-xs">{(() => { const v = data.reduce((s, d) => s + d.sumIna - d.sumRS, 0); return <span className={v >= 0 ? 'text-lime-600' : 'text-orange-600'}>{v > 0 ? '+' : ''}{formatRp(v)}</span>; })()}</td>
-                  <td className="px-3 py-3 border-r border-teal-200 text-right text-xs">{(() => { const v = data.reduce((s, d) => s + d.sumIdrg - d.sumRS, 0); return <span className={v >= 0 ? 'text-lime-600' : 'text-orange-600'}>{v > 0 ? '+' : ''}{formatRp(v)}</span>; })()}</td>
-                  <td className="px-3 py-3 border-r border-teal-200 text-right text-xs">{(() => { const v = data.reduce((s, d) => s + d.sumIdrg - d.sumIna, 0); return <span className={v >= 0 ? 'text-purple-600' : 'text-rose-600'}>{v > 0 ? '+' : ''}{formatRp(v)}</span>; })()}</td>
+                <tr className="bg-blue-50 border-t-2 border-blue-300 font-black">
+                  <td className="px-3 py-3 border-r border-blue-200 sticky left-0 bg-blue-50 z-[5] text-blue-800 text-xs uppercase">Grand Total</td>
+                  <td className="px-3 py-3 border-r border-blue-200 text-right text-blue-800">{data.reduce((s, d) => s + d.count, 0).toLocaleString()}</td>
+                  <td className="px-3 py-3 border-r border-blue-200 text-right text-xs">{formatRp(data.reduce((s, d) => s + d.sumRS, 0))}</td>
+                  <td className="px-3 py-3 border-r border-blue-200 text-right text-xs text-sky-700">{formatRp(data.reduce((s, d) => s + d.sumIna, 0))}</td>
+                  <td className="px-3 py-3 border-r border-blue-200 text-right text-xs text-orange-700">{formatRp(data.reduce((s, d) => s + d.sumIdrg, 0))}</td>
+                  <td className="px-3 py-3 border-r border-blue-200 text-right text-xs">{(() => { const v = data.reduce((s, d) => s + d.sumIna - d.sumRS, 0); return <span className={v >= 0 ? 'text-lime-600' : 'text-orange-600'}>{v > 0 ? '+' : ''}{formatRp(v)}</span>; })()}</td>
+                  <td className="px-3 py-3 border-r border-blue-200 text-right text-xs">{(() => { const v = data.reduce((s, d) => s + d.sumIdrg - d.sumRS, 0); return <span className={v >= 0 ? 'text-lime-600' : 'text-orange-600'}>{v > 0 ? '+' : ''}{formatRp(v)}</span>; })()}</td>
+                  <td className="px-3 py-3 border-r border-blue-200 text-right text-xs">{(() => { const v = data.reduce((s, d) => s + d.sumIdrg - d.sumIna, 0); return <span className={v >= 0 ? 'text-purple-600' : 'text-rose-600'}>{v > 0 ? '+' : ''}{formatRp(v)}</span>; })()}</td>
                   {compKeys.map(c => (
-                    <td key={`tot-${c.key}`} className="px-3 py-3 border-r border-teal-200 text-right text-[11px] text-slate-700">{formatRpEx(data.reduce((s, d) => s + (d.comps?.[c.key] || 0), 0))}</td>
+                    <td key={`tot-${c.key}`} className="px-3 py-3 border-r border-blue-200 text-right text-[11px] text-slate-700">{formatRpEx(data.reduce((s, d) => s + (d.comps?.[c.key] || 0), 0))}</td>
                   ))}
                 </tr>
               </tfoot>
@@ -4067,7 +4067,7 @@ export default function App() {
           .dark-mode-container table tbody tr { border-color: #334155 !important; }
           .dark-mode-container table tbody tr:hover { background-color: rgba(255,255,255,0.05) !important; }
           .dark-mode-container input, .dark-mode-container select { background-color: #1e293b !important; color: #f1f5f9 !important; border-color: #475569 !important; }
-          .dark-mode-container .bg-indigo-50, .dark-mode-container .bg-sky-50, .dark-mode-container .bg-teal-50, .dark-mode-container .bg-purple-50, .dark-mode-container .bg-orange-50, .dark-mode-container .bg-rose-50, .dark-mode-container .bg-lime-50, .dark-mode-container .bg-violet-50 { background-color: rgba(30, 41, 59, 0.6) !important; border-color: #334155 !important; }
+          .dark-mode-container .bg-indigo-50, .dark-mode-container .bg-sky-50, .dark-mode-container .bg-blue-50, .dark-mode-container .bg-purple-50, .dark-mode-container .bg-orange-50, .dark-mode-container .bg-rose-50, .dark-mode-container .bg-lime-50, .dark-mode-container .bg-violet-50 { background-color: rgba(30, 41, 59, 0.6) !important; border-color: #334155 !important; }
         `}} />
       )}
       <div className={`flex h-screen overflow-hidden font-sans ${isDarkMode ? 'dark-mode-container' : 'bg-slate-50 text-slate-800'}`}>

@@ -190,10 +190,10 @@ export default function KompetensiLaporan({ reports, onDrillDown }) {
             <tr key={i}>
               <td className="text-center">{i + 1}</td>
               <td className="font-black">{formatMonthIndo(d.monthKey)}</td>
-              <td className="text-center cursor-pointer hover:bg-teal-50" onClick={()=>onDrillDown&&onDrillDown({title:`Klaim INA-CBG: ${d.monthKey} (SL 0)`, filterFn:r=>!r._meta?.isOutsideOverall&&r._meta?.monthKey===d.monthKey&&r._meta?.severity===0})}>{formatNumber(d.sl0_c)}</td>
-              <td className="text-center cursor-pointer hover:bg-teal-50" onClick={()=>onDrillDown&&onDrillDown({title:`Klaim INA-CBG: ${d.monthKey} (SL 1)`, filterFn:r=>!r._meta?.isOutsideOverall&&r._meta?.monthKey===d.monthKey&&r._meta?.severity===1})}>{formatNumber(d.sl1_c)}</td>
-              <td className="text-center cursor-pointer hover:bg-teal-50" onClick={()=>onDrillDown&&onDrillDown({title:`Klaim INA-CBG: ${d.monthKey} (SL 2)`, filterFn:r=>!r._meta?.isOutsideOverall&&r._meta?.monthKey===d.monthKey&&r._meta?.severity===2})}>{formatNumber(d.sl2_c)}</td>
-              <td className="text-center cursor-pointer hover:bg-teal-50" onClick={()=>onDrillDown&&onDrillDown({title:`Klaim INA-CBG: ${d.monthKey} (SL 3)`, filterFn:r=>!r._meta?.isOutsideOverall&&r._meta?.monthKey===d.monthKey&&r._meta?.severity===3})}>{formatNumber(d.sl3_c)}</td>
+              <td className="text-center cursor-pointer hover:bg-blue-50" onClick={()=>onDrillDown&&onDrillDown({title:`Klaim INA-CBG: ${d.monthKey} (SL 0)`, filterFn:r=>!r._meta?.isOutsideOverall&&r._meta?.monthKey===d.monthKey&&r._meta?.severity===0})}>{formatNumber(d.sl0_c)}</td>
+              <td className="text-center cursor-pointer hover:bg-blue-50" onClick={()=>onDrillDown&&onDrillDown({title:`Klaim INA-CBG: ${d.monthKey} (SL 1)`, filterFn:r=>!r._meta?.isOutsideOverall&&r._meta?.monthKey===d.monthKey&&r._meta?.severity===1})}>{formatNumber(d.sl1_c)}</td>
+              <td className="text-center cursor-pointer hover:bg-blue-50" onClick={()=>onDrillDown&&onDrillDown({title:`Klaim INA-CBG: ${d.monthKey} (SL 2)`, filterFn:r=>!r._meta?.isOutsideOverall&&r._meta?.monthKey===d.monthKey&&r._meta?.severity===2})}>{formatNumber(d.sl2_c)}</td>
+              <td className="text-center cursor-pointer hover:bg-blue-50" onClick={()=>onDrillDown&&onDrillDown({title:`Klaim INA-CBG: ${d.monthKey} (SL 3)`, filterFn:r=>!r._meta?.isOutsideOverall&&r._meta?.monthKey===d.monthKey&&r._meta?.severity===3})}>{formatNumber(d.sl3_c)}</td>
               <td className="text-right">{formatRupiah(d.sl0_t)}</td>
               <td className="text-right">{formatRupiah(d.sl1_t)}</td>
               <td className="text-right">{formatRupiah(d.sl2_t)}</td>
@@ -250,10 +250,10 @@ export default function KompetensiLaporan({ reports, onDrillDown }) {
             <tr key={i}>
               <td className="text-center">{i + 1}</td>
               <td className="font-black">{formatMonthIndo(d.monthKey)}</td>
-              <td className="text-center cursor-pointer hover:bg-teal-50" onClick={()=>onDrillDown&&onDrillDown({title:`Klaim iDRG: ${d.monthKey} (Dasar)`, filterFn:r=>r._meta?.isOutsideOverall&&r._meta?.monthKey===d.monthKey&&r._meta?.highestLevelName==='Dasar'})}>{formatNumber(d.d_c)}</td>
-              <td className="text-center cursor-pointer hover:bg-teal-50" onClick={()=>onDrillDown&&onDrillDown({title:`Klaim iDRG: ${d.monthKey} (Madya)`, filterFn:r=>r._meta?.isOutsideOverall&&r._meta?.monthKey===d.monthKey&&r._meta?.highestLevelName==='Madya'})}>{formatNumber(d.m_c)}</td>
-              <td className="text-center cursor-pointer hover:bg-teal-50" onClick={()=>onDrillDown&&onDrillDown({title:`Klaim iDRG: ${d.monthKey} (Utama)`, filterFn:r=>r._meta?.isOutsideOverall&&r._meta?.monthKey===d.monthKey&&r._meta?.highestLevelName==='Utama'})}>{formatNumber(d.u_c)}</td>
-              <td className="text-center cursor-pointer hover:bg-teal-50" onClick={()=>onDrillDown&&onDrillDown({title:`Klaim iDRG: ${d.monthKey} (Paripurna)`, filterFn:r=>r._meta?.isOutsideOverall&&r._meta?.monthKey===d.monthKey&&r._meta?.highestLevelName==='Paripurna'})}>{formatNumber(d.p_c)}</td>
+              <td className="text-center cursor-pointer hover:bg-blue-50" onClick={()=>onDrillDown&&onDrillDown({title:`Klaim iDRG: ${d.monthKey} (Dasar)`, filterFn:r=>r._meta?.isOutsideOverall&&r._meta?.monthKey===d.monthKey&&r._meta?.highestLevelName==='Dasar'})}>{formatNumber(d.d_c)}</td>
+              <td className="text-center cursor-pointer hover:bg-blue-50" onClick={()=>onDrillDown&&onDrillDown({title:`Klaim iDRG: ${d.monthKey} (Madya)`, filterFn:r=>r._meta?.isOutsideOverall&&r._meta?.monthKey===d.monthKey&&r._meta?.highestLevelName==='Madya'})}>{formatNumber(d.m_c)}</td>
+              <td className="text-center cursor-pointer hover:bg-blue-50" onClick={()=>onDrillDown&&onDrillDown({title:`Klaim iDRG: ${d.monthKey} (Utama)`, filterFn:r=>r._meta?.isOutsideOverall&&r._meta?.monthKey===d.monthKey&&r._meta?.highestLevelName==='Utama'})}>{formatNumber(d.u_c)}</td>
+              <td className="text-center cursor-pointer hover:bg-blue-50" onClick={()=>onDrillDown&&onDrillDown({title:`Klaim iDRG: ${d.monthKey} (Paripurna)`, filterFn:r=>r._meta?.isOutsideOverall&&r._meta?.monthKey===d.monthKey&&r._meta?.highestLevelName==='Paripurna'})}>{formatNumber(d.p_c)}</td>
               <td className="text-right">{formatRupiah(d.d_t)}</td>
               <td className="text-right">{formatRupiah(d.m_t)}</td>
               <td className="text-right">{formatRupiah(d.u_t)}</td>

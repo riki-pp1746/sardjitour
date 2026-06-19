@@ -195,7 +195,7 @@ const Icons = {
 
 const THEME = {
   emerald: '#059669',
-  teal: '#0d9488',
+  teal: '#2563eb',
   sky: '#0284c7',
   amber: '#d97706',
   rose: '#e11d48',
@@ -455,9 +455,9 @@ const TabelRealisasiSumberJenis = ({ aggData }) => {
       return (
          <tr className="border-b border-slate-100 hover:bg-slate-50 transition duration-150">
             <td className="px-4 py-3 border-r border-slate-200 text-left font-bold text-slate-700">{label}</td>
-            <td className="px-3 py-3 text-slate-600">{formatTableID(p51)}</td><td className="px-3 py-3 font-semibold text-slate-800">{formatTableID(r51)}</td><td className="px-3 py-3 border-r border-slate-200 font-semibold text-teal-600">{p51 > 0 ? (r51/p51*100).toFixed(2) : '-'}%</td>
-            <td className="px-3 py-3 text-slate-600">{formatTableID(p52)}</td><td className="px-3 py-3 font-semibold text-slate-800">{formatTableID(r52)}</td><td className="px-3 py-3 border-r border-slate-200 font-semibold text-teal-600">{p52 > 0 ? (r52/p52*100).toFixed(2) : '-'}%</td>
-            <td className="px-3 py-3 text-slate-600">{formatTableID(p53)}</td><td className="px-3 py-3 font-semibold text-slate-800">{formatTableID(r53)}</td><td className="px-3 py-3 border-r border-slate-200 font-semibold text-teal-600">{p53 > 0 ? (r53/p53*100).toFixed(2) : '-'}%</td>
+            <td className="px-3 py-3 text-slate-600">{formatTableID(p51)}</td><td className="px-3 py-3 font-semibold text-slate-800">{formatTableID(r51)}</td><td className="px-3 py-3 border-r border-slate-200 font-semibold text-blue-600">{p51 > 0 ? (r51/p51*100).toFixed(2) : '-'}%</td>
+            <td className="px-3 py-3 text-slate-600">{formatTableID(p52)}</td><td className="px-3 py-3 font-semibold text-slate-800">{formatTableID(r52)}</td><td className="px-3 py-3 border-r border-slate-200 font-semibold text-blue-600">{p52 > 0 ? (r52/p52*100).toFixed(2) : '-'}%</td>
+            <td className="px-3 py-3 text-slate-600">{formatTableID(p53)}</td><td className="px-3 py-3 font-semibold text-slate-800">{formatTableID(r53)}</td><td className="px-3 py-3 border-r border-slate-200 font-semibold text-blue-600">{p53 > 0 ? (r53/p53*100).toFixed(2) : '-'}%</td>
             <td className="px-3 py-3 bg-slate-50 font-bold text-slate-800">{formatTableID(tP)}</td><td className="px-3 py-3 bg-slate-50 font-bold text-emerald-700">{formatTableID(tR)}</td><td className="px-3 py-3 bg-slate-50 font-black text-slate-800">{tP > 0 ? (tR/tP*100).toFixed(2) : '-'}%</td>
          </tr>
       );
@@ -550,7 +550,7 @@ const TabRealisasiAnggaran1 = ({ aggData, sheetStatus }) => {
           <div className="text-2xl font-black text-slate-800">{formatRp(summary.paguAwal)}</div>
         </div>
         <div className="bg-white p-5 rounded-2xl shadow-sm border border-slate-100 flex flex-col justify-center relative overflow-hidden group">
-          <div className="absolute top-0 left-0 w-1 h-full bg-teal-500"></div>
+          <div className="absolute top-0 left-0 w-1 h-full bg-blue-500"></div>
           <div className="text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-1">PAGU RM</div>
           <div className="text-2xl font-black text-slate-800">{formatRp(summary.paguRM)}</div>
         </div>
@@ -566,20 +566,20 @@ const TabRealisasiAnggaran1 = ({ aggData, sheetStatus }) => {
              <div className="relative">
                 <div className="flex justify-between text-[10px] mb-1.5 font-bold"><span className="text-slate-600">Belanja Pegawai (51)</span> <span className="text-emerald-600">{s51Pagu > 0 ? ((s51Real/s51Pagu)*100).toFixed(2):'0'}%</span></div>
                 <div className="w-full bg-slate-100 h-3 rounded-full flex overflow-hidden shadow-inner">
-                   <div className="bg-teal-600 h-full transition-all duration-1000" style={{width: `${summary.paguEfektif > 0 ? (s51Pagu/summary.paguEfektif)*100 : 0}%`}}></div>
+                   <div className="bg-blue-600 h-full transition-all duration-1000" style={{width: `${summary.paguEfektif > 0 ? (s51Pagu/summary.paguEfektif)*100 : 0}%`}}></div>
                    <div className="bg-amber-500 h-full transition-all duration-1000" style={{width: `${s51Pagu > 0 ? (s51Real/s51Pagu)*100 : 0}%`}}></div>
                 </div>
              </div>
              <div className="relative">
                 <div className="flex justify-between text-[10px] mb-1.5 font-bold"><span className="text-slate-600">Belanja Barang (52)</span> <span className="text-emerald-600">{s52Pagu > 0 ? ((s52Real/s52Pagu)*100).toFixed(2):'0'}%</span></div>
                 <div className="w-full bg-slate-100 h-3 rounded-full flex overflow-hidden shadow-inner">
-                   <div className="bg-teal-600 h-full transition-all duration-1000" style={{width: `${summary.paguEfektif > 0 ? (s52Pagu/summary.paguEfektif)*100 : 0}%`}}></div>
+                   <div className="bg-blue-600 h-full transition-all duration-1000" style={{width: `${summary.paguEfektif > 0 ? (s52Pagu/summary.paguEfektif)*100 : 0}%`}}></div>
                    <div className="bg-amber-500 h-full transition-all duration-1000" style={{width: `${s52Pagu > 0 ? (s52Real/s52Pagu)*100 : 0}%`}}></div>
                 </div>
              </div>
           </div>
           <div className="flex gap-4 text-[9px] font-bold mt-5 justify-center w-full uppercase tracking-wider text-slate-500">
-             <span className="flex items-center"><div className="w-2.5 h-2.5 rounded-sm bg-teal-600 mr-1.5"></div>Pagu Efektif</span>
+             <span className="flex items-center"><div className="w-2.5 h-2.5 rounded-sm bg-blue-600 mr-1.5"></div>Pagu Efektif</span>
              <span className="flex items-center"><div className="w-2.5 h-2.5 rounded-sm bg-amber-500 mr-1.5"></div>Realisasi</span>
           </div>
         </div>
@@ -590,7 +590,7 @@ const TabRealisasiAnggaran1 = ({ aggData, sheetStatus }) => {
           <div className="text-2xl font-black text-slate-800">{formatRp(summary.blokir)}</div>
         </div>
         <div className="bg-white p-5 rounded-2xl shadow-sm border border-slate-100 flex flex-col justify-center relative overflow-hidden group">
-          <div className="absolute top-0 left-0 w-1 h-full bg-teal-400"></div>
+          <div className="absolute top-0 left-0 w-1 h-full bg-blue-400"></div>
           <div className="text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-1">REALISASI RM</div>
           <div className="text-2xl font-black text-slate-800">{formatRp(summary.realisasiRM)}</div>
         </div>
@@ -607,7 +607,7 @@ const TabRealisasiAnggaran1 = ({ aggData, sheetStatus }) => {
         </div>
         <div className="bg-white p-5 rounded-2xl shadow-sm border border-slate-100 flex flex-col justify-center items-center relative overflow-hidden">
           <div className="text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-1">% REALISASI RM</div>
-          <div className="text-3xl font-black text-teal-600">{summary.paguRM > 0 ? ((summary.realisasiRM / summary.paguRM)*100).toFixed(2) : '0.00'}%</div>
+          <div className="text-3xl font-black text-blue-600">{summary.paguRM > 0 ? ((summary.realisasiRM / summary.paguRM)*100).toFixed(2) : '0.00'}%</div>
         </div>
         <div className="bg-white p-5 rounded-2xl shadow-sm border border-slate-100 flex flex-col justify-center items-center relative overflow-hidden">
           <div className="text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-1">% REALISASI BLU</div>
@@ -1634,7 +1634,7 @@ function App({ onLogout }) {
       <aside className={`${isSidebarOpen ? 'w-full md:w-64' : 'w-0 md:w-20'} bg-white border-b md:border-b-0 md:border-r border-gray-200 flex flex-col flex-shrink-0 z-20 shadow-[2px_0_8px_rgba(0,0,0,0.05)] transition-all duration-300 ease-in-out overflow-hidden hidden md:flex`}>
         <div className="h-16 flex items-center px-5 bg-[#0f172a] shadow-md">
           <div className="w-8 h-8 bg-gradient-to-br from-blue-400 to-blue-600 rounded-lg flex items-center justify-center mr-3 shadow-inner relative overflow-hidden">
-             <div className="absolute top-0 right-0 w-3 h-3 bg-teal-400 rounded-bl-full"></div>
+             <div className="absolute top-0 right-0 w-3 h-3 bg-blue-400 rounded-bl-full"></div>
              <img src={LOGO_URL} alt="Logo" className="w-full h-full object-contain relative z-10" />
           </div>
           <div className="flex flex-col">
@@ -1771,15 +1771,15 @@ const LoginScreen = ({ onLogin }) => {
     <div className="min-h-screen bg-slate-100 flex flex-col justify-center items-center p-4 font-sans selection:bg-emerald-200">
       <div className="w-full max-w-md bg-white rounded-3xl shadow-2xl border border-slate-200 overflow-hidden animate-fadeIn">
         <div className="bg-emerald-900 p-10 flex flex-col items-center justify-center relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-40 h-40 bg-teal-500 rounded-bl-full opacity-20"></div>
+          <div className="absolute top-0 right-0 w-40 h-40 bg-blue-500 rounded-bl-full opacity-20"></div>
           <div className="absolute bottom-0 left-0 w-32 h-32 bg-emerald-500 rounded-tr-full opacity-20"></div>
           
           <div className="w-44 h-44 bg-white rounded-[32px] flex items-center justify-center shadow-2xl relative overflow-hidden mb-8 border-[8px] border-emerald-800/30 p-4 transition-transform hover:scale-105">
-             <div className="absolute top-0 right-0 w-16 h-16 bg-teal-500 rounded-bl-full"></div>
+             <div className="absolute top-0 right-0 w-16 h-16 bg-blue-500 rounded-bl-full"></div>
              <img src={LOGO_URL} alt="Logo" className="w-full h-full object-contain relative z-10 drop-shadow-xl" />
           </div>
           <h1 className="text-3xl font-black text-white tracking-widest uppercase text-center drop-shadow-md">Blueberry</h1>
-          <p className="text-[13px] text-teal-400 font-bold uppercase tracking-widest mt-2 flex items-center">
+          <p className="text-[13px] text-blue-400 font-bold uppercase tracking-widest mt-2 flex items-center">
              <SvgIcon path={Icons.Mountain} className="w-4 h-4 mr-2" />
              RSP Goenawan Partowidigdo
           </p>

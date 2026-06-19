@@ -55,8 +55,8 @@ const styles = `
   100% { background-position: 200% 0; }
 }
 @keyframes pulse-ring {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(20,184,166,0.3); }
-  50%       { box-shadow: 0 0 0 6px rgba(20,184,166,0); }
+  0%, 100% { box-shadow: 0 0 0 0 rgba(59,130,246,0.3); }
+  50%       { box-shadow: 0 0 0 6px rgba(59,130,246,0); }
 }
 @keyframes spin-slow { to { transform: rotate(360deg); } }
 @keyframes float {
@@ -96,8 +96,8 @@ const styles = `
   position: relative;
 }
 .group-card:hover {
-  border-color: #14b8a6;
-  box-shadow: 0 8px 24px rgba(20,184,166,0.15), 0 0 0 3px rgba(20,184,166,0.08);
+  border-color: #3b82f6;
+  box-shadow: 0 8px 24px rgba(59,130,246,0.15), 0 0 0 3px rgba(59,130,246,0.08);
   transform: translateY(-3px) scale(1.01);
 }
 .group-card-danger:hover {
@@ -114,7 +114,7 @@ const styles = `
   white-space: nowrap;
 }
 .tab-btn-active {
-  background: linear-gradient(135deg, #0d9488 0%, #0f766e 100%);
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
   color: white;
   box-shadow: 0 3px 10px rgba(13,148,136,0.25);
 }
@@ -124,7 +124,7 @@ const styles = `
 }
 .tab-btn-inactive:hover {
   background: #f0fdfa;
-  color: #0d9488;
+  color: #2563eb;
 }
 
 .stat-pill {
@@ -401,10 +401,10 @@ function DrillDown({ group, rows, icdMap, config, onClose, onExport }) {
         <div style={{background:'linear-gradient(135deg,#0f172a 0%,#1e293b 100%)',padding:'20px 24px',display:'flex',alignItems:'center',justifyContent:'space-between',flexShrink:0}}>
           <div>
             <div style={{display:'flex',alignItems:'center',gap:8,marginBottom:4}}>
-              <div style={{width:28,height:28,borderRadius:8,background:'rgba(20,184,166,0.2)',border:'1px solid rgba(20,184,166,0.3)',display:'flex',alignItems:'center',justifyContent:'center'}}>
-                <Eye size={14} color="#14b8a6"/>
+              <div style={{width:28,height:28,borderRadius:8,background:'rgba(59,130,246,0.2)',border:'1px solid rgba(59,130,246,0.3)',display:'flex',alignItems:'center',justifyContent:'center'}}>
+                <Eye size={14} color="#3b82f6"/>
               </div>
-              <p style={{fontSize:10,fontWeight:800,color:'#14b8a6',letterSpacing:'0.12em',textTransform:'uppercase'}}>
+              <p style={{fontSize:10,fontWeight:800,color:'#3b82f6',letterSpacing:'0.12em',textTransform:'uppercase'}}>
                 {customTitle || `Drill-Down Detail${filterLevel ? ` · Level ${filterLevel}` : ''}`}
               </p>
             </div>
@@ -448,9 +448,9 @@ function DrillDown({ group, rows, icdMap, config, onClose, onExport }) {
                 });
                 onExport(dn(group), [sheetPasien, sheetICD]);
               }
-            }} style={{display:'flex',alignItems:'center',gap:6,padding:'7px 14px',background:'rgba(20,184,166,0.15)',border:'1px solid rgba(20,184,166,0.3)',borderRadius:10,color:'#5eead4',fontSize:11,fontWeight:700,cursor:'pointer',transition:'all 0.2s'}}
-              onMouseEnter={e=>{e.currentTarget.style.background='rgba(20,184,166,0.25)';}}
-              onMouseLeave={e=>{e.currentTarget.style.background='rgba(20,184,166,0.15)';}}>
+            }} style={{display:'flex',alignItems:'center',gap:6,padding:'7px 14px',background:'rgba(59,130,246,0.15)',border:'1px solid rgba(59,130,246,0.3)',borderRadius:10,color:'#5eead4',fontSize:11,fontWeight:700,cursor:'pointer',transition:'all 0.2s'}}
+              onMouseEnter={e=>{e.currentTarget.style.background='rgba(59,130,246,0.25)';}}
+              onMouseLeave={e=>{e.currentTarget.style.background='rgba(59,130,246,0.15)';}}>
               <Download size={13}/> Excel
             </button>
             <button onClick={onClose} style={{width:32,height:32,borderRadius:10,border:'1px solid rgba(255,255,255,0.12)',background:'rgba(255,255,255,0.06)',display:'flex',alignItems:'center',justifyContent:'center',cursor:'pointer',color:'rgba(255,255,255,0.6)',transition:'all 0.2s'}}
@@ -486,8 +486,8 @@ function DrillDown({ group, rows, icdMap, config, onClose, onExport }) {
           ].map(t=>(
             <button key={t.id} onClick={()=>{setTab(t.id);setPage(0);}}
               style={{display:'flex',alignItems:'center',gap:6,padding:'12px 20px',fontSize:11,fontWeight:800,border:'none',background:'none',cursor:'pointer',
-                borderBottom: tab===t.id ? '2px solid #0d9488':'2px solid transparent',
-                color: tab===t.id ? '#0d9488' : '#94a3b8',
+                borderBottom: tab===t.id ? '2px solid #2563eb':'2px solid transparent',
+                color: tab===t.id ? '#2563eb' : '#94a3b8',
                 transition:'all 0.2s'}}>
               {t.icon}{t.label}
             </button>
@@ -497,7 +497,7 @@ function DrillDown({ group, rows, icdMap, config, onClose, onExport }) {
               <Search size={12} style={{position:'absolute',left:10,top:'50%',transform:'translateY(-50%)',color:'#94a3b8'}}/>
               <input value={search} onChange={e=>setSearch(e.target.value)} placeholder="Cari SEP / DPJP / ICD..."
                 style={{paddingLeft:30,paddingRight:12,paddingTop:7,paddingBottom:7,fontSize:11,border:'1.5px solid #e2e8f0',borderRadius:10,outline:'none',width:220,color:'#334155',background:'#f8fafc'}}
-                onFocus={e=>{e.target.style.borderColor='#0d9488';e.target.style.background='white';}}
+                onFocus={e=>{e.target.style.borderColor='#2563eb';e.target.style.background='white';}}
                 onBlur={e=>{e.target.style.borderColor='#e2e8f0';e.target.style.background='#f8fafc';}}/>
             </div>
           </div>
@@ -689,7 +689,7 @@ function Top10Table({ title, data }) {
   return (
     <div style={{background:'white',borderRadius:16,border:`1.5px solid ${isDanger?'#fecdd3':'#e2e8f0'}`,overflow:'hidden',boxShadow:'0 2px 12px rgba(0,0,0,0.04)'}}>
       <div style={{padding:'14px 18px',borderBottom:`1px solid ${isDanger?'#fee2e2':'#f1f5f9'}`,background:isDanger?'linear-gradient(135deg,#fff1f2,#ffe4e6)':'#f8fafc',display:'flex',alignItems:'center',gap:8}}>
-        <div style={{width:6,height:20,borderRadius:3,background:isDanger?'#f43f5e':'#14b8a6'}}/>
+        <div style={{width:6,height:20,borderRadius:3,background:isDanger?'#f43f5e':'#3b82f6'}}/>
         <h3 style={{fontWeight:800,fontSize:12,color:'#1e293b',margin:0}}>{title}</h3>
       </div>
       <div style={{overflowX:'auto'}}>
@@ -1023,7 +1023,7 @@ export default function KompetensiDashboard({ rows, onBack, resolveKsmDept, ksmO
                       <div style={{flex:1}}>
                         <div style={{display:'flex',alignItems:'center',justifyContent:'space-between',gap:8,marginBottom:4}}>
                           <h3 style={{fontSize:12,fontWeight:800,color:'#1e293b',margin:0}}>{r.title}</h3>
-                          <span style={{display:'inline-flex',alignItems:'center',gap:4,fontSize:9,fontWeight:800,color:'#0d9488',background:'#f0fdfa',border:'1px solid #99f6e4',padding:'2px 8px',borderRadius:999,whiteSpace:'nowrap',flexShrink:0}}>
+                          <span style={{display:'inline-flex',alignItems:'center',gap:4,fontSize:9,fontWeight:800,color:'#2563eb',background:'#f0fdfa',border:'1px solid #99f6e4',padding:'2px 8px',borderRadius:999,whiteSpace:'nowrap',flexShrink:0}}>
                             <Users size={9}/> Lihat Pasien
                           </span>
                         </div>
@@ -1075,7 +1075,7 @@ export default function KompetensiDashboard({ rows, onBack, resolveKsmDept, ksmO
                       </div>
                       <div style={{display:'flex',alignItems:'center',gap:8}}>
                         <span style={{fontSize:12,fontWeight:900,color:barColors[i][0]}}>{fmtRp(item.revenue)}</span>
-                        <span style={{display:'inline-flex',alignItems:'center',gap:3,fontSize:9,fontWeight:800,color:'#0d9488',background:'#f0fdfa',border:'1px solid #99f6e4',padding:'2px 7px',borderRadius:999}}>
+                        <span style={{display:'inline-flex',alignItems:'center',gap:3,fontSize:9,fontWeight:800,color:'#2563eb',background:'#f0fdfa',border:'1px solid #99f6e4',padding:'2px 7px',borderRadius:999}}>
                           <Eye size={9}/> Detail
                         </span>
                       </div>
@@ -1108,7 +1108,7 @@ export default function KompetensiDashboard({ rows, onBack, resolveKsmDept, ksmO
                         filterFn: row => row._meta?.highestGroup === item.name && row._meta?.isOutsideOverall
                       })}
                       style={{fontSize:10,fontWeight:700,color:'#475569',background:'#f8fafc',border:'1.5px solid #e2e8f0',padding:'4px 12px',borderRadius:999,cursor:'pointer',transition:'all 0.2s'}}
-                      onMouseEnter={e=>{e.currentTarget.style.background='#f0fdfa';e.currentTarget.style.borderColor='#99f6e4';e.currentTarget.style.color='#0d9488';}}
+                      onMouseEnter={e=>{e.currentTarget.style.background='#f0fdfa';e.currentTarget.style.borderColor='#99f6e4';e.currentTarget.style.color='#2563eb';}}
                       onMouseLeave={e=>{e.currentTarget.style.background='#f8fafc';e.currentTarget.style.borderColor='#e2e8f0';e.currentTarget.style.color='#475569';}}>
                       {dn(item.name)} · {fmtRp(item.revenue)}
                     </button>
@@ -1149,7 +1149,7 @@ export default function KompetensiDashboard({ rows, onBack, resolveKsmDept, ksmO
               const xPct = strategicData.maxVol ? (item.volume / strategicData.maxVol) * 90 : 50;
               const yPct = strategicData.maxTariff ? (item.avgTariff / strategicData.maxTariff) * 90 : 50;
               const sz = Math.max(16, Math.min(56, (item.revenue / (strategicData.topRevenue[0]?.revenue || 1)) * 56));
-              const colors = ['#f43f5e','#f97316','#eab308','#22c55e','#3b82f6','#8b5cf6','#14b8a6','#ec4899','#06b6d4','#84cc16'];
+              const colors = ['#f43f5e','#f97316','#eab308','#22c55e','#3b82f6','#8b5cf6','#3b82f6','#ec4899','#06b6d4','#84cc16'];
               const color = colors[i % colors.length];
               return (
                 <div key={i}
@@ -1194,19 +1194,19 @@ export default function KompetensiDashboard({ rows, onBack, resolveKsmDept, ksmO
         {/* Top bar */}
         <div style={{padding:'12px 20px',display:'flex',alignItems:'center',gap:16,borderBottom:'1px solid #f1f5f9'}}>
           <button onClick={onBack} style={{width:36,height:36,borderRadius:10,border:'1.5px solid #e2e8f0',background:'#f8fafc',display:'flex',alignItems:'center',justifyContent:'center',cursor:'pointer',color:'#64748b',transition:'all 0.2s',flexShrink:0}}
-            onMouseEnter={e=>{e.currentTarget.style.background='#f0fdfa';e.currentTarget.style.borderColor='#99f6e4';e.currentTarget.style.color='#0d9488';}}
+            onMouseEnter={e=>{e.currentTarget.style.background='#f0fdfa';e.currentTarget.style.borderColor='#99f6e4';e.currentTarget.style.color='#2563eb';}}
             onMouseLeave={e=>{e.currentTarget.style.background='#f8fafc';e.currentTarget.style.borderColor='#e2e8f0';e.currentTarget.style.color='#64748b';}}>
             <ArrowLeft size={16}/>
           </button>
 
           <div style={{display:'flex',alignItems:'center',gap:12,flex:1}}>
             <div style={{width:38,height:38,borderRadius:12,background:'linear-gradient(135deg,#f0fdfa,#ccfbf1)',border:'1.5px solid #99f6e4',display:'flex',alignItems:'center',justifyContent:'center',flexShrink:0,boxShadow:'0 2px 8px rgba(13,148,136,0.12)'}}>
-              <ShieldAlert size={19} color="#0d9488"/>
+              <ShieldAlert size={19} color="#2563eb"/>
             </div>
             <div>
               <div style={{display:'flex',alignItems:'center',gap:8}}>
                 <h1 style={{fontWeight:900,fontSize:16,color:'#0f172a',margin:0,letterSpacing:'-0.02em'}}>Analisis Kompetensi Layanan</h1>
-                <span style={{fontSize:9,fontWeight:800,color:'#0d9488',background:'#f0fdfa',border:'1.5px solid #99f6e4',padding:'2px 8px',borderRadius:999,letterSpacing:'0.1em',textTransform:'uppercase'}}>LIVE</span>
+                <span style={{fontSize:9,fontWeight:800,color:'#2563eb',background:'#f0fdfa',border:'1.5px solid #99f6e4',padding:'2px 8px',borderRadius:999,letterSpacing:'0.1em',textTransform:'uppercase'}}>LIVE</span>
               </div>
               <p style={{fontSize:11,color:'#64748b',margin:'2px 0 0 0'}}>
                 {fmt(data.totalPatients)} kasus · {fmt(data.patientsOutsideCompetency)} di luar kompetensi ({pctOut}%)
@@ -1298,7 +1298,7 @@ export default function KompetensiDashboard({ rows, onBack, resolveKsmDept, ksmO
           {tab==='ksm' && isKsmLoading && (
             <div style={{display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center',padding:'100px 20px',background:'white',borderRadius:20,border:'1.5px solid #e2e8f0',boxShadow:'0 4px 20px rgba(0,0,0,0.05)',marginTop:20}} className="komp-fade-up">
               <div style={{animation:'spin-slow 1.5s linear infinite',marginBottom:20}}>
-                <Activity size={40} color="#0d9488" />
+                <Activity size={40} color="#2563eb" />
               </div>
               <h3 style={{fontWeight:900,fontSize:18,color:'#0f172a',margin:0}}>Menganalisis Kinerja KSM...</h3>
               <p style={{fontSize:13,color:'#64748b',margin:'8px 0 0 0'}}>Melakukan pemetaan kompetensi pada seluruh data layanan</p>
@@ -1345,7 +1345,7 @@ export default function KompetensiDashboard({ rows, onBack, resolveKsmDept, ksmO
                                 : row => (row['DPJP']||'-').trim()===d.name.trim()
                             })}
                             style={{borderBottom:'1px solid #f8fafc',background:isAlert?'#fff5f5':i%2===0?'white':'#fafafa',cursor:'pointer',transition:'all 0.15s'}}
-                            onMouseEnter={e=>{e.currentTarget.style.background='#f0fdfa';e.currentTarget.style.borderLeft='3px solid #14b8a6';}}
+                            onMouseEnter={e=>{e.currentTarget.style.background='#f0fdfa';e.currentTarget.style.borderLeft='3px solid #3b82f6';}}
                             onMouseLeave={e=>{e.currentTarget.style.background=isAlert?'#fff5f5':i%2===0?'white':'#fafafa';e.currentTarget.style.borderLeft='none';}}>
                             <td style={{padding:'10px 14px',color:'#94a3b8',fontWeight:700}}>{i+1}</td>
                             <td style={{padding:'10px 14px'}}>
@@ -1485,7 +1485,7 @@ export default function KompetensiDashboard({ rows, onBack, resolveKsmDept, ksmO
                     {[{id:'dept',icon:<Building2 size={12}/>,label:'Departemen'},{id:'ksm',icon:<Users size={12}/>,label:'KSM'},{id:'dpjp',icon:<User size={12}/>,label:'DPJP'}].map(v => (
                       <button key={v.id} onClick={() => {setKsmSubView(v.id);setKsmSearch('');}}
                         style={{display:'flex',alignItems:'center',gap:5,padding:'6px 14px',borderRadius:9,border:'none',fontSize:11,fontWeight:700,cursor:'pointer',transition:'all 0.2s',
-                          background:ksmSubView===v.id?'linear-gradient(135deg,#0d9488,#0f766e)':'transparent',
+                          background:ksmSubView===v.id?'linear-gradient(135deg,#2563eb,#1d4ed8)':'transparent',
                           color:ksmSubView===v.id?'white':'#64748b',
                           boxShadow:ksmSubView===v.id?'0 3px 10px rgba(13,148,136,0.25)':'none'}}>
                         {v.icon}{v.label}
@@ -1586,7 +1586,7 @@ export default function KompetensiDashboard({ rows, onBack, resolveKsmDept, ksmO
                       <Search size={12} style={{position:'absolute',left:10,top:'50%',transform:'translateY(-50%)',color:'#94a3b8'}}/>
                       <input value={search} onChange={e=>setSearch(e.target.value)} placeholder="Cari kelompok..."
                         style={{paddingLeft:30,paddingRight:12,paddingTop:8,paddingBottom:8,fontSize:11,border:'1.5px solid #e2e8f0',borderRadius:10,outline:'none',width:180,color:'#334155',background:'#f8fafc',transition:'all 0.2s'}}
-                        onFocus={e=>{e.target.style.borderColor='#0d9488';e.target.style.background='white';}}
+                        onFocus={e=>{e.target.style.borderColor='#2563eb';e.target.style.background='white';}}
                         onBlur={e=>{e.target.style.borderColor='#e2e8f0';e.target.style.background='#f8fafc';}}/>
                     </div>
                   </div>
@@ -1698,7 +1698,7 @@ export default function KompetensiDashboard({ rows, onBack, resolveKsmDept, ksmO
                     <p style={{fontSize:11,color:'#64748b',margin:'4px 0 0 0'}}>Kode ICD dengan frekuensi dan nilai tarif tertinggi</p>
                   </div>
                   <button onClick={handleExportTop10}
-                    style={{display:'flex',alignItems:'center',gap:6,padding:'9px 18px',background:'linear-gradient(135deg,#0d9488,#059669)',color:'white',border:'none',borderRadius:12,fontSize:11,fontWeight:800,cursor:'pointer',boxShadow:'0 4px 12px rgba(13,148,136,0.3)',transition:'all 0.2s',letterSpacing:'0.04em',textTransform:'uppercase'}}
+                    style={{display:'flex',alignItems:'center',gap:6,padding:'9px 18px',background:'linear-gradient(135deg,#2563eb,#059669)',color:'white',border:'none',borderRadius:12,fontSize:11,fontWeight:800,cursor:'pointer',boxShadow:'0 4px 12px rgba(13,148,136,0.3)',transition:'all 0.2s',letterSpacing:'0.04em',textTransform:'uppercase'}}
                     onMouseEnter={e=>{e.currentTarget.style.boxShadow='0 6px 20px rgba(13,148,136,0.45)';e.currentTarget.style.transform='translateY(-1px)';}}
                     onMouseLeave={e=>{e.currentTarget.style.boxShadow='0 4px 12px rgba(13,148,136,0.3)';e.currentTarget.style.transform='translateY(0)';}}>
                     <Download size={14}/> Download Excel
@@ -1814,7 +1814,7 @@ export default function KompetensiDashboard({ rows, onBack, resolveKsmDept, ksmO
                   <Search size={12} style={{position:'absolute',left:10,top:'50%',transform:'translateY(-50%)',color:'#94a3b8'}}/>
                   <input value={search} onChange={e=>setSearch(e.target.value)} placeholder="Cari kelompok..."
                     style={{paddingLeft:30,paddingRight:12,paddingTop:8,paddingBottom:8,fontSize:11,border:'1.5px solid #e2e8f0',borderRadius:10,outline:'none',width:200,color:'#334155',transition:'all 0.2s'}}
-                    onFocus={e=>{e.target.style.borderColor='#0d9488';}}
+                    onFocus={e=>{e.target.style.borderColor='#2563eb';}}
                     onBlur={e=>{e.target.style.borderColor='#e2e8f0';}}/>
                 </div>
               </div>
@@ -1850,13 +1850,13 @@ export default function KompetensiDashboard({ rows, onBack, resolveKsmDept, ksmO
                       return (
                         <tr key={r.name} onClick={()=>setDrill(r.name)}
                           style={{borderBottom:'1px solid #f1f5f9',cursor:'pointer',background:i%2===0?'white':'#fafafa',transition:'all 0.15s'}}
-                          onMouseEnter={e=>{e.currentTarget.style.background='#f0fdfa';e.currentTarget.style.boxShadow='inset 3px 0 0 #14b8a6';}}
+                          onMouseEnter={e=>{e.currentTarget.style.background='#f0fdfa';e.currentTarget.style.boxShadow='inset 3px 0 0 #3b82f6';}}
                           onMouseLeave={e=>{e.currentTarget.style.background=i%2===0?'white':'#fafafa';e.currentTarget.style.boxShadow='none';}}>
                           <td style={{padding:'11px 12px',color:'#94a3b8',textAlign:'center',borderRight:'1px solid #f1f5f9'}}>{i+1}</td>
                           <td style={{padding:'11px 16px',borderRight:'1px solid #f1f5f9'}}>
                             <div style={{fontWeight:800,color:'#1e293b',fontSize:12}}>{dn(r.name)}</div>
                             <div style={{fontSize:10,color:'#94a3b8',marginTop:2}}>
-                              Kompetensi RS: <span style={{color:'#0d9488',fontWeight:800}}>{config[r.name]||'Belum Mapping'}</span>
+                              Kompetensi RS: <span style={{color:'#2563eb',fontWeight:800}}>{config[r.name]||'Belum Mapping'}</span>
                             </div>
                             <div style={{display:'flex',flexWrap:'wrap',gap:3,marginTop:4}}>
                               {LEVEL_ORDER.map(lv => {
@@ -1895,7 +1895,7 @@ export default function KompetensiDashboard({ rows, onBack, resolveKsmDept, ksmO
                             <MiniLevelBar ranap={r.ranap} rajal={r.rajal}/>
                           </td>
                           <td style={{padding:'11px 12px',textAlign:'center'}}>
-                            <span style={{display:'inline-flex',alignItems:'center',gap:4,fontSize:10,color:'#0d9488',fontWeight:800,background:'#f0fdfa',padding:'5px 12px',borderRadius:999,border:'1px solid #99f6e4',transition:'all 0.2s'}}>
+                            <span style={{display:'inline-flex',alignItems:'center',gap:4,fontSize:10,color:'#2563eb',fontWeight:800,background:'#f0fdfa',padding:'5px 12px',borderRadius:999,border:'1px solid #99f6e4',transition:'all 0.2s'}}>
                               <Users size={11}/>Detail
                             </span>
                           </td>

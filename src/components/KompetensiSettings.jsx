@@ -120,9 +120,9 @@ export default function KompetensiSettings() {
 
   return (
     <div className="space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-500 pb-12">
-      <div className="flex items-center gap-4 bg-teal-50 p-6 rounded-3xl border-2 border-teal-100">
+      <div className="flex items-center gap-4 bg-blue-50 p-6 rounded-3xl border-2 border-blue-100">
         <div className="w-16 h-16 rounded-2xl bg-white flex items-center justify-center shadow-sm">
-          <Settings size={32} className="text-teal-600" />
+          <Settings size={32} className="text-blue-600" />
         </div>
         <div>
           <h2 className="text-2xl font-black text-slate-800">Pemetaan Kompetensi Rumah Sakit</h2>
@@ -142,7 +142,7 @@ export default function KompetensiSettings() {
 
       <div className="bg-white p-6 rounded-3xl border border-slate-100 shadow-sm mb-6">
         <div className="flex items-center gap-3 mb-4">
-          <Building className="text-teal-600" size={24} />
+          <Building className="text-blue-600" size={24} />
           <h3 className="text-lg font-bold text-slate-800">Pilih Rumah Sakit (Otomatis)</h3>
         </div>
         <div className="mb-4">
@@ -178,7 +178,7 @@ export default function KompetensiSettings() {
               placeholder="Cari Kelompok Layanan..." 
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className="w-full pl-10 pr-4 py-2 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-teal-500/20 focus:border-teal-500 transition-all font-medium text-slate-700"
+              className="w-full pl-10 pr-4 py-2 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all font-medium text-slate-700"
             />
           </div>
           
@@ -186,7 +186,7 @@ export default function KompetensiSettings() {
             {saved && <span className="text-emerald-600 font-bold text-sm flex items-center gap-1"><Info size={16}/> Disimpan</span>}
             <button 
               onClick={handleSave}
-              className="bg-teal-600 hover:bg-teal-700 text-white px-6 py-2.5 rounded-xl text-sm font-black flex items-center gap-2 transition-all shadow-lg shadow-teal-500/30"
+              className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2.5 rounded-xl text-sm font-black flex items-center gap-2 transition-all shadow-lg shadow-blue-500/30"
             >
               <Save size={18} /> Simpan Pengaturan
             </button>
@@ -211,7 +211,7 @@ export default function KompetensiSettings() {
                     <select
                       value={config[g] || 'Tidak Melayani'}
                       onChange={(e) => handleChange(g, e.target.value)}
-                      className="w-full bg-white border border-slate-300 rounded-lg px-4 py-2 font-bold text-slate-700 focus:ring-2 focus:ring-teal-500/20 focus:border-teal-500"
+                      className="w-full bg-white border border-slate-300 rounded-lg px-4 py-2 font-bold text-slate-700 focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500"
                     >
                       {Object.keys(levelValues).filter(k => k !== 'Belum Ada Mapping').map(lvl => (
                         <option key={lvl} value={lvl}>{lvl}</option>

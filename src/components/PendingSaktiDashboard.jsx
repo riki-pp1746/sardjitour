@@ -288,12 +288,12 @@ const renderIcdPills = (codeListStr) => {
         return (
           <div
             key={idx}
-            className="group relative flex items-center gap-1 bg-slate-100 hover:bg-teal-50 border border-slate-200 hover:border-teal-200 px-2 py-0.5 rounded-md text-[10px] font-bold text-slate-700 hover:text-teal-800 transition-all cursor-help"
+            className="group relative flex items-center gap-1 bg-slate-100 hover:bg-blue-50 border border-slate-200 hover:border-blue-200 px-2 py-0.5 rounded-md text-[10px] font-bold text-slate-700 hover:text-blue-800 transition-all cursor-help"
             title={desc || "Kode ICD BPJS"}
           >
-            <span className="font-mono text-teal-600 group-hover:text-teal-700">{code}</span>
+            <span className="font-mono text-blue-600 group-hover:text-blue-700">{code}</span>
             {desc && (
-              <span className="text-[9px] text-slate-500 font-medium border-l pl-1 border-slate-300 group-hover:border-teal-300 max-w-[120px] truncate">
+              <span className="text-[9px] text-slate-500 font-medium border-l pl-1 border-slate-300 group-hover:border-blue-300 max-w-[120px] truncate">
                 {desc}
               </span>
             )}
@@ -1274,17 +1274,17 @@ Berikan jawaban audit komprehensif dalam format JSON berikut (HANYA JSON murni, 
     <div className="space-y-8 pb-10">
 
       {/* HEADER SECTION */}
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 bg-gradient-to-r from-teal-800 via-teal-900 to-emerald-950 p-8 rounded-[2.5rem] shadow-xl text-white relative overflow-hidden border border-white/10">
-        <div className="absolute top-0 right-0 w-64 h-64 bg-teal-500/10 rounded-full blur-3xl -mr-16 -mt-16 pointer-events-none"></div>
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 bg-gradient-to-r from-blue-800 via-blue-900 to-emerald-950 p-8 rounded-[2.5rem] shadow-xl text-white relative overflow-hidden border border-white/10">
+        <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl -mr-16 -mt-16 pointer-events-none"></div>
         <div className="absolute bottom-0 left-1/3 w-48 h-48 bg-emerald-500/10 rounded-full blur-2xl pointer-events-none"></div>
 
         <div className="flex items-center gap-4.5 relative z-10">
-          <div className="p-4 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 shadow-lg shadow-teal-500/10 text-teal-400">
+          <div className="p-4 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 shadow-lg shadow-blue-500/10 text-blue-400">
             <FileSpreadsheet size={32} />
           </div>
           <div>
             <h1 className="text-2xl font-black tracking-tight uppercase">Analisis Pending</h1>
-            <p className="text-xs text-teal-200 font-bold uppercase tracking-wider mt-1">Audit, Klasifikasi, & Solusi Sanggahan BPJS Terintegrasi</p>
+            <p className="text-xs text-blue-200 font-bold uppercase tracking-wider mt-1">Audit, Klasifikasi, & Solusi Sanggahan BPJS Terintegrasi</p>
           </div>
         </div>
 
@@ -1439,7 +1439,7 @@ Berikan jawaban audit komprehensif dalam format JSON berikut (HANYA JSON murni, 
                 : '⚪ Kamus Lokal Standar'}
             </div>
 
-            <div className="text-[10px] text-teal-200/70 font-semibold max-w-[200px] leading-relaxed">
+            <div className="text-[10px] text-blue-200/70 font-semibold max-w-[200px] leading-relaxed">
               Pengaturan kamus dan sinkronisasi otomatis kini berada di menu utama <b>Kamus ICD</b>.
             </div>
           </div>
@@ -1449,8 +1449,8 @@ Berikan jawaban audit komprehensif dalam format JSON berikut (HANYA JSON murni, 
 
       {/* DRAG AND DROP UPLOAD CONTAINER */}
       {processedClaims.length === 0 && (
-        <Card className="p-16 border-2 border-dashed border-slate-200 text-center hover:border-teal-500 hover:shadow-lg transition-all rounded-[2.5rem] bg-white flex flex-col items-center justify-center max-w-3xl mx-auto">
-          <div className="w-20 h-20 bg-teal-50 rounded-3xl flex items-center justify-center mb-6 text-teal-600 shadow-inner">
+        <Card className="p-16 border-2 border-dashed border-slate-200 text-center hover:border-blue-500 hover:shadow-lg transition-all rounded-[2.5rem] bg-white flex flex-col items-center justify-center max-w-3xl mx-auto">
+          <div className="w-20 h-20 bg-blue-50 rounded-3xl flex items-center justify-center mb-6 text-blue-600 shadow-inner">
             <Upload size={36} />
           </div>
           <h2 className="text-xl font-black text-slate-800 tracking-tight">Unggah Berkas Pending BPJS</h2>
@@ -1458,13 +1458,13 @@ Berikan jawaban audit komprehensif dalam format JSON berikut (HANYA JSON murni, 
             Seret & taruh berkas Excel (.xlsx, .xls) atau CSV laporan pending BPJS Anda ke sini, atau klik tombol di bawah untuk memilih file.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row gap-4">
-            <label className="bg-teal-600 hover:bg-teal-700 text-white px-8 py-3.5 rounded-2xl font-black text-xs transition-all shadow-lg shadow-teal-600/20 cursor-pointer uppercase tracking-widest flex items-center gap-2">
+            <label className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3.5 rounded-2xl font-black text-xs transition-all shadow-lg shadow-blue-600/20 cursor-pointer uppercase tracking-widest flex items-center gap-2">
               <FileSpreadsheet size={16} /> Pilih File Excel/CSV
               <input type="file" onChange={handleFileUpload} accept=".xlsx,.xls,.csv" className="hidden" />
             </label>
           </div>
           <div className="mt-8 flex items-center gap-2 text-[10px] text-slate-400 bg-slate-50 border px-4 py-2 rounded-xl">
-            <Info size={14} className="text-teal-500" />
+            <Info size={14} className="text-blue-500" />
             <span>Format kolom fleksibel! Sistem memiliki pemetaan kolom interaktif jika format Anda berbeda.</span>
           </div>
         </Card>
@@ -1479,13 +1479,13 @@ Berikan jawaban audit komprehensif dalam format JSON berikut (HANYA JSON murni, 
             <div className="flex gap-2">
               <button
                 onClick={() => setActiveSubTab('dashboard')}
-                className={`px-5 py-2.5 rounded-xl text-xs font-black uppercase tracking-wider transition-all flex items-center gap-2 ${activeSubTab === 'dashboard' ? 'bg-teal-600 text-white shadow-md shadow-teal-600/10' : 'text-slate-500 hover:bg-slate-50'}`}
+                className={`px-5 py-2.5 rounded-xl text-xs font-black uppercase tracking-wider transition-all flex items-center gap-2 ${activeSubTab === 'dashboard' ? 'bg-blue-600 text-white shadow-md shadow-blue-600/10' : 'text-slate-500 hover:bg-slate-50'}`}
               >
                 <Sparkles size={14} /> Dashboard Kerja
               </button>
               <button
                 onClick={() => setActiveSubTab('report')}
-                className={`px-5 py-2.5 rounded-xl text-xs font-black uppercase tracking-wider transition-all flex items-center gap-2 ${activeSubTab === 'report' ? 'bg-teal-600 text-white shadow-md shadow-teal-600/10' : 'text-slate-500 hover:bg-slate-50'}`}
+                className={`px-5 py-2.5 rounded-xl text-xs font-black uppercase tracking-wider transition-all flex items-center gap-2 ${activeSubTab === 'report' ? 'bg-blue-600 text-white shadow-md shadow-blue-600/10' : 'text-slate-500 hover:bg-slate-50'}`}
               >
                 <FileText size={14} /> Laporan Eksekutif & Cetak
               </button>
@@ -1493,7 +1493,7 @@ Berikan jawaban audit komprehensif dalam format JSON berikut (HANYA JSON murni, 
             {activeSubTab === 'report' && (
               <button
                 onClick={() => window.print()}
-                className="px-5 py-2.5 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white rounded-xl text-xs font-black uppercase tracking-wider transition-all shadow-md shadow-emerald-600/10 flex items-center gap-1.5"
+                className="px-5 py-2.5 bg-gradient-to-r from-emerald-600 to-blue-600 hover:from-emerald-700 hover:to-blue-700 text-white rounded-xl text-xs font-black uppercase tracking-wider transition-all shadow-md shadow-emerald-600/10 flex items-center gap-1.5"
               >
                 <Download size={14} /> Cetak Laporan (Print)
               </button>
@@ -1579,14 +1579,14 @@ Berikan jawaban audit komprehensif dalam format JSON berikut (HANYA JSON murni, 
                 <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 border-b pb-4 border-slate-100">
                   <div>
                     <h3 className="text-base font-extrabold text-slate-800 flex items-center gap-2">
-                      <Sparkles size={18} className="text-teal-600 animate-pulse" /> Matriks Prioritas Masalah Pending
+                      <Sparkles size={18} className="text-blue-600 animate-pulse" /> Matriks Prioritas Masalah Pending
                     </h3>
                     <p className="text-xs text-slate-400 mt-0.5">Analisis korelasi nominal biaya pending terhadap frekuensi masalah. Klik titik untuk memfilter alasan pending.</p>
                   </div>
                   {selectedDisputeReason && (
                     <button
                       onClick={() => setSelectedDisputeReason(null)}
-                      className="text-xs font-black text-teal-600 hover:text-teal-800 bg-teal-50 px-3 py-1.5 rounded-lg border border-teal-100 transition-colors print:hidden"
+                      className="text-xs font-black text-blue-600 hover:text-blue-800 bg-blue-50 px-3 py-1.5 rounded-lg border border-blue-100 transition-colors print:hidden"
                     >
                       Reset Filter Titik
                     </button>
@@ -1608,7 +1608,7 @@ Berikan jawaban audit komprehensif dalam format JSON berikut (HANYA JSON murni, 
                         {/* Arrow indicator pointing to circle */}
                         <div className="absolute bottom-[-5px] left-1/2 -translate-x-1/2 w-2.5 h-2.5 bg-slate-950 border-r border-b border-slate-700/80 transform rotate-45"></div>
 
-                        <div className="text-[10px] font-black text-teal-400 uppercase tracking-widest mb-1.5 flex justify-between">
+                        <div className="text-[10px] font-black text-blue-400 uppercase tracking-widest mb-1.5 flex justify-between">
                           <span>{hoveredPoint.data.category}</span>
                           <span></span>
                         </div>
@@ -1626,7 +1626,7 @@ Berikan jawaban audit komprehensif dalam format JSON berikut (HANYA JSON murni, 
 
                     {/* Toolbar Panel Overlay */}
                     <div className="absolute right-4 top-1/2 -translate-y-1/2 flex flex-col gap-1 bg-white/90 backdrop-blur-sm border border-slate-200/80 p-1 rounded-lg shadow-md z-30 select-none">
-                      <button className="p-1 rounded-md bg-teal-50 text-teal-600 border border-teal-100 transition-colors" title="Pan Tool (Active)">
+                      <button className="p-1 rounded-md bg-blue-50 text-blue-600 border border-blue-100 transition-colors" title="Pan Tool (Active)">
                         <Move size={13} />
                       </button>
                       <button className="p-1 rounded-md text-slate-400 hover:bg-slate-100 transition-colors" title="Box Zoom Tool">
@@ -1638,7 +1638,7 @@ Berikan jawaban audit komprehensif dalam format JSON berikut (HANYA JSON murni, 
                           setCrosshair(null);
                           setHoveredPoint(null);
                         }}
-                        className="p-1 rounded-md text-slate-400 hover:bg-slate-100 hover:text-teal-600 transition-colors"
+                        className="p-1 rounded-md text-slate-400 hover:bg-slate-100 hover:text-blue-600 transition-colors"
                         title="Reset View"
                       >
                         <RefreshCw size={13} />
@@ -1750,7 +1750,7 @@ Berikan jawaban audit komprehensif dalam format JSON berikut (HANYA JSON murni, 
                               fillOpacity={isSelected ? 0.95 : 0.7}
                               stroke="#fff"
                               strokeWidth={isSelected ? 3.5 : 1.8}
-                              className="transition-all duration-150 hover:fill-opacity-100 hover:stroke-[3.5px] hover:stroke-teal-400"
+                              className="transition-all duration-150 hover:fill-opacity-100 hover:stroke-[3.5px] hover:stroke-blue-400"
                             />
                             {/* Circle Pulse for Selected */}
                             {isSelected && (
@@ -1784,7 +1784,7 @@ Berikan jawaban audit komprehensif dalam format JSON berikut (HANYA JSON murni, 
                   <div className="space-y-5">
                     <div className="border-b pb-4 border-slate-100">
                       <h3 className="text-base font-extrabold text-slate-800 flex items-center gap-2">
-                        <Info size={18} className="text-teal-600" /> Kelompok Kasus Pending (Case Groups)
+                        <Info size={18} className="text-blue-600" /> Kelompok Kasus Pending (Case Groups)
                       </h3>
                       <p className="text-xs text-slate-400 mt-0.5">Sebaran kelompok kasus pending berdasarkan kombinasi kriteria audit BPJS & internal RS.</p>
                     </div>
@@ -1806,7 +1806,7 @@ Berikan jawaban audit komprehensif dalam format JSON berikut (HANYA JSON murni, 
                           <div 
                             key={idx} 
                             onClick={() => setFilterCategoryCombo(item.combo === filterCategoryCombo ? 'ALL' : item.combo)}
-                            className={`p-1.5 rounded-xl hover:bg-slate-50 transition-colors cursor-pointer border ${item.combo === filterCategoryCombo ? 'border-teal-400 bg-teal-50/20' : 'border-transparent'}`}
+                            className={`p-1.5 rounded-xl hover:bg-slate-50 transition-colors cursor-pointer border ${item.combo === filterCategoryCombo ? 'border-blue-400 bg-blue-50/20' : 'border-transparent'}`}
                             title={`Klik untuk menyaring: ${item.combo}`}
                           >
                             <CategoryBar 
@@ -1827,7 +1827,7 @@ Berikan jawaban audit komprehensif dalam format JSON berikut (HANYA JSON murni, 
                   <div className="space-y-5">
                     <div className="border-b pb-4 border-slate-100">
                       <h3 className="text-base font-extrabold text-slate-800 flex items-center gap-2">
-                        <ShieldCheck size={18} className="text-teal-600" /> Faktor Penyebab &amp; Aksi Integrasi
+                        <ShieldCheck size={18} className="text-blue-600" /> Faktor Penyebab &amp; Aksi Integrasi
                       </h3>
                       <p className="text-xs text-slate-400 mt-0.5">Analisis akar masalah (root cause) dan kontrol manajemen data pending.</p>
                     </div>
@@ -1863,7 +1863,7 @@ Berikan jawaban audit komprehensif dalam format JSON berikut (HANYA JSON murni, 
                       >
                         Bersihkan Data
                       </button>
-                      <label className="flex-1 text-center py-2.5 bg-teal-600 hover:bg-teal-700 text-white text-xs font-black rounded-xl transition-all uppercase tracking-wider shadow-md shadow-teal-600/10 cursor-pointer">
+                      <label className="flex-1 text-center py-2.5 bg-blue-600 hover:bg-blue-700 text-white text-xs font-black rounded-xl transition-all uppercase tracking-wider shadow-md shadow-blue-600/10 cursor-pointer">
                         Unggah Baru
                         <input type="file" onChange={handleFileUpload} accept=".xlsx,.xls,.csv" className="hidden" />
                       </label>
@@ -1877,14 +1877,14 @@ Berikan jawaban audit komprehensif dalam format JSON berikut (HANYA JSON murni, 
                 <div className="flex justify-between items-center border-b pb-4 border-slate-100 mb-4">
                   <div>
                     <h3 className="text-base font-extrabold text-slate-800 flex items-center gap-2">
-                      <Layers size={18} className="text-teal-600" /> Rincian Kombinasi Kategori Masalah
+                      <Layers size={18} className="text-blue-600" /> Rincian Kombinasi Kategori Masalah
                     </h3>
                     <p className="text-xs text-slate-400 mt-0.5">Kelompok kategori yang muncul bersamaan dalam satu berkas pending.</p>
                   </div>
                   {filterCategoryCombo !== 'ALL' && (
                     <button
                       onClick={() => setFilterCategoryCombo('ALL')}
-                      className="text-xs font-black text-teal-600 hover:text-teal-800 bg-teal-50 px-3 py-1.5 rounded-lg border border-teal-100 transition-colors print:hidden cursor-pointer"
+                      className="text-xs font-black text-blue-600 hover:text-blue-800 bg-blue-50 px-3 py-1.5 rounded-lg border border-blue-100 transition-colors print:hidden cursor-pointer"
                     >
                       Reset Filter Kombinasi ({filterCategoryCombo})
                     </button>
@@ -1905,9 +1905,9 @@ Berikan jawaban audit komprehensif dalam format JSON berikut (HANYA JSON murni, 
                 <div className="p-6 border-b border-slate-100 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
                   <div>
                     <h3 className="text-base font-extrabold text-slate-800 flex flex-wrap items-center gap-2">
-                      <FileText size={18} className="text-teal-600" /> Daftar Kasus Pending BPJS
+                      <FileText size={18} className="text-blue-600" /> Daftar Kasus Pending BPJS
                       {filterCategoryCombo !== 'ALL' && (
-                        <span className="px-2 py-0.5 bg-teal-50 text-teal-700 border border-teal-100 rounded-md text-[10px] uppercase font-black tracking-wider animate-pulse inline-flex items-center gap-1">
+                        <span className="px-2 py-0.5 bg-blue-50 text-blue-700 border border-blue-100 rounded-md text-[10px] uppercase font-black tracking-wider animate-pulse inline-flex items-center gap-1">
                           Filter Kombinasi: {filterCategoryCombo}
                           <span onClick={(e) => { e.stopPropagation(); setFilterCategoryCombo('ALL'); }} className="cursor-pointer font-bold ml-1 hover:text-rose-600">×</span>
                         </span>
@@ -1924,7 +1924,7 @@ Berikan jawaban audit komprehensif dalam format JSON berikut (HANYA JSON murni, 
                         placeholder="Cari pasien, SEP, koder..."
                         value={searchQuery}
                         onChange={(e) => setSearchQuery(e.target.value)}
-                        className="pl-9 pr-4 py-2 border rounded-xl text-xs font-bold outline-none focus:ring-2 focus:ring-teal-500 focus:border-teal-500 w-full sm:w-64 bg-slate-50/50"
+                        className="pl-9 pr-4 py-2 border rounded-xl text-xs font-bold outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 w-full sm:w-64 bg-slate-50/50"
                       />
                       <Search size={14} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400" />
                     </div>
@@ -1964,7 +1964,7 @@ Berikan jawaban audit komprehensif dalam format JSON berikut (HANYA JSON murni, 
 
                     <button
                       onClick={downloadExcelWithAnalysis}
-                      className="px-3.5 py-2 bg-gradient-to-r from-teal-600 to-emerald-600 hover:from-teal-700 hover:to-emerald-700 text-white rounded-xl text-xs font-black uppercase tracking-wider transition-all shadow-md shadow-teal-600/10 flex items-center gap-1.5 shrink-0"
+                      className="px-3.5 py-2 bg-gradient-to-r from-blue-600 to-emerald-600 hover:from-blue-700 hover:to-emerald-700 text-white rounded-xl text-xs font-black uppercase tracking-wider transition-all shadow-md shadow-blue-600/10 flex items-center gap-1.5 shrink-0"
                       title="Unduh Hasil Pemetaan & Analisis Gemini AI ke Excel"
                     >
                       <Download size={14} /> Unduh Hasil (.xlsx)
@@ -2013,16 +2013,16 @@ Berikan jawaban audit komprehensif dalam format JSON berikut (HANYA JSON murni, 
                                           );
                                         }
                                       }}
-                                      className="font-extrabold text-slate-800 hover:text-teal-600 cursor-pointer transition-colors flex items-center gap-1 text-left bg-transparent border-none p-0 outline-none"
+                                      className="font-extrabold text-slate-800 hover:text-blue-600 cursor-pointer transition-colors flex items-center gap-1 text-left bg-transparent border-none p-0 outline-none"
                                       title="Klik untuk melihat Detail Drilldown"
                                     >
-                                      {c.nama} <Search size={11} className="text-teal-500 shrink-0" />
+                                      {c.nama} <Search size={11} className="text-blue-500 shrink-0" />
                                     </button>
                                   ) : (
                                     <span className="font-extrabold text-slate-800">{c.nama}</span>
                                   )}
                                   {c.aiReviewed && (
-                                    <span className="px-1.5 py-0.5 bg-teal-50 text-teal-700 rounded-md font-black text-[8px] uppercase tracking-wider border border-teal-200 shadow-sm flex items-center gap-0.5" title="Selesai Diulas Oleh Gemini AI">
+                                    <span className="px-1.5 py-0.5 bg-blue-50 text-blue-700 rounded-md font-black text-[8px] uppercase tracking-wider border border-blue-200 shadow-sm flex items-center gap-0.5" title="Selesai Diulas Oleh Gemini AI">
                                       <Brain size={8} className="animate-pulse" /> AI Audited
                                     </span>
                                   )}
@@ -2093,7 +2093,7 @@ Berikan jawaban audit komprehensif dalam format JSON berikut (HANYA JSON murni, 
                                   onClick={() => openAiAnalysisModal(c)}
                                   className={`px-3.5 py-1.5 rounded-xl text-[10px] font-black transition-all flex items-center justify-center gap-1 w-full uppercase tracking-wider shadow-sm ${c.aiReviewed
                                       ? "bg-gradient-to-r from-sky-600 to-blue-700 hover:from-sky-700 hover:to-blue-800 text-white"
-                                      : "bg-gradient-to-r from-teal-600 to-emerald-600 hover:from-teal-700 hover:to-emerald-700 text-white"
+                                      : "bg-gradient-to-r from-blue-600 to-emerald-600 hover:from-blue-700 hover:to-emerald-700 text-white"
                                     }`}
                                 >
                                   <Brain size={12} className={c.aiReviewed ? "" : "animate-pulse"} />
@@ -2184,8 +2184,8 @@ Berikan jawaban audit komprehensif dalam format JSON berikut (HANYA JSON murni, 
               </div>
 
               {/* Textual Executive Summary Insight */}
-              <div className="bg-teal-50/50 border border-teal-100/80 p-6 rounded-3xl">
-                <h3 className="text-xs font-black text-teal-800 uppercase tracking-wider mb-2.5 flex items-center gap-1.5">
+              <div className="bg-blue-50/50 border border-blue-100/80 p-6 rounded-3xl">
+                <h3 className="text-xs font-black text-blue-800 uppercase tracking-wider mb-2.5 flex items-center gap-1.5">
                   <Brain size={15} /> Executive Insight &amp; Rekomendasi Audit
                 </h3>
                 <p className="text-xs leading-relaxed text-slate-600 font-medium">
@@ -2282,7 +2282,7 @@ Berikan jawaban audit komprehensif dalam format JSON berikut (HANYA JSON murni, 
               {/* Top 10 Dispute Reasons by Category (Medis, Koding, Administrasi, Readmisi) */}
               <div className="print-page-break space-y-6">
                 <h2 className="text-xs font-black text-slate-800 uppercase tracking-widest border-b pb-2 flex items-center gap-2">
-                  <FileSpreadsheet size={16} className="text-teal-600" /> Permasalahan Pending Top 10 Berdasarkan Kategori
+                  <FileSpreadsheet size={16} className="text-blue-600" /> Permasalahan Pending Top 10 Berdasarkan Kategori
                 </h2>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -2320,7 +2320,7 @@ Berikan jawaban audit komprehensif dalam format JSON berikut (HANYA JSON murni, 
 
                   {/* Category 2: Koding */}
                   <div className="border border-slate-200 rounded-3xl p-5 bg-white space-y-3 shadow-sm">
-                    <h3 className="text-xs font-black text-teal-700 bg-teal-50 border border-teal-100 px-3.5 py-2 rounded-xl flex justify-between items-center uppercase tracking-wide">
+                    <h3 className="text-xs font-black text-blue-700 bg-blue-50 border border-blue-100 px-3.5 py-2 rounded-xl flex justify-between items-center uppercase tracking-wide">
                       <span>Top 10 Pending Koding</span>
                       <span className="text-[10px] font-black">{top10Stats.koding.length} Masalah</span>
                     </h3>
@@ -2419,7 +2419,7 @@ Berikan jawaban audit komprehensif dalam format JSON berikut (HANYA JSON murni, 
               {/* Persentase Distribusi Kategori & Faktor Penyebab Pending (NEW USER REQUEST) */}
               <div className="print-page-break space-y-6">
                 <h2 className="text-xs font-black text-slate-800 uppercase tracking-widest border-b pb-2 flex items-center gap-2">
-                  <Brain size={16} className="text-teal-600" /> Analisis Distribusi Kategori &amp; Faktor Penyebab Pending
+                  <Brain size={16} className="text-blue-600" /> Analisis Distribusi Kategori &amp; Faktor Penyebab Pending
                 </h2>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -2427,7 +2427,7 @@ Berikan jawaban audit komprehensif dalam format JSON berikut (HANYA JSON murni, 
                   <div className="border border-slate-200 rounded-3xl p-5 bg-white space-y-4 shadow-sm">
                     <h3 className="text-xs font-black text-slate-800 border-b pb-2 uppercase tracking-wide flex justify-between">
                       <span>Kategori Permasalahan (Single &amp; Combo)</span>
-                      <span className="text-[10px] text-teal-600 font-extrabold">Persentase</span>
+                      <span className="text-[10px] text-blue-600 font-extrabold">Persentase</span>
                     </h3>
                     <div className="space-y-4 max-h-[400px] overflow-y-auto custom-scrollbar pr-1">
                       {stats.categoryCombos.map((item, idx) => {
@@ -2456,7 +2456,7 @@ Berikan jawaban audit komprehensif dalam format JSON berikut (HANYA JSON murni, 
                   <div className="border border-slate-200 rounded-3xl p-5 bg-white space-y-4 shadow-sm">
                     <h3 className="text-xs font-black text-slate-800 border-b pb-2 uppercase tracking-wide flex justify-between">
                       <span>Faktor Penyebab (Causal Factors)</span>
-                      <span className="text-[10px] text-teal-600 font-extrabold">Persentase</span>
+                      <span className="text-[10px] text-blue-600 font-extrabold">Persentase</span>
                     </h3>
                     <div className="space-y-4">
                       <CategoryBar label="Internal RS (Edukasi Koding, Resume Medis, Sistem)" count={stats.internal} total={stats.total} color="bg-rose-500" />
@@ -2489,11 +2489,11 @@ Berikan jawaban audit komprehensif dalam format JSON berikut (HANYA JSON murni, 
       {showMappingModal && (
         <div className="fixed inset-0 bg-slate-900/80 backdrop-blur-sm z-[2000] flex items-center justify-center p-4">
           <div className="bg-white rounded-[2.5rem] w-full max-w-lg max-h-[90vh] flex flex-col shadow-2xl overflow-hidden border border-slate-200 animate-in zoom-in-95 duration-200">
-            <div className="p-6 bg-gradient-to-r from-teal-800 to-emerald-950 text-white flex items-center gap-3 shrink-0">
+            <div className="p-6 bg-gradient-to-r from-blue-800 to-emerald-950 text-white flex items-center gap-3 shrink-0">
               <div className="p-2.5 bg-white/10 rounded-xl border border-white/20"><FileSpreadsheet size={20} /></div>
               <div>
                 <h3 className="text-base font-black uppercase tracking-tight">Hubungkan Kolom Spreadsheet</h3>
-                <p className="text-[10px] text-teal-200 font-bold uppercase tracking-widest mt-0.5">Sesuaikan struktur data Anda</p>
+                <p className="text-[10px] text-blue-200 font-bold uppercase tracking-widest mt-0.5">Sesuaikan struktur data Anda</p>
               </div>
             </div>
 
@@ -2508,7 +2508,7 @@ Berikan jawaban audit komprehensif dalam format JSON berikut (HANYA JSON murni, 
                 <select
                   value={columnMapping.sep}
                   onChange={(e) => setColumnMapping({ ...columnMapping, sep: e.target.value })}
-                  className="w-full bg-slate-50 border border-slate-200 text-slate-700 text-xs font-bold rounded-xl px-4 py-3 focus:ring-2 focus:ring-teal-500 outline-none cursor-pointer"
+                  className="w-full bg-slate-50 border border-slate-200 text-slate-700 text-xs font-bold rounded-xl px-4 py-3 focus:ring-2 focus:ring-blue-500 outline-none cursor-pointer"
                 >
                   {headers.map((h, idx) => <option key={idx} value={h}>{h}</option>)}
                 </select>
@@ -2520,7 +2520,7 @@ Berikan jawaban audit komprehensif dalam format JSON berikut (HANYA JSON murni, 
                 <select
                   value={columnMapping.nama}
                   onChange={(e) => setColumnMapping({ ...columnMapping, nama: e.target.value })}
-                  className="w-full bg-slate-50 border border-slate-200 text-slate-700 text-xs font-bold rounded-xl px-4 py-3 focus:ring-2 focus:ring-teal-500 outline-none cursor-pointer"
+                  className="w-full bg-slate-50 border border-slate-200 text-slate-700 text-xs font-bold rounded-xl px-4 py-3 focus:ring-2 focus:ring-blue-500 outline-none cursor-pointer"
                 >
                   {headers.map((h, idx) => <option key={idx} value={h}>{h}</option>)}
                 </select>
@@ -2532,7 +2532,7 @@ Berikan jawaban audit komprehensif dalam format JSON berikut (HANYA JSON murni, 
                 <select
                   value={columnMapping.keterangan}
                   onChange={(e) => setColumnMapping({ ...columnMapping, keterangan: e.target.value })}
-                  className="w-full bg-slate-50 border border-slate-200 text-slate-700 text-xs font-bold rounded-xl px-4 py-3 focus:ring-2 focus:ring-teal-500 outline-none cursor-pointer"
+                  className="w-full bg-slate-50 border border-slate-200 text-slate-700 text-xs font-bold rounded-xl px-4 py-3 focus:ring-2 focus:ring-blue-500 outline-none cursor-pointer"
                 >
                   {headers.map((h, idx) => <option key={idx} value={h}>{h}</option>)}
                 </select>
@@ -2544,7 +2544,7 @@ Berikan jawaban audit komprehensif dalam format JSON berikut (HANYA JSON murni, 
                 <select
                   value={columnMapping.nominal}
                   onChange={(e) => setColumnMapping({ ...columnMapping, nominal: e.target.value })}
-                  className="w-full bg-slate-50 border border-slate-200 text-slate-700 text-xs font-bold rounded-xl px-4 py-3 focus:ring-2 focus:ring-teal-500 outline-none cursor-pointer"
+                  className="w-full bg-slate-50 border border-slate-200 text-slate-700 text-xs font-bold rounded-xl px-4 py-3 focus:ring-2 focus:ring-blue-500 outline-none cursor-pointer"
                 >
                   {headers.map((h, idx) => <option key={idx} value={h}>{h}</option>)}
                 </select>
@@ -2556,7 +2556,7 @@ Berikan jawaban audit komprehensif dalam format JSON berikut (HANYA JSON murni, 
                 <select
                   value={columnMapping.faktor}
                   onChange={(e) => setColumnMapping({ ...columnMapping, faktor: e.target.value })}
-                  className="w-full bg-slate-50 border border-slate-200 text-slate-700 text-xs font-bold rounded-xl px-4 py-3 focus:ring-2 focus:ring-teal-500 outline-none cursor-pointer"
+                  className="w-full bg-slate-50 border border-slate-200 text-slate-700 text-xs font-bold rounded-xl px-4 py-3 focus:ring-2 focus:ring-blue-500 outline-none cursor-pointer"
                 >
                   <option value="">-- AUTO-CLASSIFY (Analisis Kata Kunci) --</option>
                   {headers.map((h, idx) => <option key={idx} value={h}>{h}</option>)}
@@ -2577,7 +2577,7 @@ Berikan jawaban audit komprehensif dalam format JSON berikut (HANYA JSON murni, 
               </button>
               <button
                 onClick={confirmMapping}
-                className="flex-1 py-3 bg-teal-600 hover:bg-teal-700 text-white text-xs font-black rounded-xl uppercase tracking-wider transition-all shadow-md shadow-teal-600/10"
+                className="flex-1 py-3 bg-blue-600 hover:bg-blue-700 text-white text-xs font-black rounded-xl uppercase tracking-wider transition-all shadow-md shadow-blue-600/10"
               >
                 Terapkan Pemetaan
               </button>
@@ -2592,12 +2592,12 @@ Berikan jawaban audit komprehensif dalam format JSON berikut (HANYA JSON murni, 
           <div className="bg-white w-full max-w-2xl h-full shadow-2xl flex flex-col border-l border-slate-200 animate-in slide-in-from-right duration-300">
 
             {/* Header */}
-            <div className="p-6 bg-gradient-to-r from-teal-800 to-emerald-950 text-white flex justify-between items-center shrink-0">
+            <div className="p-6 bg-gradient-to-r from-blue-800 to-emerald-950 text-white flex justify-between items-center shrink-0">
               <div className="flex items-center gap-3">
-                <div className="p-2.5 bg-white/10 rounded-xl border border-white/20"><Brain size={20} className="text-teal-300 animate-pulse" /></div>
+                <div className="p-2.5 bg-white/10 rounded-xl border border-white/20"><Brain size={20} className="text-blue-300 animate-pulse" /></div>
                 <div>
                   <h3 className="text-sm font-black uppercase tracking-tight">Gemini AI Clinical Assessor</h3>
-                  <p className="text-[10px] text-teal-200 font-bold uppercase tracking-widest mt-0.5">Penilai &amp; Penyusun Sanggahan Cerdas</p>
+                  <p className="text-[10px] text-blue-200 font-bold uppercase tracking-widest mt-0.5">Penilai &amp; Penyusun Sanggahan Cerdas</p>
                 </div>
               </div>
               <button
@@ -2618,7 +2618,7 @@ Berikan jawaban audit komprehensif dalam format JSON berikut (HANYA JSON murni, 
               {/* Patient Profile Card */}
               <div className="bg-slate-50 p-6 rounded-3xl border border-slate-100 flex flex-col gap-3">
                 <div className="flex items-center gap-2 border-b pb-2 border-slate-200/50">
-                  <div className="w-1.5 h-3 bg-teal-500 rounded-full"></div>
+                  <div className="w-1.5 h-3 bg-blue-500 rounded-full"></div>
                   <span className="text-[10px] font-black text-slate-500 uppercase tracking-widest">Detail Klaim BPJS</span>
                 </div>
                 <div className="grid grid-cols-2 gap-4 text-xs font-semibold text-slate-700">
@@ -2677,7 +2677,7 @@ Berikan jawaban audit komprehensif dalam format JSON berikut (HANYA JSON murni, 
                   value={manualClinicalText}
                   onChange={(e) => setManualClinicalText(e.target.value)}
                   placeholder="Tempel teks ringkasan medis, hasil lab, rontgen, penunjang, atau terapi obat di sini untuk memperkuat analisis klinis sanggahan AI..."
-                  className="w-full bg-slate-50 border border-slate-200 text-xs font-semibold rounded-2xl p-4 focus:ring-2 focus:ring-teal-500 outline-none leading-relaxed"
+                  className="w-full bg-slate-50 border border-slate-200 text-xs font-semibold rounded-2xl p-4 focus:ring-2 focus:ring-blue-500 outline-none leading-relaxed"
                 />
               </div>
 
@@ -2685,7 +2685,7 @@ Berikan jawaban audit komprehensif dalam format JSON berikut (HANYA JSON murni, 
               <button
                 onClick={() => analyzeWithGemini(aiPatient)}
                 disabled={isAiLoading}
-                className={`w-full py-4 bg-gradient-to-r ${aiResponse ? "from-slate-600 to-slate-700 hover:from-slate-700 hover:to-slate-800" : "from-teal-600 to-emerald-600 hover:from-teal-700 hover:to-emerald-700"} text-white rounded-2xl font-black text-xs transition-all shadow-xl uppercase tracking-widest flex items-center justify-center gap-2`}
+                className={`w-full py-4 bg-gradient-to-r ${aiResponse ? "from-slate-600 to-slate-700 hover:from-slate-700 hover:to-slate-800" : "from-blue-600 to-emerald-600 hover:from-blue-700 hover:to-emerald-700"} text-white rounded-2xl font-black text-xs transition-all shadow-xl uppercase tracking-widest flex items-center justify-center gap-2`}
               >
                 {isAiLoading ? (
                   <>
@@ -2717,8 +2717,8 @@ Berikan jawaban audit komprehensif dalam format JSON berikut (HANYA JSON murni, 
                   )}
 
                   {/* Saran Perbaikan Card */}
-                  <div className="bg-teal-50 p-5 rounded-3xl border border-teal-100 space-y-2.5">
-                    <span className="text-[10px] font-black text-teal-800 uppercase tracking-widest flex items-center gap-1.5">
+                  <div className="bg-blue-50 p-5 rounded-3xl border border-blue-100 space-y-2.5">
+                    <span className="text-[10px] font-black text-blue-800 uppercase tracking-widest flex items-center gap-1.5">
                       <Brain size={14} /> Saran Perbaikan Coder
                     </span>
                     <p className="text-xs leading-relaxed font-bold text-slate-700">{aiResponse.saran_perbaikan}</p>
@@ -2733,9 +2733,9 @@ Berikan jawaban audit komprehensif dalam format JSON berikut (HANYA JSON murni, 
                   </div>
 
                   {/* Draft Jawaban Sanggahan RS (Formal) */}
-                  <div className="border border-teal-100 rounded-3xl overflow-hidden shadow-sm">
-                    <div className="bg-teal-50 px-5 py-3.5 border-b border-teal-100 flex justify-between items-center">
-                      <span className="text-[10px] font-black text-teal-800 uppercase tracking-widest flex items-center gap-1.5">
+                  <div className="border border-blue-100 rounded-3xl overflow-hidden shadow-sm">
+                    <div className="bg-blue-50 px-5 py-3.5 border-b border-blue-100 flex justify-between items-center">
+                      <span className="text-[10px] font-black text-blue-800 uppercase tracking-widest flex items-center gap-1.5">
                         <FileText size={14} /> Draft Resmi Sanggahan RS
                       </span>
                       <button
@@ -2776,7 +2776,7 @@ Berikan jawaban audit komprehensif dalam format JSON berikut (HANYA JSON murni, 
 
 const MetricCard = ({ title, value, subtitle, color, icon: Icon }) => {
   const colors = {
-    teal: 'border-teal-100 bg-white text-teal-600 shadow-teal-600/5',
+    teal: 'border-blue-100 bg-white text-blue-600 shadow-blue-600/5',
     emerald: 'border-emerald-100 bg-white text-emerald-600 shadow-emerald-600/5',
     amber: 'border-amber-100 bg-white text-amber-600 shadow-amber-600/5',
     indigo: 'border-sky-100 bg-white text-sky-600 shadow-sky-600/5'
@@ -2934,12 +2934,12 @@ const CategoryComboTable = React.memo(({ combos, totalClaims, totalNominal, onRo
               <td className="px-6 py-4 text-center">
                 <div className="text-[10px] font-black text-slate-500 mb-1">{((c.count / totalClaims) * 100).toFixed(1)}%</div>
                 <div className="w-20 h-1 bg-slate-100 rounded-full mx-auto overflow-hidden">
-                  <div className="h-full bg-teal-500" style={{ width: `${(c.count / totalClaims) * 100}%` }}></div>
+                  <div className="h-full bg-blue-500" style={{ width: `${(c.count / totalClaims) * 100}%` }}></div>
                 </div>
               </td>
               <td className="px-6 py-4 text-right text-xs font-mono font-black text-emerald-600">{formatRp(c.nominal)}</td>
               <td className="px-6 py-4 text-right">
-                <button onClick={() => onRowClick(c)} className="p-2 text-slate-300 hover:text-teal-600 transition-colors cursor-pointer" title="Saring Tabel Berdasarkan Kombinasi Ini">
+                <button onClick={() => onRowClick(c)} className="p-2 text-slate-300 hover:text-blue-600 transition-colors cursor-pointer" title="Saring Tabel Berdasarkan Kombinasi Ini">
                   <Search size={14} />
                 </button>
               </td>
