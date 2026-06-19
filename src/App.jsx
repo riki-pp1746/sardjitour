@@ -4439,10 +4439,8 @@ export default function App() {
         if (lines.length > 0) {
           const headers = lines[0].split('\t').map(h => h.trim());
           const allRows = lines.slice(1).map(l => { const vals = l.split('\t'); let obj = {}; headers.forEach((h, i) => { obj[h] = vals[i] ? vals[i].trim() : ''; }); return obj; });
-          const rows = allRows.filter(r => String(r['KODE_RS'] || '').trim() === '3404015');
-          if (allRows.length > 0 && rows.length === 0) {
-            throw new Error('Data tidak sesuai dengan koders 3404015');
-          }
+          const rows = allRows;
+          
           newFiles.push({ id: Math.random().toString(36).substring(2, 11), name: f.name, rawSize: f.size, size: (f.size / 1024).toFixed(2) + ' KB', headers, rows });
         }
         setUploadProgress({ current: fi + 1, total, fileName: f.name, pct: Math.round(((fi + 1) / total) * 100), status: 'done' });
