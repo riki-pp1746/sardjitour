@@ -4438,7 +4438,16 @@ export default function App() {
         const lines = text.split('\n').filter(l => l.trim() !== '');
         if (lines.length > 0) {
           const headers = lines[0].split('\t').map(h => h.trim());
-          const allRows = lines.slice(1).map(l => { const vals = l.split('\t'); let obj = {}; headers.forEach((h, i) => { obj[h] = vals[i] ? vals[i].trim() : ''; }); return obj; });
+          const NEEDED_HEADERS = new Set(['KODE_RS','DISCHARGE_DATE','PTD','JENIS_RAWAT','PELAYANAN','KELAS_RAWAT','KELAS','HAK_KELAS','DPJP','KODE_INACBG','INACBG','DIAGLIST','PROCLIST','IDRG_DIAG_LISTS','IDRG_PROC_LISTS','CODER_ID','USER_CODER','CODER','SEP','MRN','ADMISSION_DATE','NAMA_PASIEN','TARIF_RS','TARIF_INA','TARIF_INACBG','TARIF_IDRG','LOS','_LOS','KODE_INA','KODE_IDRG','CBG_CODE','DESCRIPTION','STATUS_PULANG','CARA_PULANG','DISCHARGE_STATUS','UMUR_TAHUN','PROSEDUR_NON_BEDAH','PROSEDUR_BEDAH','KONSULTASI','TENAGA_AHLI','KEPERAWATAN','PENUNJANG','RADIOLOGI','LABORATORIUM','PELAYANAN_DARAH','REHABILITASI','KAMAR_AKOMODASI','RAWAT_INTENSIF','OBAT','ALKES','BMHP','SEWA_ALAT']);
+          const allRows = lines.slice(1).map(l => { 
+            const vals = l.split('\t'); let obj = {}; 
+            headers.forEach((h, i) => { 
+              const cleanH = h.toUpperCase().replace(/[^A-Z0-9_]/g, '');
+              if (NEEDED_HEADERS.has(cleanH) || NEEDED_HEADERS.has(h.toUpperCase())) {
+                obj[h] = vals[i] ? vals[i].trim() : ''; 
+              }
+            }); return obj; 
+          });
           const rows = allRows;
           
           newFiles.push({ id: Math.random().toString(36).substring(2, 11), name: f.name, rawSize: f.size, size: (f.size / 1024).toFixed(2) + ' KB', headers, rows });
@@ -4877,9 +4886,9 @@ export default function App() {
           const reqs = ru.condition.requires || [];
           const missings = ru.condition.missing || [];
           const excludes = ru.condition.excludes || [];
-          const hasReq = reqs.some(c => acRow.some(ac => ac.startsWith(c)));
-          const hasMissing = missings.some(c => acRow.some(ac => ac.startsWith(c)));
-          const hasExclude = excludes.some(c => acRow.some(ac => ac.startsWith(c)));
+          const hasReq = reqs.some(c => acRow.some(ac => ac.startsWith(normalize_c(c))));
+          const hasMissing = missings.some(c => acRow.some(ac => ac.startsWith(normalize_c(c))));
+          const hasExclude = excludes.some(c => acRow.some(ac => ac.startsWith(normalize_c(c))));
           if (hasReq && !hasMissing) {
             if (ptd === '1') matched = true; // Ranap: always flag if no CT Scan (ignore Z08/Z09)
             else if (!hasExclude) matched = true; // Rajal/Others: flag only if no Z08/Z09
