@@ -10110,38 +10110,51 @@ export default function App() {
             </div>
           </div>
         )}
-        <div className="min-h-screen flex items-center justify-center p-4 relative overflow-hidden"
-          style={{ background: 'linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 30%, #f0fdf9 60%, #f8fafc 100%)' }}>
-          {/* Soft mesh background blobs */}
-          <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0 pointer-events-none">
-            <div className="absolute top-[-15%] left-[-10%] w-[50%] h-[50%] rounded-full" style={{ background: 'radial-gradient(circle, rgba(94,234,212,0.25) 0%, transparent 70%)', filter: 'blur(60px)' }}></div>
-            <div className="absolute top-[10%] right-[-10%] w-[45%] h-[50%] rounded-full" style={{ background: 'radial-gradient(circle, rgba(167,243,208,0.2) 0%, transparent 70%)', filter: 'blur(70px)' }}></div>
-            <div className="absolute bottom-[-10%] left-[15%] w-[55%] h-[45%] rounded-full" style={{ background: 'radial-gradient(circle, rgba(186,230,253,0.3) 0%, transparent 70%)', filter: 'blur(80px)' }}></div>
-            <div className="absolute top-[40%] left-[40%] w-[30%] h-[30%] rounded-full" style={{ background: 'radial-gradient(circle, rgba(165,243,252,0.2) 0%, transparent 70%)', filter: 'blur(50px)' }}></div>
-          </div>
-          <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-            {loginParticles.map((p, i) => (
-              <div key={i} className="absolute rounded-full" style={{ width: `${p.size}px`, height: `${p.size}px`, left: `${p.x}%`, top: `${p.y}%`, background: 'rgba(59,130,246,0.15)', animationDuration: `${p.duration}s`, animationDelay: `${p.delay}s`, animation: `pulse ${p.duration}s ease-in-out ${p.delay}s infinite` }} />
-            ))}
-          </div>
+        <div className="min-h-screen flex flex-col md:flex-row bg-slate-50 relative overflow-hidden font-sans">
+          {/* Left Split - Branding panel */}
+          <div className="hidden md:flex md:w-1/2 lg:w-[55%] bg-[#0f172a] relative items-center justify-center p-12 overflow-hidden">
+             <div className="absolute inset-0 bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#0f172a] z-0"></div>
+             <div className="absolute inset-0 opacity-10 bg-[linear-gradient(rgba(255,255,255,.1)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.1)_1px,transparent_1px)] bg-[size:40px_40px] z-0"></div>
+             
+             {/* Subtle glow effect behind text */}
+             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-blue-500/20 rounded-full blur-[100px] pointer-events-none"></div>
 
-          <div className="w-full max-w-md relative z-10 animate-in zoom-in-95 duration-700">
-            {/* Header */}
-            <div className="text-center mb-8">
-              <div className="inline-flex items-center justify-center w-20 h-20 rounded-3xl bg-white shadow-2xl shadow-sky-900/10 mb-6 overflow-hidden p-3 border border-white/20">
-                <img src={logo} className="w-full h-full object-contain" alt="Logo" />
-              </div>
-              <div className="flex flex-col items-center justify-center">
-                <h1 className="text-4xl font-black tracking-tight leading-none mb-1" style={{ color: '#ffffff', textShadow: '0 2px 20px rgba(14,165,233,0.15)' }}>
-                  UR Sardjito
+             <div className="relative z-10 w-full max-w-2xl flex flex-col pl-8">
+                <div className="mb-12 w-20 h-20 bg-white rounded-2xl p-3 shadow-[0_0_40px_rgba(0,0,0,0.5)] border border-white/10 flex items-center justify-center">
+                  <img src={logo} className="w-full h-full object-contain filter drop-shadow-sm" alt="Logo" />
+                </div>
+                <h1 className="text-4xl lg:text-6xl font-black text-white tracking-tight mb-6 leading-[1.1] drop-shadow-lg">
+                  Intelligent <span className="text-blue-400">Analytics</span><br/>for Healthcare.
                 </h1>
-                <p className="text-[9px] font-black uppercase tracking-[0.2em] text-center px-4 mt-3 leading-relaxed" style={{ color: '#94a3b8' }}>Sistem Informasi & Utilisasi Rumah Sakit Terpadu<br />Indonesian Diagnosis Related Group</p>
-              </div>
-            </div>
+                <p className="text-lg text-slate-400 font-medium max-w-lg leading-relaxed mb-8">
+                  Sistem Informasi & Utilisasi Rumah Sakit Terpadu. Platform Business Intelligence enterprise untuk efisiensi, validasi, dan wawasan komprehensif.
+                </p>
+                <div className="flex items-center gap-4">
+                  <div className="flex -space-x-3">
+                    <div className="w-10 h-10 rounded-full border-2 border-[#1e293b] bg-slate-700"></div>
+                    <div className="w-10 h-10 rounded-full border-2 border-[#1e293b] bg-slate-600"></div>
+                    <div className="w-10 h-10 rounded-full border-2 border-[#1e293b] bg-slate-500"></div>
+                  </div>
+                  <p className="text-sm font-semibold text-slate-400">Terpercaya oleh 100+ Profesional Medis</p>
+                </div>
+             </div>
+          </div>
 
-            {/* Card */}
-            <div className="bg-white/90 backdrop-blur-2xl rounded-[3rem] border border-white shadow-[0_25px_60px_rgba(0,0,0,0.15)] p-10 overflow-hidden relative group">
-              <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-blue-400 to-emerald-400"></div>
+          {/* Right Split - Form Panel */}
+          <div className="w-full md:w-1/2 lg:w-[45%] min-h-screen bg-white flex flex-col justify-center px-6 sm:px-12 xl:px-24 py-12 relative z-10 shadow-[-20px_0_40px_rgba(0,0,0,0.1)] overflow-y-auto custom-scrollbar">
+            <div className="w-full max-w-sm mx-auto animate-in fade-in slide-in-from-bottom-8 duration-700">
+               <div className="md:hidden flex items-center gap-4 mb-10">
+                 <div className="w-12 h-12 bg-white rounded-xl shadow-sm border border-slate-100 p-2 flex items-center justify-center">
+                   <img src={logo} className="w-full h-full object-contain" alt="Logo" />
+                 </div>
+                 <h2 className="text-2xl font-black text-slate-800">UR Sardjito</h2>
+               </div>
+               
+               <div className="mb-10">
+                 <h2 className="text-3xl font-black text-slate-900 tracking-tight mb-2">Welcome back</h2>
+                 <p className="text-sm font-medium text-slate-500">Please enter your details to sign in.</p>
+               </div>
+
               {/* Error Alert */}
               {loginError && (
                 <div className="mb-6 bg-rose-900/30 border border-rose-100 rounded-2xl p-4 flex gap-3 items-start animate-in slide-in-from-top-2 duration-300">
@@ -10168,7 +10181,7 @@ export default function App() {
                       type="text" 
                       value={mfaVerifyCode}
                       onChange={e => { setMfaVerifyCode(e.target.value.replace(/\D/g, '').slice(0, 6)); setLoginError(''); }}
-                      className="w-full px-6 py-4 rounded-2xl bg-black/20 border-2 border-white/10 text-white placeholder-slate-500 focus:bg-white/5 focus:ring-4 focus:ring-cyan-500/20 focus:border-cyan-400 outline-none transition-all font-black text-center text-2xl tracking-[0.2em] shadow-sm"
+                      className="w-full px-6 py-4 rounded-2xl bg-white border-2 border-slate-200 text-slate-900 placeholder-slate-400 focus:bg-slate-50 focus:ring-4 focus:ring-blue-500/10 focus:border-blue-600 rounded-xl outline-none transition-all font-black text-center text-2xl tracking-[0.2em] shadow-sm"
                       placeholder="000000" required
                     />
                   </div>
@@ -10186,7 +10199,7 @@ export default function App() {
                   <input
                     type="text" value={username}
                     onChange={e => { setUsername(e.target.value); setLoginError(''); }}
-                    className="w-full px-6 py-4 rounded-2xl bg-black/20 border-2 border-white/10 text-white placeholder-slate-500 focus:bg-white/5 focus:ring-4 focus:ring-cyan-500/20 focus:border-cyan-400 outline-none transition-all font-bold shadow-sm"
+                    className="w-full px-6 py-4 rounded-2xl bg-white border-2 border-slate-200 text-slate-900 placeholder-slate-400 focus:bg-slate-50 focus:ring-4 focus:ring-blue-500/10 focus:border-blue-600 rounded-xl outline-none transition-all font-bold shadow-sm"
                     placeholder="Masukkan Email lengkap Anda" required
                   />
                 </div>
@@ -10196,7 +10209,7 @@ export default function App() {
                     <input
                       type={showPassword ? "text" : "password"} value={password}
                       onChange={e => { setPassword(e.target.value); setLoginError(''); }}
-                      className="w-full pl-6 pr-14 py-4 rounded-2xl bg-black/20 border-2 border-white/10 text-white placeholder-slate-500 focus:bg-white/5 focus:ring-4 focus:ring-cyan-500/20 focus:border-cyan-400 outline-none transition-all font-bold shadow-sm"
+                      className="w-full pl-6 pr-14 py-4 rounded-2xl bg-white border-2 border-slate-200 text-slate-900 placeholder-slate-400 focus:bg-slate-50 focus:ring-4 focus:ring-blue-500/10 focus:border-blue-600 rounded-xl outline-none transition-all font-bold shadow-sm"
                       placeholder="Masukkan password" required
                     />
                     <button
@@ -10283,7 +10296,7 @@ export default function App() {
                     type="text"
                     value={forgotIdentity}
                     onChange={e => { setForgotIdentity(e.target.value); setForgotError(''); setForgotSuccess(''); }}
-                    className="w-full px-5 py-4 rounded-2xl bg-black/20 border-2 border-white/10 text-white placeholder-slate-500 focus:bg-white/5 focus:ring-4 focus:ring-cyan-500/20 focus:border-cyan-400 outline-none transition-all font-bold shadow-sm"
+                    className="w-full px-5 py-4 rounded-2xl bg-white border-2 border-slate-200 text-slate-900 placeholder-slate-400 focus:bg-slate-50 focus:ring-4 focus:ring-blue-500/10 focus:border-blue-600 rounded-xl outline-none transition-all font-bold shadow-sm"
                     placeholder="Contoh: user@email.com atau username Anda"
                     autoComplete="email"
                     autoFocus
@@ -10370,7 +10383,7 @@ export default function App() {
                       type={showNewPassword ? "text" : "password"}
                       value={newPassword}
                       onChange={e => { setNewPassword(e.target.value); setResetNewPasswordError(''); setResetNewPasswordSuccess(''); }}
-                      className="w-full px-5 py-4 rounded-2xl bg-black/20 border-2 border-white/10 text-white placeholder-slate-500 focus:bg-white/5 focus:ring-4 focus:ring-cyan-500/20 focus:border-cyan-400 outline-none transition-all font-bold shadow-sm"
+                      className="w-full px-5 py-4 rounded-2xl bg-white border-2 border-slate-200 text-slate-900 placeholder-slate-400 focus:bg-slate-50 focus:ring-4 focus:ring-blue-500/10 focus:border-blue-600 rounded-xl outline-none transition-all font-bold shadow-sm"
                       placeholder="Minimal 6 karakter"
                       autoFocus
                     />

@@ -1,0 +1,473 @@
+if (!isLoggedIn) {
+
+    return (
+      <>
+        {/* Advertisement Overlay (shows on login page too) */}
+        {showAdOverlay && (
+          <div className="fixed inset-0 z-[9999] bg-slate-900/75 backdrop-blur-sm flex items-center justify-center p-6"
+            style={{ animation: 'fadeIn 0.5s ease' }}>
+            <div className="relative max-w-4xl w-full mx-auto" style={{ animation: 'zoomIn 0.6s ease' }}>
+              <button
+                onClick={(e) => { e.stopPropagation(); setShowAdOverlay(false); }}
+                className="absolute -top-4 -right-4 w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-xl text-slate-500 hover:text-rose-600 hover:scale-110 transition-all z-10"
+              >
+                <X size={20} />
+              </button>
+              <a href="https://drive.google.com/file/d/1L2g_Z8Gxv1MRHxVt5RsGBsMJ-0xItjas/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="block rounded-2xl overflow-hidden shadow-2xl border border-white/20 bg-slate-800">
+                <img
+                  src="https://lh3.googleusercontent.com/d/1L2g_Z8Gxv1MRHxVt5RsGBsMJ-0xItjas"
+                  alt="Advertisement"
+                  className="w-full h-auto object-contain max-h-[85vh]"
+                  onError={(e) => {
+                    e.target.style.display = 'none';
+                    e.target.nextSibling && (e.target.nextSibling.style.display = 'flex');
+                  }}
+                />
+                <div style={{ display: 'none' }} className="w-full h-64 flex-col items-center justify-center gap-3 text-white/60">
+                  <span className="text-5xl">📢</span>
+                  <p className="text-sm font-semibold">Klik untuk melihat informasi lebih lanjut</p>
+                </div>
+              </a>
+              <p className="text-center text-white/50 text-xs mt-4 font-medium tracking-wider">
+                {initialAdDone ? 'Gerakkan mouse atau klik untuk menutup' : 'Iklan ini akan otomatis tertutup dalam 5 detik...'}
+              </p>
+            </div>
+          </div>
+        )}
+        <div className="min-h-screen flex items-center justify-center p-4 relative overflow-hidden"
+          style={{ background: 'linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 30%, #f0fdf9 60%, #f8fafc 100%)' }}>
+          {/* Soft mesh background blobs */}
+          <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0 pointer-events-none">
+            <div className="absolute top-[-15%] left-[-10%] w-[50%] h-[50%] rounded-full" style={{ background: 'radial-gradient(circle, rgba(94,234,212,0.25) 0%, transparent 70%)', filter: 'blur(60px)' }}></div>
+            <div className="absolute top-[10%] right-[-10%] w-[45%] h-[50%] rounded-full" style={{ background: 'radial-gradient(circle, rgba(167,243,208,0.2) 0%, transparent 70%)', filter: 'blur(70px)' }}></div>
+            <div className="absolute bottom-[-10%] left-[15%] w-[55%] h-[45%] rounded-full" style={{ background: 'radial-gradient(circle, rgba(186,230,253,0.3) 0%, transparent 70%)', filter: 'blur(80px)' }}></div>
+            <div className="absolute top-[40%] left-[40%] w-[30%] h-[30%] rounded-full" style={{ background: 'radial-gradient(circle, rgba(165,243,252,0.2) 0%, transparent 70%)', filter: 'blur(50px)' }}></div>
+          </div>
+          <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+            {loginParticles.map((p, i) => (
+              <div key={i} className="absolute rounded-full" style={{ width: `${p.size}px`, height: `${p.size}px`, left: `${p.x}%`, top: `${p.y}%`, background: 'rgba(59,130,246,0.15)', animationDuration: `${p.duration}s`, animationDelay: `${p.delay}s`, animation: `pulse ${p.duration}s ease-in-out ${p.delay}s infinite` }} />
+            ))}
+          </div>
+
+          <div className="w-full max-w-md relative z-10 animate-in zoom-in-95 duration-700">
+            {/* Header */}
+            <div className="text-center mb-8">
+              <div className="inline-flex items-center justify-center w-20 h-20 rounded-3xl bg-white shadow-2xl shadow-sky-900/10 mb-6 overflow-hidden p-3 border border-white/20">
+                <img src={logo} className="w-full h-full object-contain" alt="Logo" />
+              </div>
+              <div className="flex flex-col items-center justify-center">
+                <h1 className="text-4xl font-black tracking-tight leading-none mb-1" style={{ color: '#0f4c75', textShadow: '0 2px 20px rgba(14,165,233,0.15)' }}>
+                  UR Sardjito
+                </h1>
+                <p className="text-[9px] font-black uppercase tracking-[0.2em] text-center px-4 mt-3 leading-relaxed" style={{ color: '#64748b' }}>Sistem Informasi & Utilisasi Rumah Sakit Terpadu<br />Indonesian Diagnosis Related Group</p>
+              </div>
+            </div>
+
+            {/* Card */}
+            <div className="bg-white/90 backdrop-blur-2xl rounded-[3rem] border border-white shadow-[0_25px_60px_rgba(0,0,0,0.15)] p-10 overflow-hidden relative group">
+              <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-blue-400 to-emerald-400"></div>
+              {/* Error Alert */}
+              {loginError && (
+                <div className="mb-6 bg-rose-50 border border-rose-100 rounded-2xl p-4 flex gap-3 items-start animate-in slide-in-from-top-2 duration-300">
+                  <div className="shrink-0 w-8 h-8 rounded-full bg-rose-100 flex items-center justify-center mt-0.5">
+                    <AlertCircle size={16} className="text-rose-600" />
+                  </div>
+                  <div>
+                    <p className="text-rose-700 font-bold text-sm leading-relaxed">{loginError}</p>
+                  </div>
+                </div>
+              )}
+
+              {mfaChallengeMode ? (
+                <form onSubmit={handleMfaVerify} className="space-y-6">
+                  <div className="text-center space-y-3 mb-6">
+                    <div className="w-16 h-16 bg-blue-100 rounded-full mx-auto flex items-center justify-center text-blue-600 mb-4">
+                      <ShieldAlert size={32} />
+                    </div>
+                    <h3 className="text-xl font-black text-slate-800">Verifikasi Keamanan</h3>
+                    <p className="text-sm text-slate-500">Masukkan 6 digit OTP dari aplikasi Google Authenticator Anda.</p>
+                  </div>
+                  <div>
+                    <input
+                      type="text" 
+                      value={mfaVerifyCode}
+                      onChange={e => { setMfaVerifyCode(e.target.value.replace(/\D/g, '').slice(0, 6)); setLoginError(''); }}
+                      className="w-full px-6 py-4 rounded-2xl bg-slate-50 border-2 border-slate-100 text-slate-800 placeholder-slate-300 focus:bg-white focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 outline-none transition-all font-black text-center text-2xl tracking-[0.2em] shadow-sm"
+                      placeholder="000000" required
+                    />
+                  </div>
+                  <button type="submit" disabled={isLoggingIn || mfaVerifyCode.length !== 6} className="w-full bg-blue-600 hover:bg-blue-700 text-white rounded-2xl py-4 font-black uppercase tracking-widest text-sm transition-all flex justify-center items-center gap-2 hover:shadow-lg hover:shadow-blue-500/30 disabled:opacity-50 cursor-pointer">
+                    {isLoggingIn ? 'Memverifikasi...' : 'Verifikasi OTP'}
+                  </button>
+                  <button type="button" onClick={() => { setMfaChallengeMode(false); setMfaVerifyCode(''); }} className="w-full text-slate-400 hover:text-slate-600 text-xs font-bold uppercase tracking-wider mt-4 cursor-pointer">
+                    Kembali ke Login
+                  </button>
+                </form>
+              ) : (
+                <form onSubmit={handleLogin} className="space-y-6">
+                  <div>
+                    <label className="block text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] mb-2.5 ml-1">Email (atau Username Lama)</label>
+                  <input
+                    type="text" value={username}
+                    onChange={e => { setUsername(e.target.value); setLoginError(''); }}
+                    className="w-full px-6 py-4 rounded-2xl bg-slate-50 border-2 border-slate-100 text-slate-800 placeholder-slate-300 focus:bg-white focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 outline-none transition-all font-bold shadow-sm"
+                    placeholder="Masukkan Email lengkap Anda" required
+                  />
+                </div>
+                <div>
+                  <label className="block text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] mb-2.5 ml-1">Password</label>
+                  <div className="relative">
+                    <input
+                      type={showPassword ? "text" : "password"} value={password}
+                      onChange={e => { setPassword(e.target.value); setLoginError(''); }}
+                      className="w-full pl-6 pr-14 py-4 rounded-2xl bg-slate-50 border-2 border-slate-100 text-slate-800 placeholder-slate-300 focus:bg-white focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 outline-none transition-all font-bold shadow-sm"
+                      placeholder="Masukkan password" required
+                    />
+                    <button
+                      type="button"
+                      onClick={() => setShowPassword(!showPassword)}
+                      className="absolute right-5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-blue-600 transition-colors focus:outline-none"
+                    >
+                      {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+                    </button>
+                  </div>
+                  <div className="flex justify-end mt-2 ml-1">
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setShowForgotPassword(true);
+                        setForgotError('');
+                        setForgotSuccess('');
+                        setForgotIdentity('');
+                      }}
+                      className="text-blue-500 hover:text-blue-600 text-[10px] font-black tracking-wider uppercase transition-colors"
+                    >
+                      Lupa Password?
+                    </button>
+                  </div>
+                </div>
+
+                {/* Slider CAPTCHA */}
+                <SliderCaptcha onVerified={() => setCaptchaVerified(true)} verified={captchaVerified} />
+
+                <button
+                  type="submit"
+                  disabled={!captchaVerified || isLoggingIn}
+                  className={`w-full font-black py-4.5 px-4 rounded-2xl flex items-center justify-center gap-3 transition-all duration-300 mt-4 text-xs tracking-[0.1em] uppercase ${(captchaVerified && !isLoggingIn)
+                    ? 'bg-blue-600 hover:bg-blue-700 text-white shadow-2xl shadow-blue-600/30 hover:-translate-y-1 hover:shadow-blue-600/40'
+                    : 'bg-slate-100 text-slate-300 cursor-not-allowed border-2 border-slate-50'
+                    }`}
+                >
+                  {isLoggingIn ? <Activity size={18} className="animate-spin" /> : <LogIn size={18} />}
+                  {isLoggingIn ? 'MEMVERIFIKASI...' : 'MASUK KE DASHBOARD'}
+                </button>
+              </form>
+              )}
+
+              <div className="mt-8 text-center">
+                <p className="text-slate-400 text-[10px] font-bold uppercase tracking-[0.15em]">Gunakan akun resmi sistem AKURAT.</p>
+                <div className="mt-3">
+                  <button type="button" onClick={() => setShowRegister(true)} className="text-blue-500 hover:text-blue-600 text-[11px] font-bold transition-colors">Belum punya akun? Daftar Baru di sini</button>
+                </div>
+                <p className="text-slate-300 text-[9px] mt-2 font-medium">© 2026 iDRG Analytics Platform • Alpha v1.7.7 (070620260947)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {showForgotPassword && (
+          <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-slate-900/80 backdrop-blur-md animate-in fade-in duration-300">
+            <div className="max-w-md w-full p-8 shadow-2xl border border-white/20 bg-white relative rounded-[2rem] animate-in zoom-in-95 duration-300">
+              <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-blue-500 to-emerald-500 rounded-t-[2rem]"></div>
+              
+              <button 
+                onClick={() => { setShowForgotPassword(false); setForgotError(''); setForgotSuccess(''); setForgotIdentity(''); }}
+                className="absolute top-5 right-5 w-8 h-8 rounded-full flex items-center justify-center bg-slate-50 text-slate-400 hover:bg-slate-100 hover:text-rose-600 hover:scale-105 transition-all outline-none"
+              >
+                <X size={16} />
+              </button>
+
+              <div className="text-center space-y-3 mb-6">
+                <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center shadow-inner mx-auto">
+                  <Key size={32} className="text-blue-600" />
+                </div>
+                <h3 className="text-xl font-black text-slate-800 tracking-tight">Lupa Password?</h3>
+                <p className="text-xs text-slate-500 leading-relaxed font-medium">
+                  Masukkan <span className="font-bold text-slate-700">Email</span> atau <span className="font-bold text-slate-700">Username</span> akun Anda.
+                  Kami akan mengirimkan tautan reset password ke email terdaftar.
+                </p>
+              </div>
+
+              <form onSubmit={handleForgotPassword} className="space-y-4">
+                <div>
+                  <label className="block text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] mb-2 ml-1">
+                    Email atau Username
+                  </label>
+                  <input
+                    type="text"
+                    value={forgotIdentity}
+                    onChange={e => { setForgotIdentity(e.target.value); setForgotError(''); setForgotSuccess(''); }}
+                    className="w-full px-5 py-4 rounded-2xl bg-slate-50 border-2 border-slate-100 text-slate-800 placeholder-slate-300 focus:bg-white focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 outline-none transition-all font-bold shadow-sm"
+                    placeholder="Contoh: user@email.com atau username Anda"
+                    autoComplete="email"
+                    autoFocus
+                  />
+                  <p className="mt-1.5 ml-1 text-[10px] text-slate-400 font-medium">
+                    💡 Jika menggunakan username tanpa @, sistem akan otomatis menambahkan @pusbikes.com
+                  </p>
+                </div>
+
+                {forgotError && (
+                  <div className="p-4 bg-rose-50 border border-rose-100 rounded-2xl flex items-start gap-3 text-rose-700 font-bold text-xs animate-in shake duration-300">
+                    <AlertCircle size={16} className="shrink-0 mt-0.5" />
+                    <span>{forgotError}</span>
+                  </div>
+                )}
+
+                {forgotSuccess && (
+                  <div className="p-4 bg-emerald-50 border border-emerald-100 rounded-2xl flex items-start gap-3 text-emerald-700 font-bold text-xs animate-in fade-in duration-300">
+                    <CheckCircle size={16} className="shrink-0 mt-0.5" />
+                    <span>{forgotSuccess}</span>
+                  </div>
+                )}
+
+                {forgotSuccess ? (
+                  <button
+                    type="button"
+                    onClick={() => { setShowForgotPassword(false); setForgotSuccess(''); }}
+                    className="w-full font-black py-4 px-4 rounded-2xl flex items-center justify-center gap-2 transition-all duration-300 text-xs tracking-[0.1em] uppercase bg-emerald-600 hover:bg-emerald-700 text-white shadow-lg shadow-emerald-600/20 hover:-translate-y-0.5 cursor-pointer"
+                  >
+                    <CheckCircle size={16} /> TUTUP
+                  </button>
+                ) : (
+                  <button
+                    type="submit"
+                    disabled={isProcessingForgot || !forgotIdentity.trim()}
+                    className={`w-full font-black py-4 px-4 rounded-2xl flex items-center justify-center gap-2 transition-all duration-300 text-xs tracking-[0.1em] uppercase ${
+                      !isProcessingForgot && forgotIdentity.trim()
+                        ? 'bg-blue-600 hover:bg-blue-700 text-white shadow-lg shadow-blue-600/20 hover:-translate-y-0.5 cursor-pointer'
+                        : 'bg-slate-100 text-slate-300 cursor-not-allowed border-2 border-slate-50'
+                    }`}
+                  >
+                    {isProcessingForgot ? <Activity size={16} className="animate-spin" /> : <Send size={16} />}
+                    {isProcessingForgot ? 'MENGIRIM...' : 'KIRIM LINK RESET PASSWORD'}
+                  </button>
+                )}
+              </form>
+
+              <p className="text-center text-[10px] text-slate-400 font-medium mt-4">
+                Ingat password Anda?{' '}
+                <button
+                  type="button"
+                  onClick={() => { setShowForgotPassword(false); setForgotError(''); setForgotSuccess(''); }}
+                  className="text-blue-500 hover:text-blue-600 font-bold transition-colors"
+                >
+                  Kembali ke Login
+                </button>
+              </p>
+            </div>
+          </div>
+        )}
+
+        {isResettingPassword && (
+          <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-slate-900/80 backdrop-blur-md animate-in fade-in duration-300">
+            <div className="max-w-md w-full p-8 shadow-2xl border border-white/20 bg-white relative rounded-[2rem] animate-in zoom-in-95 duration-300">
+              <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-blue-500 to-emerald-500 rounded-t-[2rem]"></div>
+              
+              <div className="text-center space-y-3 mb-6 mt-4">
+                <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center shadow-inner mx-auto">
+                  <Key size={32} className="text-blue-600" />
+                </div>
+                <h3 className="text-xl font-black text-slate-800 tracking-tight">Buat Password Baru</h3>
+                <p className="text-xs text-slate-500 leading-relaxed font-medium">
+                  Silakan masukkan password baru untuk akun Anda.
+                </p>
+              </div>
+
+              <form onSubmit={handleSetNewPassword} className="space-y-4">
+                <div>
+                  <label className="block text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] mb-2 ml-1">
+                    Password Baru
+                  </label>
+                  <div className="relative">
+                    <input
+                      type={showNewPassword ? "text" : "password"}
+                      value={newPassword}
+                      onChange={e => { setNewPassword(e.target.value); setResetNewPasswordError(''); setResetNewPasswordSuccess(''); }}
+                      className="w-full px-5 py-4 rounded-2xl bg-slate-50 border-2 border-slate-100 text-slate-800 placeholder-slate-300 focus:bg-white focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 outline-none transition-all font-bold shadow-sm"
+                      placeholder="Minimal 6 karakter"
+                      autoFocus
+                    />
+                    <button
+                      type="button"
+                      onClick={() => setShowNewPassword(!showNewPassword)}
+                      className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 hover:text-blue-500 focus:outline-none transition-colors"
+                    >
+                      {showNewPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+                    </button>
+                  </div>
+                </div>
+
+                {resetNewPasswordError && (
+                  <div className="p-4 bg-rose-50 border border-rose-100 rounded-2xl flex items-start gap-3 text-rose-700 font-bold text-xs animate-in shake duration-300">
+                    <AlertCircle size={16} className="shrink-0 mt-0.5" />
+                    <span>{resetNewPasswordError}</span>
+                  </div>
+                )}
+
+                {resetNewPasswordSuccess && (
+                  <div className="p-4 bg-emerald-50 border border-emerald-100 rounded-2xl flex items-start gap-3 text-emerald-700 font-bold text-xs animate-in fade-in duration-300">
+                    <CheckCircle size={16} className="shrink-0 mt-0.5" />
+                    <span>{resetNewPasswordSuccess}</span>
+                  </div>
+                )}
+
+                {resetNewPasswordSuccess ? (
+                  <button
+                    type="button"
+                    onClick={() => { setIsResettingPassword(false); setResetNewPasswordSuccess(''); setNewPassword(''); }}
+                    className="w-full font-black py-4 px-4 rounded-2xl flex items-center justify-center gap-2 transition-all duration-300 text-xs tracking-[0.1em] uppercase bg-emerald-600 hover:bg-emerald-700 text-white shadow-lg shadow-emerald-600/20 hover:-translate-y-0.5 cursor-pointer"
+                  >
+                    <CheckCircle size={16} /> TUTUP & LOGIN
+                  </button>
+                ) : (
+                  <button
+                    type="submit"
+                    disabled={isProcessingNewPassword || !newPassword}
+                    className={`w-full font-black py-4 px-4 rounded-2xl flex items-center justify-center gap-2 transition-all duration-300 text-xs tracking-[0.1em] uppercase ${
+                      !isProcessingNewPassword && newPassword
+                        ? 'bg-blue-600 hover:bg-blue-700 text-white shadow-lg shadow-blue-600/20 hover:-translate-y-0.5 cursor-pointer'
+                        : 'bg-slate-100 text-slate-300 cursor-not-allowed border-2 border-slate-50'
+                    }`}
+                  >
+                    {isProcessingNewPassword ? <Activity size={16} className="animate-spin" /> : <Send size={16} />}
+                    {isProcessingNewPassword ? 'MENYIMPAN...' : 'SIMPAN PASSWORD BARU'}
+                  </button>
+                )}
+              </form>
+            </div>
+          </div>
+        )}
+
+        {showRegister && (
+          <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-slate-900/90 backdrop-blur-md animate-in fade-in duration-300">
+            <div className="max-w-md w-full max-h-[95vh] overflow-y-auto custom-scrollbar p-10 shadow-2xl border border-white/20 bg-white relative rounded-[2.5rem] animate-in zoom-in-95 duration-300">
+              <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-blue-500 via-emerald-500 to-blue-600"></div>
+              <button onClick={() => setShowRegister(false)} className="absolute top-6 right-6 text-slate-400 hover:text-slate-600 hover:bg-slate-100 p-2 rounded-full transition-all">
+                <X size={20} />
+              </button>
+              
+              <div className="text-center mb-8">
+                <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                  <ClipboardList size={32} className="text-blue-600" />
+                </div>
+                <h2 className="text-2xl font-black text-slate-800 tracking-tight">Permohonan Akun</h2>
+                <p className="text-sm text-slate-500 font-medium mt-2">Daftar untuk mendapatkan akses ke aplikasi</p>
+              </div>
+
+              {regState.error && (
+                <div className="mb-6 p-4 bg-rose-50 border border-rose-100 rounded-2xl flex items-start gap-3">
+                  <AlertCircle size={18} className="text-rose-500 shrink-0 mt-0.5" />
+                  <p className="text-xs font-bold text-rose-700">{regState.error}</p>
+                </div>
+              )}
+
+              {regState.success && (
+                <div className="mb-6 p-4 bg-emerald-50 border border-emerald-100 rounded-2xl flex items-start gap-3">
+                  <CheckCircle size={18} className="text-emerald-500 shrink-0 mt-0.5" />
+                  <p className="text-xs font-bold text-emerald-700">{regState.success}</p>
+                </div>
+              )}
+
+              <form onSubmit={handleRegister} className="space-y-4">
+                <div>
+                  <label className="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1.5 ml-1">Email</label>
+                  <input type="email" required value={regData.email} onChange={e => setRegData({...regData, email: e.target.value})} className="w-full bg-slate-50 border border-slate-200 text-slate-800 text-sm rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent block p-3.5 transition-all outline-none font-medium" placeholder="email@contoh.com" />
+                </div>
+                <div>
+                  <label className="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1.5 ml-1">Password</label>
+                  <div className="relative">
+                    <input type={showRegPassword ? "text" : "password"} required value={regData.password} onChange={e => setRegData({...regData, password: e.target.value})} minLength={8} className="w-full bg-slate-50 border border-slate-200 text-slate-800 text-sm rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent block p-3.5 pr-12 transition-all outline-none font-medium" placeholder="Minimal 8 karakter" />
+                    <button
+                      type="button"
+                      onClick={() => setShowRegPassword(!showRegPassword)}
+                      className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 hover:text-blue-600 transition-colors focus:outline-none"
+                    >
+                      {showRegPassword ? <EyeOff size={16} /> : <Eye size={16} />}
+                    </button>
+                  </div>
+                </div>
+                <div>
+                  <label className="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1.5 ml-1">Username (ID Login)</label>
+                  <input type="text" required value={regData.username} onChange={e => setRegData({...regData, username: e.target.value})} className="w-full bg-slate-50 border border-slate-200 text-slate-800 text-sm rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent block p-3.5 transition-all outline-none font-medium" placeholder="johndoe" />
+                </div>
+                <div>
+                  <label className="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1.5 ml-1">Nama Lengkap</label>
+                  <input type="text" required value={regData.nama} onChange={e => setRegData({...regData, nama: e.target.value})} className="w-full bg-slate-50 border border-slate-200 text-slate-800 text-sm rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent block p-3.5 transition-all outline-none font-medium" placeholder="Nama Lengkap Anda" />
+                </div>
+                <div>
+                  <label className="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1.5 ml-1">Nama Rumah Sakit / Faskes</label>
+                  <input type="text" required value={regData.faskes} onChange={e => setRegData({...regData, faskes: e.target.value})} className="w-full bg-slate-50 border border-slate-200 text-slate-800 text-sm rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent block p-3.5 transition-all outline-none font-medium" placeholder="RSUD Contoh" />
+                </div>
+                <div>
+                  <label className="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1.5 ml-1">No WhatsApp</label>
+                  <input type="text" value={regData.wa} onChange={e => setRegData({...regData, wa: e.target.value})} className="w-full bg-slate-50 border border-slate-200 text-slate-800 text-sm rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent block p-3.5 transition-all outline-none font-medium" placeholder="081234567890" />
+                </div>
+                <div className="pt-4">
+                  <button type="submit" disabled={regState.loading} className="w-full font-black py-4 px-4 rounded-2xl flex items-center justify-center gap-2 transition-all duration-300 text-xs tracking-[0.1em] uppercase bg-blue-600 hover:bg-blue-700 text-white shadow-lg shadow-blue-600/20 hover:-translate-y-0.5 disabled:opacity-50 disabled:hover:translate-y-0">
+                    {regState.loading ? <Activity size={16} className="animate-spin" /> : <Send size={16} />}
+                    {regState.loading ? 'MEMPROSES...' : 'KIRIM PERMOHONAN'}
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        )}
+
+        {showDisclaimer && (
+          <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-slate-900/90 backdrop-blur-md animate-in fade-in duration-300">
+            <div className="max-w-md w-full max-h-[95vh] overflow-y-auto custom-scrollbar p-10 shadow-2xl border border-white/20 bg-white relative rounded-[2.5rem] animate-in zoom-in-95 duration-300">
+              <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-blue-500 via-emerald-500 to-blue-600"></div>
+              <div className="flex flex-col items-center text-center space-y-6">
+                <div className="w-24 h-24 bg-blue-50 rounded-3xl flex items-center justify-center shadow-inner">
+                  <AlertTriangle size={48} className="text-blue-600 animate-pulse" />
+                </div>
+                <div className="space-y-3">
+                  <h2 className="text-2xl font-black text-slate-800 tracking-tight">Privasi & Keamanan Data</h2>
+                  <p className="text-sm text-slate-500 leading-relaxed font-bold">
+                    Sebagai standar kepatuhan data medis, sistem <strong className="text-blue-600">UR Sardjito</strong> memberitahukan:
+                  </p>
+                </div>
+                <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 text-left space-y-4 shadow-inner">
+                  <div className="flex gap-4">
+                    <CheckCircle className="text-blue-500 shrink-0 mt-0.5" size={18} />
+                    <p className="text-xs text-slate-600 leading-relaxed"><strong>Pemrosesan Lokal 100%.</strong> Developer tidak menyimpan data Anda di server. Seluruh proses terjadi di memori browser.</p>
+                  </div>
+                  <div className="flex gap-4">
+                    <CheckCircle className="text-blue-500 shrink-0 mt-0.5" size={18} />
+                    <p className="text-xs text-slate-600 leading-relaxed"><strong>Tanggung Jawab Pengguna.</strong> Segala akses dan kerahasiaan data adalah tanggung jawab penuh operator di faskes.</p>
+                  </div>
+                  <div className="flex gap-4">
+                    <CheckCircle className="text-blue-500 shrink-0 mt-0.5" size={18} />
+                    <p className="text-xs text-slate-600 leading-relaxed"><strong>Sesi Sementara.</strong> Menutup tab atau me-refresh halaman akan menghapus data analisis secara permanen dari aplikasi.</p>
+                  </div>
+                  <div className="flex gap-4">
+                    <ShieldAlert className="text-amber-500 shrink-0 mt-0.5" size={18} />
+                    <p className="text-xs text-slate-600 leading-relaxed"><strong>Sangat Disarankan.</strong> Segera aktifkan perlindungan <em>Multi-Factor Authentication (MFA)</em> di menu <strong>Keamanan Akun</strong> setelah login, untuk memastikan data hanya dapat diakses oleh Anda.</p>
+                  </div>
+                </div>
+                <div className="w-full flex flex-col gap-3 pt-2">
+                  <button onClick={finalizeLogin} className="w-full py-4 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl font-black text-sm transition-all shadow-lg shadow-emerald-500/25 active:scale-95 flex items-center justify-center gap-2">
+                    <CheckCircle size={18} /> SAYA MENGERTI & SETUJU
+                  </button>
+                  <button onClick={() => setShowDisclaimer(false)} className="w-full py-3.5 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-xl font-bold text-xs transition-all border border-slate-200 flex items-center justify-center gap-2">
+                    <X size={16} /> TIDAK SETUJU & KEMBALI
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+      </>
+    );
+  }
