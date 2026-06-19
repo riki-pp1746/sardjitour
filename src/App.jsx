@@ -1055,11 +1055,11 @@ const DEFAULT_AUDIT_RULES = [
     "condition": {
       "type": "custom_missing",
       "requires": ["I60", "I61", "I62", "I63"],
-      "missing": ["87.03", "88.91"],
+      "missing": ["87.03", "88.91", "88.41"],
       "excludes": ["Z08", "Z09", "Z09.8", "Z50"]
     },
     "validation_action": {
-      "warning_message": "Bukti Medis Tidak Lengkap / Upcoding: Klaim stroke akut (I60-I63) WAJIB disertai tindakan CT-Scan Kepala (87.03) atau MRI (88.91). Jika tidak ada dan BUKAN pasien kontrol/rehab (Z08/Z09/Z50), turunkan koding menjadi I64."
+      "warning_message": "Bukti Medis Tidak Lengkap / Upcoding: Klaim stroke akut (I60-I63) WAJIB disertai tindakan CT-Scan Kepala (87.03), MRI (88.91), atau Arteriography (88.41). Jika tidak ada dan BUKAN pasien kontrol/rehab (Z08/Z09/Z50), turunkan koding menjadi I64."
     },
     "PTD": "1/2"
   },
