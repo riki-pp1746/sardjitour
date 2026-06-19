@@ -1,7 +1,7 @@
 import logo from "./assets/logo.png";
 import React, { useState, useRef, useMemo, useEffect, useId, useCallback } from 'react';
 import { supabase } from './supabaseClient';
-import { UploadCloud, Folder, FileText, CheckCircle, Trash2, AlertCircle, X, BarChart3, PieChart, Activity, Layers, Search, Table2, GitMerge, FileCode, CheckSquare, AlertTriangle, Stethoscope, User, Users, ActivitySquare, Download, TrendingUp, TrendingDown, ChevronRight, ChevronDown, Zap, Award, ArrowUpCircle, LogIn, LogOut, Menu, Printer, Moon, Sun, Calendar, Bed, Building2, LayoutDashboard, Bot, Sparkles, ClipboardList, Scissors, Settings, FileSpreadsheet, Eye, EyeOff, RefreshCw, Key, Send, Save, Plus, ShieldAlert, Copy } from 'lucide-react';
+import { UploadCloud, Box, Folder, FileText, CheckCircle, Trash2, AlertCircle, X, BarChart3, PieChart, Activity, Layers, Search, Table2, GitMerge, FileCode, CheckSquare, AlertTriangle, Stethoscope, User, Users, ActivitySquare, Download, TrendingUp, TrendingDown, ChevronRight, ChevronDown, Zap, Award, ArrowUpCircle, LogIn, LogOut, Menu, Printer, Moon, Sun, Calendar, Bed, Building2, LayoutDashboard, Bot, Sparkles, ClipboardList, Scissors, Settings, FileSpreadsheet, Eye, EyeOff, RefreshCw, Key, Send, Save, Plus, ShieldAlert, Copy } from 'lucide-react';
 import { generateExecutivePPTX, generateAuditPPTX, generatePendingPPTX, generateKpiCoderPPTX, generateSosialisasiPPTX } from './utils/pptxExport';
 import KompetensiDashboard from './components/KompetensiDashboard.jsx';
 import MfaSettings from './components/MfaSettings.jsx';
@@ -11033,99 +11033,122 @@ export default function App() {
         )}
 
         {/* SIDEBAR NAVIGATION */}
-        <aside className={`bg-white border-r border-blue-100 transition-all duration-300 z-[100] flex flex-col shadow-2xl shadow-blue-900/5 print:hidden fixed inset-y-0 left-0 lg:relative ${isSidebarOpen ? 'translate-x-0 w-64' : '-translate-x-full lg:translate-x-0 lg:w-20 w-64'} shrink-0 h-screen`}>
+        <aside className={`transition-all duration-500 z-[100] flex flex-col print:hidden fixed inset-y-0 left-0 lg:relative lg:my-3 lg:ml-3 lg:rounded-[2rem] rounded-none bg-[#0a0f1d] border-r border-white/5 lg:border border-white/10 shadow-[0_0_50px_rgba(0,0,0,0.5)] overflow-hidden ${isSidebarOpen ? 'translate-x-0 w-72' : '-translate-x-full lg:translate-x-0 lg:w-20 w-72'} shrink-0 lg:h-[calc(100vh-24px)] h-screen`}>
           {/* Branding */}
-          <div className="p-4 flex items-center justify-between border-b border-blue-100 shrink-0 h-16 bg-gradient-to-r from-blue-50 to-white">
-            <div className="flex items-center gap-3 overflow-hidden cursor-pointer" onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
-              <div className="p-1.5 bg-white rounded-lg shrink-0 shadow-[0_0_15px_rgba(59,130,246,0.2)] w-9 h-9 flex items-center justify-center overflow-hidden border border-blue-200">
-                <img src={logo} className="w-full h-full object-contain" alt="Logo" />
+          <div className="p-5 flex items-center justify-between border-b border-white/5 shrink-0 h-20 bg-gradient-to-r from-blue-950/40 to-transparent">
+            <div className="flex items-center gap-4 overflow-hidden cursor-pointer" onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
+              <div className="p-2 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl shrink-0 shadow-[0_0_20px_rgba(59,130,246,0.4)] w-11 h-11 flex items-center justify-center overflow-hidden border border-white/20">
+                <img src={logo} className="w-full h-full object-contain filter drop-shadow-md brightness-200" alt="Logo" />
               </div>
               {isSidebarOpen && (
                 <div className="flex flex-col ml-1">
-                  <span className="text-xl font-black whitespace-nowrap tracking-tight leading-none text-slate-800">
+                  <span className="text-2xl font-black whitespace-nowrap tracking-tight leading-none text-white drop-shadow-md">
                     UR Sardjito
                   </span>
-                  <span className="text-[7px] text-slate-500 mt-0.5 tracking-wider font-extrabold uppercase leading-tight opacity-90" title="Sistem Informasi & Utilisasi Rumah Sakit Terpadu - Indonesian Diagnosis Related Group">
-                    Sistem Informasi & Utilisasi Rumah Sakit Terpadu
+                  <span className="text-[8px] text-cyan-300 mt-1 tracking-widest font-black uppercase leading-tight opacity-90">
+                    Sistem Informasi Terpadu
                   </span>
-                  <span className="text-[7px] text-blue-400 font-black mt-0.5 tracking-[0.2em] uppercase leading-tight">Alpha v1.7.7 (070620260947)</span>
                 </div>
               )}
             </div>
-            {/* Mobile close button inside sidebar */}
             {isSidebarOpen && (
-              <button onClick={() => setIsSidebarOpen(false)} className="lg:hidden p-1.5 hover:bg-blue-100 rounded-lg text-blue-600 transition-colors" title="Tutup Menu">
-                <X size={18} />
+              <button onClick={() => setIsSidebarOpen(false)} className="lg:hidden p-2 hover:bg-white/10 rounded-xl text-slate-400 transition-colors">
+                <X size={20} />
               </button>
             )}
           </div>
 
           {/* User Profile Section */}
           {isLoggedIn && (
-            <div className={`p-4 border-b border-slate-50 flex items-center ${isSidebarOpen ? 'gap-3' : 'justify-center'} bg-slate-50/30`}>
-              <div className="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center text-white font-black text-lg shadow-lg shadow-blue-600/20 shrink-0 border border-blue-500/20">
+            <div className={`p-5 border-b border-white/5 flex items-center ${isSidebarOpen ? 'gap-4' : 'justify-center'} bg-white/[0.02]`}>
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white font-black text-lg shadow-lg shadow-indigo-500/30 shrink-0 border border-white/10">
                 {username.charAt(0).toUpperCase()}
               </div>
               {isSidebarOpen && (
                 <div className="flex flex-col min-w-0">
-                  <span className="text-[10px] font-black text-blue-600 uppercase tracking-widest leading-none mb-1 opacity-70">Logged In As</span>
-                  <span className="text-sm font-black text-slate-800 truncate leading-tight">{username}</span>
+                  <span className="text-[9px] font-black text-slate-400 uppercase tracking-[0.2em] leading-none mb-1.5">Administrator</span>
+                  <span className="text-sm font-bold text-slate-100 truncate leading-tight">{username}</span>
                 </div>
               )}
             </div>
           )}
 
           {/* Navigation Menu */}
-          <div className="flex-1 overflow-y-auto py-6 px-3 space-y-1.5 custom-scrollbar">
-            <button onClick={() => { setActiveTab('upload'); if (window.innerWidth < 1024) setIsSidebarOpen(false); }} className={`w-full flex items-center gap-3 px-3 py-3 rounded-xl text-sm font-bold transition-all ${activeTab === 'upload' ? 'bg-blue-600 text-white shadow-xl shadow-blue-600/30' : 'text-slate-600 hover:bg-blue-50 hover:text-blue-700'} ${!isSidebarOpen && 'justify-center'}`} title="Integrasi Data">
-              <UploadCloud size={20} className="shrink-0" />
-              {isSidebarOpen && <span>Integrasi Data</span>}
-            </button>
-
-            <div className={`mt-8 mb-3 ${isSidebarOpen ? 'px-3' : 'text-center'}`}>
-              <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest">{isSidebarOpen ? 'Dashboard Menu' : '...'}</p>
+          <div className="flex-1 overflow-y-auto py-6 px-4 space-y-8 custom-scrollbar scrollbar-dark">
+            
+            <div className="space-y-1.5">
+              <button onClick={() => { setActiveTab('upload'); if (window.innerWidth < 1024) setIsSidebarOpen(false); }} className={`w-full flex items-center gap-3.5 px-3.5 py-3.5 rounded-2xl text-sm transition-all group ${activeTab === 'upload' ? 'bg-gradient-to-r from-blue-600 to-cyan-500 text-white shadow-lg shadow-blue-500/25 border border-white/10' : 'text-slate-400 hover:bg-white/5 hover:text-white border border-transparent'} ${!isSidebarOpen && 'justify-center'}`} title="Integrasi Data">
+                <UploadCloud size={20} className={`shrink-0 ${activeTab === 'upload' ? 'text-white' : 'group-hover:text-cyan-400 transition-colors'}`} />
+                {isSidebarOpen && <span className="font-bold tracking-wide">Integrasi Data</span>}
+              </button>
             </div>
 
-            {TABS.filter(t => {
+            {(() => {
+              const SIDEBAR_GROUPS = [
+                { label: 'Analitik & Laporan', icon: PieChart, ids: ['executive', 'report', 'rekap', 'sl_cl_analysis'] },
+                { label: 'Kinerja Klinis', icon: Activity, ids: ['dept', 'ksm', 'dpjp', 'kpi_coder'] },
+                { label: 'Mutu & Validasi', icon: ShieldAlert, ids: ['discrepancy', 'medsurg_valid', 'audit', 'readmisi', 'naik_kelas', 'icu'] },
+                { label: 'Manajemen Khusus', icon: Box, ids: ['pending_sakti', 'topup', 'kompetensi', 'mapping'] },
+                { label: 'Sistem & Akses', icon: Settings, ids: ['insight_sosialisasi', 'settings_ksm', 'settings_kompetensi', 'user_management', 'security'] },
+              ];
+
               const isAdmin = localStorage.getItem('sak_role') === 'admin';
               const hasKomp = localStorage.getItem('sak_akses_kompetensi') === 'true';
-              if (t.id === 'user_management') return isAdmin;
-              if (t.id === 'kompetensi' || t.id === 'settings_kompetensi') return isAdmin || hasKomp;
-              return true;
-            }).map((t, idx) => {
-              const Icon = t.icon;
-              const isActive = activeTab === 'dashboard' && subTab === t.id;
-              return (
-                <button key={idx} onClick={() => {
-                  if (t.id === 'kompetensi') {
-                    setShowKompPopup(true);
-                  } else {
-                    setActiveTab('dashboard'); 
-                    switchSubTab(t.id); 
-                    if (window.innerWidth < 1024) setIsSidebarOpen(false);
-                  }
-                }} className={`w-full flex items-center gap-3 px-3 py-3 rounded-xl text-sm transition-all group ${isActive ? 'bg-blue-50 text-blue-700 font-bold border border-blue-100 shadow-sm' : 'text-slate-500 hover:bg-slate-50 hover:text-slate-800 font-medium border border-transparent'} ${!isSidebarOpen && 'justify-center'}`} title={t.label}>
-                  <Icon size={20} className={`shrink-0 transition-colors ${isActive ? 'text-blue-600' : 'text-slate-400 group-hover:text-slate-600'}`} />
-                  {isSidebarOpen && <span className="whitespace-nowrap">{t.label}</span>}
-                </button>
-              )
-            })}
 
+              return SIDEBAR_GROUPS.map((group, gIdx) => {
+                const groupTabs = group.ids.map(id => TABS.find(t => t.id === id)).filter(Boolean).filter(t => {
+                  if (t.id === 'user_management') return isAdmin;
+                  if (t.id === 'kompetensi' || t.id === 'settings_kompetensi') return isAdmin || hasKomp;
+                  return true;
+                });
+
+                if (groupTabs.length === 0) return null;
+
+                return (
+                  <div key={gIdx} className="space-y-2">
+                    <div className={`flex items-center gap-2 mb-3 ${isSidebarOpen ? 'px-2' : 'justify-center'}`}>
+                      {!isSidebarOpen && <group.icon size={14} className="text-slate-600" />}
+                      {isSidebarOpen && <span className="text-[10px] font-black text-slate-500 uppercase tracking-widest">{group.label}</span>}
+                    </div>
+                    {groupTabs.map((t, idx) => {
+                      const Icon = t.icon;
+                      const isActive = activeTab === 'dashboard' && subTab === t.id;
+                      return (
+                        <button key={idx} onClick={() => {
+                          if (t.id === 'kompetensi') {
+                            setShowKompPopup(true);
+                          } else {
+                            setActiveTab('dashboard'); 
+                            switchSubTab(t.id); 
+                            if (window.innerWidth < 1024) setIsSidebarOpen(false);
+                          }
+                        }} className={`w-full flex items-center gap-3.5 px-3.5 py-3 rounded-xl text-[13px] transition-all group relative overflow-hidden ${isActive ? 'text-white font-bold bg-white/5 border border-white/10' : 'text-slate-400 hover:text-slate-200 hover:bg-white/[0.02] font-medium border border-transparent'} ${!isSidebarOpen && 'justify-center'}`} title={t.label}>
+                          {isActive && <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-6 bg-cyan-400 rounded-r-full shadow-[0_0_10px_#22d3ee]" />}
+                          <Icon size={18} className={`shrink-0 transition-all duration-300 ${isActive ? 'text-cyan-400 drop-shadow-[0_0_8px_rgba(34,211,238,0.6)]' : 'text-slate-500 group-hover:text-slate-300 group-hover:scale-110'}`} />
+                          {isSidebarOpen && <span className="whitespace-nowrap tracking-wide">{t.label}</span>}
+                        </button>
+                      )
+                    })}
+                  </div>
+                )
+              });
+            })()}
 
           </div>
 
           {/* User Action & Settings */}
-          <div className="p-4 border-t border-slate-100 shrink-0 space-y-2 bg-slate-50/50">
-            <button onClick={() => setIsDarkMode(!isDarkMode)} className={`w-full flex items-center gap-3 px-3 py-3 rounded-xl text-sm font-bold text-slate-600 hover:bg-white hover:text-slate-800 hover:shadow-sm transition-all border border-transparent hover:border-slate-200 ${!isSidebarOpen && 'justify-center'}`} title="Toggle Mode Gelap/Terang">
-              {isDarkMode ? <Sun size={20} className="shrink-0 text-amber-500" /> : <Moon size={20} className="shrink-0 text-slate-400" />}
+          <div className="p-4 border-t border-white/5 shrink-0 space-y-2 bg-black/20">
+            <button onClick={() => setIsDarkMode(!isDarkMode)} className={`w-full flex items-center gap-3 px-3 py-3 rounded-xl text-xs font-bold text-slate-400 hover:bg-white/5 hover:text-white transition-all border border-transparent hover:border-white/10 ${!isSidebarOpen && 'justify-center'}`} title="Toggle Mode Gelap/Terang">
+              {isDarkMode ? <Sun size={18} className="shrink-0 text-amber-400" /> : <Moon size={18} className="shrink-0 text-slate-400" />}
               {isSidebarOpen && <span>{isDarkMode ? 'Mode Terang' : 'Mode Gelap'}</span>}
             </button>
-            <button onClick={handleLogout} className={`w-full flex items-center gap-3 px-3 py-3 rounded-xl text-sm font-bold text-rose-600 hover:bg-rose-50 hover:text-rose-700 transition-all border border-transparent hover:border-rose-100 ${!isSidebarOpen && 'justify-center'}`} title="Keluar">
-              <LogOut size={20} className="shrink-0" />
+            <button onClick={handleLogout} className={`w-full flex items-center gap-3 px-3 py-3 rounded-xl text-xs font-bold text-rose-400 hover:bg-rose-500/10 hover:text-rose-300 transition-all border border-transparent hover:border-rose-500/20 ${!isSidebarOpen && 'justify-center'}`} title="Keluar">
+              <LogOut size={18} className="shrink-0" />
               {isSidebarOpen && <span>Keluar</span>}
             </button>
           </div>
         </aside>
+
 
         {/* MAIN CONTENT AREA */}
         <div className="flex-1 flex flex-col h-screen overflow-hidden bg-slate-50 relative">
