@@ -4421,7 +4421,7 @@ export default function App() {
 
   const processFiles = async (files) => {
     setError('');
-    const vFiles = Array.from(files).filter(f => f.name.endsWith('.txt') || f.type === 'text/plain');
+    const vFiles = Array.from(files).filter(f => f.name.toLowerCase().endsWith('.txt') || f.type === 'text/plain');
     if (vFiles.length === 0) return setError('Masukkan file .txt');
     const newFiles = [];
     const total = vFiles.length;
