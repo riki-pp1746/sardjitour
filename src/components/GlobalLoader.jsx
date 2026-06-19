@@ -1,5 +1,5 @@
 import React from 'react';
-
+import logo from '../assets/logo.png';
 export default function GlobalLoader({ title, subtitle, percent, fullScreen = false, children }) {
   const containerClasses = fullScreen 
     ? "fixed inset-0 z-[9999] bg-gradient-to-br from-blue-50/90 via-white/95 to-slate-50/90 flex flex-col items-center justify-center overflow-hidden"
@@ -38,43 +38,9 @@ export default function GlobalLoader({ title, subtitle, percent, fullScreen = fa
             </div>
 
             {/* Fake GPU accelerated glow behind logo to save performance instead of heavy SVG drop-shadows */}
-            <div className="absolute inset-0 m-auto w-16 h-16 bg-cyan-400/30 rounded-full blur-[20px]" style={{ willChange: 'transform, opacity' }}></div>
+            <div className="absolute inset-0 m-auto w-16 h-16 bg-blue-400/30 rounded-full blur-[20px]" style={{ willChange: 'transform, opacity' }}></div>
 
-            {/* The 3D Faceted SVG "A" */}
-            <svg viewBox="0 0 100 100" className="relative w-20 h-20 z-10 a-logo transform-gpu">
-              <defs>
-                <linearGradient id="tealDark" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="#1d4ed8" />
-                  <stop offset="100%" stopColor="#1e3a8a" />
-                </linearGradient>
-                <linearGradient id="tealLight" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="#2dd4bf" />
-                  <stop offset="100%" stopColor="#2563eb" />
-                </linearGradient>
-                <linearGradient id="crystalGradientCorrected" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stopColor="#ccfbf1" />
-                  <stop offset="100%" stopColor="#3b82f6" />
-                </linearGradient>
-              </defs>
-
-              {/* Left Pillar */}
-              <polygon points="45,5 15,95 30,95" fill="url(#tealDark)" />
-              <polygon points="45,5 30,95 45,95" fill="url(#tealLight)" />
-
-              {/* Right Pillar */}
-              <polygon points="65,40 55,95 70,95" fill="url(#tealDark)" />
-              <polygon points="65,40 70,95 85,95" fill="url(#tealLight)" />
-
-              {/* Swoosh Bottom Face */}
-              <path d="M 5,70 Q 50,55 95,25 Q 60,65 35,80 Z" fill="url(#tealDark)" />
-              {/* Swoosh Top Face */}
-              <path d="M 5,70 Q 40,40 95,25 Q 50,55 5,70 Z" className="a-logo-fill" />
-              
-              {/* Edge Highlights for extra 3D pop */}
-              <polyline points="45,5 30,95" fill="none" stroke="#a7f3d0" strokeWidth="0.5" opacity="0.8" />
-              <polyline points="65,40 70,95" fill="none" stroke="#a7f3d0" strokeWidth="0.5" opacity="0.8" />
-              <path d="M 5,70 Q 40,40 95,25" fill="none" stroke="#ffffff" strokeWidth="0.8" opacity="0.9" />
-            </svg>
+            <img src={logo} alt="UR Sardjito Logo" className="relative w-20 h-20 z-10 animate-pulse drop-shadow-xl" />
             
             {percent !== undefined && percent !== null && (
               <span className="absolute -bottom-6 text-xs font-black text-blue-600 drop-shadow-sm bg-blue-50 px-3 py-0.5 rounded-full border border-blue-200">
@@ -84,19 +50,19 @@ export default function GlobalLoader({ title, subtitle, percent, fullScreen = fa
           </div>
         </div>
 
-        {/* AKURAT text */}
+        {/* UR Sardjito text */}
         <div className="flex flex-col items-center z-10 relative">
-          <h1 className="font-sans font-black text-2xl tracking-[0.3em] ml-2 mb-1" style={{
-              background: 'linear-gradient(to right, #1d4ed8, #2dd4bf, #1d4ed8)',
+          <h1 className="font-sans font-black text-2xl tracking-[0.1em] mb-1" style={{
+              background: 'linear-gradient(to right, #1d4ed8, #3b82f6, #1d4ed8)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
-              filter: 'drop-shadow(0 1px 2px rgba(13,148,136,0.2))'
+              filter: 'drop-shadow(0 1px 2px rgba(59,130,246,0.2))'
           }}>
-            AKURAT
+            UR SARDJITO
           </h1>
           <div className="flex items-center gap-2 w-full justify-center">
             <div className="h-[1px] w-8 bg-gradient-to-r from-transparent to-blue-600"></div>
-            <span className="font-sans font-semibold tracking-[0.4em] text-blue-700 text-[10px] ml-1">iDRG</span>
+            <span className="font-sans font-semibold tracking-[0.2em] text-blue-700 text-[9px] ml-1 uppercase">Sistem Informasi Terpadu</span>
             <div className="h-[1px] w-8 bg-gradient-to-l from-transparent to-blue-600"></div>
           </div>
         </div>
