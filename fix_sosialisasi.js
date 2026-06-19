@@ -12,7 +12,7 @@ const sosialisasi_code =
 export const generateSosialisasiPPTX = async ({ ksmName, ksmStats, topCases, topUpPotentials, scatterImageBase64, quadrantInsights }) => {
   const pptx = new pptxgen();
   pptx.layout = "LAYOUT_16x9";
-  pptx.author = "Akurat-iDRG System";
+  pptx.author = "UR Sardjito System";
   pptx.subject = "Laporan Sosialisasi KMKB";
   pptx.title = "Sosialisasi KSM " + ksmName;
 

@@ -4706,7 +4706,7 @@ export default function App() {
                 ) : (
                   <div className="bg-white/50 backdrop-blur-sm border border-slate-200/60 p-20 rounded-[2.5rem] text-center mt-10 max-w-3xl mx-auto shadow-2xl shadow-slate-200/50 animate-in zoom-in-95 duration-500">
                     <div className="mb-10 animate-in fade-in zoom-in-75 duration-1000">
-                      <img src="https://lh3.googleusercontent.com/d/1K9BUgDDRmF0d9Q9mCasC5KhDXVpVhJs5" alt="AKURAT iDRG Logo" className="w-72 mx-auto drop-shadow-[0_20px_50px_rgba(20,184,166,0.3)] transition-transform hover:scale-105 duration-700" />
+                      <img src="https://lh3.googleusercontent.com/d/1K9BUgDDRmF0d9Q9mCasC5KhDXVpVhJs5" alt="UR Sardjito Logo" className="w-72 mx-auto drop-shadow-[0_20px_50px_rgba(20,184,166,0.3)] transition-transform hover:scale-105 duration-700" />
                     </div>
                     <h2 className="text-3xl font-black mb-4 text-slate-800 tracking-tight">Menunggu Dataset Utama...</h2>
                     <p className="text-slate-500 font-medium leading-relaxed">

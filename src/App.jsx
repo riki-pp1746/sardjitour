@@ -166,7 +166,7 @@ export const copyToClipboardHtml = (headers, rows, title = 'Tabel Data') => {
 };
 
 // --- DATABASE PERSISTENCE LAYER (IndexedDB) ---
-const dbName = "AkuratIdrgDb";
+const dbName = "UR SardjitoDb";
 const storeName = "IcdDictionary";
 
 const initIcdDb = () => {
@@ -3639,17 +3639,17 @@ export default function App() {
   useEffect(() => {
     const loadIcdDictionary = async () => {
       try {
-        console.log('[Akurat-iDRG] Loading dynamic ICD dictionary from IndexedDB...');
+        console.log('[UR Sardjito] Loading dynamic ICD dictionary from IndexedDB...');
         const map = await loadIcdDictFromDb();
         const size = Object.keys(map).length;
         if (size > 0) {
-          console.log(`[Akurat-iDRG] Successfully loaded ${size} ICD dictionary codes from IndexedDB.`);
+          console.log(`[UR Sardjito] Successfully loaded ${size} ICD dictionary codes from IndexedDB.`);
           setIcdSyncVersion(prev => prev + 1);
         } else {
-          console.log('[Akurat-iDRG] Local ICD dictionary database is empty or not synchronized yet.');
+          console.log('[UR Sardjito] Local ICD dictionary database is empty or not synchronized yet.');
         }
       } catch (err) {
-        console.error('[Akurat-iDRG] Failed to load ICD dictionary from IndexedDB:', err);
+        console.error('[UR Sardjito] Failed to load ICD dictionary from IndexedDB:', err);
       }
       
       // Run automatic background synchronization silently!
@@ -3660,7 +3660,7 @@ export default function App() {
       const urlToSync = localStorage.getItem("sak_icd_sheet_url") || "https://docs.google.com/spreadsheets/d/19Fqy6_e_j9_cuH43as9pB_5gJjWnPO3Eb2EIfX1or-w/edit?usp=sharing";
       setAutoSyncStatus("syncing");
       try {
-        console.log('[Akurat-iDRG] Starting silent automatic background sync for ICD Dictionary...');
+        console.log('[UR Sardjito] Starting silent automatic background sync for ICD Dictionary...');
         const exportUrl = getGoogleSheetCsvUrl(urlToSync.trim());
         const res = await fetch(exportUrl);
         if (!res.ok) throw new Error(`Status ${res.status}`);
@@ -3686,19 +3686,19 @@ export default function App() {
           globalIcdMap = window.sakIcdMap;
           
           window.dispatchEvent(new CustomEvent('sak_icd_sync_complete', { detail: window.sakIcdMap }));
-          console.log(`[Akurat-iDRG] Silent automatic background ICD sync finished successfully. Loaded ${dictArray.length} codes.`);
+          console.log(`[UR Sardjito] Silent automatic background ICD sync finished successfully. Loaded ${dictArray.length} codes.`);
           setAutoSyncStatus("done");
         } else {
           setAutoSyncStatus("failed");
         }
       } catch (err) {
-        console.warn('[Akurat-iDRG] Silent automatic background ICD sync failed, using offline fallback:', err.message);
+        console.warn('[UR Sardjito] Silent automatic background ICD sync failed, using offline fallback:', err.message);
         setAutoSyncStatus("failed");
       }
     };
 
     const handleSyncComplete = (e) => {
-      console.log('[Akurat-iDRG] ICD sync complete event received. Refreshing RAM cache...');
+      console.log('[UR Sardjito] ICD sync complete event received. Refreshing RAM cache...');
       setIcdSyncVersion(prev => prev + 1);
     };
 
@@ -3739,7 +3739,7 @@ export default function App() {
 
   // Persistence Sync
   useEffect(() => {
-    console.log('[Akurat-iDRG] Navigation state:', { activeTab, subTab });
+    console.log('[UR Sardjito] Navigation state:', { activeTab, subTab });
     sessionStorage.setItem('sak_activeTab', activeTab);
     sessionStorage.setItem('sak_subTab', subTab);
     sessionStorage.setItem('sak_globalFilter', JSON.stringify(globalFilter));
@@ -3967,7 +3967,7 @@ export default function App() {
   };
 
   useEffect(() => {
-    console.log('[Akurat-iDRG] Global Filter changed:', globalFilter);
+    console.log('[UR Sardjito] Global Filter changed:', globalFilter);
   }, [globalFilter]);
 
   useEffect(() => {
@@ -8557,14 +8557,14 @@ export default function App() {
     }
 
     const updateOverride = (norm, ksm, dept) => {
-      console.log('[Akurat-iDRG] updateOverride called:', { norm, ksm, dept });
+      console.log('[UR Sardjito] updateOverride called:', { norm, ksm, dept });
       setDraftKsmOverrides(prev => {
         const base = prev !== null ? prev : ksmOverrides;
         const next = {
           ...base,
           [norm]: { ksm, dept }
         };
-        console.log('[Akurat-iDRG] Next draftKsmOverrides:', next);
+        console.log('[UR Sardjito] Next draftKsmOverrides:', next);
         return next;
       });
     };
@@ -8751,7 +8751,7 @@ export default function App() {
                   const isOverridden = !!overrideVal;
 
                   if (d.norm && (d.norm.includes('AHMAD') || d.norm.includes('FITRAH'))) {
-                    console.log('[Akurat-iDRG] Render row debug for:', d.norm, {
+                    console.log('[UR Sardjito] Render row debug for:', d.norm, {
                       overrideVal,
                       autoResolved,
                       current,
@@ -8932,7 +8932,7 @@ export default function App() {
         <SectionHeader 
           icon={RefreshCw} 
           title="Sinkronisasi & Kamus ICD" 
-          desc="Hubungkan aplikasi Akurat-iDRG dengan pangkalan data ICD-10 & ICD-9 eksternal via Google Sheets untuk verifikasi deskripsi diagnosis dan prosedur medis." 
+          desc="Hubungkan aplikasi UR Sardjito dengan pangkalan data ICD-10 & ICD-9 eksternal via Google Sheets untuk verifikasi deskripsi diagnosis dan prosedur medis." 
           colorClass="bg-teal-50 text-teal-600" 
           highlightClass="bg-teal-500/5" 
         />
@@ -9092,7 +9092,7 @@ export default function App() {
         <SectionHeader 
           icon={ClipboardList} 
           title="Manajemen Akses & Kredensial Pengguna" 
-          desc="Otorisasi pengajuan akun baru dan atur masa aktif akses Akurat-iDRG langsung dari aplikasi secara otomatis menggunakan Supabase." 
+          desc="Otorisasi pengajuan akun baru dan atur masa aktif akses UR Sardjito langsung dari aplikasi secara otomatis menggunakan Supabase." 
           colorClass="bg-teal-500/10 text-teal-700" 
           highlightClass="bg-teal-500/5" 
         />

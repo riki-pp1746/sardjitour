@@ -1,4 +1,4 @@
-# 📖 Panduan Penggunaan **AKURAT iDRG**
+# 📖 Panduan Penggunaan **UR Sardjito**
 *Analisis Klaim & Utilisasi Review Terpadu — Indonesian Diagnosis Related Group*
 
 ---
@@ -7,13 +7,13 @@
 
 Buka browser (Chrome, Firefox, Edge) dan kunjungi:
 
-> **[https://akuratidrg.web.id/](https://akuratidrg.web.id/)**
+> **[https://UR Sardjito.web.id/](https://UR Sardjito.web.id/)**
 
 ---
 
 ## 1. Login
 
-![Halaman Login AKURAT iDRG](./screenshots/Screenshot_2026-05-16_081718.png)
+![Halaman Login UR Sardjito](./screenshots/Screenshot_2026-05-16_081718.png)
 
 1. Masukkan **USERNAME** yang telah diberikan oleh admin.
 2. Masukkan **PASSWORD** Anda.
@@ -248,5 +248,5 @@ Klik **KPI Coder**. Menampilkan performa individu petugas koding:
 
 ---
 
-*Panduan ini dibuat berdasarkan aplikasi AKURAT iDRG versi aktif di **[https://akuratidrg.web.id/](https://akuratidrg.web.id/)***
+*Panduan ini dibuat berdasarkan aplikasi UR Sardjito versi aktif di **[https://UR Sardjito.web.id/](https://UR Sardjito.web.id/)***
 *© RPP Analisis Klaim & Utilisasi Review Terpadu iDRG*

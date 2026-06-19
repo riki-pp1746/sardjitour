@@ -1,6 +1,6 @@
 import Papa from 'papaparse';
 
-export const CONFIG_KEY = 'Akurat_RS_Config';
+export const CONFIG_KEY = 'UR Sardjito_RS_Config';
 
 let icdMap = null;
 let icdDescMap = null;

@@ -22,9 +22,9 @@ const getInaTarif = (r) => safeParseFloat(r.TOTAL_TARIF || r['TOTAL TARIF'] || r
 const initPptx = (title, subject) => {
   const pptx = new pptxgen();
   pptx.layout = "LAYOUT_16x9"; // 10 x 5.625 inches
-  pptx.author = "Akurat-iDRG System";
+  pptx.author = "UR Sardjito System";
   pptx.company = "Faskes";
-  pptx.subject = subject || "Laporan Akurat-iDRG";
+  pptx.subject = subject || "Laporan UR Sardjito";
   pptx.title = title || "Laporan";
   return pptx;
 };
@@ -43,7 +43,7 @@ const addCover = (pptx, line1, line2) => {
   slide.addText(line1, { x: 1, y: 1.8, w: 8, fontSize: 32, bold: true, color: "ffffff", align: "center", fontFace: "Arial" });
   slide.addText(line2 || "", { x: 1, y: 2.7, w: 8, fontSize: 18, color: "ccfbf1", align: "center", fontFace: "Arial" });
   slide.addText("Generated: " + new Date().toLocaleDateString('id-ID'), { x: 1, y: 3.3, w: 8, fontSize: 11, color: "99f6e4", align: "center", fontFace: "Arial" });
-  slide.addText("Akurat-iDRG System", { x: 1, y: 3.7, w: 8, fontSize: 10, color: "5eead4", align: "center", fontFace: "Arial" });
+  slide.addText("UR Sardjito System", { x: 1, y: 3.7, w: 8, fontSize: 10, color: "5eead4", align: "center", fontFace: "Arial" });
 };
 
 const addTableSlide = (pptx, title, sub, rows, colW, opts = {}) => {

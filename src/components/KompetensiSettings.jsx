@@ -135,7 +135,7 @@ export default function KompetensiSettings() {
         <div>
           <h4 className="font-bold text-amber-900 mb-1">Peringatan Penting</h4>
           <p className="text-amber-800 text-sm leading-relaxed">
-            Data pemetaan kompetensi yang digunakan pada sistem ini <strong>bukan merupakan rilis resmi dari Kementerian Kesehatan (Kemenkes)</strong> melainkan hasil kompilasi internal. Oleh karena itu, pengisian profil secara otomatis mungkin tidak 100% akurat dengan kondisi nyata. <strong>Anda diwajibkan untuk memeriksa dan menyesuaikan ulang tingkat kompetensi di bawah ini</strong> agar sesuai dengan kapabilitas layanan aktual di Rumah Sakit Anda sebelum melakukan analisis.
+            Data pemetaan kompetensi yang digunakan pada sistem ini <strong>bukan merupakan rilis resmi dari Kementerian Kesehatan (Kemenkes)</strong> melainkan hasil kompilasi internal. Oleh karena itu, pengisian profil secara otomatis mungkin tidak 100% ur_sardjito dengan kondisi nyata. <strong>Anda diwajibkan untuk memeriksa dan menyesuaikan ulang tingkat kompetensi di bawah ini</strong> agar sesuai dengan kapabilitas layanan aktual di Rumah Sakit Anda sebelum melakukan analisis.
           </p>
         </div>
       </div>

@@ -13,7 +13,7 @@ import GlobalLoader from './GlobalLoader';
 const DEFAULT_GEMINI_KEY = "";
 
 // --- DATABASE PERSISTENCE LAYER (IndexedDB) ---
-const dbName = "AkuratIdrgDb";
+const dbName = "UR SardjitoDb";
 const storeName = "IcdDictionary";
 
 const initIcdDb = () => {
@@ -717,7 +717,7 @@ export default function PendingSaktiDashboard({ isDarkMode, mainDataset = [], re
 
         // 3. Generate instant response suggestions based on category
         let saran = 'Konfirmasi rekam medis dengan dokter DPJP.';
-        let rsBenar = 'Sesuai dengan rekam medis pasien terlampir bahwa koding sudah akurat.';
+        let rsBenar = 'Sesuai dengan rekam medis pasien terlampir bahwa koding sudah ur_sardjito.';
         let rsSalah = 'Kesediaan koding ulang sesuai arahan verifikator.';
 
         if (kategori.includes('Koding')) {
@@ -2174,7 +2174,7 @@ Berikan jawaban audit komprehensif dalam format JSON berikut (HANYA JSON murni, 
               <div className="border-b pb-6 border-slate-200 flex justify-between items-center">
                 <div>
                   <h1 className="text-xl font-black text-slate-900 tracking-tight uppercase">Laporan Executive Audit Pending BPJS</h1>
-                  <p className="text-[10px] text-slate-400 mt-1 font-bold uppercase tracking-widest">Kementerian Kesehatan Republik Indonesia • Akurat-iDRG Dashboard</p>
+                  <p className="text-[10px] text-slate-400 mt-1 font-bold uppercase tracking-widest">Kementerian Kesehatan Republik Indonesia • UR Sardjito Dashboard</p>
                 </div>
                 <div className="text-right">
                   <div className="text-xs font-black text-slate-700 bg-slate-100 px-3.5 py-2 rounded-xl border border-slate-200 shadow-sm">
@@ -2499,7 +2499,7 @@ Berikan jawaban audit komprehensif dalam format JSON berikut (HANYA JSON murni, 
 
             <div className="p-8 space-y-5 overflow-y-auto flex-1 custom-scrollbar">
               <div className="bg-slate-50 p-4 rounded-2xl border border-slate-100 text-[11px] leading-relaxed text-slate-500 font-medium">
-                Pilih nama kolom di file spreadsheet Anda yang mewakili data-data di bawah ini agar sistem dapat memproses secara akurat.
+                Pilih nama kolom di file spreadsheet Anda yang mewakili data-data di bawah ini agar sistem dapat memproses secara ur_sardjito.
               </div>
 
               {/* SEP Column */}
