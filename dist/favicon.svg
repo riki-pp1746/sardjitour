@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="tealDark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stopColor="#0f766e" />
+      <stop offset="100%" stopColor="#042f2e" />
+    </linearGradient>
+    <linearGradient id="tealLight" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stopColor="#2dd4bf" />
+      <stop offset="100%" stopColor="#0d9488" />
+    </linearGradient>
+    <linearGradient id="tealGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stopColor="#ccfbf1" />
+      <stop offset="100%" stopColor="#14b8a6" />
+    </linearGradient>
+  </defs>
+
+  <g transform="translate(0, 5)">
+    <!-- Left Pillar -->
+    <polygon points="45,5 15,95 30,95" fill="url(#tealDark)" />
+    <polygon points="45,5 30,95 45,95" fill="url(#tealLight)" />
+
+    <!-- Right Pillar -->
+    <polygon points="65,40 55,95 70,95" fill="url(#tealDark)" />
+    <polygon points="65,40 70,95 85,95" fill="url(#tealLight)" />
+
+    <!-- Swoosh Bottom Face -->
+    <path d="M 5,70 Q 50,55 95,25 Q 60,65 35,80 Z" fill="url(#tealDark)" />
+    <!-- Swoosh Top Face -->
+    <path d="M 5,70 Q 40,40 95,25 Q 50,55 5,70 Z" fill="url(#tealGlow)" />
+  </g>
+</svg>
