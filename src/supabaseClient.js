@@ -148,7 +148,7 @@ export const supabase = {
       listFactors: async () => ({ data: [], error: null }),
       challenge: async () => ({ data: { id: 'mock' }, error: null }),
       verify: async () => ({ data: {}, error: null }),
-      enroll: async () => ({ data: { id: 'mock' }, error: null }),
+      enroll: async () => ({ data: { id: 'mock', totp: { uri: 'otpauth://totp/AkuratIDRG:demo@example.com?secret=JBSWY3DPEHPK3PXP&issuer=AkuratIDRG' } }, error: null }),
       unenroll: async () => ({ data: {}, error: null }),
     }
   }
