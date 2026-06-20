@@ -10459,7 +10459,7 @@ export default function App() {
                 <div className="w-16 h-16 bg-blue-900/30 rounded-2xl flex items-center justify-center mx-auto mb-4">
                   <ClipboardList size={32} className="text-blue-600" />
                 </div>
-                <h2 className="text-2xl font-black text-white tracking-tight">Permohonan Akun</h2>
+                <h2 className="text-2xl font-black text-slate-800 tracking-tight">Permohonan Akun</h2>
                 <p className="text-sm text-slate-500 font-medium mt-2">Daftar untuk mendapatkan akses ke aplikasi</p>
               </div>
 
@@ -10480,12 +10480,12 @@ export default function App() {
               <form onSubmit={handleRegister} className="space-y-4">
                 <div>
                   <label className="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1.5 ml-1">Email</label>
-                  <input type="email" required value={regData.email} onChange={e => setRegData({...regData, email: e.target.value})} className="w-full bg-slate-50 border border-slate-200 text-white text-sm rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent block p-3.5 transition-all outline-none font-medium" placeholder="email@contoh.com" />
+                  <input type="email" required value={regData.email} onChange={e => setRegData({...regData, email: e.target.value})} className="w-full bg-slate-50 border border-slate-200 text-slate-800 text-sm rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent block p-3.5 transition-all outline-none font-medium" placeholder="email@contoh.com" />
                 </div>
                 <div>
                   <label className="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1.5 ml-1">Password</label>
                   <div className="relative">
-                    <input type={showRegPassword ? "text" : "password"} required value={regData.password} onChange={e => setRegData({...regData, password: e.target.value})} minLength={8} className="w-full bg-slate-50 border border-slate-200 text-white text-sm rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent block p-3.5 pr-12 transition-all outline-none font-medium" placeholder="Minimal 8 karakter" />
+                    <input type={showRegPassword ? "text" : "password"} required value={regData.password} onChange={e => setRegData({...regData, password: e.target.value})} minLength={8} className="w-full bg-slate-50 border border-slate-200 text-slate-800 text-sm rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent block p-3.5 pr-12 transition-all outline-none font-medium" placeholder="Minimal 8 karakter" />
                     <button
                       type="button"
                       onClick={() => setShowRegPassword(!showRegPassword)}
@@ -10497,19 +10497,19 @@ export default function App() {
                 </div>
                 <div>
                   <label className="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1.5 ml-1">Username (ID Login)</label>
-                  <input type="text" required value={regData.username} onChange={e => setRegData({...regData, username: e.target.value})} className="w-full bg-slate-50 border border-slate-200 text-white text-sm rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent block p-3.5 transition-all outline-none font-medium" placeholder="johndoe" />
+                  <input type="text" required value={regData.username} onChange={e => setRegData({...regData, username: e.target.value})} className="w-full bg-slate-50 border border-slate-200 text-slate-800 text-sm rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent block p-3.5 transition-all outline-none font-medium" placeholder="johndoe" />
                 </div>
                 <div>
                   <label className="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1.5 ml-1">Nama Lengkap</label>
-                  <input type="text" required value={regData.nama} onChange={e => setRegData({...regData, nama: e.target.value})} className="w-full bg-slate-50 border border-slate-200 text-white text-sm rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent block p-3.5 transition-all outline-none font-medium" placeholder="Nama Lengkap Anda" />
+                  <input type="text" required value={regData.nama} onChange={e => setRegData({...regData, nama: e.target.value})} className="w-full bg-slate-50 border border-slate-200 text-slate-800 text-sm rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent block p-3.5 transition-all outline-none font-medium" placeholder="Nama Lengkap Anda" />
                 </div>
                 <div>
                   <label className="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1.5 ml-1">Nama Rumah Sakit / Faskes</label>
-                  <input type="text" required value={regData.faskes} onChange={e => setRegData({...regData, faskes: e.target.value})} className="w-full bg-slate-50 border border-slate-200 text-white text-sm rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent block p-3.5 transition-all outline-none font-medium" placeholder="RSUD Contoh" />
+                  <input type="text" required value={regData.faskes} onChange={e => setRegData({...regData, faskes: e.target.value})} className="w-full bg-slate-50 border border-slate-200 text-slate-800 text-sm rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent block p-3.5 transition-all outline-none font-medium" placeholder="RSUD Contoh" />
                 </div>
                 <div>
                   <label className="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1.5 ml-1">No WhatsApp</label>
-                  <input type="text" value={regData.wa} onChange={e => setRegData({...regData, wa: e.target.value})} className="w-full bg-slate-50 border border-slate-200 text-white text-sm rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent block p-3.5 transition-all outline-none font-medium" placeholder="081234567890" />
+                  <input type="text" value={regData.wa} onChange={e => setRegData({...regData, wa: e.target.value})} className="w-full bg-slate-50 border border-slate-200 text-slate-800 text-sm rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent block p-3.5 transition-all outline-none font-medium" placeholder="081234567890" />
                 </div>
                 <div className="pt-4">
                   <button type="submit" disabled={regState.loading} className="w-full font-black py-4 px-4 rounded-2xl flex items-center justify-center gap-2 transition-all duration-300 text-xs tracking-[0.1em] uppercase bg-blue-600 hover:bg-blue-700 text-white shadow-lg shadow-blue-600/20 hover:-translate-y-0.5 disabled:opacity-50 disabled:hover:translate-y-0">
@@ -10531,7 +10531,7 @@ export default function App() {
                   <AlertTriangle size={48} className="text-blue-600 animate-pulse" />
                 </div>
                 <div className="space-y-3">
-                  <h2 className="text-2xl font-black text-white tracking-tight">Privasi & Keamanan Data</h2>
+                  <h2 className="text-2xl font-black text-slate-800 tracking-tight">Privasi & Keamanan Data</h2>
                   <p className="text-sm text-slate-500 leading-relaxed font-bold">
                     Sebagai standar kepatuhan data medis, sistem <strong className="text-blue-600">UR Sardjito</strong> memberitahukan:
                   </p>
