@@ -144,12 +144,24 @@ export const supabase = {
       return { data: { subscription: { unsubscribe: unsub } } };
     },
     mfa: {
-      getAuthenticatorAssuranceLevel: async () => ({ data: { currentLevel: 'aal1', nextLevel: 'aal1' }, error: null }),
-      listFactors: async () => ({ data: [], error: null }),
+      getAuthenticatorAssuranceLevel: async () => {
+        const isEnrolled = localStorage.getItem('mfa_enrolled') === 'true';
+        return { data: { currentLevel: 'aal1', nextLevel: isEnrolled ? 'aal2' : 'aal1' }, error: null };
+      },
+      listFactors: async () => {
+        const isEnrolled = localStorage.getItem('mfa_enrolled') === 'true';
+        return { data: isEnrolled ? { all: [{ id: 'mock' }], totp: [{ id: 'mock' }] } : { all: [], totp: [] }, error: null };
+      },
       challenge: async () => ({ data: { id: 'mock' }, error: null }),
-      verify: async () => ({ data: {}, error: null }),
+      verify: async () => {
+        localStorage.setItem('mfa_enrolled', 'true');
+        return { data: {}, error: null };
+      },
       enroll: async () => ({ data: { id: 'mock', totp: { uri: 'otpauth://totp/AkuratIDRG:demo@example.com?secret=JBSWY3DPEHPK3PXP&issuer=AkuratIDRG' } }, error: null }),
-      unenroll: async () => ({ data: {}, error: null }),
+      unenroll: async () => {
+        localStorage.removeItem('mfa_enrolled');
+        return { data: {}, error: null };
+      },
     }
   }
 };
