@@ -77,11 +77,17 @@ class SupabaseQueryBuilder {
              }
              qRef = query(qRef, where(cond.field, "==", cond.value));
          }
-         if (this._order) {
-            qRef = query(qRef, orderBy(this._order.field, this._order.dir));
-         }
          const snap = await getDocs(qRef);
-         const res = snap.docs.map(d => { const dt = d.data(); return { id: d.id, created_at: dt.createdAt, ...dt }; });
+         let res = snap.docs.map(d => { const dt = d.data(); return { id: d.id, created_at: dt.createdAt, ...dt }; });
+         if (this._order) {
+            res.sort((a, b) => {
+               const v1 = a[this._order.field] || '';
+               const v2 = b[this._order.field] || '';
+               if (v1 < v2) return this._order.dir === 'asc' ? -1 : 1;
+               if (v1 > v2) return this._order.dir === 'asc' ? 1 : -1;
+               return 0;
+            });
+         }
          return resolve({ data: this._single ? res[0] : res, error: null });
       }
     } catch (e) {
@@ -108,10 +114,10 @@ export const supabase = {
              username,
              isAdmin: isSuperAdmin,
              role: isSuperAdmin ? 'admin' : 'user',
-             isApproved: true,
-             is_approved: true,
-             akses_kompetensi: true,
-             status: 'active',
+             isApproved: isSuperAdmin,
+             is_approved: isSuperAdmin,
+             akses_kompetensi: isSuperAdmin,
+             status: isSuperAdmin ? 'active' : 'pending',
              createdAt: new Date().toISOString(),
              ...options?.data
           });
